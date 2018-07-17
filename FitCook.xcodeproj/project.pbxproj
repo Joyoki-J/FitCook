@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FF233C220FE3CA0001DEB95 /* FCRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF233C120FE3CA0001DEB95 /* FCRootViewController.m */; };
+		1FF233E720FE3D93001DEB95 /* FCMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF233E620FE3D93001DEB95 /* FCMainViewController.m */; };
+		1FF233EA20FE451D001DEB95 /* FCLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF233E920FE451D001DEB95 /* FCLaunchViewController.m */; };
 		697E0FEF20FC486300777146 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 697E0FEE20FC486300777146 /* AppDelegate.m */; };
 		697E0FF220FC486300777146 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 697E0FF120FC486300777146 /* ViewController.m */; };
 		697E0FF520FC486300777146 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 697E0FF320FC486300777146 /* Main.storyboard */; };
@@ -19,6 +22,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1FF233C020FE3CA0001DEB95 /* FCRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCRootViewController.h; sourceTree = "<group>"; };
+		1FF233C120FE3CA0001DEB95 /* FCRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCRootViewController.m; sourceTree = "<group>"; };
+		1FF233E520FE3D93001DEB95 /* FCMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCMainViewController.h; sourceTree = "<group>"; };
+		1FF233E620FE3D93001DEB95 /* FCMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCMainViewController.m; sourceTree = "<group>"; };
+		1FF233E820FE451D001DEB95 /* FCLaunchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCLaunchViewController.h; sourceTree = "<group>"; };
+		1FF233E920FE451D001DEB95 /* FCLaunchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCLaunchViewController.m; sourceTree = "<group>"; };
 		697E0FEA20FC486300777146 /* FitCook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitCook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		697E0FED20FC486300777146 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		697E0FEE20FC486300777146 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -69,6 +78,12 @@
 			children = (
 				697E0FED20FC486300777146 /* AppDelegate.h */,
 				697E0FEE20FC486300777146 /* AppDelegate.m */,
+				1FF233C020FE3CA0001DEB95 /* FCRootViewController.h */,
+				1FF233C120FE3CA0001DEB95 /* FCRootViewController.m */,
+				1FF233E820FE451D001DEB95 /* FCLaunchViewController.h */,
+				1FF233E920FE451D001DEB95 /* FCLaunchViewController.m */,
+				1FF233E520FE3D93001DEB95 /* FCMainViewController.h */,
+				1FF233E620FE3D93001DEB95 /* FCMainViewController.m */,
 				697E100320FC633600777146 /* FCBaseViewController.h */,
 				697E100420FC633600777146 /* FCBaseViewController.m */,
 				697E100620FC649300777146 /* UIBarButtonItem+FC.h */,
@@ -157,10 +172,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				697E100B20FC650400777146 /* FCUIManager.m in Sources */,
+				1FF233EA20FE451D001DEB95 /* FCLaunchViewController.m in Sources */,
 				697E100520FC633600777146 /* FCBaseViewController.m in Sources */,
 				697E0FF220FC486300777146 /* ViewController.m in Sources */,
 				697E100820FC649300777146 /* UIBarButtonItem+FC.m in Sources */,
+				1FF233C220FE3CA0001DEB95 /* FCRootViewController.m in Sources */,
 				697E0FFD20FC486600777146 /* main.m in Sources */,
+				1FF233E720FE3D93001DEB95 /* FCMainViewController.m in Sources */,
 				697E0FEF20FC486300777146 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

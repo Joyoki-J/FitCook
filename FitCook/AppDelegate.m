@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "FCRootViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +18,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    FCRootViewController *vcRoot = [[FCRootViewController alloc] init];
+    self.window.rootViewController = vcRoot;
+    [self.window makeKeyAndVisible];
     
     return YES;
 }
