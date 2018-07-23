@@ -1,0 +1,14 @@
+//
+//  FitCook-Prefix.pch
+//  FitCook
+//
+//  Created by Joyoki on 2018/7/24.
+//  Copyright © 2018年 Joyoki. All rights reserved.
+//
+
+#ifndef FitCook_Prefix_pch
+#define FitCook_Prefix_pch
+
+
+
+#endif /* FitCook_Prefix_pch */

@@ -19,15 +19,19 @@
 		697E100520FC633600777146 /* FCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 697E100420FC633600777146 /* FCBaseViewController.m */; };
 		697E100820FC649300777146 /* UIBarButtonItem+FC.m in Sources */ = {isa = PBXBuildFile; fileRef = 697E100720FC649300777146 /* UIBarButtonItem+FC.m */; };
 		697E100B20FC650400777146 /* FCUIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 697E100A20FC650400777146 /* FCUIManager.m */; };
+		C78B109FA29FBB57A160F64C /* libPods-FitCook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F320A08630F8D0C285BF96 /* libPods-FitCook.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F5916BE21063AC200A62093 /* FitCook-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FitCook-Prefix.pch"; sourceTree = "<group>"; };
 		1FF233C020FE3CA0001DEB95 /* FCRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCRootViewController.h; sourceTree = "<group>"; };
 		1FF233C120FE3CA0001DEB95 /* FCRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCRootViewController.m; sourceTree = "<group>"; };
 		1FF233E520FE3D93001DEB95 /* FCMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCMainViewController.h; sourceTree = "<group>"; };
 		1FF233E620FE3D93001DEB95 /* FCMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCMainViewController.m; sourceTree = "<group>"; };
 		1FF233E820FE451D001DEB95 /* FCLaunchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCLaunchViewController.h; sourceTree = "<group>"; };
 		1FF233E920FE451D001DEB95 /* FCLaunchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCLaunchViewController.m; sourceTree = "<group>"; };
+		295DAC29CE529CA49431766B /* Pods-FitCook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitCook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FitCook/Pods-FitCook.debug.xcconfig"; sourceTree = "<group>"; };
+		56F320A08630F8D0C285BF96 /* libPods-FitCook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FitCook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		697E0FEA20FC486300777146 /* FitCook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitCook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		697E0FED20FC486300777146 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		697E0FEE20FC486300777146 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -44,6 +48,7 @@
 		697E100720FC649300777146 /* UIBarButtonItem+FC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+FC.m"; sourceTree = "<group>"; };
 		697E100920FC650400777146 /* FCUIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCUIManager.h; sourceTree = "<group>"; };
 		697E100A20FC650400777146 /* FCUIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCUIManager.m; sourceTree = "<group>"; };
+		F46D1EE34183340D4CC975B0 /* Pods-FitCook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitCook.release.xcconfig"; path = "Pods/Target Support Files/Pods-FitCook/Pods-FitCook.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,17 +56,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C78B109FA29FBB57A160F64C /* libPods-FitCook.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5403B7871CEB8DD75DCFAD06 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				56F320A08630F8D0C285BF96 /* libPods-FitCook.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		697E0FE120FC486300777146 = {
 			isa = PBXGroup;
 			children = (
 				697E0FEC20FC486300777146 /* FitCook */,
 				697E0FEB20FC486300777146 /* Products */,
+				70D422122633CBFF891BDBC7 /* Pods */,
+				5403B7871CEB8DD75DCFAD06 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,8 +113,18 @@
 				697E0FF820FC486600777146 /* LaunchScreen.storyboard */,
 				697E0FFB20FC486600777146 /* Info.plist */,
 				697E0FFC20FC486600777146 /* main.m */,
+				1F5916BE21063AC200A62093 /* FitCook-Prefix.pch */,
 			);
 			path = FitCook;
+			sourceTree = "<group>";
+		};
+		70D422122633CBFF891BDBC7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				295DAC29CE529CA49431766B /* Pods-FitCook.debug.xcconfig */,
+				F46D1EE34183340D4CC975B0 /* Pods-FitCook.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,9 +134,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 697E100020FC486600777146 /* Build configuration list for PBXNativeTarget "FitCook" */;
 			buildPhases = (
+				BD3D92965B56A441898B928A /* [CP] Check Pods Manifest.lock */,
 				697E0FE620FC486300777146 /* Sources */,
 				697E0FE720FC486300777146 /* Frameworks */,
 				697E0FE820FC486300777146 /* Resources */,
+				CF445661837F6B88F8EB2358 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -165,6 +193,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BD3D92965B56A441898B928A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FitCook-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF445661837F6B88F8EB2358 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FitCook/Pods-FitCook-resources.sh",
+				"${PODS_ROOT}/SSKeychain/Support/SSKeychain.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SSKeychain.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FitCook/Pods-FitCook-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		697E0FE620FC486300777146 /* Sources */ = {
@@ -317,37 +384,91 @@
 		};
 		697E100120FC486600777146 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 295DAC29CE529CA49431766B /* Pods-FitCook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2AG95DX2G9;
+				DEVELOPMENT_TEAM = 27CV7895W3;
+				GCC_PREFIX_HEADER = "FitCook/FitCook-Prefix.pch";
 				INFOPLIST_FILE = FitCook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.joyoki.FitCook;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"MJExtension\"",
+					"-l\"Realm\"",
+					"-l\"SDWebImage\"",
+					"-l\"SSKeychain\"",
+					"-l\"c++\"",
+					"-l\"realmcore-ios\"",
+					"-l\"z\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shanshan.fitcook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		697E100220FC486600777146 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F46D1EE34183340D4CC975B0 /* Pods-FitCook.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2AG95DX2G9;
+				DEVELOPMENT_TEAM = 27CV7895W3;
+				GCC_PREFIX_HEADER = "FitCook/FitCook-Prefix.pch";
 				INFOPLIST_FILE = FitCook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.joyoki.FitCook;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"MJExtension\"",
+					"-l\"Realm\"",
+					"-l\"SDWebImage\"",
+					"-l\"SSKeychain\"",
+					"-l\"c++\"",
+					"-l\"realmcore-ios\"",
+					"-l\"z\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shanshan.fitcook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
