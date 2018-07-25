@@ -9,6 +9,6 @@
 #ifndef FitCook_Prefix_pch
 #define FitCook_Prefix_pch
 
-
+#import "FCUIManager.h"
 
 #endif /* FitCook_Prefix_pch */

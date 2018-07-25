@@ -11,9 +11,9 @@
 #define RGBA(r,g,b,a) [UIColor colorWithRed:r/255.f green:g/255.f blue:b/255.f alpha:a/100.f]
 #define RGB(r,g,b) RGBA(r,g,b,100.f)
 
-#define COLOR_MAIN           RGB(221.0f,64.0f,59.0f)
-#define COLOR_BARITEM_GRAY   RGB(245.0f,165.0f,162.0f)
-#define COLOR_DefaultTittle  RGB(51, 51, 51)
+#define COLOR_TAB_BAR_ITEM_TITLE           RGB(217.0f,218.0f,218.0f)
+#define COLOR_TAB_BAR_ITEM_TITLE_SELECTED  RGB(90.0f,218.0f,249.0f)
+#define COLOR_BARITEM_GRAY                 RGB(245.0f,165.0f,162.0f)
 
 #define kFCFont(size)       [FCUIManager fontOfSize:(size) bold:NO]
 #define kFCBoldFont(size)   [FCUIManager fontOfSize:(size) bold:YES]

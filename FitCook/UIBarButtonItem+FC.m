@@ -7,7 +7,6 @@
 //
 
 #import "UIBarButtonItem+FC.h"
-#import "FCUIManager.h"
 
 @implementation UIBarButtonItem (FC)
 

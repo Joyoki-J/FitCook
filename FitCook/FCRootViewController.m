@@ -34,7 +34,7 @@
     [self.view addSubview:vcLaunch.view];
     _vcLaunch = vcLaunch;
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [UIView animateWithDuration:0.3 animations:^{
             vcLaunch.view.alpha = 0;
         } completion:^(BOOL finished) {
@@ -43,15 +43,6 @@
                 vcLaunch.view.alpha = 1;
             }
         }];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            vcLaunch.view.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height, self.view.bounds.size.width, self.view.bounds.size.height);
-            [self.view bringSubviewToFront:vcLaunch.view];
-            [UIView animateWithDuration:0.3 animations:^{
-                vcLaunch.view.frame = self.view.bounds;
-            } completion:^(BOOL finished) {
-                
-            }];
-        });
     });
 }
 
