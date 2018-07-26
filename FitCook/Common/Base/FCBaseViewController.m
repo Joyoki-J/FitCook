@@ -8,6 +8,7 @@
 
 #import "FCBaseViewController.h"
 #import "UIBarButtonItem+FC.h"
+#import "UIImage+FC.h"
 
 @interface FCBaseViewController ()
 
@@ -20,9 +21,8 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-//        self.hidesBottomBarWhenPushed = YES;
+        self.hidesBottomBarWhenPushed = YES;
     }
-    
     return self;
 }
 
@@ -30,7 +30,7 @@
 {
     self = [super init];
     if (self) {
-//        self.hidesBottomBarWhenPushed = YES;
+        self.hidesBottomBarWhenPushed = YES;
     }
     return self;
 }
@@ -39,7 +39,24 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = NO;
+    
     [self addCustomBackBarButtonItemIfNeeded];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.navigationController.navigationBar setBackgroundImage:[self navigationBarBackgroundImage] forBarMetrics:UIBarMetricsDefault];
+    
+    if (self.isViewWillAppearBecauseOfPop) {
+        [self.navigationController setNavigationBarHidden:[self needsHiddenNavigationBar] animated:YES];
+    } else {
+        //from tab bar
+        [self.navigationController setNavigationBarHidden:[self needsHiddenNavigationBar] animated:NO];
+    }
 }
 
 - (void)addCustomBackBarButtonItemIfNeeded
@@ -55,6 +72,11 @@
             }
         }
     }
+}
+
+- (BOOL)needsHiddenNavigationBar
+{
+    return NO;
 }
 
 - (BOOL)needsCustomBackBarButtonItem
@@ -83,16 +105,33 @@
 
 - (UIBarButtonItem *)backButtonItemWithImageName:(NSString *)imageName highlightedImageName:(NSString *)highlightedImageName
 {
-    return [UIBarButtonItem backBarButtonItemWithTarget:self
+    return [UIBarButtonItem fc_backBarButtonItemWithTarget:self
                                                  action:@selector(popViewController)
                                               imageName:imageName
                                    highlightedImageName:highlightedImageName
                                       selectedImageName:nil];
 }
 
+- (UIImage *)navigationBarBackgroundImage {
+    return [UIImage fc_imageWithColor:[UIColor whiteColor]];
+}
+
 - (void)popViewController
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    if (self.navigationController) {
+        if (self.navigationController.viewControllers.count > 1) {
+            [self.navigationController popViewControllerAnimated:YES];
+        } else {
+            [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+        }
+    } else {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+}
+
+- (BOOL)isViewWillAppearBecauseOfPop
+{
+    return [self.navigationController.view window] && !self.isMovingToParentViewController;
 }
 
 - (void)didReceiveMemoryWarning {

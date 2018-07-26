@@ -10,5 +10,6 @@
 #define FitCook_Prefix_pch
 
 #import "FCUIManager.h"
+#import "FCCategoryHeader.h"
 
 #endif /* FitCook_Prefix_pch */

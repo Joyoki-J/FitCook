@@ -10,20 +10,20 @@
 
 @interface UIBarButtonItem (FC)
 
-+ (UIBarButtonItem *)barButtonItemWithTarget:(id)target
++ (UIBarButtonItem *)fc_barButtonItemWithTarget:(id)target
                                       action:(SEL)selector
                                    imageName:(NSString *)imageName
                         highlightedImageName:(NSString *)highlightedImageName
                            selectedImageName:(NSString *)selectedImageName;
 
 //调整backBarButton 距离左侧间距
-+ (UIBarButtonItem *)backBarButtonItemWithTarget:(id)target
++ (UIBarButtonItem *)fc_backBarButtonItemWithTarget:(id)target
                                           action:(SEL)selector
                                        imageName:(NSString *)imageName
                             highlightedImageName:(NSString *)highlightedImageName
                                selectedImageName:(NSString *)selectedImageName;
 
-+ (UIBarButtonItem *)barButtonItemWithTarget:(id)target
++ (UIBarButtonItem *)fc_barButtonItemWithTarget:(id)target
                                       action:(SEL)selector
                                        title:(NSString *)title;
 

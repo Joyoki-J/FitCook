@@ -7,11 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F4CFB75210A1E0A00CFC438 /* FCRecipesRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CFB74210A1E0A00CFC438 /* FCRecipesRootViewController.m */; };
+		1F4CFB78210A1E5600CFC438 /* FCShoppingRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CFB77210A1E5600CFC438 /* FCShoppingRootViewController.m */; };
+		1F4CFB7B210A1E8C00CFC438 /* FCSearchRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CFB7A210A1E8C00CFC438 /* FCSearchRootViewController.m */; };
+		1F4CFB7E210A1EA800CFC438 /* FCFavouritesRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CFB7D210A1EA800CFC438 /* FCFavouritesRootViewController.m */; };
+		1F4CFB81210A1EC400CFC438 /* FCProfileRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CFB80210A1EC400CFC438 /* FCProfileRootViewController.m */; };
+		1F4CFB84210A1F7A00CFC438 /* FCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CFB83210A1F7A00CFC438 /* FCNavigationController.m */; };
+		1F4CFB87210A205000CFC438 /* FCNavigationRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CFB86210A205000CFC438 /* FCNavigationRootViewController.m */; };
+		1F54C7A9210A1A35002BE1E5 /* UIImage+FC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F54C7A8210A1A35002BE1E5 /* UIImage+FC.m */; };
 		1FF233C220FE3CA0001DEB95 /* FCRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF233C120FE3CA0001DEB95 /* FCRootViewController.m */; };
 		1FF233E720FE3D93001DEB95 /* FCMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF233E620FE3D93001DEB95 /* FCMainViewController.m */; };
 		1FF233EA20FE451D001DEB95 /* FCLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF233E920FE451D001DEB95 /* FCLaunchViewController.m */; };
 		697E0FEF20FC486300777146 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 697E0FEE20FC486300777146 /* AppDelegate.m */; };
-		697E0FF220FC486300777146 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 697E0FF120FC486300777146 /* ViewController.m */; };
 		697E0FF520FC486300777146 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 697E0FF320FC486300777146 /* Main.storyboard */; };
 		697E0FF720FC486600777146 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 697E0FF620FC486600777146 /* Assets.xcassets */; };
 		697E0FFA20FC486600777146 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 697E0FF820FC486600777146 /* LaunchScreen.storyboard */; };
@@ -23,6 +30,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F4CFB73210A1E0A00CFC438 /* FCRecipesRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCRecipesRootViewController.h; sourceTree = "<group>"; };
+		1F4CFB74210A1E0A00CFC438 /* FCRecipesRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCRecipesRootViewController.m; sourceTree = "<group>"; };
+		1F4CFB76210A1E5600CFC438 /* FCShoppingRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCShoppingRootViewController.h; sourceTree = "<group>"; };
+		1F4CFB77210A1E5600CFC438 /* FCShoppingRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCShoppingRootViewController.m; sourceTree = "<group>"; };
+		1F4CFB79210A1E8C00CFC438 /* FCSearchRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCSearchRootViewController.h; sourceTree = "<group>"; };
+		1F4CFB7A210A1E8C00CFC438 /* FCSearchRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCSearchRootViewController.m; sourceTree = "<group>"; };
+		1F4CFB7C210A1EA800CFC438 /* FCFavouritesRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCFavouritesRootViewController.h; sourceTree = "<group>"; };
+		1F4CFB7D210A1EA800CFC438 /* FCFavouritesRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCFavouritesRootViewController.m; sourceTree = "<group>"; };
+		1F4CFB7F210A1EC400CFC438 /* FCProfileRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCProfileRootViewController.h; sourceTree = "<group>"; };
+		1F4CFB80210A1EC400CFC438 /* FCProfileRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCProfileRootViewController.m; sourceTree = "<group>"; };
+		1F4CFB82210A1F7A00CFC438 /* FCNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCNavigationController.h; sourceTree = "<group>"; };
+		1F4CFB83210A1F7A00CFC438 /* FCNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCNavigationController.m; sourceTree = "<group>"; };
+		1F4CFB85210A205000CFC438 /* FCNavigationRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCNavigationRootViewController.h; sourceTree = "<group>"; };
+		1F4CFB86210A205000CFC438 /* FCNavigationRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCNavigationRootViewController.m; sourceTree = "<group>"; };
+		1F4CFB88210A2DDD00CFC438 /* FCCategoryHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCCategoryHeader.h; sourceTree = "<group>"; };
+		1F54C7A7210A1A35002BE1E5 /* UIImage+FC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+FC.h"; sourceTree = "<group>"; };
+		1F54C7A8210A1A35002BE1E5 /* UIImage+FC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FC.m"; sourceTree = "<group>"; };
 		1F5916BE21063AC200A62093 /* FitCook-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FitCook-Prefix.pch"; sourceTree = "<group>"; };
 		1FF233C020FE3CA0001DEB95 /* FCRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCRootViewController.h; sourceTree = "<group>"; };
 		1FF233C120FE3CA0001DEB95 /* FCRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCRootViewController.m; sourceTree = "<group>"; };
@@ -35,8 +59,6 @@
 		697E0FEA20FC486300777146 /* FitCook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitCook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		697E0FED20FC486300777146 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		697E0FEE20FC486300777146 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		697E0FF020FC486300777146 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		697E0FF120FC486300777146 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		697E0FF420FC486300777146 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		697E0FF620FC486600777146 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		697E0FF920FC486600777146 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,6 +85,136 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F54C7AA210A1C20002BE1E5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				1F54C7B5210A1D2E002BE1E5 /* Manager */,
+				1F54C7B4210A1CE7002BE1E5 /* Base */,
+				1F54C7AB210A1C3D002BE1E5 /* Category */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		1F54C7AB210A1C3D002BE1E5 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				697E100620FC649300777146 /* UIBarButtonItem+FC.h */,
+				697E100720FC649300777146 /* UIBarButtonItem+FC.m */,
+				1F54C7A7210A1A35002BE1E5 /* UIImage+FC.h */,
+				1F54C7A8210A1A35002BE1E5 /* UIImage+FC.m */,
+				1F4CFB88210A2DDD00CFC438 /* FCCategoryHeader.h */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		1F54C7AC210A1C5B002BE1E5 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				1F54C7AD210A1C64002BE1E5 /* Main */,
+				1F54C7AF210A1C82002BE1E5 /* Recipes */,
+				1F54C7B0210A1C8C002BE1E5 /* Shopping */,
+				1F54C7B1210A1C93002BE1E5 /* Search */,
+				1F54C7B2210A1C9B002BE1E5 /* Favourites */,
+				1F54C7B3210A1CA1002BE1E5 /* Profile */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		1F54C7AD210A1C64002BE1E5 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				697E0FED20FC486300777146 /* AppDelegate.h */,
+				697E0FEE20FC486300777146 /* AppDelegate.m */,
+				1FF233C020FE3CA0001DEB95 /* FCRootViewController.h */,
+				1FF233C120FE3CA0001DEB95 /* FCRootViewController.m */,
+				1FF233E820FE451D001DEB95 /* FCLaunchViewController.h */,
+				1FF233E920FE451D001DEB95 /* FCLaunchViewController.m */,
+				1FF233E520FE3D93001DEB95 /* FCMainViewController.h */,
+				1FF233E620FE3D93001DEB95 /* FCMainViewController.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		1F54C7AF210A1C82002BE1E5 /* Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				1F4CFB73210A1E0A00CFC438 /* FCRecipesRootViewController.h */,
+				1F4CFB74210A1E0A00CFC438 /* FCRecipesRootViewController.m */,
+			);
+			path = Recipes;
+			sourceTree = "<group>";
+		};
+		1F54C7B0210A1C8C002BE1E5 /* Shopping */ = {
+			isa = PBXGroup;
+			children = (
+				1F4CFB76210A1E5600CFC438 /* FCShoppingRootViewController.h */,
+				1F4CFB77210A1E5600CFC438 /* FCShoppingRootViewController.m */,
+			);
+			path = Shopping;
+			sourceTree = "<group>";
+		};
+		1F54C7B1210A1C93002BE1E5 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				1F4CFB79210A1E8C00CFC438 /* FCSearchRootViewController.h */,
+				1F4CFB7A210A1E8C00CFC438 /* FCSearchRootViewController.m */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		1F54C7B2210A1C9B002BE1E5 /* Favourites */ = {
+			isa = PBXGroup;
+			children = (
+				1F4CFB7C210A1EA800CFC438 /* FCFavouritesRootViewController.h */,
+				1F4CFB7D210A1EA800CFC438 /* FCFavouritesRootViewController.m */,
+			);
+			path = Favourites;
+			sourceTree = "<group>";
+		};
+		1F54C7B3210A1CA1002BE1E5 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				1F4CFB7F210A1EC400CFC438 /* FCProfileRootViewController.h */,
+				1F4CFB80210A1EC400CFC438 /* FCProfileRootViewController.m */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		1F54C7B4210A1CE7002BE1E5 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				697E100320FC633600777146 /* FCBaseViewController.h */,
+				697E100420FC633600777146 /* FCBaseViewController.m */,
+				1F4CFB85210A205000CFC438 /* FCNavigationRootViewController.h */,
+				1F4CFB86210A205000CFC438 /* FCNavigationRootViewController.m */,
+				1F4CFB82210A1F7A00CFC438 /* FCNavigationController.h */,
+				1F4CFB83210A1F7A00CFC438 /* FCNavigationController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		1F54C7B5210A1D2E002BE1E5 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				697E100920FC650400777146 /* FCUIManager.h */,
+				697E100A20FC650400777146 /* FCUIManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		1F54C7B6210A1D71002BE1E5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				697E0FF320FC486300777146 /* Main.storyboard */,
+				697E0FF620FC486600777146 /* Assets.xcassets */,
+				697E0FF820FC486600777146 /* LaunchScreen.storyboard */,
+				697E0FFB20FC486600777146 /* Info.plist */,
+				697E0FFC20FC486600777146 /* main.m */,
+				1F5916BE21063AC200A62093 /* FitCook-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		5403B7871CEB8DD75DCFAD06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,28 +244,9 @@
 		697E0FEC20FC486300777146 /* FitCook */ = {
 			isa = PBXGroup;
 			children = (
-				697E0FED20FC486300777146 /* AppDelegate.h */,
-				697E0FEE20FC486300777146 /* AppDelegate.m */,
-				1FF233C020FE3CA0001DEB95 /* FCRootViewController.h */,
-				1FF233C120FE3CA0001DEB95 /* FCRootViewController.m */,
-				1FF233E820FE451D001DEB95 /* FCLaunchViewController.h */,
-				1FF233E920FE451D001DEB95 /* FCLaunchViewController.m */,
-				1FF233E520FE3D93001DEB95 /* FCMainViewController.h */,
-				1FF233E620FE3D93001DEB95 /* FCMainViewController.m */,
-				697E100320FC633600777146 /* FCBaseViewController.h */,
-				697E100420FC633600777146 /* FCBaseViewController.m */,
-				697E100620FC649300777146 /* UIBarButtonItem+FC.h */,
-				697E100720FC649300777146 /* UIBarButtonItem+FC.m */,
-				697E100920FC650400777146 /* FCUIManager.h */,
-				697E100A20FC650400777146 /* FCUIManager.m */,
-				697E0FF020FC486300777146 /* ViewController.h */,
-				697E0FF120FC486300777146 /* ViewController.m */,
-				697E0FF320FC486300777146 /* Main.storyboard */,
-				697E0FF620FC486600777146 /* Assets.xcassets */,
-				697E0FF820FC486600777146 /* LaunchScreen.storyboard */,
-				697E0FFB20FC486600777146 /* Info.plist */,
-				697E0FFC20FC486600777146 /* main.m */,
-				1F5916BE21063AC200A62093 /* FitCook-Prefix.pch */,
+				1F54C7AA210A1C20002BE1E5 /* Common */,
+				1F54C7AC210A1C5B002BE1E5 /* Modules */,
+				1F54C7B6210A1D71002BE1E5 /* Supporting Files */,
 			);
 			path = FitCook;
 			sourceTree = "<group>";
@@ -239,13 +372,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				697E100B20FC650400777146 /* FCUIManager.m in Sources */,
+				1F4CFB7E210A1EA800CFC438 /* FCFavouritesRootViewController.m in Sources */,
 				1FF233EA20FE451D001DEB95 /* FCLaunchViewController.m in Sources */,
+				1F54C7A9210A1A35002BE1E5 /* UIImage+FC.m in Sources */,
 				697E100520FC633600777146 /* FCBaseViewController.m in Sources */,
-				697E0FF220FC486300777146 /* ViewController.m in Sources */,
+				1F4CFB81210A1EC400CFC438 /* FCProfileRootViewController.m in Sources */,
+				1F4CFB78210A1E5600CFC438 /* FCShoppingRootViewController.m in Sources */,
+				1F4CFB7B210A1E8C00CFC438 /* FCSearchRootViewController.m in Sources */,
 				697E100820FC649300777146 /* UIBarButtonItem+FC.m in Sources */,
 				1FF233C220FE3CA0001DEB95 /* FCRootViewController.m in Sources */,
 				697E0FFD20FC486600777146 /* main.m in Sources */,
+				1F4CFB75210A1E0A00CFC438 /* FCRecipesRootViewController.m in Sources */,
+				1F4CFB84210A1F7A00CFC438 /* FCNavigationController.m in Sources */,
 				1FF233E720FE3D93001DEB95 /* FCMainViewController.m in Sources */,
+				1F4CFB87210A205000CFC438 /* FCNavigationRootViewController.m in Sources */,
 				697E0FEF20FC486300777146 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

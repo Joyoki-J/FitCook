@@ -10,7 +10,7 @@
 
 @implementation UIBarButtonItem (FC)
 
-+ (UIBarButtonItem *)barButtonItemWithTarget:(id)target
++ (UIBarButtonItem *)fc_barButtonItemWithTarget:(id)target
                                       action:(SEL)selector
                                    imageName:(NSString *)imageName
                         highlightedImageName:(NSString *)highlightedImageName
@@ -31,7 +31,7 @@
     return [[UIBarButtonItem alloc] initWithCustomView:button];
 }
 
-+ (UIBarButtonItem *)backBarButtonItemWithTarget:(id)target
++ (UIBarButtonItem *)fc_backBarButtonItemWithTarget:(id)target
                                           action:(SEL)selector
                                        imageName:(NSString *)imageName
                             highlightedImageName:(NSString *)highlightedImageName
@@ -53,16 +53,16 @@
     return [[UIBarButtonItem alloc] initWithCustomView:button];
 }
 
-+ (UIBarButtonItem *)barButtonItemWithTarget:(id)target
++ (UIBarButtonItem *)fc_barButtonItemWithTarget:(id)target
                                       action:(SEL)selector
                                        title:(NSString *)title
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button addTarget:target action:selector forControlEvents:UIControlEventTouchUpInside];
     [button setTitle:title forState:UIControlStateNormal];
-    button.titleLabel.font = kFCFont_16;
+    button.titleLabel.font = kFont_16;
     button.titleLabel.textAlignment = NSTextAlignmentRight;
-    [button setTitleColor:COLOR_BARITEM_GRAY forState:UIControlStateDisabled];
+    [button setTitleColor:kCOLOR_BARITEM_GRAY forState:UIControlStateDisabled];
     [button sizeToFit];
     return [[UIBarButtonItem alloc] initWithCustomView:button];
 }

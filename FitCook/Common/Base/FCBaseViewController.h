@@ -10,4 +10,12 @@
 
 @interface FCBaseViewController : UIViewController
 
+- (BOOL)needsHiddenNavigationBar;
+
+- (BOOL)needsCustomBackBarButtonItem;
+- (NSArray *)customLeftBarButtonItems;
+- (UIBarButtonItem *)backButtonItem;
+
+- (UIImage *)navigationBarBackgroundImage;
+
 @end
