@@ -32,19 +32,24 @@
     return self;
 }
 
-- (BOOL)needsCustomBackBarButtonItem
-{
-    return NO;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = kCOLOR_RANDOM;
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Override
+- (BOOL)needsCustomBackBarButtonItem
+{
+    return NO;
+}
+
+- (UIFont *)navigationBarTitleFont {
+    return kBoldFont(24);
 }
 
 @end

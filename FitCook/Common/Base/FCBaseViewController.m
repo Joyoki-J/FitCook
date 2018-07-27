@@ -51,6 +51,27 @@
     
     [self.navigationController.navigationBar setBackgroundImage:[self navigationBarBackgroundImage] forBarMetrics:UIBarMetricsDefault];
     
+    NSMutableDictionary *titleAttributes = [NSMutableDictionary dictionary];
+    UIColor *titleColor = self.navigationController.navigationBar.titleTextAttributes[NSForegroundColorAttributeName];
+    if (![titleColor isEqual:[self navigationBarTitleColor]]) {
+        [titleAttributes setObject:[self navigationBarTitleColor] forKey:NSForegroundColorAttributeName];
+    }
+    UIColor *titleFont  = self.navigationController.navigationBar.titleTextAttributes[NSFontAttributeName];
+    if (![titleFont isEqual:[self navigationBarTitleFont]]) {
+        [titleAttributes setObject:[self navigationBarTitleFont] forKey:NSFontAttributeName];
+    }
+    if (titleAttributes.allKeys.count > 0) {
+        NSMutableDictionary *attributes = [self.navigationController.navigationBar.titleTextAttributes mutableCopy];
+        if (attributes) {
+            [titleAttributes enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+                [attributes setObject:obj forKey:key];
+            }];
+            [self.navigationController.navigationBar setTitleTextAttributes:attributes];
+        } else {
+            [self.navigationController.navigationBar setTitleTextAttributes:titleAttributes];
+        }
+    }
+    
     if (self.isViewWillAppearBecauseOfPop) {
         [self.navigationController setNavigationBarHidden:[self needsHiddenNavigationBar] animated:YES];
     } else {
@@ -89,6 +110,22 @@
     return nil;
 }
 
+- (UIImage *)navigationBarBackgroundImage {
+    return [UIImage fc_imageWithColor:[UIColor whiteColor]];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleDefault;
+}
+
+- (UIColor *)navigationBarTitleColor {
+    return [UIColor blackColor];
+}
+
+- (UIFont *)navigationBarTitleFont {
+    return [UIFont systemFontOfSize:20];
+}
+
 - (UIBarButtonItem *)customBarButtonItem
 {
     if (!_customBarButtonItem) {
@@ -112,10 +149,6 @@
                                       selectedImageName:nil];
 }
 
-- (UIImage *)navigationBarBackgroundImage {
-    return [UIImage fc_imageWithColor:[UIColor whiteColor]];
-}
-
 - (void)popViewController
 {
     if (self.navigationController) {
@@ -136,7 +169,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    
 }
 
 @end

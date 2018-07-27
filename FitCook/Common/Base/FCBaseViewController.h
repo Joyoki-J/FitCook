@@ -17,5 +17,9 @@
 - (UIBarButtonItem *)backButtonItem;
 
 - (UIImage *)navigationBarBackgroundImage;
+- (UIColor *)navigationBarTitleColor;
+- (UIFont *)navigationBarTitleFont;
+
+- (void)popViewController;
 
 @end

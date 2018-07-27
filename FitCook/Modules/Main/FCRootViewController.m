@@ -12,8 +12,7 @@
 
 @interface FCRootViewController ()
 
-@property (nonatomic, strong) FCLaunchViewController *vcLaunch;
-@property (nonatomic, strong) FCMainViewController *vcMain;
+@property (nonatomic, strong) UIViewController *vcShowing;
 
 @end
 
@@ -22,36 +21,52 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    FCMainViewController *vcMain = [[FCMainViewController alloc] init];
-    vcMain.view.frame = self.view.bounds;
-    [self addChildViewController:vcMain];
-    [self.view addSubview:vcMain.view];
-    _vcMain = vcMain;
-    
-    FCLaunchViewController *vcLaunch = [[FCLaunchViewController alloc] init];
-    vcLaunch.view.frame = self.view.bounds;
-    [self addChildViewController:vcLaunch];
-    [self.view addSubview:vcLaunch.view];
-    _vcLaunch = vcLaunch;
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [UIView animateWithDuration:0.3 animations:^{
-            vcLaunch.view.alpha = 0;
-        } completion:^(BOOL finished) {
-            if (finished) {
-                [self.view sendSubviewToBack:vcLaunch.view];
-                vcLaunch.view.alpha = 1;
-            }
-        }];
-    });
+    [self showMainViewController];
 }
 
+- (void)showLaunchViewController {
+    FCLaunchViewController *vcLaunch = [[FCLaunchViewController alloc] init];
+    [self showSubViewController:vcLaunch];
+}
 
+- (void)showMainViewController {
+    FCMainViewController *vcMain = [[FCMainViewController alloc] init];
+    [self showSubViewController:vcMain];
+}
+
+- (void)showSubViewController:(UIViewController *)subVC {
+    subVC.view.frame = self.view.bounds;
+    [self addChildViewController:subVC];
+    if (_vcShowing) {
+        [self.view insertSubview:subVC.view belowSubview:_vcShowing.view];
+        [UIView animateWithDuration:0.3 animations:^{
+            self.vcShowing.view.alpha = 0;
+        } completion:^(BOOL finished) {
+            [self.vcShowing.view removeFromSuperview];
+            [self.vcShowing removeFromParentViewController];
+            self.vcShowing = subVC;
+        }];
+    } else {
+        [self.view addSubview:subVC.view];
+        self.vcShowing = subVC;
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     
 }
+
+- (UIViewController *)childViewControllerForStatusBarStyle {
+    return _vcShowing;
+}
+
+#pragma mark - setter&getter
+- (void)setVcShowing:(UIViewController *)vcShowing {
+    _vcShowing = vcShowing;
+    [self setNeedsStatusBarAppearanceUpdate];
+}
+
 
 
 @end

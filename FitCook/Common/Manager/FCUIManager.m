@@ -36,7 +36,7 @@
 
 + (UIFont *)fontOfSize:(CGFloat)size bold:(BOOL)bold {
     if (bold) {
-        return [UIFont boldSystemFontOfSize:bold];
+        return [UIFont boldSystemFontOfSize:size];
     } else {
         return [UIFont systemFontOfSize:size];
     }
