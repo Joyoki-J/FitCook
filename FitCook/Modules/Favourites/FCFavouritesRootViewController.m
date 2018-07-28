@@ -14,6 +14,10 @@
 
 @implementation FCFavouritesRootViewController
 
++ (NSString *)storyboardName {
+    return @"Favourites";
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

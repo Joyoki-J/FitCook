@@ -14,6 +14,10 @@
 
 @implementation FCProfileRootViewController
 
++ (NSString *)storyboardName {
+    return @"Profile";
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

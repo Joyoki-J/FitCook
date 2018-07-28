@@ -10,6 +10,10 @@
 
 @implementation FCRecipesRootViewController
 
++ (NSString *)storyboardName {
+    return @"Recipes";
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 }

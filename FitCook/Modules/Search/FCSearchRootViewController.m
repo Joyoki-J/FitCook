@@ -14,6 +14,10 @@
 
 @implementation FCSearchRootViewController
 
++ (NSString *)storyboardName {
+    return @"Search";
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

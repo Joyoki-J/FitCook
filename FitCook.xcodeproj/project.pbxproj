@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F1D3060210C985800DC50DD /* Recipes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F1D305F210C985800DC50DD /* Recipes.storyboard */; };
+		1F1D3062210C9F3B00DC50DD /* Shopping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F1D3061210C9F3B00DC50DD /* Shopping.storyboard */; };
+		1F1D3064210C9F4B00DC50DD /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F1D3063210C9F4B00DC50DD /* Search.storyboard */; };
+		1F1D3066210C9F6000DC50DD /* Favourites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F1D3065210C9F6000DC50DD /* Favourites.storyboard */; };
+		1F1D3068210C9F6E00DC50DD /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F1D3067210C9F6E00DC50DD /* Profile.storyboard */; };
 		1F4CFB75210A1E0A00CFC438 /* FCRecipesRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CFB74210A1E0A00CFC438 /* FCRecipesRootViewController.m */; };
 		1F4CFB78210A1E5600CFC438 /* FCShoppingRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CFB77210A1E5600CFC438 /* FCShoppingRootViewController.m */; };
 		1F4CFB7B210A1E8C00CFC438 /* FCSearchRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CFB7A210A1E8C00CFC438 /* FCSearchRootViewController.m */; };
@@ -30,6 +35,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F1D305F210C985800DC50DD /* Recipes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recipes.storyboard; sourceTree = "<group>"; };
+		1F1D3061210C9F3B00DC50DD /* Shopping.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shopping.storyboard; sourceTree = "<group>"; };
+		1F1D3063210C9F4B00DC50DD /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		1F1D3065210C9F6000DC50DD /* Favourites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favourites.storyboard; sourceTree = "<group>"; };
+		1F1D3067210C9F6E00DC50DD /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		1F4CFB73210A1E0A00CFC438 /* FCRecipesRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCRecipesRootViewController.h; sourceTree = "<group>"; };
 		1F4CFB74210A1E0A00CFC438 /* FCRecipesRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCRecipesRootViewController.m; sourceTree = "<group>"; };
 		1F4CFB76210A1E5600CFC438 /* FCShoppingRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCShoppingRootViewController.h; sourceTree = "<group>"; };
@@ -140,6 +150,7 @@
 			children = (
 				1F4CFB73210A1E0A00CFC438 /* FCRecipesRootViewController.h */,
 				1F4CFB74210A1E0A00CFC438 /* FCRecipesRootViewController.m */,
+				1F1D305F210C985800DC50DD /* Recipes.storyboard */,
 			);
 			path = Recipes;
 			sourceTree = "<group>";
@@ -149,6 +160,7 @@
 			children = (
 				1F4CFB76210A1E5600CFC438 /* FCShoppingRootViewController.h */,
 				1F4CFB77210A1E5600CFC438 /* FCShoppingRootViewController.m */,
+				1F1D3061210C9F3B00DC50DD /* Shopping.storyboard */,
 			);
 			path = Shopping;
 			sourceTree = "<group>";
@@ -158,6 +170,7 @@
 			children = (
 				1F4CFB79210A1E8C00CFC438 /* FCSearchRootViewController.h */,
 				1F4CFB7A210A1E8C00CFC438 /* FCSearchRootViewController.m */,
+				1F1D3063210C9F4B00DC50DD /* Search.storyboard */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -167,6 +180,7 @@
 			children = (
 				1F4CFB7C210A1EA800CFC438 /* FCFavouritesRootViewController.h */,
 				1F4CFB7D210A1EA800CFC438 /* FCFavouritesRootViewController.m */,
+				1F1D3065210C9F6000DC50DD /* Favourites.storyboard */,
 			);
 			path = Favourites;
 			sourceTree = "<group>";
@@ -176,6 +190,7 @@
 			children = (
 				1F4CFB7F210A1EC400CFC438 /* FCProfileRootViewController.h */,
 				1F4CFB80210A1EC400CFC438 /* FCProfileRootViewController.m */,
+				1F1D3067210C9F6E00DC50DD /* Profile.storyboard */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -319,8 +334,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F1D3060210C985800DC50DD /* Recipes.storyboard in Resources */,
 				697E0FFA20FC486600777146 /* LaunchScreen.storyboard in Resources */,
+				1F1D3068210C9F6E00DC50DD /* Profile.storyboard in Resources */,
 				697E0FF720FC486600777146 /* Assets.xcassets in Resources */,
+				1F1D3066210C9F6000DC50DD /* Favourites.storyboard in Resources */,
+				1F1D3062210C9F3B00DC50DD /* Shopping.storyboard in Resources */,
+				1F1D3064210C9F4B00DC50DD /* Search.storyboard in Resources */,
 				697E0FF520FC486300777146 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

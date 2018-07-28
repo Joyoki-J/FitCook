@@ -14,6 +14,10 @@
 
 @implementation FCShoppingRootViewController
 
++ (NSString *)storyboardName {
+    return @"Shopping";
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

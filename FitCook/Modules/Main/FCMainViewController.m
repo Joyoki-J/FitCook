@@ -30,27 +30,27 @@
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName: kFont_10, NSForegroundColorAttributeName : kCOLOR_TAB_BAR_ITEM_TITLE_SELECTED}
                                              forState:UIControlStateSelected];
     
-    FCRecipesRootViewController *vcRecipes = [[FCRecipesRootViewController alloc] init];
+    FCRecipesRootViewController *vcRecipes = [FCRecipesRootViewController viewControllerFromStoryboard];
     vcRecipes.title = @"Recipes";
     FCNavigationController *navcRecipes = [[FCNavigationController alloc] initWithRootViewController:vcRecipes];
     navcRecipes.tabBarItem = [self tabBarItemWithTitle:@"Recipes" imageName:@"tabbar_recipes_normal" selectedImageName:@"tabbar_recipes_selected"];
     
-    FCShoppingRootViewController *vcShopping = [[FCShoppingRootViewController alloc] init];
+    FCShoppingRootViewController *vcShopping = [FCShoppingRootViewController viewControllerFromStoryboard];
     vcShopping.title = @"Shopping";
     FCNavigationController *navcShopping = [[FCNavigationController alloc] initWithRootViewController:vcShopping];
     navcShopping.tabBarItem = [self tabBarItemWithTitle:@"Shopping" imageName:@"tabbar_shopping_normal" selectedImageName:@"tabbar_shopping_selected"];
     
-    FCSearchRootViewController *vcSearch = [[FCSearchRootViewController alloc] init];
+    FCSearchRootViewController *vcSearch = [FCSearchRootViewController viewControllerFromStoryboard];
     vcSearch.title = @"Search";
     FCNavigationController *navcSearch = [[FCNavigationController alloc] initWithRootViewController:vcSearch];
     navcSearch.tabBarItem = [self tabBarItemWithTitle:@"Search" imageName:@"tabbar_search_normal" selectedImageName:@"tabbar_search_selected"];
    
-    FCFavouritesRootViewController *vcFavourites = [[FCFavouritesRootViewController alloc] init];
+    FCFavouritesRootViewController *vcFavourites = [FCFavouritesRootViewController viewControllerFromStoryboard];
     vcFavourites.title = @"Favourites";
     FCNavigationController *navcFavourites = [[FCNavigationController alloc] initWithRootViewController:vcFavourites];
     navcFavourites.tabBarItem = [self tabBarItemWithTitle:@"Favourites" imageName:@"tabbar_favourites_normal" selectedImageName:@"tabbar_favourites_selected"];
     
-    FCProfileRootViewController *vcProfile = [[FCProfileRootViewController alloc] init];
+    FCProfileRootViewController *vcProfile = [FCProfileRootViewController viewControllerFromStoryboard];
     vcProfile.title = @"Profile";
     FCNavigationController *navcProfile = [[FCNavigationController alloc] initWithRootViewController:vcProfile];
     navcProfile.tabBarItem = [self tabBarItemWithTitle:@"Profile" imageName:@"tabbar_profile_normal" selectedImageName:@"tabbar_profile_selected"];

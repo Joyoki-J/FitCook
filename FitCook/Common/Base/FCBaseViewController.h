@@ -10,6 +10,9 @@
 
 @interface FCBaseViewController : UIViewController
 
++ (NSString *)storyboardName;
++ (instancetype)viewControllerFromStoryboard;
+
 - (BOOL)needsHiddenNavigationBar;
 
 - (BOOL)needsCustomBackBarButtonItem;

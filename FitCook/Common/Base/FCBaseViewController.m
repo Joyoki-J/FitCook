@@ -18,6 +18,19 @@
 
 @implementation FCBaseViewController
 
++ (NSString *)storyboardName {
+    return nil;
+}
+
++ (instancetype)viewControllerFromStoryboard {
+    NSString *storyboardName = [[self class] storyboardName];
+    if (!storyboardName) {
+        return nil;
+    }
+    NSString *identifier = NSStringFromClass([self class]);
+    return [[UIStoryboard storyboardWithName:storyboardName bundle:nil] instantiateViewControllerWithIdentifier:identifier];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
