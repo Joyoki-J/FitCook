@@ -21,7 +21,12 @@
 #define kCOLOR_RANDOM                       RGB(random() % 256,random() % 256,random() % 256)
 #define kCOLOR_TAB_BAR_ITEM_TITLE           RGB(217.0f,218.0f,218.0f)
 #define kCOLOR_TAB_BAR_ITEM_TITLE_SELECTED  RGB(90.0f,218.0f,249.0f)
-#define kCOLOR_BARITEM_GRAY                 RGB(245.0f,165.0f,162.0f)
+
+#define kCOLOR_GRAY_BARITEM                 RGB(245.0f,165.0f,162.0f)
+#define kCOLOR_GRAY_TITLE                   RGB(74.0f,74.0f,74.0f)
+#define kCOLOR_GRAY_BORDER                  RGB(238.0f,238.0f,238.0f)
+
+#define kCOLOR_BLUE_BORDER                  RGB(61.0f,124.0f,252.0f)
 
 #define kFont(size)       [FCUIManager fontOfSize:(size) bold:NO]
 #define kBoldFont(size)   [FCUIManager fontOfSize:(size) bold:YES]

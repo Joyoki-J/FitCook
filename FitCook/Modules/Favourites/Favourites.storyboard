@@ -31,11 +31,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foot_photo1.png" translatesAutoresizingMaskIntoConstraints="NO" id="6X6-eY-chp">
-                                                    <rect key="frame" x="14" y="-0.5" width="347" height="134"/>
-                                                    <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <rect key="frame" x="14" y="-0.5" width="347" height="134.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zij-Wl-eRK">
-                                                    <rect key="frame" x="14" y="-0.5" width="347" height="134"/>
+                                                    <rect key="frame" x="14" y="-0.5" width="347" height="134.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avocado Bacon Milk Pasta" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kK-tC-3ea">
                                                             <rect key="frame" x="39" y="48.5" width="269" height="24"/>
@@ -44,13 +44,13 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17mins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6s-BR-gCi">
-                                                            <rect key="frame" x="20" y="103" width="40" height="15"/>
+                                                            <rect key="frame" x="20" y="103.5" width="40" height="15"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_favourite_like" translatesAutoresizingMaskIntoConstraints="NO" id="Vqg-dv-xF4">
-                                                            <rect key="frame" x="307" y="100" width="20" height="20"/>
+                                                            <rect key="frame" x="307" y="100.5" width="20" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="5zy-v7-9B4"/>
                                                                 <constraint firstAttribute="width" constant="20" id="APw-1T-rAN"/>

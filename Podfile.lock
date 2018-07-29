@@ -14,25 +14,28 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - Masonry (1.1.0)
   - MJExtension (3.0.15.1)
-  - Realm (3.7.4):
-    - Realm/Headers (= 3.7.4)
-  - Realm/Headers (3.7.4)
+  - Realm (3.7.5):
+    - Realm/Headers (= 3.7.5)
+  - Realm/Headers (3.7.5)
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
   - SSKeychain (1.4.1)
 
 DEPENDENCIES:
-  - AFNetworking
-  - MJExtension
-  - Realm
-  - SDWebImage
-  - SSKeychain
+  - AFNetworking (= 3.2.1)
+  - Masonry (= 1.1.0)
+  - MJExtension (= 3.0.15.1)
+  - Realm (= 3.7.5)
+  - SDWebImage (= 4.4.2)
+  - SSKeychain (= 1.4.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - Masonry
     - MJExtension
     - Realm
     - SDWebImage
@@ -40,11 +43,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
-  Realm: a469bb59e33f9926102ccaea4349822c53b9117e
+  Realm: c286caf4dbf346ce24aad49ca76c7ce622d4a082
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SSKeychain: 55cc80f66f5c73da827e3077f02e43528897db41
 
-PODFILE CHECKSUM: 805dcd74ca14b80275fa09f0ce6dc04cdb58a7b0
+PODFILE CHECKSUM: bf396902f3fb517d1fc8ae9936c88880a831c0d9
 
 COCOAPODS: 1.5.3

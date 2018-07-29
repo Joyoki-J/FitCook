@@ -23,6 +23,13 @@
 		1F4CFB84210A1F7A00CFC438 /* FCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CFB83210A1F7A00CFC438 /* FCNavigationController.m */; };
 		1F4CFB87210A205000CFC438 /* FCNavigationRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CFB86210A205000CFC438 /* FCNavigationRootViewController.m */; };
 		1F54C7A9210A1A35002BE1E5 /* UIImage+FC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F54C7A8210A1A35002BE1E5 /* UIImage+FC.m */; };
+		1F5B719F210DCFA9001C4604 /* foot_photo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F5B719E210DCFA9001C4604 /* foot_photo2.png */; };
+		1F5B71A2210DD053001C4604 /* FCRecipesRootListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5B71A1210DD053001C4604 /* FCRecipesRootListCell.m */; };
+		1F5B71A5210DD09A001C4604 /* FCBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5B71A4210DD09A001C4604 /* FCBaseCollectionViewCell.m */; };
+		1F5B71A8210DD15A001C4604 /* FCRecipesRootItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5B71A7210DD15A001C4604 /* FCRecipesRootItemCell.m */; };
+		1F5B71AB210DDD75001C4604 /* FCRecipesRootItemLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5B71AA210DDD75001C4604 /* FCRecipesRootItemLayout.m */; };
+		1F5B71B0210DDFEE001C4604 /* FCFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5B71AF210DDFEE001C4604 /* FCFilterView.m */; };
+		1F5B71B6210DE98B001C4604 /* FCFilterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5B71B5210DE98B001C4604 /* FCFilterCell.m */; };
 		1FF233C220FE3CA0001DEB95 /* FCRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF233C120FE3CA0001DEB95 /* FCRootViewController.m */; };
 		1FF233E720FE3D93001DEB95 /* FCMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF233E620FE3D93001DEB95 /* FCMainViewController.m */; };
 		1FF233EA20FE451D001DEB95 /* FCLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF233E920FE451D001DEB95 /* FCLaunchViewController.m */; };
@@ -66,6 +73,19 @@
 		1F54C7A7210A1A35002BE1E5 /* UIImage+FC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+FC.h"; sourceTree = "<group>"; };
 		1F54C7A8210A1A35002BE1E5 /* UIImage+FC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FC.m"; sourceTree = "<group>"; };
 		1F5916BE21063AC200A62093 /* FitCook-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FitCook-Prefix.pch"; sourceTree = "<group>"; };
+		1F5B719E210DCFA9001C4604 /* foot_photo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foot_photo2.png; sourceTree = "<group>"; };
+		1F5B71A0210DD053001C4604 /* FCRecipesRootListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCRecipesRootListCell.h; sourceTree = "<group>"; };
+		1F5B71A1210DD053001C4604 /* FCRecipesRootListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCRecipesRootListCell.m; sourceTree = "<group>"; };
+		1F5B71A3210DD09A001C4604 /* FCBaseCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCBaseCollectionViewCell.h; sourceTree = "<group>"; };
+		1F5B71A4210DD09A001C4604 /* FCBaseCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCBaseCollectionViewCell.m; sourceTree = "<group>"; };
+		1F5B71A6210DD15A001C4604 /* FCRecipesRootItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCRecipesRootItemCell.h; sourceTree = "<group>"; };
+		1F5B71A7210DD15A001C4604 /* FCRecipesRootItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCRecipesRootItemCell.m; sourceTree = "<group>"; };
+		1F5B71A9210DDD75001C4604 /* FCRecipesRootItemLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCRecipesRootItemLayout.h; sourceTree = "<group>"; };
+		1F5B71AA210DDD75001C4604 /* FCRecipesRootItemLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCRecipesRootItemLayout.m; sourceTree = "<group>"; };
+		1F5B71AE210DDFEE001C4604 /* FCFilterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCFilterView.h; sourceTree = "<group>"; };
+		1F5B71AF210DDFEE001C4604 /* FCFilterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCFilterView.m; sourceTree = "<group>"; };
+		1F5B71B4210DE98B001C4604 /* FCFilterCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCFilterCell.h; sourceTree = "<group>"; };
+		1F5B71B5210DE98B001C4604 /* FCFilterCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCFilterCell.m; sourceTree = "<group>"; };
 		1FF233C020FE3CA0001DEB95 /* FCRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCRootViewController.h; sourceTree = "<group>"; };
 		1FF233C120FE3CA0001DEB95 /* FCRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCRootViewController.m; sourceTree = "<group>"; };
 		1FF233E520FE3D93001DEB95 /* FCMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCMainViewController.h; sourceTree = "<group>"; };
@@ -107,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				1F1D307D210CE87100DC50DD /* foot_photo1.png */,
+				1F5B719E210DCFA9001C4604 /* foot_photo2.png */,
 			);
 			path = Temp;
 			sourceTree = "<group>";
@@ -154,6 +175,12 @@
 			children = (
 				1F4CFB73210A1E0A00CFC438 /* FCRecipesRootViewController.h */,
 				1F4CFB74210A1E0A00CFC438 /* FCRecipesRootViewController.m */,
+				1F5B71A0210DD053001C4604 /* FCRecipesRootListCell.h */,
+				1F5B71A1210DD053001C4604 /* FCRecipesRootListCell.m */,
+				1F5B71A6210DD15A001C4604 /* FCRecipesRootItemCell.h */,
+				1F5B71A7210DD15A001C4604 /* FCRecipesRootItemCell.m */,
+				1F5B71A9210DDD75001C4604 /* FCRecipesRootItemLayout.h */,
+				1F5B71AA210DDD75001C4604 /* FCRecipesRootItemLayout.m */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -189,6 +216,7 @@
 				1F54C7B1210A1C93002BE1E5 /* Search */,
 				1F54C7B2210A1C9B002BE1E5 /* Favourites */,
 				1F54C7B3210A1CA1002BE1E5 /* Profile */,
+				1F5B71AC210DDF56001C4604 /* Component */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -264,6 +292,8 @@
 				1F4CFB83210A1F7A00CFC438 /* FCNavigationController.m */,
 				1F1D3078210CE3C800DC50DD /* FCBaseTableViewCell.h */,
 				1F1D3079210CE3C800DC50DD /* FCBaseTableViewCell.m */,
+				1F5B71A3210DD09A001C4604 /* FCBaseCollectionViewCell.h */,
+				1F5B71A4210DD09A001C4604 /* FCBaseCollectionViewCell.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -288,6 +318,25 @@
 				1F5916BE21063AC200A62093 /* FitCook-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1F5B71AC210DDF56001C4604 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				1F5B71AD210DDFCC001C4604 /* FCFilterView */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		1F5B71AD210DDFCC001C4604 /* FCFilterView */ = {
+			isa = PBXGroup;
+			children = (
+				1F5B71AE210DDFEE001C4604 /* FCFilterView.h */,
+				1F5B71AF210DDFEE001C4604 /* FCFilterView.m */,
+				1F5B71B4210DE98B001C4604 /* FCFilterCell.h */,
+				1F5B71B5210DE98B001C4604 /* FCFilterCell.m */,
+			);
+			path = FCFilterView;
 			sourceTree = "<group>";
 		};
 		5403B7871CEB8DD75DCFAD06 /* Frameworks */ = {
@@ -404,6 +453,7 @@
 				1F1D3062210C9F3B00DC50DD /* Shopping.storyboard in Resources */,
 				1F1D3064210C9F4B00DC50DD /* Search.storyboard in Resources */,
 				697E0FF520FC486300777146 /* Main.storyboard in Resources */,
+				1F5B719F210DCFA9001C4604 /* foot_photo2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,7 +506,12 @@
 				697E100B20FC650400777146 /* FCUIManager.m in Sources */,
 				1F4CFB7E210A1EA800CFC438 /* FCFavouritesRootViewController.m in Sources */,
 				1FF233EA20FE451D001DEB95 /* FCLaunchViewController.m in Sources */,
+				1F5B71B0210DDFEE001C4604 /* FCFilterView.m in Sources */,
 				1F54C7A9210A1A35002BE1E5 /* UIImage+FC.m in Sources */,
+				1F5B71A5210DD09A001C4604 /* FCBaseCollectionViewCell.m in Sources */,
+				1F5B71AB210DDD75001C4604 /* FCRecipesRootItemLayout.m in Sources */,
+				1F5B71A8210DD15A001C4604 /* FCRecipesRootItemCell.m in Sources */,
+				1F5B71B6210DE98B001C4604 /* FCFilterCell.m in Sources */,
 				697E100520FC633600777146 /* FCBaseViewController.m in Sources */,
 				1F4CFB81210A1EC400CFC438 /* FCProfileRootViewController.m in Sources */,
 				1F4CFB78210A1E5600CFC438 /* FCShoppingRootViewController.m in Sources */,
@@ -465,6 +520,7 @@
 				1FF233C220FE3CA0001DEB95 /* FCRootViewController.m in Sources */,
 				697E0FFD20FC486600777146 /* main.m in Sources */,
 				1F1D307A210CE3C800DC50DD /* FCBaseTableViewCell.m in Sources */,
+				1F5B71A2210DD053001C4604 /* FCRecipesRootListCell.m in Sources */,
 				1F4CFB75210A1E0A00CFC438 /* FCRecipesRootViewController.m in Sources */,
 				1F4CFB84210A1F7A00CFC438 /* FCNavigationController.m in Sources */,
 				1F1D3077210CE03500DC50DD /* FCFavouritesRootListCell.m in Sources */,

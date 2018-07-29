@@ -12,4 +12,6 @@
 #import "FCUIManager.h"
 #import "FCCategoryHeader.h"
 
+#import <Masonry.h>
+
 #endif /* FitCook_Prefix_pch */

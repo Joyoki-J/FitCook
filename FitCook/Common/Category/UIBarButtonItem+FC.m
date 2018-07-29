@@ -62,7 +62,7 @@
     [button setTitle:title forState:UIControlStateNormal];
     button.titleLabel.font = kFont_16;
     button.titleLabel.textAlignment = NSTextAlignmentRight;
-    [button setTitleColor:kCOLOR_BARITEM_GRAY forState:UIControlStateDisabled];
+    [button setTitleColor:kCOLOR_GRAY_BARITEM forState:UIControlStateDisabled];
     [button sizeToFit];
     return [[UIBarButtonItem alloc] initWithCustomView:button];
 }
