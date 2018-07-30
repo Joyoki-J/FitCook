@@ -31,9 +31,10 @@
     return [[UIStoryboard storyboardWithName:storyboardName bundle:nil] instantiateViewControllerWithIdentifier:identifier];
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (instancetype)initWithCoder:(NSCoder *)coder
 {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+    self = [super initWithCoder:coder];
+    if (self) {
         self.hidesBottomBarWhenPushed = YES;
     }
     return self;
@@ -136,7 +137,7 @@
 }
 
 - (UIFont *)navigationBarTitleFont {
-    return [UIFont systemFontOfSize:20];
+    return kFont(25);
 }
 
 - (UIBarButtonItem *)customBarButtonItem
@@ -149,7 +150,7 @@
 
 - (UIBarButtonItem *)backButtonItem
 {
-    return [self backButtonItemWithImageName:@"navBarItem_back" highlightedImageName:@"navBarItem_back_highlighted"];
+    return [self backButtonItemWithImageName:@"navbarItem_back_black" highlightedImageName:@"navbarItem_back_black"];
 }
 
 

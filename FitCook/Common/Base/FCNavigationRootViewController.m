@@ -14,6 +14,15 @@
 
 @implementation FCNavigationRootViewController
 
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        self.hidesBottomBarWhenPushed = NO;
+    }
+    return self;
+}
+
 - (instancetype)init
 {
     self = [super init];
@@ -23,14 +32,6 @@
     return self;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        self.hidesBottomBarWhenPushed = NO;
-    }
-    
-    return self;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,10 +47,6 @@
 - (BOOL)needsCustomBackBarButtonItem
 {
     return NO;
-}
-
-- (UIFont *)navigationBarTitleFont {
-    return kFont(25);
 }
 
 @end

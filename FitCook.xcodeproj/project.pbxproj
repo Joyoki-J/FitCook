@@ -30,6 +30,11 @@
 		1F5B71AB210DDD75001C4604 /* FCRecipesRootItemLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5B71AA210DDD75001C4604 /* FCRecipesRootItemLayout.m */; };
 		1F5B71B0210DDFEE001C4604 /* FCFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5B71AF210DDFEE001C4604 /* FCFilterView.m */; };
 		1F5B71B6210DE98B001C4604 /* FCFilterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5B71B5210DE98B001C4604 /* FCFilterCell.m */; };
+		1F5EBB57210F58EB00ECE894 /* foot_photo3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F5EBB56210F58EB00ECE894 /* foot_photo3.png */; };
+		1F5EBB5D210F599C00ECE894 /* FCShoppingRootRecipesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5EBB5C210F599C00ECE894 /* FCShoppingRootRecipesCell.m */; };
+		1F5EBB60210F59AE00ECE894 /* FCShoppingRootFoodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5EBB5F210F59AE00ECE894 /* FCShoppingRootFoodsCell.m */; };
+		1F5EBB67210F6E2600ECE894 /* FCShoppingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5EBB66210F6E2600ECE894 /* FCShoppingListViewController.m */; };
+		1F5EBB6B210F71CA00ECE894 /* FCRecipesDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5EBB6A210F71CA00ECE894 /* FCRecipesDetailViewController.m */; };
 		1FF233C220FE3CA0001DEB95 /* FCRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF233C120FE3CA0001DEB95 /* FCRootViewController.m */; };
 		1FF233E720FE3D93001DEB95 /* FCMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF233E620FE3D93001DEB95 /* FCMainViewController.m */; };
 		1FF233EA20FE451D001DEB95 /* FCLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF233E920FE451D001DEB95 /* FCLaunchViewController.m */; };
@@ -86,6 +91,15 @@
 		1F5B71AF210DDFEE001C4604 /* FCFilterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCFilterView.m; sourceTree = "<group>"; };
 		1F5B71B4210DE98B001C4604 /* FCFilterCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCFilterCell.h; sourceTree = "<group>"; };
 		1F5B71B5210DE98B001C4604 /* FCFilterCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCFilterCell.m; sourceTree = "<group>"; };
+		1F5EBB56210F58EB00ECE894 /* foot_photo3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foot_photo3.png; sourceTree = "<group>"; };
+		1F5EBB5B210F599C00ECE894 /* FCShoppingRootRecipesCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCShoppingRootRecipesCell.h; sourceTree = "<group>"; };
+		1F5EBB5C210F599C00ECE894 /* FCShoppingRootRecipesCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCShoppingRootRecipesCell.m; sourceTree = "<group>"; };
+		1F5EBB5E210F59AE00ECE894 /* FCShoppingRootFoodsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCShoppingRootFoodsCell.h; sourceTree = "<group>"; };
+		1F5EBB5F210F59AE00ECE894 /* FCShoppingRootFoodsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCShoppingRootFoodsCell.m; sourceTree = "<group>"; };
+		1F5EBB65210F6E2600ECE894 /* FCShoppingListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCShoppingListViewController.h; sourceTree = "<group>"; };
+		1F5EBB66210F6E2600ECE894 /* FCShoppingListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCShoppingListViewController.m; sourceTree = "<group>"; };
+		1F5EBB69210F71CA00ECE894 /* FCRecipesDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCRecipesDetailViewController.h; sourceTree = "<group>"; };
+		1F5EBB6A210F71CA00ECE894 /* FCRecipesDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCRecipesDetailViewController.m; sourceTree = "<group>"; };
 		1FF233C020FE3CA0001DEB95 /* FCRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCRootViewController.h; sourceTree = "<group>"; };
 		1FF233C120FE3CA0001DEB95 /* FCRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCRootViewController.m; sourceTree = "<group>"; };
 		1FF233E520FE3D93001DEB95 /* FCMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCMainViewController.h; sourceTree = "<group>"; };
@@ -128,6 +142,7 @@
 			children = (
 				1F1D307D210CE87100DC50DD /* foot_photo1.png */,
 				1F5B719E210DCFA9001C4604 /* foot_photo2.png */,
+				1F5EBB56210F58EB00ECE894 /* foot_photo3.png */,
 			);
 			path = Temp;
 			sourceTree = "<group>";
@@ -166,6 +181,10 @@
 			children = (
 				1F4CFB76210A1E5600CFC438 /* FCShoppingRootViewController.h */,
 				1F4CFB77210A1E5600CFC438 /* FCShoppingRootViewController.m */,
+				1F5EBB5B210F599C00ECE894 /* FCShoppingRootRecipesCell.h */,
+				1F5EBB5C210F599C00ECE894 /* FCShoppingRootRecipesCell.m */,
+				1F5EBB5E210F59AE00ECE894 /* FCShoppingRootFoodsCell.h */,
+				1F5EBB5F210F59AE00ECE894 /* FCShoppingRootFoodsCell.m */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -241,6 +260,7 @@
 			children = (
 				1F1D305F210C985800DC50DD /* Recipes.storyboard */,
 				1F1D3074210CDFE500DC50DD /* Root */,
+				1F5EBB68210F700400ECE894 /* RecipesDetail */,
 			);
 			path = Recipes;
 			sourceTree = "<group>";
@@ -250,6 +270,7 @@
 			children = (
 				1F1D3061210C9F3B00DC50DD /* Shopping.storyboard */,
 				1F1D3073210CDFDD00DC50DD /* Root */,
+				1F5EBB61210F6DB600ECE894 /* ShoppingList */,
 			);
 			path = Shopping;
 			sourceTree = "<group>";
@@ -337,6 +358,24 @@
 				1F5B71B5210DE98B001C4604 /* FCFilterCell.m */,
 			);
 			path = FCFilterView;
+			sourceTree = "<group>";
+		};
+		1F5EBB61210F6DB600ECE894 /* ShoppingList */ = {
+			isa = PBXGroup;
+			children = (
+				1F5EBB65210F6E2600ECE894 /* FCShoppingListViewController.h */,
+				1F5EBB66210F6E2600ECE894 /* FCShoppingListViewController.m */,
+			);
+			path = ShoppingList;
+			sourceTree = "<group>";
+		};
+		1F5EBB68210F700400ECE894 /* RecipesDetail */ = {
+			isa = PBXGroup;
+			children = (
+				1F5EBB69210F71CA00ECE894 /* FCRecipesDetailViewController.h */,
+				1F5EBB6A210F71CA00ECE894 /* FCRecipesDetailViewController.m */,
+			);
+			path = RecipesDetail;
 			sourceTree = "<group>";
 		};
 		5403B7871CEB8DD75DCFAD06 /* Frameworks */ = {
@@ -445,6 +484,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F1D307E210CE87100DC50DD /* foot_photo1.png in Resources */,
+				1F5EBB57210F58EB00ECE894 /* foot_photo3.png in Resources */,
 				1F1D3060210C985800DC50DD /* Recipes.storyboard in Resources */,
 				697E0FFA20FC486600777146 /* LaunchScreen.storyboard in Resources */,
 				1F1D3068210C9F6E00DC50DD /* Profile.storyboard in Resources */,
@@ -507,9 +547,11 @@
 				1F4CFB7E210A1EA800CFC438 /* FCFavouritesRootViewController.m in Sources */,
 				1FF233EA20FE451D001DEB95 /* FCLaunchViewController.m in Sources */,
 				1F5B71B0210DDFEE001C4604 /* FCFilterView.m in Sources */,
+				1F5EBB5D210F599C00ECE894 /* FCShoppingRootRecipesCell.m in Sources */,
 				1F54C7A9210A1A35002BE1E5 /* UIImage+FC.m in Sources */,
 				1F5B71A5210DD09A001C4604 /* FCBaseCollectionViewCell.m in Sources */,
 				1F5B71AB210DDD75001C4604 /* FCRecipesRootItemLayout.m in Sources */,
+				1F5EBB67210F6E2600ECE894 /* FCShoppingListViewController.m in Sources */,
 				1F5B71A8210DD15A001C4604 /* FCRecipesRootItemCell.m in Sources */,
 				1F5B71B6210DE98B001C4604 /* FCFilterCell.m in Sources */,
 				697E100520FC633600777146 /* FCBaseViewController.m in Sources */,
@@ -517,9 +559,11 @@
 				1F4CFB78210A1E5600CFC438 /* FCShoppingRootViewController.m in Sources */,
 				1F4CFB7B210A1E8C00CFC438 /* FCSearchRootViewController.m in Sources */,
 				697E100820FC649300777146 /* UIBarButtonItem+FC.m in Sources */,
+				1F5EBB6B210F71CA00ECE894 /* FCRecipesDetailViewController.m in Sources */,
 				1FF233C220FE3CA0001DEB95 /* FCRootViewController.m in Sources */,
 				697E0FFD20FC486600777146 /* main.m in Sources */,
 				1F1D307A210CE3C800DC50DD /* FCBaseTableViewCell.m in Sources */,
+				1F5EBB60210F59AE00ECE894 /* FCShoppingRootFoodsCell.m in Sources */,
 				1F5B71A2210DD053001C4604 /* FCRecipesRootListCell.m in Sources */,
 				1F4CFB75210A1E0A00CFC438 /* FCRecipesRootViewController.m in Sources */,
 				1F4CFB84210A1F7A00CFC438 /* FCNavigationController.m in Sources */,

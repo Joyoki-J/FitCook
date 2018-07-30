@@ -39,8 +39,8 @@
 {
     UIImage *image = [UIImage imageNamed:imageName];
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(0.0f, 0.0f, image.size.width, image.size.height);
-    button.contentEdgeInsets = UIEdgeInsetsMake(0, -11.0f, 0, 0);
+    button.frame = CGRectMake(0.0f, 0.0f, 25, 25);
+    button.contentEdgeInsets = UIEdgeInsetsMake(0, -13.0f, 0, 0);
     [button addTarget:target action:selector forControlEvents:UIControlEventTouchUpInside];
     [button setImage:image forState:UIControlStateNormal];
     if (highlightedImageName) {
