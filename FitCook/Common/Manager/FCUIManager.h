@@ -25,6 +25,8 @@
 #define kCOLOR_GRAY_BARITEM                 RGB(245.0f,165.0f,162.0f)
 #define kCOLOR_GRAY_TITLE                   RGB(74.0f,74.0f,74.0f)
 #define kCOLOR_GRAY_BORDER                  RGB(238.0f,238.0f,238.0f)
+#define kCOLOR_GRAY_142_142_142             RGB(142.0f,142.0f,142.0f)
+
 
 #define kCOLOR_BLUE_BORDER                  RGB(61.0f,124.0f,252.0f)
 

@@ -137,7 +137,7 @@
 }
 
 - (UIFont *)navigationBarTitleFont {
-    return kFont(25);
+    return kFont(20);
 }
 
 - (UIBarButtonItem *)customBarButtonItem

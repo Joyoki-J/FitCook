@@ -49,4 +49,8 @@
     return NO;
 }
 
+- (UIFont *)navigationBarTitleFont {
+    return kFont(25);
+}
+
 @end
