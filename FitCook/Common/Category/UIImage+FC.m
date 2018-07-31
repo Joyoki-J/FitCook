@@ -25,4 +25,23 @@
     return image;
 }
 
++ (UIImage *)fc_imageForDeviceWithImageName:(NSString *)imageName {
+    
+    NSString *realImageName = imageName;
+    
+    if (IS_SS_IPHONE_X) {
+        realImageName = [NSString stringWithFormat:@"%@_iphoneX", realImageName];
+    } else if (IS_SS_IPHONE_P) {
+        realImageName = [NSString stringWithFormat:@"%@_iphoneP", realImageName];
+    } else if (IS_SS_IPHONE_6) {
+        realImageName = [NSString stringWithFormat:@"%@_iphone6", realImageName];
+    } else if (IS_SS_IPHONE_5) {
+        realImageName = [NSString stringWithFormat:@"%@_iphone5", realImageName];
+    } else if (IS_SS_IPHONE_4) {
+        realImageName = [NSString stringWithFormat:@"%@_iphone4", realImageName];
+    }
+    
+    return [self imageNamed:realImageName];
+}
+
 @end

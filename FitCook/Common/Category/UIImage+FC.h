@@ -12,4 +12,6 @@
 
 + (UIImage *)fc_imageWithColor:(UIColor *)color;
 
++ (UIImage *)fc_imageForDeviceWithImageName:(NSString *)imageName;
+
 @end

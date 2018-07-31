@@ -95,12 +95,12 @@
             CGPoint point = CGPointMake(14 + (indexPath.row - 1) * 100 + 46, 0);
             [collectionView setContentOffset:point animated:YES];
         }
-    } else if (leading > kScreenWidth - 92 - 60) {
+    } else if (leading > kSCREEN_WIDTH - 92 - 60) {
         if (indexPath.row == _arrData.count - 1) {
-            CGPoint point = CGPointMake(92.0 * _arrData.count + 8.0 * (_arrData.count - 1) + 28.0 - kScreenWidth, 0);
+            CGPoint point = CGPointMake(92.0 * _arrData.count + 8.0 * (_arrData.count - 1) + 28.0 - kSCREEN_WIDTH, 0);
             [collectionView setContentOffset:point animated:YES];
         } else {
-            CGPoint point = CGPointMake((14.0 + indexPath.row * 100.0) - (kScreenWidth - 92 - 60), 0);
+            CGPoint point = CGPointMake((14.0 + indexPath.row * 100.0) - (kSCREEN_WIDTH - 92 - 60), 0);
             [collectionView setContentOffset:point animated:YES];
         }
     }

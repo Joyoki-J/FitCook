@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-#define kScreenWidth   [UIScreen mainScreen].bounds.size.width
-#define kScreenHeight  [UIScreen mainScreen].bounds.size.height
-#define kNavBarHeight  (IS_SS_IPHONE_X ? 88.0f : 64.0f)
-#define kTabBarHeight  (IS_SS_IPHONE_X ? 83.0f : 49.0f)
-#define kStatBarHeight (IS_SS_IPHONE_X ? 44.0f : 20.0f)
-#define kOnePixel      (1.0 / [UIScreen mainScreen].scale)
+#define kSCREEN_WIDTH    [UIScreen mainScreen].bounds.size.width
+#define kSCREEN_HEIGHT   [UIScreen mainScreen].bounds.size.height
+#define kNAVBAR_HEIGHT   (IS_SS_IPHONE_X ? 88.0f : 64.0f)
+#define kTABBAR_HEIGHT   (IS_SS_IPHONE_X ? 83.0f : 49.0f)
+#define kSTATBAR_HEIGHT  (IS_SS_IPHONE_X ? 44.0f : 20.0f)
+#define kONEPIXEL_WIDTH  (1.0 / [UIScreen mainScreen].scale)
 
 #define RGBA(r,g,b,a)     [UIColor colorWithRed:r/255.f green:g/255.f blue:b/255.f alpha:a/100.f]
 #define RGB(r,g,b)        RGBA(r,g,b,100.f)
@@ -59,8 +59,8 @@ typedef NS_ENUM(NSInteger, FCScreenSize) {
 
 #define IS_SS_IPHONE_4   kCurrent_SS == FCS_ScreenSize_3_5  //iphone 4,4s
 #define IS_SS_IPHONE_5   kCurrent_SS == FCS_ScreenSize_4_0  //iphone 5,5s,5e
-#define IS_SS_IPHONE_6   kCurrent_SS == FCS_ScreenSize_4_7  //iphone 6,6s,7
-#define IS_SS_IPHONE_P   kCurrent_SS == FCS_ScreenSize_5_5  //iphone 6p,6sp,7p
+#define IS_SS_IPHONE_6   kCurrent_SS == FCS_ScreenSize_4_7  //iphone 6,6s,7,8
+#define IS_SS_IPHONE_P   kCurrent_SS == FCS_ScreenSize_5_5  //iphone 6p,6sp,7p,8p
 #define IS_SS_IPHONE_X   kCurrent_SS == FCS_ScreenSize_5_8  //iphone x
 
 @interface FCUIManager : NSObject

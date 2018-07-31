@@ -11,5 +11,7 @@
 
 #import "UIBarButtonItem+FC.h"
 #import "UIImage+FC.h"
+#import "UIView+FC.h"
+#import "NSString+FC.h"
 
 #endif /* FCCategoryHeader_h */

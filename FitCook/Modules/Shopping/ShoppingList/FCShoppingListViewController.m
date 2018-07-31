@@ -37,7 +37,7 @@
 }
 
 - (UIView *)createHeaderView {
-    UIView *vHeader = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 21.0 / 50.0 * (kScreenWidth - 30.0))];
+    UIView *vHeader = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, 21.0 / 50.0 * (kSCREEN_WIDTH - 30.0))];
     vHeader.backgroundColor = [UIColor whiteColor];
     
     _imgvHeader = [[UIImageView alloc] init];
