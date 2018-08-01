@@ -7,8 +7,10 @@
 //
 
 #import "FCProfileRootViewController.h"
+#import "FCTermsConditionsViewController.h"
+#import <MessageUI/MessageUI.h>
 
-@interface FCProfileRootViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface FCProfileRootViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,MFMailComposeViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imgvPicture;
 
@@ -57,11 +59,16 @@
     if (sender.tag == 99) {
         [self showPickPhotoAlert];
     } else if (sender.tag == 100) {
-        NSLog(@"点击 - Invite Your friends");
+        [self shared];
     } else if (sender.tag == 101) {
-        NSLog(@"点击 - Terms and Conditions");
+        FCTermsConditionsViewController *vcTermsConditions = [FCTermsConditionsViewController viewControllerFromStoryboard];
+        [self.navigationController pushViewController:vcTermsConditions animated:YES];
     } else if (sender.tag == 102) {
-        NSLog(@"点击 - Contact Us");
+        if ([MFMailComposeViewController canSendMail]) {
+            [self sendEmail];
+        }else{
+            //给出提示,设备未开启邮件服务
+        }
     } else if (sender.tag == 103) {
         NSLog(@"点击 - Logout");
     }
@@ -84,6 +91,7 @@
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.sourceType = sourceType;
     picker.delegate = self;
+    picker.allowsEditing = YES;
     [self presentViewController:picker animated:YES completion:nil];
 }
 
@@ -120,6 +128,62 @@
     else{
         NSLog(@"save image fail");
     }
+}
+
+- (void)shared {
+    NSString *textToShare = @"FitCook";
+    NSURL *urlToShare = [NSURL URLWithString:@"https://itunes.apple.com/cn/app/kung-fu-z/id1380910604?mt=8"];
+    NSArray *activityItems = @[textToShare,urlToShare];
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItems applicationActivities:nil];
+    activityVC.excludedActivityTypes = @[UIActivityTypePrint,
+                                         UIActivityTypeCopyToPasteboard,
+                                         UIActivityTypeAssignToContact,
+                                         UIActivityTypeSaveToCameraRoll,
+                                         UIActivityTypeAddToReadingList,
+                                         UIActivityTypePostToFlickr,
+                                         UIActivityTypePostToVimeo,
+                                         UIActivityTypeOpenInIBooks];
+    [self presentViewController:activityVC animated:YES completion:nil];
+    activityVC.completionWithItemsHandler = ^(UIActivityType  _Nullable activityType, BOOL completed, NSArray * _Nullable returnedItems, NSError * _Nullable activityError) {
+        if (completed) {
+            NSLog(@"completed");
+        } else  {
+            NSLog(@"cancled");
+        }
+    };
+}
+
+- (void)sendEmail {
+    // 创建邮件发送界面
+    MFMailComposeViewController *mailCompose = [[MFMailComposeViewController alloc] init];
+    // 设置邮件代理
+    [mailCompose setMailComposeDelegate:self];
+    // 设置收件人
+    [mailCompose setToRecipients:@[@"sswenj33@gmail.com"]];
+    // 设置邮件主题
+    [mailCompose setSubject:@"Hello FitCook"];
+    // 弹出邮件发送视图
+    [self presentViewController:mailCompose animated:YES completion:nil];
+
+}
+
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    switch (result) {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail send canceled: 用户取消编辑");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved: 用户保存邮件");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail sent: 用户点击发送");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail send errored: %@ : 用户尝试保存或发送邮件失败", [error localizedDescription]);
+            break;
+    }
+    // 关闭邮件发送视图
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
