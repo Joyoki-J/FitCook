@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol FCFilterViewDelegate;
+
 @interface FCFilterView : UIView
+
+@property (nonatomic, weak) id <FCFilterViewDelegate> delegate;
+
+@end
+
+@protocol FCFilterViewDelegate <NSObject>
+
+- (void)filterView:(FCFilterView *)view didSelectedIndex:(NSInteger)index withTitle:(NSString *)title;
 
 @end

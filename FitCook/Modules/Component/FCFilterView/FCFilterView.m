@@ -74,13 +74,18 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *selectedTitle = nil;
     if (_selectIndexPath == indexPath) {
         _selectIndexPath = nil;
         [collectionView reloadData];
     } else {
         _selectIndexPath = indexPath;
+        selectedTitle = _arrData[indexPath.row];
         [collectionView reloadData];
         [self scrollCollectionViewIfNeed:collectionView withIndexPath:indexPath];
+    }
+    if ([_delegate respondsToSelector:@selector(filterView:didSelectedIndex:withTitle:)]) {
+        [_delegate filterView:self didSelectedIndex:indexPath.row withTitle:selectedTitle];
     }
 }
 

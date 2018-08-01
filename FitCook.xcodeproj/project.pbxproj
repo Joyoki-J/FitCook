@@ -50,6 +50,8 @@
 		697E100B20FC650400777146 /* FCUIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 697E100A20FC650400777146 /* FCUIManager.m */; };
 		6987DEE82110532500F9D303 /* UIView+FC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6987DEE72110532500F9D303 /* UIView+FC.m */; };
 		6987DEEB2110564F00F9D303 /* NSString+FC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6987DEEA2110564F00F9D303 /* NSString+FC.m */; };
+		6987DEEE21114CD900F9D303 /* FCRecipesRootFilterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6987DEED21114CD900F9D303 /* FCRecipesRootFilterCell.m */; };
+		6987DEF221119FCF00F9D303 /* FCOnePixelLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 6987DEF121119FCF00F9D303 /* FCOnePixelLine.m */; };
 		C78B109FA29FBB57A160F64C /* libPods-FitCook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F320A08630F8D0C285BF96 /* libPods-FitCook.a */; };
 /* End PBXBuildFile section */
 
@@ -133,6 +135,10 @@
 		6987DEE72110532500F9D303 /* UIView+FC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+FC.m"; sourceTree = "<group>"; };
 		6987DEE92110564F00F9D303 /* NSString+FC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+FC.h"; sourceTree = "<group>"; };
 		6987DEEA2110564F00F9D303 /* NSString+FC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+FC.m"; sourceTree = "<group>"; };
+		6987DEEC21114CD900F9D303 /* FCRecipesRootFilterCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCRecipesRootFilterCell.h; sourceTree = "<group>"; };
+		6987DEED21114CD900F9D303 /* FCRecipesRootFilterCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCRecipesRootFilterCell.m; sourceTree = "<group>"; };
+		6987DEF021119FCF00F9D303 /* FCOnePixelLine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCOnePixelLine.h; sourceTree = "<group>"; };
+		6987DEF121119FCF00F9D303 /* FCOnePixelLine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCOnePixelLine.m; sourceTree = "<group>"; };
 		F46D1EE34183340D4CC975B0 /* Pods-FitCook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitCook.release.xcconfig"; path = "Pods/Target Support Files/Pods-FitCook/Pods-FitCook.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -212,6 +218,8 @@
 				1F5B71A7210DD15A001C4604 /* FCRecipesRootItemCell.m */,
 				1F5B71A9210DDD75001C4604 /* FCRecipesRootItemLayout.h */,
 				1F5B71AA210DDD75001C4604 /* FCRecipesRootItemLayout.m */,
+				6987DEEC21114CD900F9D303 /* FCRecipesRootFilterCell.h */,
+				6987DEED21114CD900F9D303 /* FCRecipesRootFilterCell.m */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -360,6 +368,7 @@
 		1F5B71AC210DDF56001C4604 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				6987DEEF21119FA300F9D303 /* FCOnePixelLine */,
 				1F5B71AD210DDFCC001C4604 /* FCFilterView */,
 			);
 			path = Component;
@@ -431,6 +440,15 @@
 				1F54C7B6210A1D71002BE1E5 /* Supporting Files */,
 			);
 			path = FitCook;
+			sourceTree = "<group>";
+		};
+		6987DEEF21119FA300F9D303 /* FCOnePixelLine */ = {
+			isa = PBXGroup;
+			children = (
+				6987DEF021119FCF00F9D303 /* FCOnePixelLine.h */,
+				6987DEF121119FCF00F9D303 /* FCOnePixelLine.m */,
+			);
+			path = FCOnePixelLine;
 			sourceTree = "<group>";
 		};
 		70D422122633CBFF891BDBC7 /* Pods */ = {
@@ -578,8 +596,10 @@
 				1F4CFB81210A1EC400CFC438 /* FCProfileRootViewController.m in Sources */,
 				1F4CFB78210A1E5600CFC438 /* FCShoppingRootViewController.m in Sources */,
 				1F4CFB7B210A1E8C00CFC438 /* FCSearchRootViewController.m in Sources */,
+				6987DEF221119FCF00F9D303 /* FCOnePixelLine.m in Sources */,
 				697E100820FC649300777146 /* UIBarButtonItem+FC.m in Sources */,
 				1F5EBB6B210F71CA00ECE894 /* FCRecipesDetailViewController.m in Sources */,
+				6987DEEE21114CD900F9D303 /* FCRecipesRootFilterCell.m in Sources */,
 				1FF233C220FE3CA0001DEB95 /* FCRootViewController.m in Sources */,
 				697E0FFD20FC486600777146 /* main.m in Sources */,
 				1F1D307A210CE3C800DC50DD /* FCBaseTableViewCell.m in Sources */,
@@ -734,7 +754,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 27CV7895W3;
+				DEVELOPMENT_TEAM = P5HSNE9KET;
 				GCC_PREFIX_HEADER = "FitCook/FitCook-Prefix.pch";
 				INFOPLIST_FILE = FitCook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -779,7 +799,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 27CV7895W3;
+				DEVELOPMENT_TEAM = P5HSNE9KET;
 				GCC_PREFIX_HEADER = "FitCook/FitCook-Prefix.pch";
 				INFOPLIST_FILE = FitCook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

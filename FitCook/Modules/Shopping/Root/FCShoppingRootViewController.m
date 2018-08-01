@@ -82,7 +82,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return _isFoodsStyle ? CGFLOAT_MIN : 15.0;
+    return _isFoodsStyle ? CGFLOAT_MIN : 14.0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

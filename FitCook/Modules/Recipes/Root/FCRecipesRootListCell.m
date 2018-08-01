@@ -39,4 +39,10 @@
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if ([_delegate respondsToSelector:@selector(recipesRootListCell:didSelectedItemWithIndexPath:)]) {
+        [_delegate recipesRootListCell:self didSelectedItemWithIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:_section]];
+    }
+}
+
 @end

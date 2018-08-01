@@ -8,10 +8,17 @@
 
 #import "FCRecipesRootViewController.h"
 #import "FCRecipesRootListCell.h"
+#import "FCRecipesRootFilterCell.h"
+#import "FCFilterView.h"
+#import "FCRecipesDetailViewController.h"
 
-@interface FCRecipesRootViewController()<UITableViewDataSource, UITableViewDelegate>
+@interface FCRecipesRootViewController()<UITableViewDataSource, UITableViewDelegate, FCFilterViewDelegate, FCRecipesRootListCellDelegate>
+
+@property (weak, nonatomic) IBOutlet FCFilterView *vFilter;
 
 @property (weak, nonatomic) IBOutlet UITableView *tvList;
+
+@property (nonatomic, copy) NSString *currentSeletecdFilter;
 
 @end
 
@@ -23,6 +30,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _vFilter.delegate = self;
+    _tvList.estimatedRowHeight = 0;
+    _tvList.estimatedSectionFooterHeight = 0;
+    _tvList.estimatedSectionHeaderHeight = 0;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,7 +44,7 @@
 
 #pragma mark - UITableViewDataSource, UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 8;
+    return _currentSeletecdFilter ? 2 : 8;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -44,12 +56,40 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 218;
+    return _currentSeletecdFilter ? 148 : 218;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    FCRecipesRootListCell *cell = [FCRecipesRootListCell cellWithTableView:tableView andIndexPath:indexPath];
-    return cell;
+    if (_currentSeletecdFilter) {
+        FCRecipesRootFilterCell *cell = [FCRecipesRootFilterCell cellWithTableView:tableView andIndexPath:indexPath];
+        return cell;
+    } else {
+        FCRecipesRootListCell *cell = [FCRecipesRootListCell cellWithTableView:tableView andIndexPath:indexPath];
+        cell.delegate = self;
+        cell.section = indexPath.row;
+        return cell;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (_currentSeletecdFilter) {
+        NSLog(@"点击 - 有筛选 - %ld",indexPath.row);
+        FCRecipesDetailViewController *vcRecipesDetail = [FCRecipesDetailViewController viewControllerFromStoryboard];
+        [self.navigationController pushViewController:vcRecipesDetail animated:YES];
+    }
+}
+
+#pragma mark - FCRecipesRootListCellDelegate
+- (void)recipesRootListCell:(FCRecipesRootListCell *)cell didSelectedItemWithIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"点击 - 无筛选 - section=%ld row=%ld",indexPath.section,indexPath.row);
+    FCRecipesDetailViewController *vcRecipesDetail = [FCRecipesDetailViewController viewControllerFromStoryboard];
+    [self.navigationController pushViewController:vcRecipesDetail animated:YES];
+}
+
+#pragma mark - FCFilterViewDelegate
+- (void)filterView:(FCFilterView *)view didSelectedIndex:(NSInteger)index withTitle:(NSString *)title {
+    _currentSeletecdFilter = title;
+    [_tvList reloadData];
 }
 
 @end

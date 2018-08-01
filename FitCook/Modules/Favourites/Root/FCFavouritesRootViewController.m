@@ -8,6 +8,7 @@
 
 #import "FCFavouritesRootViewController.h"
 #import "FCFavouritesRootListCell.h"
+#import "FCRecipesDetailViewController.h"
 
 @interface FCFavouritesRootViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -64,6 +65,11 @@
     FCFavouritesRootListCell *cell = [FCFavouritesRootListCell cellWithTableView:tableView andIndexPath:indexPath];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    FCRecipesDetailViewController *vcRecipesDetail = [FCRecipesDetailViewController viewControllerFromStoryboard];
+    [self.navigationController pushViewController:vcRecipesDetail animated:YES];
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -32,8 +32,6 @@
     
     _vSegment.delegate = self;
     
-    [self updateConstraintsIfNeed];
-    
     [self createCustomBackItem];
     
     [self test1];
@@ -45,7 +43,8 @@
     [super didReceiveMemoryWarning];
 }
 
-- (void)updateConstraintsIfNeed {
+- (void)updateViewConstraints {
+    [super updateViewConstraints];
     if (IS_SS_IPHONE_X) {
         _layoutAddButtom.constant = 0;
     }
@@ -83,7 +82,7 @@
         [sv addSubview:labContent];
         [labContent mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(127);
-            make.width.mas_equalTo(kSCREEN_WIDTH - 142);
+            make.width.mas_equalTo(kSCREEN_WIDTH - 141);
             if (labLast) {
                 make.top.equalTo(labLast.mas_bottom).offset(5);
             } else {
@@ -94,7 +93,7 @@
             }
         }];
         [labTitle mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(15);
+            make.left.mas_equalTo(14);
             make.height.mas_equalTo(20);
             make.top.equalTo(labContent.mas_top);
         }];
@@ -139,8 +138,8 @@
         labTitle.attributedText = obj;
         [sv addSubview:labTitle];
         [labTitle mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(15);
-            make.width.mas_equalTo(kSCREEN_WIDTH - 30);
+            make.left.mas_equalTo(14);
+            make.width.mas_equalTo(kSCREEN_WIDTH - 28);
             if (labLast) {
                 make.top.equalTo(labLast.mas_bottom).offset(10);
             } else {
@@ -171,7 +170,7 @@
         [sv addSubview:labContent];
         [labContent mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(127);
-            make.width.mas_equalTo(kSCREEN_WIDTH - 142);
+            make.width.mas_equalTo(kSCREEN_WIDTH - 141);
             if (labLast) {
                 make.top.equalTo(labLast.mas_bottom).offset(5);
             } else {
@@ -182,7 +181,7 @@
             }
         }];
         [labTitle mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(15);
+            make.left.mas_equalTo(14);
             make.height.mas_equalTo(20);
             make.top.equalTo(labContent.mas_top);
         }];

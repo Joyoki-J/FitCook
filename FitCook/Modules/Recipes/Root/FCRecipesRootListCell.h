@@ -8,6 +8,18 @@
 
 #import "FCBaseTableViewCell.h"
 
+@protocol FCRecipesRootListCellDelegate;
+
 @interface FCRecipesRootListCell : FCBaseTableViewCell
+
+@property (nonatomic, weak) id <FCRecipesRootListCellDelegate> delegate;
+@property (nonatomic, assign) NSInteger section;
+
+@end
+
+
+@protocol FCRecipesRootListCellDelegate<NSObject>
+
+- (void)recipesRootListCell:(FCRecipesRootListCell *)cell didSelectedItemWithIndexPath:(NSIndexPath *)indexPath;
 
 @end
