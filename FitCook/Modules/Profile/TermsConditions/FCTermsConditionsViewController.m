@@ -47,7 +47,7 @@
             UILabel *lab = [[UILabel alloc] init];
             lab.textColor = [UIColor blackColor];
             lab.font = kFont_16;
-            lab.textAlignment = NSTextAlignmentLeft;
+            lab.textAlignment = idx == 0 ? NSTextAlignmentCenter : NSTextAlignmentLeft;
             lab.numberOfLines = 0;
             lab.text = obj;
             [self.vContent addSubview:lab];

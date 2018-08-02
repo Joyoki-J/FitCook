@@ -25,5 +25,96 @@
             </objects>
             <point key="canvasLocation" x="348" y="-195"/>
         </scene>
+        <!--Search Filter View Controller-->
+        <scene sceneID="H2r-9i-3xo">
+            <objects>
+                <viewController storyboardIdentifier="FCSearchFilterViewController" id="5GK-Ll-LIN" customClass="FCSearchFilterViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4x9-t4-kud">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jtj-tK-dek">
+                                <rect key="frame" x="95" y="0.0" width="280" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="80U-tn-cFf">
+                                        <rect key="frame" x="8" y="313.5" width="82.5" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Bhx-Rg-G9Z"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j6m-0i-sev">
+                                        <rect key="frame" x="189.5" y="313.5" width="82.5" height="40"/>
+                                        <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="acy-Wb-8XJ"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dairy-free" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5GH-45-l5I">
+                                        <rect key="frame" x="189.5" y="313.5" width="82.5" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vegetarian" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqa-6k-Nel">
+                                        <rect key="frame" x="8" y="313.5" width="83" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pg7-43-8id">
+                                        <rect key="frame" x="98.5" y="313.5" width="83" height="40"/>
+                                        <color key="backgroundColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="bzB-59-Wej"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sugar-free" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcb-aA-Zaq">
+                                        <rect key="frame" x="98.5" y="313.5" width="83" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.66799789669999998" green="0.47512125970000002" blue="0.25860109930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="jqa-6k-Nel" firstAttribute="top" secondItem="80U-tn-cFf" secondAttribute="top" id="0bk-xp-Erz"/>
+                                    <constraint firstItem="5GH-45-l5I" firstAttribute="top" secondItem="j6m-0i-sev" secondAttribute="top" id="42Z-qV-70w"/>
+                                    <constraint firstItem="5GH-45-l5I" firstAttribute="leading" secondItem="j6m-0i-sev" secondAttribute="leading" id="7El-Hs-TdD"/>
+                                    <constraint firstItem="pg7-43-8id" firstAttribute="leading" secondItem="80U-tn-cFf" secondAttribute="trailing" constant="8" id="80e-R4-h2n"/>
+                                    <constraint firstItem="j6m-0i-sev" firstAttribute="width" secondItem="80U-tn-cFf" secondAttribute="width" id="AsE-eS-MGO"/>
+                                    <constraint firstItem="80U-tn-cFf" firstAttribute="leading" secondItem="Jtj-tK-dek" secondAttribute="leading" constant="8" id="CQd-LU-9CI"/>
+                                    <constraint firstItem="j6m-0i-sev" firstAttribute="leading" secondItem="pg7-43-8id" secondAttribute="trailing" constant="8" id="D7W-zm-K8l"/>
+                                    <constraint firstItem="pcb-aA-Zaq" firstAttribute="top" secondItem="pg7-43-8id" secondAttribute="top" id="F3C-pg-caW"/>
+                                    <constraint firstItem="pg7-43-8id" firstAttribute="centerY" secondItem="Jtj-tK-dek" secondAttribute="centerY" id="Jmo-oV-mPf"/>
+                                    <constraint firstItem="pg7-43-8id" firstAttribute="width" secondItem="80U-tn-cFf" secondAttribute="width" id="Mhh-IL-63O"/>
+                                    <constraint firstItem="jqa-6k-Nel" firstAttribute="leading" secondItem="80U-tn-cFf" secondAttribute="leading" id="RdA-KE-RJ9"/>
+                                    <constraint firstItem="5GH-45-l5I" firstAttribute="bottom" secondItem="j6m-0i-sev" secondAttribute="bottom" id="SeN-wx-6FY"/>
+                                    <constraint firstItem="pcb-aA-Zaq" firstAttribute="bottom" secondItem="pg7-43-8id" secondAttribute="bottom" id="TEJ-BV-JcK"/>
+                                    <constraint firstItem="jqa-6k-Nel" firstAttribute="trailing" secondItem="80U-tn-cFf" secondAttribute="trailing" id="TPI-sp-4e3"/>
+                                    <constraint firstItem="pcb-aA-Zaq" firstAttribute="trailing" secondItem="pg7-43-8id" secondAttribute="trailing" id="aNj-3S-v6m"/>
+                                    <constraint firstAttribute="width" constant="280" id="bM9-rO-14B"/>
+                                    <constraint firstAttribute="trailing" secondItem="j6m-0i-sev" secondAttribute="trailing" constant="8" id="cna-Mq-cKW"/>
+                                    <constraint firstItem="pcb-aA-Zaq" firstAttribute="leading" secondItem="pg7-43-8id" secondAttribute="leading" id="kDI-yI-Med"/>
+                                    <constraint firstItem="jqa-6k-Nel" firstAttribute="bottom" secondItem="80U-tn-cFf" secondAttribute="bottom" id="lmn-NC-DVf"/>
+                                    <constraint firstItem="80U-tn-cFf" firstAttribute="centerY" secondItem="Jtj-tK-dek" secondAttribute="centerY" id="oB0-Ze-S3s"/>
+                                    <constraint firstItem="j6m-0i-sev" firstAttribute="centerY" secondItem="Jtj-tK-dek" secondAttribute="centerY" id="r6B-bm-ybb"/>
+                                    <constraint firstItem="5GH-45-l5I" firstAttribute="trailing" secondItem="j6m-0i-sev" secondAttribute="trailing" id="vV7-6S-34U"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Jtj-tK-dek" firstAttribute="top" secondItem="4x9-t4-kud" secondAttribute="top" id="8IN-L8-i4S"/>
+                            <constraint firstItem="MrB-Eh-qAc" firstAttribute="bottom" secondItem="Jtj-tK-dek" secondAttribute="bottom" id="Gl9-pg-pVI"/>
+                            <constraint firstItem="MrB-Eh-qAc" firstAttribute="trailing" secondItem="Jtj-tK-dek" secondAttribute="trailing" id="J6f-yn-Yl3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MrB-Eh-qAc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pEJ-wm-wrK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1216.8" y="-196.55172413793105"/>
+        </scene>
     </scenes>
 </document>
