@@ -14,6 +14,7 @@
 + (instancetype)viewControllerFromStoryboard;
 
 - (BOOL)needsHiddenNavigationBar;
+- (BOOL)canDragBackFromNavigationController;
 
 - (BOOL)needsCustomBackBarButtonItem;
 - (NSArray *)customLeftBarButtonItems;

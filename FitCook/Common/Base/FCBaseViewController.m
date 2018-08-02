@@ -10,7 +10,7 @@
 #import "UIBarButtonItem+FC.h"
 #import "UIImage+FC.h"
 
-@interface FCBaseViewController ()
+@interface FCBaseViewController ()<UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) UIBarButtonItem *customBarButtonItem;
 
@@ -92,6 +92,24 @@
         //from tab bar
         [self.navigationController setNavigationBarHidden:[self needsHiddenNavigationBar] animated:NO];
     }
+    
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.delegate = nil;
+    } 
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    __weak typeof(self) weakSelf = self;
+    self.navigationController.interactivePopGestureRecognizer.delegate = weakSelf;
+}
+
+#pragma mark - UIGestureRecognizerDelegate
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer*)gestureRecognizer {
+    if (self.navigationController && self.navigationController.viewControllers.count == 1) {
+        return NO;
+    }
+    return [self canDragBackFromNavigationController];
 }
 
 - (void)addCustomBackBarButtonItemIfNeeded
@@ -112,6 +130,11 @@
 - (BOOL)needsHiddenNavigationBar
 {
     return NO;
+}
+
+- (BOOL)canDragBackFromNavigationController
+{
+    return YES;
 }
 
 - (BOOL)needsCustomBackBarButtonItem

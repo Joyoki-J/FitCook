@@ -157,6 +157,30 @@
     NSArray<NSDictionary<NSString *, NSString *> *> *array = @[@{@"title": @"Calories:", @"value": @"670.7kcal"},
                                                                @{@"title": @"Fat:", @"value": @"34.2g"},
                                                                @{@"title": @"Carbohydrat:", @"value": @"80.7g"},
+                                                               @{@"title": @"Protein:", @"value": @"14.3g"},
+                                                               @{@"title": @"Calories:", @"value": @"670.7kcal"},
+                                                               @{@"title": @"Fat:", @"value": @"34.2g"},
+                                                               @{@"title": @"Carbohydrat:", @"value": @"80.7g"},
+                                                               @{@"title": @"Protein:", @"value": @"14.3g"},
+                                                               @{@"title": @"Calories:", @"value": @"670.7kcal"},
+                                                               @{@"title": @"Fat:", @"value": @"34.2g"},
+                                                               @{@"title": @"Carbohydrat:", @"value": @"80.7g"},
+                                                               @{@"title": @"Protein:", @"value": @"14.3g"},
+                                                               @{@"title": @"Calories:", @"value": @"670.7kcal"},
+                                                               @{@"title": @"Fat:", @"value": @"34.2g"},
+                                                               @{@"title": @"Carbohydrat:", @"value": @"80.7g"},
+                                                               @{@"title": @"Protein:", @"value": @"14.3g"},
+                                                               @{@"title": @"Calories:", @"value": @"670.7kcal"},
+                                                               @{@"title": @"Fat:", @"value": @"34.2g"},
+                                                               @{@"title": @"Carbohydrat:", @"value": @"80.7g"},
+                                                               @{@"title": @"Protein:", @"value": @"14.3g"},
+                                                               @{@"title": @"Calories:", @"value": @"670.7kcal"},
+                                                               @{@"title": @"Fat:", @"value": @"34.2g"},
+                                                               @{@"title": @"Carbohydrat:", @"value": @"80.7g"},
+                                                               @{@"title": @"Protein:", @"value": @"14.3g"},
+                                                               @{@"title": @"Calories:", @"value": @"670.7kcal"},
+                                                               @{@"title": @"Fat:", @"value": @"34.2g"},
+                                                               @{@"title": @"Carbohydrat:", @"value": @"80.7g"},
                                                                @{@"title": @"Protein:", @"value": @"14.3g"}];
     UIScrollView *sv = [_vContent viewWithTag:12];
     __block UILabel *labLast;
@@ -176,7 +200,7 @@
             } else {
                 make.top.mas_equalTo(0);
             }
-            if (idx == 3) {
+            if (idx == array.count - 1) {
                 make.bottom.mas_equalTo(0);
             }
         }];
@@ -208,6 +232,7 @@
     UIScrollView *svLast = _vContent.subviews.lastObject;
     UIScrollView *svNext = [_vContent viewWithTag:index + 10];
     svNext.alpha = 0;
+    [svNext setContentOffset:CGPointZero];
     [_vContent bringSubviewToFront:svNext];
     [UIView animateWithDuration:0.3 animations:^{
         svLast.alpha = 0;
