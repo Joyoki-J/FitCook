@@ -9,7 +9,7 @@
 #import "FCProfileRootViewController.h"
 #import "FCTermsConditionsViewController.h"
 #import <MessageUI/MessageUI.h>
-
+#define kCompressibilityFactor 1280.0 / [UIScreen mainScreen].scale
 @interface FCProfileRootViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,MFMailComposeViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imgvPicture;
@@ -131,9 +131,11 @@
 }
 
 - (void)shared {
-    NSString *textToShare = @"FitCook";
-    NSURL *urlToShare = [NSURL URLWithString:@"https://itunes.apple.com/us/app/fitcook/id1420594493"];
-    NSArray *activityItems = @[textToShare,urlToShare];
+//    NSString *textToShare = @"FitCook";
+//    NSURL *urlToShare = [NSURL URLWithString:@"https://itunes.apple.com/us/app/fitcook/id1420594493"];
+//    NSArray *activityItems = @[textToShare,urlToShare];
+    UIImage *image = [UIImage imageNamed:@"foot_photo3"];
+    NSArray *activityItems = @[[self getJPEGImagerImg:image]];
     UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItems applicationActivities:nil];
     activityVC.excludedActivityTypes = @[UIActivityTypePrint,
                                          UIActivityTypeCopyToPasteboard,
@@ -153,16 +155,41 @@
     };
 }
 
+- (UIImage *)getJPEGImagerImg:(UIImage *)image{
+    CGFloat oldImg_WID = image.size.width;
+    CGFloat oldImg_HEI = image.size.height;
+    //CGFloat aspectRatio = oldImg_WID/oldImg_HEI;
+    if(oldImg_WID > kCompressibilityFactor || oldImg_HEI > kCompressibilityFactor){
+        if(oldImg_WID > oldImg_HEI){
+            oldImg_HEI = (kCompressibilityFactor * oldImg_HEI)/oldImg_WID;
+            oldImg_WID = kCompressibilityFactor;
+        }else{
+            oldImg_WID = (kCompressibilityFactor * oldImg_WID)/oldImg_HEI;
+            oldImg_HEI = kCompressibilityFactor;
+        }
+    }
+    UIImage *newImg = [self imageWithImage:image scaledToSize:CGSizeMake(oldImg_WID, oldImg_HEI)];
+    return newImg;
+}
+
+- (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize{
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, [UIScreen mainScreen].scale);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+
 - (void)sendEmail {
-    // 创建邮件发送界面
+    
     MFMailComposeViewController *mailCompose = [[MFMailComposeViewController alloc] init];
-    // 设置邮件代理
+    
     [mailCompose setMailComposeDelegate:self];
-    // 设置收件人
+    
     [mailCompose setToRecipients:@[@"sswenj33@gmail.com"]];
-    // 设置邮件主题
+    
     [mailCompose setSubject:@"Hello FitCook"];
-    // 弹出邮件发送视图
+    
     [self presentViewController:mailCompose animated:YES completion:nil];
 
 }
@@ -182,7 +209,6 @@
             NSLog(@"Mail send errored: %@ : 用户尝试保存或发送邮件失败", [error localizedDescription]);
             break;
     }
-    // 关闭邮件发送视图
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
