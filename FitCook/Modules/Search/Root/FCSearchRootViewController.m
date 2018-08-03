@@ -112,6 +112,10 @@
     return kFont_20;
 }
 
+//- (UIImage *)navigationBarBackgroundImage {
+//    return [UIImage fc_imageWithColor:[UIColor clearColor]];
+//}
+
 - (UIImage *)navigationBarBackgroundImage {
     return [UIImage fc_imageForDeviceWithImageName:@"navbar_background"];
 }
