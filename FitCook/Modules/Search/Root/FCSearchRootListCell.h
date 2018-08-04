@@ -10,4 +10,6 @@
 
 @interface FCSearchRootListCell : FCBaseTableViewCell
 
+@property (nonatomic, assign) BOOL isFavourited;
+
 @end

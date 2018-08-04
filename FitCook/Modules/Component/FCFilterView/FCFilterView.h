@@ -7,12 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FCFilterStyle.h"
 
 @protocol FCFilterViewDelegate;
 
 @interface FCFilterView : UIView
 
 @property (nonatomic, weak) id <FCFilterViewDelegate> delegate;
+
+@property (nonatomic, strong) FCFilterStyle *style;
+
+- (void)updateStyle:(FCFilterStyle *)style;
 
 @end
 
@@ -21,3 +26,4 @@
 - (void)filterView:(FCFilterView *)view didSelectedIndex:(NSInteger)index withTitle:(NSString *)title;
 
 @end
+

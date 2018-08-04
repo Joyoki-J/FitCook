@@ -42,6 +42,8 @@
 		1FA7FC002111F40700EDB21F /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA7FBFF2111F40700EDB21F /* Social.framework */; };
 		1FA7FC022111FB2500EDB21F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA7FC012111FB2500EDB21F /* MessageUI.framework */; };
 		1FA7FC06211209DC00EDB21F /* FCTermsConditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA7FC05211209DC00EDB21F /* FCTermsConditionsViewController.m */; };
+		1FE31D3921163210007CD792 /* FCSearchHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE31D3821163210007CD792 /* FCSearchHeaderView.m */; };
+		1FE31D3C2116395C007CD792 /* FCFilterStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE31D3B2116395C007CD792 /* FCFilterStyle.m */; };
 		1FE50F2F21121961003E1390 /* termsConditions.json in Resources */ = {isa = PBXBuildFile; fileRef = 1FE50F2E21121961003E1390 /* termsConditions.json */; };
 		1FF233C220FE3CA0001DEB95 /* FCRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF233C120FE3CA0001DEB95 /* FCRootViewController.m */; };
 		1FF233E720FE3D93001DEB95 /* FCMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF233E620FE3D93001DEB95 /* FCMainViewController.m */; };
@@ -125,6 +127,10 @@
 		1FA7FC012111FB2500EDB21F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		1FA7FC04211209DC00EDB21F /* FCTermsConditionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCTermsConditionsViewController.h; sourceTree = "<group>"; };
 		1FA7FC05211209DC00EDB21F /* FCTermsConditionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCTermsConditionsViewController.m; sourceTree = "<group>"; };
+		1FE31D3721163210007CD792 /* FCSearchHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCSearchHeaderView.h; sourceTree = "<group>"; };
+		1FE31D3821163210007CD792 /* FCSearchHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCSearchHeaderView.m; sourceTree = "<group>"; };
+		1FE31D3A2116395C007CD792 /* FCFilterStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCFilterStyle.h; sourceTree = "<group>"; };
+		1FE31D3B2116395C007CD792 /* FCFilterStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCFilterStyle.m; sourceTree = "<group>"; };
 		1FE50F2E21121961003E1390 /* termsConditions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = termsConditions.json; sourceTree = "<group>"; };
 		1FF233C020FE3CA0001DEB95 /* FCRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCRootViewController.h; sourceTree = "<group>"; };
 		1FF233C120FE3CA0001DEB95 /* FCRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCRootViewController.m; sourceTree = "<group>"; };
@@ -204,6 +210,8 @@
 			children = (
 				1F4CFB79210A1E8C00CFC438 /* FCSearchRootViewController.h */,
 				1F4CFB7A210A1E8C00CFC438 /* FCSearchRootViewController.m */,
+				1FE31D3721163210007CD792 /* FCSearchHeaderView.h */,
+				1FE31D3821163210007CD792 /* FCSearchHeaderView.m */,
 				6987DEFB211434A200F9D303 /* FCSearchRootListCell.h */,
 				6987DEFC211434A200F9D303 /* FCSearchRootListCell.m */,
 			);
@@ -409,6 +417,8 @@
 				1F5B71AF210DDFEE001C4604 /* FCFilterView.m */,
 				1F5B71B4210DE98B001C4604 /* FCFilterCell.h */,
 				1F5B71B5210DE98B001C4604 /* FCFilterCell.m */,
+				1FE31D3A2116395C007CD792 /* FCFilterStyle.h */,
+				1FE31D3B2116395C007CD792 /* FCFilterStyle.m */,
 			);
 			path = FCFilterView;
 			sourceTree = "<group>";
@@ -640,6 +650,7 @@
 				1F4CFB78210A1E5600CFC438 /* FCShoppingRootViewController.m in Sources */,
 				1F4CFB7B210A1E8C00CFC438 /* FCSearchRootViewController.m in Sources */,
 				6987DEF221119FCF00F9D303 /* FCOnePixelLine.m in Sources */,
+				1FE31D3C2116395C007CD792 /* FCFilterStyle.m in Sources */,
 				697E100820FC649300777146 /* UIBarButtonItem+FC.m in Sources */,
 				1F5EBB6B210F71CA00ECE894 /* FCRecipesDetailViewController.m in Sources */,
 				6987DEEE21114CD900F9D303 /* FCRecipesRootFilterCell.m in Sources */,
@@ -650,6 +661,7 @@
 				1F5EBB60210F59AE00ECE894 /* FCShoppingRootFoodsCell.m in Sources */,
 				1F5B71A2210DD053001C4604 /* FCRecipesRootListCell.m in Sources */,
 				6987DEE82110532500F9D303 /* UIView+FC.m in Sources */,
+				1FE31D3921163210007CD792 /* FCSearchHeaderView.m in Sources */,
 				1F8B27CA21136A9F00CB2C74 /* FCModalTransition.m in Sources */,
 				1F4CFB75210A1E0A00CFC438 /* FCRecipesRootViewController.m in Sources */,
 				1F4CFB84210A1F7A00CFC438 /* FCNavigationController.m in Sources */,

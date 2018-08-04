@@ -7,6 +7,7 @@
 //
 
 #import "FCFilterCell.h"
+#import "FCFilterStyle.h"
 
 @implementation FCFilterCell
 
@@ -14,11 +15,11 @@
     self = [super initWithFrame:frame];
     if (self) {
         _labTitle = [[UILabel alloc] init];
-        _labTitle.textColor = kCOLOR_GRAY_TITLE;
         _labTitle.textAlignment = NSTextAlignmentCenter;
         _labTitle.font = kFont_14;
-        _labTitle.layer.borderColor = [kCOLOR_GRAY_BORDER CGColor];
         _labTitle.layer.borderWidth = 2.f;
+        _labTitle.layer.cornerRadius = 2.f;
+        _labTitle.clipsToBounds = YES;
         [self.contentView addSubview:_labTitle];
         [_labTitle mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.mas_equalTo(UIEdgeInsetsZero);
@@ -27,9 +28,10 @@
     return self;
 }
 
-- (void)setIsSelected:(BOOL)isSelected {
-    _isSelected = isSelected;
-    _labTitle.layer.borderColor = [(isSelected ? kCOLOR_BLUE_BORDER : kCOLOR_GRAY_BORDER) CGColor];
+- (void)setupWithStyle:(FCFilterStyle *)style {
+    _labTitle.textColor = style.textColor;
+    _labTitle.layer.borderColor = _isSelected ? [style.borderColorSelected CGColor] : [style.borderColor CGColor];
+    _labTitle.backgroundColor = style.itemColor;
 }
 
 @end

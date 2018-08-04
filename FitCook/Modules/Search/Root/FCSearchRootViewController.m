@@ -10,11 +10,12 @@
 #import "FCSearchFilterViewController.h"
 #import "FCSearchScanViewController.h"
 #import "FCSearchRootListCell.h"
+#import "FCSearchHeaderView.h"
 
-@interface FCSearchRootViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface FCSearchRootViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UIView *vHeaderBack;
-@property (strong, nonatomic) IBOutlet UIView *vHeader;
+@property (strong, nonatomic) IBOutlet FCSearchHeaderView *vHeader;
 @property (weak, nonatomic) IBOutlet UITableView *tvList;
 @property (weak, nonatomic) IBOutlet UIImageView *imgvLogo;
 
@@ -31,21 +32,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _headerHeight = kSCREEN_WIDTH * 0.75 + 108;
-    
     [self createSubViews];
 }
 
 - (void)createSubViews {
-    _tvList.contentInset = UIEdgeInsetsMake(_headerHeight - 190, 0, 0, 0);
+    _headerHeight = kSCREEN_WIDTH * 0.75 + 123;
+    
+    _tvList.contentInset = UIEdgeInsetsMake(_headerHeight - 189, 0, 0, 0);
     _tvList.estimatedSectionFooterHeight = 0;
     _tvList.estimatedSectionHeaderHeight = 0;
     _tvList.estimatedRowHeight = 0;
+    _tvList.scrollsToTop = NO;
     
-    _vHeader.frame = CGRectMake(0, _headerHeight - 140, kSCREEN_WIDTH, 140);
+    _vHeader.frame = CGRectMake(0, _headerHeight - 149, kSCREEN_WIDTH, 149);
+    _vHeader.tfSearch.delegate = self;
     [self.view addSubview:_vHeader];
     
-//    _imgvLogo.layer.anchorPoint = CGPointMake(0.5, 0);
+    _imgvLogo.layer.anchorPoint = CGPointMake(0.5, 0);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,8 +57,7 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    FCSearchScanViewController *vcSearchScan = [FCSearchScanViewController viewControllerFromStoryboard];
-    [self.navigationController pushViewController:vcSearchScan animated:YES];
+//    [self.view endEditing:YES];
 }
 
 #pragma mark - UITableViewDelegate,UITableViewDataSource
@@ -64,7 +66,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 142;
+    return 148;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -77,22 +79,48 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FCSearchRootListCell *cell = [FCSearchRootListCell cellWithTableView:tableView andIndexPath:indexPath];
-    cell.contentView.backgroundColor = kCOLOR_RANDOM;
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    FCSearchScanViewController *vcSearchScan = [FCSearchScanViewController viewControllerFromStoryboard];
+    [self.navigationController pushViewController:vcSearchScan animated:YES];
+}
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    CGFloat y = scrollView.contentOffset.y;
-    _vHeader.minY = y > 0 ? 50 : 50 - y;
+    [self.view endEditing:YES];
     
-    CGFloat off = (_headerHeight - 190 + y) / (_headerHeight - 190);
-    if (off > 1) {
-        off = 1;
+    CGFloat y = scrollView.contentOffset.y;
+    
+    if (y > 0) {
+        _vHeader.minY = 40;
+    } else if (y < -(_headerHeight - 189)) {
+        _vHeader.minY = _headerHeight - 149;
+    } else {
+        _vHeader.minY = 40 - y;
     }
-    if (off < 0) {
-        off = 0;
+
+    CGFloat progress = 1.0 - (_headerHeight - 189 + y) / (_headerHeight - 189);
+    if (progress > 1) {
+        progress = 1;
     }
-    _imgvLogo.layer.transform = CATransform3DMakeScale(1 - off, 1 - off, 1);
+    if (progress < 0) {
+        progress = 0;
+    }
+    
+    _imgvLogo.layer.transform = CATransform3DMakeScale(progress, progress, 1);
+    _vHeader.progress = progress;
+    
+}
+
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    
+    if (_tvList.contentOffset.y < 0) {
+        [_tvList setContentOffset:CGPointZero animated:YES];
+        return NO;
+    }
+    return YES;
 }
 
 #pragma mark - Override

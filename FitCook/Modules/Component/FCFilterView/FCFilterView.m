@@ -9,6 +9,9 @@
 #import "FCFilterView.h"
 #import "FCFilterCell.h"
 
+
+
+
 @interface FCFilterView()<UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, strong) NSMutableArray<NSString *> *arrData;
@@ -32,6 +35,8 @@
 }
 
 - (void)setupDefaultData {
+    _style = [[FCFilterStyle alloc] init];
+    
     _arrData = [NSMutableArray array];
     [_arrData addObjectsFromArray:@[@"Filter",
                                     @"Sugar-free",
@@ -44,13 +49,15 @@
 }
 
 - (void)createSubViews {
+    self.backgroundColor = [UIColor clearColor];
+    
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.itemSize = CGSizeMake(92, 40);
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     layout.minimumLineSpacing = 8;
     layout.sectionInset = UIEdgeInsetsMake(0, 14, 0, 14);
     _cvList = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
-    _cvList.backgroundColor = [UIColor whiteColor];
+    _cvList.backgroundColor = [UIColor clearColor];
     _cvList.delegate = self;
     _cvList.dataSource = self;
     _cvList.showsHorizontalScrollIndicator = NO;
@@ -58,6 +65,16 @@
     [self addSubview:_cvList];
     [_cvList mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsZero);
+    }];
+}
+
+- (void)updateStyle:(FCFilterStyle *)style {
+    _style = style;
+    
+    __weak typeof(self) weakSelf = self;
+    NSArray<FCFilterCell *> *arrFilterCell = [_cvList visibleCells];
+    [arrFilterCell enumerateObjectsUsingBlock:^(FCFilterCell * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj setupWithStyle:weakSelf.style];
     }];
 }
 
@@ -70,6 +87,7 @@
     FCFilterCell *cell = [FCFilterCell cellWithCollectionView:collectionView andIndexPath:indexPath];
     cell.labTitle.text = _arrData[indexPath.row];
     cell.isSelected = _selectIndexPath == indexPath;
+    [cell setupWithStyle:_style];
     return cell;
 }
 
@@ -112,3 +130,5 @@
 }
 
 @end
+
+

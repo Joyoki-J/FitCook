@@ -8,6 +8,12 @@
 
 #import "FCSearchRootListCell.h"
 
+@interface FCSearchRootListCell()
+
+@property (weak, nonatomic) IBOutlet UIButton *btnFavourite;
+
+@end
+
 @implementation FCSearchRootListCell
 
 - (void)awakeFromNib {
@@ -19,6 +25,16 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (IBAction)onClickFavouriteAction:(UIButton *)sender {
+    self.isFavourited = !_isFavourited;
+}
+
+- (void)setIsFavourited:(BOOL)isFavourited {
+    _isFavourited = isFavourited;
+    UIImage *image = isFavourited ? [UIImage imageNamed:@"icon_favourite_like"] : [UIImage imageNamed:@"icon_favourite_unlike"];
+    [_btnFavourite setImage:image forState:UIControlStateNormal];
 }
 
 @end
