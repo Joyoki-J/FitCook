@@ -56,7 +56,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="HdG-EV-Rbs">
-                                <rect key="frame" x="0.0" y="189" width="375" height="478"/>
+                                <rect key="frame" x="0.0" y="175" width="375" height="492"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FCSearchRootListCell" rowHeight="148" id="Olr-sj-qyH" customClass="FCSearchRootListCell">
@@ -67,11 +67,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foot_photo1.png" translatesAutoresizingMaskIntoConstraints="NO" id="T5M-m4-0PR">
-                                                    <rect key="frame" x="14" y="0.0" width="347" height="134"/>
+                                                    <rect key="frame" x="14" y="14" width="347" height="134"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2e5-kc-8pK">
-                                                    <rect key="frame" x="14" y="0.0" width="347" height="134"/>
+                                                    <rect key="frame" x="14" y="14" width="347" height="134"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avocado Bacon Milk Pasta" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SgX-XE-6UK">
                                                             <rect key="frame" x="39" y="48.5" width="269" height="24"/>
@@ -113,12 +113,12 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="T5M-m4-0PR" secondAttribute="trailing" constant="14" id="4X3-V6-ljx"/>
                                                 <constraint firstItem="T5M-m4-0PR" firstAttribute="leading" secondItem="qt4-qd-Gok" secondAttribute="leading" constant="14" id="ABq-FA-pSn"/>
-                                                <constraint firstItem="2e5-kc-8pK" firstAttribute="top" secondItem="qt4-qd-Gok" secondAttribute="top" id="ExG-IP-ois"/>
-                                                <constraint firstAttribute="bottom" secondItem="T5M-m4-0PR" secondAttribute="bottom" constant="14" id="IFv-bj-hzy"/>
+                                                <constraint firstItem="2e5-kc-8pK" firstAttribute="top" secondItem="qt4-qd-Gok" secondAttribute="top" constant="14" id="ExG-IP-ois"/>
+                                                <constraint firstAttribute="bottom" secondItem="T5M-m4-0PR" secondAttribute="bottom" id="IFv-bj-hzy"/>
                                                 <constraint firstAttribute="trailing" secondItem="2e5-kc-8pK" secondAttribute="trailing" constant="14" id="KHF-w1-Bur"/>
                                                 <constraint firstItem="2e5-kc-8pK" firstAttribute="leading" secondItem="qt4-qd-Gok" secondAttribute="leading" constant="14" id="O5y-nv-pdf"/>
-                                                <constraint firstItem="T5M-m4-0PR" firstAttribute="top" secondItem="qt4-qd-Gok" secondAttribute="top" id="nJm-dA-OM5"/>
-                                                <constraint firstAttribute="bottom" secondItem="2e5-kc-8pK" secondAttribute="bottom" constant="14" id="wJg-yJ-Qin"/>
+                                                <constraint firstItem="T5M-m4-0PR" firstAttribute="top" secondItem="qt4-qd-Gok" secondAttribute="top" constant="14" id="nJm-dA-OM5"/>
+                                                <constraint firstAttribute="bottom" secondItem="2e5-kc-8pK" secondAttribute="bottom" id="wJg-yJ-Qin"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -134,7 +134,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="HdG-EV-Rbs" firstAttribute="top" secondItem="DBT-sd-RFE" secondAttribute="top" constant="189" id="0Cs-3O-TPd"/>
+                            <constraint firstItem="HdG-EV-Rbs" firstAttribute="top" secondItem="DBT-sd-RFE" secondAttribute="top" constant="175" id="0Cs-3O-TPd"/>
                             <constraint firstItem="CcU-AN-ZgT" firstAttribute="top" secondItem="DBT-sd-RFE" secondAttribute="top" id="7u8-hU-qp3"/>
                             <constraint firstItem="HdG-EV-Rbs" firstAttribute="leading" secondItem="DBT-sd-RFE" secondAttribute="leading" id="fhF-q5-T1o"/>
                             <constraint firstItem="CcU-AN-ZgT" firstAttribute="leading" secondItem="DBT-sd-RFE" secondAttribute="leading" id="hiw-id-0ba"/>
@@ -152,7 +152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q7Y-AZ-Mxm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="Nna-IG-LmL" customClass="FCSearchHeaderView">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="149"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="135"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWL-T6-jLb">
@@ -260,7 +260,7 @@
                     <constraints>
                         <constraint firstItem="fWL-T6-jLb" firstAttribute="top" secondItem="Kvs-Wq-Qvr" secondAttribute="bottom" id="JtO-VP-3aU"/>
                         <constraint firstItem="fWL-T6-jLb" firstAttribute="leading" secondItem="Nna-IG-LmL" secondAttribute="leading" constant="16" id="L97-uu-S9K"/>
-                        <constraint firstAttribute="bottom" secondItem="jkK-5U-F6b" secondAttribute="bottom" id="UF1-y1-JbG"/>
+                        <constraint firstAttribute="bottom" secondItem="jkK-5U-F6b" secondAttribute="bottom" constant="-14" id="UF1-y1-JbG"/>
                         <constraint firstItem="jkK-5U-F6b" firstAttribute="leading" secondItem="Nna-IG-LmL" secondAttribute="leading" id="ZjJ-Wv-Xz4"/>
                         <constraint firstItem="Kvs-Wq-Qvr" firstAttribute="top" secondItem="Nna-IG-LmL" secondAttribute="top" id="gtB-p7-gOl"/>
                         <constraint firstItem="jkK-5U-F6b" firstAttribute="top" secondItem="fWL-T6-jLb" secondAttribute="bottom" id="id9-RJ-WTI"/>
@@ -269,7 +269,7 @@
                         <constraint firstAttribute="trailing" secondItem="jkK-5U-F6b" secondAttribute="trailing" id="zm4-4X-KwL"/>
                     </constraints>
                     <connections>
-                        <outlet property="layTop" destination="gtB-p7-gOl" id="DLB-Si-RHX"/>
+                        <outlet property="layoutBottom" destination="UF1-y1-JbG" id="xol-do-k3W"/>
                         <outlet property="tfSearch" destination="zTu-4J-01g" id="eiw-Yo-snQ"/>
                         <outlet property="vFilter" destination="QEp-3N-okH" id="lFO-cn-tkn"/>
                         <outlet property="vFilterBack" destination="jkK-5U-F6b" id="6u1-Pd-OPg"/>
@@ -334,7 +334,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.66799789669999998" green="0.47512125970000002" blue="0.25860109930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="jqa-6k-Nel" firstAttribute="top" secondItem="80U-tn-cFf" secondAttribute="top" id="0bk-xp-Erz"/>
                                     <constraint firstItem="5GH-45-l5I" firstAttribute="top" secondItem="j6m-0i-sev" secondAttribute="top" id="42Z-qV-70w"/>
@@ -360,12 +360,21 @@
                                     <constraint firstItem="5GH-45-l5I" firstAttribute="trailing" secondItem="j6m-0i-sev" secondAttribute="trailing" id="vV7-6S-34U"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="navbar_shadow_rightside" translatesAutoresizingMaskIntoConstraints="NO" id="grn-PL-7hU">
+                                <rect key="frame" x="375" y="0.0" width="20" height="667"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="k0w-yt-R2V"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="grn-PL-7hU" secondAttribute="trailing" constant="-20" id="19a-1M-2SC"/>
                             <constraint firstItem="Jtj-tK-dek" firstAttribute="top" secondItem="4x9-t4-kud" secondAttribute="top" id="8IN-L8-i4S"/>
+                            <constraint firstItem="grn-PL-7hU" firstAttribute="top" secondItem="4x9-t4-kud" secondAttribute="top" id="8fy-4k-Lqb"/>
+                            <constraint firstItem="grn-PL-7hU" firstAttribute="leading" secondItem="Jtj-tK-dek" secondAttribute="trailing" id="Dhe-DR-Hmb"/>
                             <constraint firstItem="yWt-DN-rGE" firstAttribute="top" secondItem="Jtj-tK-dek" secondAttribute="bottom" id="Gl9-pg-pVI"/>
-                            <constraint firstAttribute="trailing" secondItem="Jtj-tK-dek" secondAttribute="trailing" id="J6f-yn-Yl3"/>
+                            <constraint firstAttribute="bottom" secondItem="grn-PL-7hU" secondAttribute="bottom" id="h1P-kx-IcT"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -425,5 +434,6 @@
         <image name="icon_search_scanner1" width="217" height="10"/>
         <image name="icon_searchheader_back" width="375" height="282"/>
         <image name="icon_searchheader_backmask" width="98" height="278"/>
+        <image name="navbar_shadow_rightside" width="20" height="20"/>
     </resources>
 </document>

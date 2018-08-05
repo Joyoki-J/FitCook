@@ -39,15 +39,15 @@
 }
 
 - (void)createSubViews {
-    _headerHeight = kSCREEN_WIDTH * 0.75 + 123;
+    _headerHeight = kSCREEN_WIDTH * 0.75 + 109;
     
-    _tvList.contentInset = UIEdgeInsetsMake(_headerHeight - 189, 0, 0, 0);
+    _tvList.contentInset = UIEdgeInsetsMake(_headerHeight - 175, 0, 0, 0);
     _tvList.estimatedSectionFooterHeight = 0;
     _tvList.estimatedSectionHeaderHeight = 0;
     _tvList.estimatedRowHeight = 0;
     _tvList.scrollsToTop = NO;
     
-    _vHeader.frame = CGRectMake(0, _headerHeight - 149, kSCREEN_WIDTH, 149);
+    _vHeader.frame = CGRectMake(0, _headerHeight - 135, kSCREEN_WIDTH, 135);
     _vHeader.tfSearch.delegate = self;
     _vHeader.delegate = self;
     [self.view addSubview:_vHeader];
@@ -103,13 +103,13 @@
     
     if (y > 0) {
         _vHeader.minY = 40;
-    } else if (y < -(_headerHeight - 189)) {
-        _vHeader.minY = _headerHeight - 149;
+    } else if (y < -(_headerHeight - 175)) {
+        _vHeader.minY = _headerHeight - 135;
     } else {
         _vHeader.minY = 40 - y;
     }
 
-    CGFloat progress = 1.0 - (_headerHeight - 189 + y) / (_headerHeight - 189);
+    CGFloat progress = 1.0 - (_headerHeight - 175 + y) / (_headerHeight - 175);
     if (progress > 1) {
         progress = 1;
     }

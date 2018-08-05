@@ -33,7 +33,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor cyanColor];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -45,9 +44,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)dealloc
-{
-    NSLog(@"deallocdeallocdeallocdeallocdealloc");
-}
 
 @end

@@ -18,7 +18,7 @@
 @property (nonatomic, strong) FCFilterStyle *style1;
 @property (nonatomic, strong) FCFilterStyle *style2;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *layTop;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutBottom;
 
 @end
 
@@ -43,7 +43,7 @@
     
     if (_progress > 0.5 && progress <= 0.5) {
         [_vFilter updateStyle:_style2];
-        _layTop.constant = 10;
+        _layoutBottom.constant = 0;
         [UIView animateWithDuration:0.25 animations:^{
             self.vFilterMore.layer.transform = CATransform3DMakeScale(0.01, 0.01, 1);
             [self layoutIfNeeded];
@@ -54,7 +54,7 @@
     } else if (_progress <= 0.5 && progress > 0.5) {
         [_vFilter updateStyle:_style1];
         self.vFilterMore.hidden = NO;
-        _layTop.constant = 0;
+        _layoutBottom.constant = -14;
         [UIView animateWithDuration:0.25 animations:^{
             self.vFilterMore.layer.transform = CATransform3DMakeScale(1, 1, 1);
             [self layoutIfNeeded];
