@@ -9,10 +9,11 @@
 #import "FCSearchRootViewController.h"
 #import "FCSearchFilterViewController.h"
 #import "FCSearchScanViewController.h"
+#import "FCRecipesDetailViewController.h"
 #import "FCSearchRootListCell.h"
 #import "FCSearchHeaderView.h"
 
-@interface FCSearchRootViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
+@interface FCSearchRootViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,FCSearchHeaderViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UIView *vHeaderBack;
 @property (strong, nonatomic) IBOutlet FCSearchHeaderView *vHeader;
@@ -20,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imgvLogo;
 
 @property (nonatomic, assign) CGFloat headerHeight;
+
+@property (nonatomic, assign) BOOL isScrollingToTop;
 
 @end
 
@@ -46,6 +49,7 @@
     
     _vHeader.frame = CGRectMake(0, _headerHeight - 149, kSCREEN_WIDTH, 149);
     _vHeader.tfSearch.delegate = self;
+    _vHeader.delegate = self;
     [self.view addSubview:_vHeader];
     
     _imgvLogo.layer.anchorPoint = CGPointMake(0.5, 0);
@@ -56,8 +60,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.view endEditing:YES];
+}
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    [self.view endEditing:YES];
+    [self.view endEditing:YES];
 }
 
 #pragma mark - UITableViewDelegate,UITableViewDataSource
@@ -83,8 +92,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    FCSearchScanViewController *vcSearchScan = [FCSearchScanViewController viewControllerFromStoryboard];
-    [self.navigationController pushViewController:vcSearchScan animated:YES];
+    FCRecipesDetailViewController *vcRecipesDetail = [FCRecipesDetailViewController viewControllerFromStoryboard];
+    [self.navigationController pushViewController:vcRecipesDetail animated:YES];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -113,14 +122,45 @@
     
 }
 
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+    if (_isScrollingToTop) {
+        _isScrollingToTop = NO;
+        [_vHeader.tfSearch becomeFirstResponder];
+    }
+}
+
 #pragma mark - UITextFieldDelegate
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     
-    if (_tvList.contentOffset.y < 0) {
+    CGPoint offset = _tvList.contentOffset;
+    [_tvList setContentOffset:offset animated:NO];
+    if (offset.y < 0) {
+        _isScrollingToTop = YES;
         [_tvList setContentOffset:CGPointZero animated:YES];
         return NO;
+    } else {
+        return YES;
     }
-    return YES;
+}
+
+#pragma mark - FCSearchHeaderViewDelegate
+- (void)searchHeaderDidClickScanAction:(FCSearchHeaderView *)vHeader {
+    FCSearchScanViewController *vcSearchScan = [FCSearchScanViewController viewControllerFromStoryboard];
+    [self.navigationController pushViewController:vcSearchScan animated:YES];
+}
+
+- (void)searchHeaderDidClickSeeAllFilterAction:(FCSearchHeaderView *)vHeader {
+    FCSearchFilterViewController *vcSearchFilter = [FCSearchFilterViewController viewControllerWithCustomTransition];
+    [self.tabBarController presentViewController:vcSearchFilter animated:YES completion:nil];
+}
+
+- (void)searchHeaderDidSelectedFilter:(FCSearchHeaderView *)vHeader {
+    NSString *keyword = vHeader.tfSearch.text;
+    if (keyword && keyword.length > 0) {
+        NSLog(@"选择了Filter = %@",keyword);
+    } else {
+        NSLog(@"清空了Filter");
+    }
 }
 
 #pragma mark - Override

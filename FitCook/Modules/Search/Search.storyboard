@@ -174,6 +174,9 @@
                                     <state key="normal" title="See all filters">
                                         <color key="titleColor" red="0.0" green="0.44313725490196076" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
+                                    <connections>
+                                        <action selector="onClickSeeAllFilterAction:" destination="Nna-IG-LmL" eventType="touchUpInside" id="qvC-Mm-Vao"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -224,12 +227,16 @@
                                         <constraint firstAttribute="height" constant="38" id="Wef-K3-HOD"/>
                                     </constraints>
                                     <state key="normal" image="icon_search_barscan"/>
+                                    <state key="highlighted" image="icon_search_barscan"/>
+                                    <connections>
+                                        <action selector="onClickScanAction:" destination="Nna-IG-LmL" eventType="touchUpInside" id="U9F-ua-SLB"/>
+                                    </connections>
                                 </button>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zTu-4J-01g">
                                     <rect key="frame" x="32" y="21" width="247" height="20"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" returnKeyType="search"/>
                                 </textField>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

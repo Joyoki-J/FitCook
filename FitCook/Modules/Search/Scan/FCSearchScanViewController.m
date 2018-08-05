@@ -151,7 +151,11 @@
         if (metadataObjects != nil && metadataObjects.count > 0 && !self.isSuccess) {
             self.isSuccess = YES;
             AVMetadataMachineReadableCodeObject * metadataObject = [metadataObjects firstObject ];
-            NSLog(@"==== %@",metadataObject.stringValue);
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Scan" message:metadataObject.stringValue preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                self.isSuccess = NO;
+            }]];
+            [self presentViewController:alert animated:YES completion:nil];
         }
     });
 }

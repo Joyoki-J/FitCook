@@ -9,7 +9,7 @@
 #import "FCSearchHeaderView.h"
 #import "FCFilterView.h"
 
-@interface FCSearchHeaderView()
+@interface FCSearchHeaderView()<FCFilterViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *vFilterBack;
 @property (weak, nonatomic) IBOutlet FCFilterView *vFilter;
@@ -26,6 +26,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    
+    _vFilter.delegate = self;
     
     _style1 = [[FCFilterStyle alloc] init];
 
@@ -59,17 +61,30 @@
         }];
     }
     
-//    CGFloat scale = progress * 2.0;
-//    if (scale > 1) {
-//        scale = 1.0;
-//    }
-//    _vFilterMore.layer.transform = CATransform3DMakeScale(scale, scale, 1);
-    
     _vFilterBack.backgroundColor = RGBA(255, 255, 255, (12 * (1 - progress)));
     
     _progress = progress;
 }
 
+- (IBAction)onClickScanAction:(UIButton *)sender {
+    if ([_delegate respondsToSelector:@selector(searchHeaderDidClickScanAction:)]) {
+        [_delegate searchHeaderDidClickScanAction:self];
+    }
+}
 
+- (IBAction)onClickSeeAllFilterAction:(UIButton *)sender {
+    if ([_delegate respondsToSelector:@selector(searchHeaderDidClickSeeAllFilterAction:)]) {
+        [_delegate searchHeaderDidClickSeeAllFilterAction:self];
+    }
+}
+
+- (void)filterView:(FCFilterView *)view didSelectedIndex:(NSInteger)index withTitle:(NSString *)title {
+    
+    _tfSearch.text = title;
+    
+    if ([_delegate respondsToSelector:@selector(searchHeaderDidSelectedFilter:)]) {
+        [_delegate searchHeaderDidSelectedFilter:self];
+    }
+}
 
 @end
