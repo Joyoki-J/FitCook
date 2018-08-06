@@ -13,7 +13,7 @@
 #import "FCSearchRootListCell.h"
 #import "FCSearchHeaderView.h"
 
-@interface FCSearchRootViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,FCSearchHeaderViewDelegate>
+@interface FCSearchRootViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,FCSearchHeaderViewDelegate,FCSearchFilterViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIView *vHeaderBack;
 @property (strong, nonatomic) IBOutlet FCSearchHeaderView *vHeader;
@@ -23,6 +23,8 @@
 @property (nonatomic, assign) CGFloat headerHeight;
 
 @property (nonatomic, assign) BOOL isScrollingToTop;
+
+@property (nonatomic, assign) BOOL isNeedDefaultStatusBar;
 
 @end
 
@@ -150,7 +152,9 @@
 }
 
 - (void)searchHeaderDidClickSeeAllFilterAction:(FCSearchHeaderView *)vHeader {
+    _isNeedDefaultStatusBar = YES;
     FCSearchFilterViewController *vcSearchFilter = [FCSearchFilterViewController viewControllerWithCustomTransition];
+    vcSearchFilter.delegate = self;
     [self.tabBarController presentViewController:vcSearchFilter animated:YES completion:nil];
 }
 
@@ -163,9 +167,14 @@
     }
 }
 
+#pragma mark - FCSearchFilterViewControllerDelegate
+- (void)searchFilterViewControllerWillClose:(FCSearchFilterViewController *)vc {
+    _isNeedDefaultStatusBar = NO;
+}
+
 #pragma mark - Override
 - (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
+    return _isNeedDefaultStatusBar ? UIStatusBarStyleDefault : UIStatusBarStyleLightContent;
 }
 
 - (BOOL)needsHiddenNavigationBar {

@@ -8,8 +8,20 @@
 
 #import "FCBaseViewController.h"
 
+@protocol FCSearchFilterViewControllerDelegate;
+
 @interface FCSearchFilterViewController : FCBaseViewController
 
+@property (nonatomic, weak) id <FCSearchFilterViewControllerDelegate> delegate;
+
 + (instancetype)viewControllerWithCustomTransition;
+- (void)close;
+
+@end
+
+
+@protocol FCSearchFilterViewControllerDelegate <NSObject>
+
+- (void)searchFilterViewControllerWillClose:(FCSearchFilterViewController *)vc;
 
 @end

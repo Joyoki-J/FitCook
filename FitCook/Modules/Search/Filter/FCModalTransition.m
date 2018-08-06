@@ -7,6 +7,7 @@
 //
 
 #import "FCModalTransition.h"
+#import "FCSearchFilterViewController.h"
 
 @interface FCModalTransition()
 
@@ -88,13 +89,9 @@
 
 - (void)dismiss {
     if (self.isPresnted && self.presentViewController) {
-        [self.presentViewController dismissViewControllerAnimated:YES completion:nil];
+        [(FCSearchFilterViewController *)self.presentViewController close
+         ];
     }
-}
-
-- (void)dealloc
-{
-    NSLog(@"FCModalTransition !!!");
 }
 
 @end
