@@ -77,4 +77,9 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)dealloc
+{
+    NSLog(@"Main");
+}
+
 @end

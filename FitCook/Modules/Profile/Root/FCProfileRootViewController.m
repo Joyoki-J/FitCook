@@ -8,6 +8,7 @@
 
 #import "FCProfileRootViewController.h"
 #import "FCTermsConditionsViewController.h"
+#import "FCSignInViewController.h"
 #import <MessageUI/MessageUI.h>
 #define kCompressibilityFactor 1280.0 / [UIScreen mainScreen].scale
 @interface FCProfileRootViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,MFMailComposeViewControllerDelegate>
@@ -70,7 +71,7 @@
             //给出提示,设备未开启邮件服务
         }
     } else if (sender.tag == 103) {
-        NSLog(@"点击 - Logout");
+        [[NSNotificationCenter defaultCenter] postNotificationName:FCLogoutNotificationKey object:nil];
     }
     
 }

@@ -39,6 +39,9 @@
 		1F8B27CA21136A9F00CB2C74 /* FCModalTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8B27C921136A9F00CB2C74 /* FCModalTransition.m */; };
 		1F92BF712110AFE700CE4BBB /* foot_photo4.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F92BF702110AFE600CE4BBB /* foot_photo4.png */; };
 		1F92BF742110B70800CE4BBB /* FCRecipesSegmentedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F92BF732110B70800CE4BBB /* FCRecipesSegmentedView.m */; };
+		1FA211C22118899000476082 /* FCSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA211C12118899000476082 /* FCSignInViewController.m */; };
+		1FA211C5211889CC00476082 /* FCSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA211C4211889CC00476082 /* FCSignUpViewController.m */; };
+		1FA211C7211889EA00476082 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FA211C6211889EA00476082 /* Login.storyboard */; };
 		1FA7FC002111F40700EDB21F /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA7FBFF2111F40700EDB21F /* Social.framework */; };
 		1FA7FC022111FB2500EDB21F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA7FC012111FB2500EDB21F /* MessageUI.framework */; };
 		1FA7FC06211209DC00EDB21F /* FCTermsConditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA7FC05211209DC00EDB21F /* FCTermsConditionsViewController.m */; };
@@ -124,6 +127,11 @@
 		1F92BF702110AFE600CE4BBB /* foot_photo4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foot_photo4.png; sourceTree = "<group>"; };
 		1F92BF722110B70800CE4BBB /* FCRecipesSegmentedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCRecipesSegmentedView.h; sourceTree = "<group>"; };
 		1F92BF732110B70800CE4BBB /* FCRecipesSegmentedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCRecipesSegmentedView.m; sourceTree = "<group>"; };
+		1FA211C02118899000476082 /* FCSignInViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCSignInViewController.h; sourceTree = "<group>"; };
+		1FA211C12118899000476082 /* FCSignInViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCSignInViewController.m; sourceTree = "<group>"; };
+		1FA211C3211889CC00476082 /* FCSignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCSignUpViewController.h; sourceTree = "<group>"; };
+		1FA211C4211889CC00476082 /* FCSignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCSignUpViewController.m; sourceTree = "<group>"; };
+		1FA211C6211889EA00476082 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		1FA7FBFF2111F40700EDB21F /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		1FA7FC012111FB2500EDB21F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		1FA7FC04211209DC00EDB21F /* FCTermsConditionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCTermsConditionsViewController.h; sourceTree = "<group>"; };
@@ -295,6 +303,7 @@
 				1F54C7B1210A1C93002BE1E5 /* Search */,
 				1F54C7B2210A1C9B002BE1E5 /* Favourites */,
 				1F54C7B3210A1CA1002BE1E5 /* Profile */,
+				1FA211BC2118888300476082 /* Login */,
 				1F5B71AC210DDF56001C4604 /* Component */,
 			);
 			path = Modules;
@@ -459,6 +468,18 @@
 			path = Filter;
 			sourceTree = "<group>";
 		};
+		1FA211BC2118888300476082 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1FA211C02118899000476082 /* FCSignInViewController.h */,
+				1FA211C12118899000476082 /* FCSignInViewController.m */,
+				1FA211C3211889CC00476082 /* FCSignUpViewController.h */,
+				1FA211C4211889CC00476082 /* FCSignUpViewController.m */,
+				1FA211C6211889EA00476082 /* Login.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		1FA7FC03211209A900EDB21F /* TermsConditions */ = {
 			isa = PBXGroup;
 			children = (
@@ -595,6 +616,7 @@
 			files = (
 				1F1D307E210CE87100DC50DD /* foot_photo1.png in Resources */,
 				1F5EBB57210F58EB00ECE894 /* foot_photo3.png in Resources */,
+				1FA211C7211889EA00476082 /* Login.storyboard in Resources */,
 				1F1D3060210C985800DC50DD /* Recipes.storyboard in Resources */,
 				1F92BF712110AFE700CE4BBB /* foot_photo4.png in Resources */,
 				697E0FFA20FC486600777146 /* LaunchScreen.storyboard in Resources */,
@@ -652,8 +674,10 @@
 				1F5B71B6210DE98B001C4604 /* FCFilterCell.m in Sources */,
 				697E100520FC633600777146 /* FCBaseViewController.m in Sources */,
 				1F4CFB81210A1EC400CFC438 /* FCProfileRootViewController.m in Sources */,
+				1FA211C5211889CC00476082 /* FCSignUpViewController.m in Sources */,
 				69893F9321181DFF008E9B5A /* FCSearchFilterView.m in Sources */,
 				1F4CFB78210A1E5600CFC438 /* FCShoppingRootViewController.m in Sources */,
+				1FA211C22118899000476082 /* FCSignInViewController.m in Sources */,
 				1F4CFB7B210A1E8C00CFC438 /* FCSearchRootViewController.m in Sources */,
 				6987DEF221119FCF00F9D303 /* FCOnePixelLine.m in Sources */,
 				1FE31D3C2116395C007CD792 /* FCFilterStyle.m in Sources */,
@@ -819,7 +843,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2AG95DX2G9;
+				DEVELOPMENT_TEAM = 27CV7895W3;
 				GCC_PREFIX_HEADER = "FitCook/FitCook-Prefix.pch";
 				INFOPLIST_FILE = FitCook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -850,7 +874,7 @@
 					"\"SystemConfiguration\"",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.joyoki1.fitcook;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shanshan.fitcook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -862,7 +886,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2AG95DX2G9;
+				DEVELOPMENT_TEAM = 27CV7895W3;
 				GCC_PREFIX_HEADER = "FitCook/FitCook-Prefix.pch";
 				INFOPLIST_FILE = FitCook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -893,7 +917,7 @@
 					"\"SystemConfiguration\"",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.joyoki1.fitcook;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shanshan.fitcook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
