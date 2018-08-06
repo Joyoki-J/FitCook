@@ -142,8 +142,6 @@
     _vFilterCategory.selectedIndexs = nil;
     _vFilterDiet.selectedIndexs     = nil;
     _vFilterTaste.selectedIndexs    = nil;
-    
-    [self close];
 }
 
 - (void)close {
