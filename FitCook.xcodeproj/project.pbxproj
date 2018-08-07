@@ -51,6 +51,7 @@
 		1FF233C220FE3CA0001DEB95 /* FCRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF233C120FE3CA0001DEB95 /* FCRootViewController.m */; };
 		1FF233E720FE3D93001DEB95 /* FCMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF233E620FE3D93001DEB95 /* FCMainViewController.m */; };
 		6916C0412119687900DE744E /* FCToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 6916C0402119687900DE744E /* FCToast.m */; };
+		6916C046211999B900DE744E /* FCRealmManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6916C045211999B900DE744E /* FCRealmManager.m */; };
 		697E0FEF20FC486300777146 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 697E0FEE20FC486300777146 /* AppDelegate.m */; };
 		697E0FF520FC486300777146 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 697E0FF320FC486300777146 /* Main.storyboard */; };
 		697E0FFA20FC486600777146 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 697E0FF820FC486600777146 /* LaunchScreen.storyboard */; };
@@ -149,6 +150,8 @@
 		56F320A08630F8D0C285BF96 /* libPods-FitCook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FitCook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6916C03F2119687900DE744E /* FCToast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCToast.h; sourceTree = "<group>"; };
 		6916C0402119687900DE744E /* FCToast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCToast.m; sourceTree = "<group>"; };
+		6916C044211999B900DE744E /* FCRealmManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCRealmManager.h; sourceTree = "<group>"; };
+		6916C045211999B900DE744E /* FCRealmManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCRealmManager.m; sourceTree = "<group>"; };
 		697E0FEA20FC486300777146 /* FitCook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitCook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		697E0FED20FC486300777146 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		697E0FEE20FC486300777146 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -271,6 +274,7 @@
 		1F54C7AA210A1C20002BE1E5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				6916C0422119995E00DE744E /* Realm */,
 				1F54C7B5210A1D2E002BE1E5 /* Manager */,
 				1F54C7B4210A1CE7002BE1E5 /* Base */,
 				1F54C7AB210A1C3D002BE1E5 /* Category */,
@@ -508,6 +512,23 @@
 			path = FCToast;
 			sourceTree = "<group>";
 		};
+		6916C0422119995E00DE744E /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				6916C044211999B900DE744E /* FCRealmManager.h */,
+				6916C045211999B900DE744E /* FCRealmManager.m */,
+				6916C0432119996A00DE744E /* Model */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		6916C0432119996A00DE744E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		697E0FE120FC486300777146 = {
 			isa = PBXGroup;
 			children = (
@@ -667,6 +688,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6916C046211999B900DE744E /* FCRealmManager.m in Sources */,
 				697E100B20FC650400777146 /* FCUIManager.m in Sources */,
 				1FA7FC06211209DC00EDB21F /* FCTermsConditionsViewController.m in Sources */,
 				1F4CFB7E210A1EA800CFC438 /* FCFavouritesRootViewController.m in Sources */,
@@ -882,7 +904,7 @@
 					"\"SystemConfiguration\"",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.joyoki2.fitcook;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shanshan.fitcook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -925,7 +947,7 @@
 					"\"SystemConfiguration\"",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.joyoki2.fitcook;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shanshan.fitcook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

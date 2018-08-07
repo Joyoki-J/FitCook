@@ -10,6 +10,7 @@
 #define FitCook_Prefix_pch
 
 #import "FCUIManager.h"
+#import "FCRealmManager.h"
 #import "FCCategoryHeader.h"
 #import "FCToast.h"
 
