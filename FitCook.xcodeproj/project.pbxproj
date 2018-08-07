@@ -50,6 +50,7 @@
 		1FE50F2F21121961003E1390 /* termsConditions.json in Resources */ = {isa = PBXBuildFile; fileRef = 1FE50F2E21121961003E1390 /* termsConditions.json */; };
 		1FF233C220FE3CA0001DEB95 /* FCRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF233C120FE3CA0001DEB95 /* FCRootViewController.m */; };
 		1FF233E720FE3D93001DEB95 /* FCMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF233E620FE3D93001DEB95 /* FCMainViewController.m */; };
+		6916C0412119687900DE744E /* FCToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 6916C0402119687900DE744E /* FCToast.m */; };
 		697E0FEF20FC486300777146 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 697E0FEE20FC486300777146 /* AppDelegate.m */; };
 		697E0FF520FC486300777146 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 697E0FF320FC486300777146 /* Main.storyboard */; };
 		697E0FFA20FC486600777146 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 697E0FF820FC486600777146 /* LaunchScreen.storyboard */; };
@@ -146,6 +147,8 @@
 		1FF233E620FE3D93001DEB95 /* FCMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCMainViewController.m; sourceTree = "<group>"; };
 		295DAC29CE529CA49431766B /* Pods-FitCook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitCook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FitCook/Pods-FitCook.debug.xcconfig"; sourceTree = "<group>"; };
 		56F320A08630F8D0C285BF96 /* libPods-FitCook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FitCook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6916C03F2119687900DE744E /* FCToast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCToast.h; sourceTree = "<group>"; };
+		6916C0402119687900DE744E /* FCToast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCToast.m; sourceTree = "<group>"; };
 		697E0FEA20FC486300777146 /* FitCook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitCook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		697E0FED20FC486300777146 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		697E0FEE20FC486300777146 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -411,6 +414,7 @@
 		1F5B71AC210DDF56001C4604 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				6916C03E2119685600DE744E /* FCToast */,
 				6987DEEF21119FA300F9D303 /* FCOnePixelLine */,
 				1F5B71AD210DDFCC001C4604 /* FCFilterView */,
 			);
@@ -493,6 +497,15 @@
 				56F320A08630F8D0C285BF96 /* libPods-FitCook.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6916C03E2119685600DE744E /* FCToast */ = {
+			isa = PBXGroup;
+			children = (
+				6916C03F2119687900DE744E /* FCToast.h */,
+				6916C0402119687900DE744E /* FCToast.m */,
+			);
+			path = FCToast;
 			sourceTree = "<group>";
 		};
 		697E0FE120FC486300777146 = {
@@ -667,6 +680,7 @@
 				1F5B71A8210DD15A001C4604 /* FCRecipesRootItemCell.m in Sources */,
 				1F5B71B6210DE98B001C4604 /* FCFilterCell.m in Sources */,
 				697E100520FC633600777146 /* FCBaseViewController.m in Sources */,
+				6916C0412119687900DE744E /* FCToast.m in Sources */,
 				1F4CFB81210A1EC400CFC438 /* FCProfileRootViewController.m in Sources */,
 				1FA211C5211889CC00476082 /* FCSignUpViewController.m in Sources */,
 				69893F9321181DFF008E9B5A /* FCSearchFilterView.m in Sources */,

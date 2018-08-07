@@ -11,6 +11,7 @@
 
 #import "FCUIManager.h"
 #import "FCCategoryHeader.h"
+#import "FCToast.h"
 
 #import <Masonry.h>
 

@@ -514,11 +514,51 @@ and a </string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rk1-IC-pFD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="2FK-Fs-59V">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_toast_back" translatesAutoresizingMaskIntoConstraints="NO" id="1it-u7-ope">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="414" id="GDT-bQ-RYV"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入账号或者密码请输入账号或者密码请输入账号或者密码请输入账号或者密码" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uzV-u3-M0q">
+                            <rect key="frame" x="52" y="25" width="332" height="38"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="icon_toast_error" translatesAutoresizingMaskIntoConstraints="NO" id="3Lk-UO-q4h">
+                            <rect key="frame" x="27" y="29" width="17" height="17"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="17" id="KS4-FB-16l"/>
+                                <constraint firstAttribute="height" constant="17" id="w64-U2-hKf"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="uck-eK-cJJ" firstAttribute="trailing" secondItem="1it-u7-ope" secondAttribute="trailing" id="4Cc-o9-IPd"/>
+                        <constraint firstItem="uzV-u3-M0q" firstAttribute="top" secondItem="uck-eK-cJJ" secondAttribute="top" constant="25" id="61G-bP-70j"/>
+                        <constraint firstItem="uzV-u3-M0q" firstAttribute="leading" secondItem="3Lk-UO-q4h" secondAttribute="trailing" constant="5" id="ERh-fT-tr2"/>
+                        <constraint firstItem="uck-eK-cJJ" firstAttribute="bottom" secondItem="uzV-u3-M0q" secondAttribute="bottom" constant="25" id="KbE-bF-LjA"/>
+                        <constraint firstItem="uck-eK-cJJ" firstAttribute="bottom" secondItem="1it-u7-ope" secondAttribute="bottom" id="NAd-AD-hvl"/>
+                        <constraint firstItem="3Lk-UO-q4h" firstAttribute="leading" secondItem="uck-eK-cJJ" secondAttribute="leading" constant="30" id="VBf-oZ-rOB"/>
+                        <constraint firstItem="1it-u7-ope" firstAttribute="top" secondItem="uck-eK-cJJ" secondAttribute="top" id="hd4-nY-HQV"/>
+                        <constraint firstItem="1it-u7-ope" firstAttribute="leading" secondItem="uck-eK-cJJ" secondAttribute="leading" id="kYu-dk-b8I"/>
+                        <constraint firstItem="uck-eK-cJJ" firstAttribute="trailing" secondItem="uzV-u3-M0q" secondAttribute="trailing" constant="30" id="pUf-zq-YFb"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="uck-eK-cJJ"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="672.46376811594212" y="202.98913043478262"/>
         </scene>
     </scenes>
     <resources>
         <image name="icon_sign_back" width="308" height="57"/>
+        <image name="icon_toast_back" width="224" height="64"/>
+        <image name="icon_toast_error" width="17" height="17"/>
     </resources>
 </document>

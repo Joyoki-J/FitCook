@@ -19,8 +19,8 @@
 #define RGB(r,g,b)        RGBA(r,g,b,100.f)
 
 #define kCOLOR_RANDOM                       RGB(random() % 256,random() % 256,random() % 256)
-#define kCOLOR_TAB_BAR_ITEM_TITLE           RGB(217.0f,218.0f,218.0f)
-#define kCOLOR_TAB_BAR_ITEM_TITLE_SELECTED  RGB(90.0f,218.0f,249.0f)
+#define kCOLOR_TAB_BAR_ITEM_TITLE           RGB(116.0f,116.0f,129.0f)
+#define kCOLOR_TAB_BAR_ITEM_TITLE_SELECTED  RGB(80.0f,99.0f,216.0f)
 
 #define kCOLOR_GRAY_BARITEM                 RGB(245.0f,165.0f,162.0f)
 #define kCOLOR_GRAY_TITLE                   RGB(74.0f,74.0f,74.0f)
