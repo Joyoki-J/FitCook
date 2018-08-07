@@ -10,4 +10,6 @@
 
 @interface FCRealmManager : NSObject
 
++ (void)test;
++ (UIImage *)image;
 @end
