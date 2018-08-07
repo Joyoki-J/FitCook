@@ -8,7 +8,6 @@
 
 #import "FCRootViewController.h"
 #import "FCMainViewController.h"
-#import "FCLaunchViewController.h"
 #import "FCSignInViewController.h"
 #import "FCNavigationController.h"
 
@@ -29,55 +28,50 @@
     [self showLoginViewController:NO];
 }
 
-- (void)showLaunchViewController {
-    FCLaunchViewController *vcLaunch = [[FCLaunchViewController alloc] init];
-    [self showSubViewController:vcLaunch animated:NO];
-}
-
-- (void)showMainViewController {
+- (void)showMainViewController:(BOOL)animated {
     FCMainViewController *vcMain = [[FCMainViewController alloc] init];
-    [self showSubViewController:vcMain animated:NO];
+    vcMain.view.frame = self.view.bounds;
+    [self addChildViewController:vcMain];
+    if (animated) {
+        [self.view insertSubview:vcMain.view belowSubview:_vcShowing.view];
+        [UIView animateWithDuration:0.4 animations:^{
+            self.vcShowing.view.transform = CGAffineTransformMakeScale(1.1, 1.1);
+        } completion:^(BOOL finished) {
+            
+        }];
+        [UIView animateWithDuration:0.3 delay:0.1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            self.vcShowing.view.alpha = 0;
+        } completion:^(BOOL finished) {
+            [self.vcShowing.view removeFromSuperview];
+            [self.vcShowing removeFromParentViewController];
+            self.vcShowing = vcMain;
+        }];
+    } else {
+        [self.view addSubview:vcMain.view];
+        self.vcShowing = vcMain;
+    }
 }
 
 - (void)showLoginViewController:(BOOL)animated {
     FCSignInViewController *vcSignIn = [FCSignInViewController viewControllerFromStoryboard];
     FCNavigationController *navSignIn = [[FCNavigationController alloc] initWithRootViewController:vcSignIn];
-    [self showSubViewController:navSignIn animated:animated];
-}
-
-- (void)showSubViewController:(UIViewController *)subVC animated:(BOOL)animated {
-    if (_vcShowing) {
-        if (animated) {
-            subVC.view.frame = CGRectMake(0, self.view.height, self.view.width, self.view.height);
-            [self addChildViewController:subVC];
-            
-            [self.view addSubview:subVC.view];
-            [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-                subVC.view.frame = self.view.bounds;
-            } completion:^(BOOL finished) {
-                [self.vcShowing.view removeFromSuperview];
-                [self.vcShowing removeFromParentViewController];
-                self.vcShowing = subVC;
-            }];
-        } else {
-            subVC.view.frame = self.view.bounds;
-            [self addChildViewController:subVC];
-            
-            [self.view insertSubview:subVC.view belowSubview:_vcShowing.view];
-            [UIView animateWithDuration:0.3 animations:^{
-                self.vcShowing.view.alpha = 0;
-            } completion:^(BOOL finished) {
-                [self.vcShowing.view removeFromSuperview];
-                [self.vcShowing removeFromParentViewController];
-                self.vcShowing = subVC;
-            }];
-        }
-    } else {
-        subVC.view.frame = self.view.bounds;
-        [self addChildViewController:subVC];
+    if (animated) {
+        navSignIn.view.frame = CGRectMake(0, self.view.height, self.view.width, self.view.height);
+        [self addChildViewController:navSignIn];
+        [self.view addSubview:navSignIn.view];
         
-        [self.view addSubview:subVC.view];
-        self.vcShowing = subVC;
+        [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            navSignIn.view.frame = self.view.bounds;
+        } completion:^(BOOL finished) {
+            [self.vcShowing.view removeFromSuperview];
+            [self.vcShowing removeFromParentViewController];
+            self.vcShowing = navSignIn;
+        }];
+    } else {
+        navSignIn.view.frame = self.view.bounds;
+        [self addChildViewController:navSignIn];
+        [self.view addSubview:navSignIn.view];
+        self.vcShowing = navSignIn;
     }
 }
 
@@ -91,7 +85,7 @@
 }
 
 - (void)signInNotification:(NSNotification *)noti {
-    [self showMainViewController];
+    [self showMainViewController:YES];
 }
 
 - (void)logoutNotification:(NSNotification *)noti {

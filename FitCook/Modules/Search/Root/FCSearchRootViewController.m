@@ -26,6 +26,9 @@
 
 @property (nonatomic, assign) BOOL isNeedDefaultStatusBar;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutLogoW;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutLogoH;
+
 @end
 
 @implementation FCSearchRootViewController
@@ -41,7 +44,11 @@
 }
 
 - (void)createSubViews {
+
     _headerHeight = kSCREEN_WIDTH * 0.75 + 109;
+    
+    _layoutLogoW.constant = kSCREEN_WIDTH * (203.0 / 375.0);
+    _layoutLogoH.constant = 169.0 / (375 * 0.75) * (kSCREEN_WIDTH * 0.75);
     
     _tvList.contentInset = UIEdgeInsetsMake(_headerHeight - 175, 0, 0, 0);
     _tvList.estimatedSectionFooterHeight = 0;

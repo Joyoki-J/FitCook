@@ -145,6 +145,8 @@
                     </view>
                     <connections>
                         <outlet property="imgvLogo" destination="9V1-2U-dcx" id="Owy-Gu-Yb5"/>
+                        <outlet property="layoutLogoH" destination="ehr-7Y-Gds" id="vji-KL-LLa"/>
+                        <outlet property="layoutLogoW" destination="G2K-cL-QZg" id="RbM-Px-1y7"/>
                         <outlet property="tvList" destination="HdG-EV-Rbs" id="wd4-Ta-NsC"/>
                         <outlet property="vHeader" destination="Nna-IG-LmL" id="nz5-ny-RBB"/>
                         <outlet property="vHeaderBack" destination="CcU-AN-ZgT" id="2kc-P6-bfr"/>
@@ -396,7 +398,7 @@
                                                         <rect key="frame" x="8" y="44" width="264" height="40"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEc-V9-Y7U">
-                                                                <rect key="frame" x="0.0" y="0.0" width="78" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="82.5" height="40"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <state key="normal" title="Breakfast">
@@ -408,7 +410,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cid-K8-rZu">
-                                                                <rect key="frame" x="86" y="0.0" width="78" height="40"/>
+                                                                <rect key="frame" x="90.5" y="0.0" width="83" height="40"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <state key="normal" title="Lunch">
@@ -420,7 +422,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUV-Em-i1Q">
-                                                                <rect key="frame" x="172" y="0.0" width="78" height="40"/>
+                                                                <rect key="frame" x="181.5" y="0.0" width="82.5" height="40"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <state key="normal" title="Dinner">
@@ -440,7 +442,7 @@
                                                             <constraint firstAttribute="bottom" secondItem="cid-K8-rZu" secondAttribute="bottom" id="Yb4-Uj-9nD"/>
                                                             <constraint firstItem="cid-K8-rZu" firstAttribute="leading" secondItem="pEc-V9-Y7U" secondAttribute="trailing" constant="8" id="ZJF-8s-FGr"/>
                                                             <constraint firstItem="pEc-V9-Y7U" firstAttribute="top" secondItem="dQv-ZQ-5oz" secondAttribute="top" id="a5d-t8-fXS"/>
-                                                            <constraint firstAttribute="trailing" secondItem="PUV-Em-i1Q" secondAttribute="trailing" constant="14" id="cZa-HC-n45"/>
+                                                            <constraint firstAttribute="trailing" secondItem="PUV-Em-i1Q" secondAttribute="trailing" id="cZa-HC-n45"/>
                                                             <constraint firstItem="pEc-V9-Y7U" firstAttribute="leading" secondItem="dQv-ZQ-5oz" secondAttribute="leading" id="gSD-oe-xxS"/>
                                                             <constraint firstItem="PUV-Em-i1Q" firstAttribute="leading" secondItem="cid-K8-rZu" secondAttribute="trailing" constant="8" id="mCk-6a-euE"/>
                                                             <constraint firstItem="cid-K8-rZu" firstAttribute="top" secondItem="dQv-ZQ-5oz" secondAttribute="top" id="o5o-kP-3Vm"/>
