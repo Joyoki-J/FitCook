@@ -10,10 +10,10 @@
 #define FitCook_Prefix_pch
 
 #import "FCUIManager.h"
-#import "FCRealmManager.h"
 #import "FCCategoryHeader.h"
 #import "FCToast.h"
 
+#import <MJExtension/MJExtension.h>
 #import <Masonry.h>
 
 #endif /* FitCook_Prefix_pch */

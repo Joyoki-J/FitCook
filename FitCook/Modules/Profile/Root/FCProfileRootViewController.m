@@ -10,7 +10,6 @@
 #import "FCTermsConditionsViewController.h"
 #import "FCSignInViewController.h"
 #import <MessageUI/MessageUI.h>
-#import "FCRealmManager.h"
 
 #define kCompressibilityFactor 1280.0 / [UIScreen mainScreen].scale
 @interface FCProfileRootViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,MFMailComposeViewControllerDelegate>
@@ -60,8 +59,7 @@
 
 - (IBAction)onClickAction:(UIButton *)sender {
     if (sender.tag == 99) {
-        _imgvPicture.image = [FCRealmManager image];
-//        [self showPickPhotoAlert];
+        [self showPickPhotoAlert];
     } else if (sender.tag == 100) {
         [self shared];
     } else if (sender.tag == 101) {

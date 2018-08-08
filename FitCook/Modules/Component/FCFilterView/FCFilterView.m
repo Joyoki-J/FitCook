@@ -38,11 +38,10 @@
     _style = [[FCFilterStyle alloc] init];
     
     _arrData = [NSMutableArray array];
-    [_arrData addObjectsFromArray:@[@"Filter",
-                                    @"Sugar-free",
+    [_arrData addObjectsFromArray:@[@"Sugar-free",
                                     @"Vegetarian",
                                     @"Dairy-free",
-                                    @"Sugar-free",
+                                    @"Gluten-free",
                                     @"Breakfast",
                                     @"Lunch",
                                     @"Dinner"]];

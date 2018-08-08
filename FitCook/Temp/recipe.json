@@ -1,0 +1,1131 @@
+[
+    {
+        "name": "Strong Arm Steak",
+        "time": "15mins",
+        "weight": 1,
+        "classify": "Today’s inspiration",
+        "filters": "sugar-free,gluten-free,lunch,dinner,",
+        "keywords": "steak,asparagus,cherry,tomato",
+        "ingredients":[
+            {
+                "name": "asparagus",
+                "dosage": {
+                    "integer": 60,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "g"
+                }
+            },
+            {
+                "name": "cherry tomatoes",
+                "dosage": {
+                    "integer": 4,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": ""
+                }
+            },
+            {
+                "name": "olive oil",
+                "dosage": {
+                    "integer": 2,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "tbsp"
+                }
+            },
+            {
+                "name": "salt",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 4,
+                    "unit": "tbsp"
+                }
+            },
+            {
+                "name": "freshly ground black pepper",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 4,
+                    "unit": "tbsp"
+                }
+            },
+            {
+                "name": "flank steak",
+                "dosage": {
+                    "integer": 150,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "g"
+                }
+            }
+        ],
+        "steps": [
+            "Preheat grill.",
+            "Sprinkle asparagus with olive oil and grill for 2 mins; turn off and grill it and cherry tomatoes 2 more mins.Remove and keep them warm",
+            "Sprinkle both sides of steak with olive oil and grill to desired level of doneness, turning once.Season to taste with salt and freshly ground black pepper.",
+            "Place on serving dish."
+        ],
+        "nutrition": {
+            "calories": "224kcal",
+            "protein": "32.2g",
+            "fat": "9g",
+            "carbohydrates": "6.3g"
+        }
+    },
+    {
+        "name": "Greek Yogurt Bowl",
+        "time": "15mins",
+        "weight": 2,
+        "classify": "Today’s inspiration",
+        "filters": "breakfast,gluten-free,",
+        "keywords": "greek,yogurt,yoghurt,berry,granola,cereal,honey",
+        "ingredients":[
+            {
+                "name": "Greek yogurt",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 2,
+                    "unit": "cup"
+                }
+            },
+            {
+                "name": "berries",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 2,
+                    "unit": "cup"
+                }
+            },
+            {
+                "name": "granola/other whole cereal",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 4,
+                    "unit": "cup"
+                }
+            },
+            {
+                "name": "honey",
+                "dosage": {
+                    "integer": 1,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "tbsp"
+                }
+            }
+        ],
+        "steps": [
+            "Layer all the ingredients in a bowl and drizzle with honey.",
+            "Place on serving dish."
+        ],
+        "nutrition": {
+            "calories": "70kcal",
+            "protein": "12g",
+            "fat": "0g",
+            "carbohydrates": "5g"
+        }
+    },
+    {
+        "name": "Mushroom Fried Quinoa",
+        "time": "20mins",
+        "weight": 3,
+        "classify": "Today’s inspiration",
+        "filters": "dairy-free,sugar-free,lunch,",
+        "keywords": "quinoa,mushroom,garlic,parmesan",
+        "ingredients":[
+            {
+                "name": "quinoa",
+                "dosage": {
+                    "integer": 40,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "g"
+                }
+            },
+            {
+                "name": "sliced mushroom",
+                "dosage": {
+                    "integer": 160,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "g"
+                }
+            },
+            {
+                "name": "minced garlic",
+                "dosage": {
+                    "integer": 2,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "cloves"
+                }
+            },
+            {
+                "name": "olive oil",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 2,
+                    "unit": "tbsp"
+                }
+            },
+            {
+                "name": "grated Parmesan",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 2,
+                    "unit": "tbsp"
+                }
+            },
+            {
+                "name": "salt and freshly black pepper to taste"
+            }
+        ],
+        "steps": [
+            "In a large saucepan of 1cup water, cook quinoa according to package instructions; set aside.",
+            "Heat olive oil in a large skillet over medium high heat.Add mushrooms, garlic and stir-fry until tenter,about 3-4 mins; season with salt and pepper, to taste.Stir in quinoa until well combined.",
+            "Serve immediately, garnished with Parmesan."
+        ],
+        "nutrition": {
+            "calories": "208.5kcal",
+            "protein": "5.95g",
+            "fat": "18.65g",
+            "carbohydrates": "12.9g"
+        }
+    },
+    {
+        "name": "Easy Tofu Salad",
+        "time": "20mins",
+        "weight": 11,
+        "classify": "Last Recipes",
+        "filters": "dairy-free,lunch,dinner,",
+        "keywords": "tofu,onion,cucumber,peanut,salad",
+        "ingredients":[
+            {
+                "name": "tofu",
+                "dosage": {
+                    "integer": 160,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "g"
+                }
+            },
+            {
+                "name": "soy sauce",
+                "dosage": {
+                    "integer": 2,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "tbsp"
+                }
+            },
+            {
+                "name": "olive oil",
+                "dosage": {
+                    "integer": 1,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "tbsp"
+                }
+            },
+            {
+                "name": "rice vinegar",
+                "dosage": {
+                    "integer": 2,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "tbsp"
+                }
+            },
+            {
+                "name": "sesame oil",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 2,
+                    "unit": "tbsp"
+                }
+            },
+            {
+                "name": "green onion",
+                "dosage": {
+                    "integer": 1,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": ""
+                }
+            },
+            {
+                "name": "minced garlic",
+                "dosage": {
+                    "integer": 2,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "cloves"
+                }
+            },
+            {
+                "name": "red onion",
+                "dosage": {
+                    "integer": 1,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": ""
+                }
+            },
+            {
+                "name": "small cucumber",
+                "dosage": {
+                    "integer": 1,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": ""
+                }
+            },
+            {
+                "name": "crushed peanuts",
+                "dosage": {
+                    "integer": 1,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "tbsp"
+                }
+            }
+        ],
+        "steps": [
+            "In a small bowl, whisk soy sauce, rice vinegar, sesame oil, minced garlic together, until fully combined,put aside.",
+            "Drain tofu, slice block in quarters and press with paper towels to remove excess liquid, thinly sliced.",
+            "Heat olive oil in a large skillet, put tofu in, fry them until turn brown.",
+            "In a large bowl, combine and gently toss all the salad ingredients with desired amount of dressing.Plate salad individually and top with tofu.Garnish with peanuts.",
+            "Serve immediately."
+        ],
+        "nutrition": {
+            "calories": "386kcal",
+            "protein": "10g",
+            "fat": "24g",
+            "carbohydrates": "34g"
+        }
+    },
+    {
+        "name": "Corn Shrimp Salad",
+        "time": "20mins",
+        "weight": 12,
+        "classify": "Last Recipes",
+        "filters": "gluten-free, dairy-free,",
+        "keywords": "corn,prawn,lemon,onion,mustard,basil",
+        "ingredients":[
+            {
+                "name": "sweet corn",
+                "dosage": {
+                    "integer": 100,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "g"
+                }
+            },
+            {
+                "name": "cooked and peeled prawn",
+                "dosage": {
+                    "integer": 150,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "g"
+                }
+            },
+            {
+                "name": "medium lemon",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 2,
+                    "unit": ""
+                }
+            },
+            {
+                "name": "small onion",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 2,
+                    "unit": ""
+                }
+            },
+            {
+                "name": "salt",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 4,
+                    "unit": "tbsp"
+                }
+            },
+            {
+                "name": "olive oil",
+                "dosage": {
+                    "integer": 2,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "tbsp"
+                }
+            },
+            {
+                "name": "red wine vinegar",
+                "dosage": {
+                    "integer": 2,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "tbsp"
+                }
+            },
+            {
+                "name": "mustard",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 2,
+                    "unit": "tbsp"
+                }
+            },
+            {
+                "name": "fresh and chopped basil",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 2,
+                    "unit": "cup"
+                }
+            }
+        ],
+        "steps": [
+            "In a large pan bring water to boil and season with salt.Add corn and boil for 5-10mins.",
+            "Meanwhile, cut onion and lemon in slice, mine basil.",
+            "Make the dressing in a big bowl with olive oil, red wine vinegar and mustard.",
+            "Get corn kernels from the corn by knife.",
+            "Mix all the ingredients together, basil on the top and put the dressing on the top.",
+            "Place on serving dish."
+        ],
+        "nutrition": {
+            "calories": "197.5kcal",
+            "protein": "26g",
+            "fat": "21.4g",
+            "carbohydrates": "5.2g"
+        }
+    },
+    {
+        "name": "Low-calories Roasted Dinner",
+        "time": "30mins",
+        "weight": 13,
+        "classify": "Last Recipes",
+        "filters": "dinner,dairy-free,",
+        "keywords": "potato,broccoli,onion,chicken,breast,sprout",
+        "ingredients":[
+            {
+                "name": "potato",
+                "dosage": {
+                    "integer": 1,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": ""
+                }
+            },
+            {
+                "name": "broccoli",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 2,
+                    "unit": ""
+                }
+            },
+            {
+                "name": "medium onion",
+                "dosage": {
+                    "integer": 1,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": ""
+                }
+            },
+            {
+                "name": "mushroom",
+                "dosage": {
+                    "integer": 100,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "g"
+                }
+            },
+            {
+                "name": "chicken breast",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 2,
+                    "denominator": 3,
+                    "unit": "cup"
+                }
+            },
+            {
+                "name": "Brussel sprouts",
+                "dosage": {
+                    "integer": 150,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "g"
+                }
+            },
+            {
+                "name": "olive oil",
+                "dosage": {
+                    "integer": 2,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "tbsp"
+                }
+            },
+            {
+                "name": "cayenne pepper",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 4,
+                    "unit": "tbsp"
+                }
+            },
+            {
+                "name": "black pepper",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 4,
+                    "unit": "tbsp"
+                }
+            },
+            {
+                "name": "salt",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 4,
+                    "unit": "tbsp"
+                }
+            },
+            {
+                "name": "salt",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 4,
+                    "unit": "tbsp"
+                }
+            },
+            {
+                "name": "basil"
+            }
+        ],
+        "steps": [
+            "Preheat oven 450ºF. Place 14’’ piece of foil shiny side up.",
+            "Cut all ingredients in slice.",
+            "Put all cut ingredients on the top of foil.",
+            "Put olive oil and other spices on the top evenly.",
+            "Roast it for 25-30 mins.",
+            "Place on serving dish."
+        ],
+        "nutrition": {
+            "calories": "553kcal",
+            "protein": "28.23g",
+            "fat": "21.34g",
+            "carbohydrates": "41.28g"
+        }
+    },
+    {
+        "name": "Salmon Poke Bowl",
+        "time": "20mins",
+        "weight": 21,
+        "classify": "Low Calories",
+        "filters": "dairy-free,lunch,dinner,",
+        "keywords": "salmon,rice,chilli,broccoli",
+        "ingredients":[
+            {
+                "name": "sushi rice",
+                "dosage": {
+                    "integer": 80,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "g"
+                }
+            },
+            {
+                "name": "water",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 3,
+                    "unit": "cup"
+                }
+            },
+            {
+                "name": "salt",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 2,
+                    "unit": "tsp"
+                }
+            },
+            {
+                "name": "sashimi-grade salmon fillet",
+                "dosage": {
+                    "integer": 160,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "g"
+                }
+            },
+            {
+                "name": "soya sauce",
+                "dosage": {
+                    "integer": 2,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "tbsp"
+                }
+            },
+            {
+                "name": "sesame oil",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 4,
+                    "unit": "tbsp"
+                }
+            },
+            {
+                "name": "finely chopped red chilli",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 8,
+                    "unit": ""
+                }
+            },
+            {
+                "name": "finely chopped red or spring onion",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 8,
+                    "unit": ""
+                }
+            },
+            {
+                "name": "broccoli",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 8,
+                    "unit": ""
+                }
+            },
+            {
+                "name": "sugar snaps",
+                "dosage": {
+                    "integer": 6,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": ""
+                }
+            },
+            {
+                "name": "chilli mayonnaise(mayo with hot chilli sauce)",
+                "dosage": {
+                    "integer": 2,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "tbsp"
+                }
+            },
+            {
+                "name": "lime",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 2,
+                    "unit": ""
+                }
+            }
+        ],
+        "steps": [
+            "Bring the rice, water and salt to a boil at low heat for 40 minutes with the lid on.",
+            "Dice salmon into 1 to 2cm cubes, and mix them up with soya sauce, sesame oil, chilli and red or spring onion.",
+            "Boil vegetables, cool off in ice cold water.",
+            "Put the vegetables dry and mix with chilli mayo, lime juice and spring onion.",
+            "Serve salmon and vegetables over rice."
+        ],
+        "nutrition": {
+            "calories": "445kcal",
+            "protein": "28g",
+            "fat": "21g",
+            "carbohydrates": "48g"
+        }
+    },
+    {
+        "name": "Easy Tuna Wrap",
+        "time": "15mins",
+        "weight": 22,
+        "classify": "Low Calories",
+        "filters": "breakfast,lunch,",
+        "keywords": "egg,wrap,tuna,pickle,lettuce,hummus,pepper,tortilla",
+        "ingredients":[
+            {
+                "name": "medium egg",
+                "dosage": {
+                    "integer": 1,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": ""
+                }
+            },
+            {
+                "name": "tortilla",
+                "dosage": {
+                    "integer": 1,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": ""
+                }
+            },
+            {
+                "name": "hummus",
+                "dosage": {
+                    "integer": 2,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "tsp"
+                }
+            },
+            {
+                "name": "small red bell pepper",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 2,
+                    "unit": ""
+                }
+            },
+            {
+                "name": "pickles",
+                "dosage": {
+                    "integer": 10,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "g"
+                }
+            },
+            {
+                "name": "canned tuna(solid/chunks)",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 2,
+                    "unit": "cup"
+                }
+            },
+            {
+                "name": "lettuce",
+                "dosage": {
+                    "integer": 1,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "leaf"
+                }
+            }
+        ],
+        "steps": [
+            "Boil egg, remove from heat, cover and let it sit for 10 mins before shelling and chopping.",
+            "Heat tortilla in the microwave for 20 seconds.Chop remaining ingredients and mix well.",
+            "Assemble mixture in the tortilla wrap.",
+            "Place on serving dish."
+        ],
+        "nutrition": {
+            "calories": "340.4kcal",
+            "protein": "34.8g",
+            "fat": "10.9g",
+            "carbohydrates": "26.6g"
+        }
+    },
+    {
+        "name": "Ketogenic Avocado Pasta",
+        "time": "10mins",
+        "weight": 31,
+        "classify": "Quick and easy",
+        "filters": "lunch,vegetarian,gluten-free,dairy-free,",
+        "keywords": "avocado,pasta,spaghetti,basil,lemon,corn,cherry,tomato",
+        "ingredients":[
+            {
+                "name": "spaghetti",
+                "dosage": {
+                    "integer": 120,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "g"
+                }
+            },
+            {
+                "name": "ripe avocados, halved, seeded and peeled",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 2,
+                    "unit": ""
+                }
+            },
+            {
+                "name": "fresh basil leaves",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 8,
+                    "unit": "cup"
+                }
+            },
+            {
+                "name": "freshly squeezed lemon juice",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 2,
+                    "unit": ""
+                }
+            },
+            {
+                "name": "olive oil",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 12,
+                    "unit": "cup"
+                }
+            },
+            {
+                "name": "cherry tomatoes, halved",
+                "dosage": {
+                    "integer": 60,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "g"
+                }
+            },
+            {
+                "name": "canned corn kernels, drained and rinsed",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 8,
+                    "unit": "cup"
+                }
+            },
+            {
+                "name": "garlic",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 2,
+                    "unit": "cloves"
+                }
+            },
+            {
+                "name": "salt"
+            },
+            {
+                "name": "freshly ground black pepper"
+            }
+        ],
+        "steps": [
+            "In a large pot of boiling salted water, cook pasta according to package instructions; drain well.",
+            "To make the avocado sauce, combine avocados, basil, garlic and lemon juice in the bowl of a food processor; season with salt and pepper, to taste.With the motor running, add olive oil in a slow stream until emulsified; set aside.",
+            "In a large bowl, combine pasta, avocado sauce, cherry tomatoes and corn.",
+            "Serve immediately"
+        ],
+        "nutrition": {
+            "calories": "670.7kcal",
+            "protein": "14.3g",
+            "fat": "34.2g",
+            "carbohydrates": "80.7g"
+        }
+    },
+    {
+        "name": "Low-carb Salad",
+        "time": "15mins",
+        "weight": 32,
+        "classify": "Quick and easy",
+        "filters": "low-calories,quick&easy,dairy-free,dinner,",
+        "keywords": "green beans,red potatoes,butter,chilli,salad",
+        "ingredients":[
+            {
+                "name": "green beans",
+                "dosage": {
+                    "integer": 60,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "g"
+                }
+            },
+            {
+                "name": "red potatoes",
+                "dosage": {
+                    "integer": 60,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "g"
+                }
+            },
+            {
+                "name": "chopped fresh parsley",
+                "dosage": {
+                    "integer": 2,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "tbsp"
+                }
+            },
+            {
+                "name": "light Margarine",
+                "dosage": {
+                    "integer": 1,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "tbsp"
+                }
+            },
+            {
+                "name": "salt",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 4,
+                    "unit": "tbsp"
+                }
+            },
+            {
+                "name": "pepper",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 8,
+                    "unit": "tbsp"
+                }
+            },
+            {
+                "name": "chilli powder",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 8,
+                    "unit": "tbsp"
+                }
+            }
+        ],
+        "steps": [
+            "In a large saucepan, steam the green beans and potatoes for 8 minutes, or until the potatoes are tender. Then transfer to a medium serving bowl.",
+            "Add the remaining ingredients, stirring until the chilli powder is well combined.",
+            "Serve immdeiatly."
+        ],
+        "nutrition": {
+            "calories": "97.75kcal",
+            "protein": "9.33g",
+            "fat": "13.96g",
+            "carbohydrates": "12.9g"
+        }
+    },
+    {
+        "name": "Protein Packed Salmon",
+        "time": "30mins",
+        "weight": 41,
+        "classify": "High Protein",
+        "filters": "gluten-free,lunch,dinner,",
+        "keywords": "salmon,cherry,tomato,onion,pepper,chickpeas,hummus,parsley",
+        "ingredients":[
+            {
+                "name": "salmon fillet",
+                "dosage": {
+                    "integer": 1,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": ""
+                }
+            },
+            {
+                "name": "drained canned chickpeas",
+                "dosage": {
+                    "integer": 2,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "tbsp"
+                }
+            },
+            {
+                "name": "chopped red onion",
+                "dosage": {
+                    "integer": 30,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "g"
+                }
+            },
+            {
+                "name": "water",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 8,
+                    "unit": "cup"
+                }
+            },
+            {
+                "name": "hummus",
+                "dosage": {
+                    "integer": 2,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "tbsp"
+                }
+            },
+            {
+                "name": "thinly sliced red pepper",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 4,
+                    "unit": "cup"
+                }
+            },
+            {
+                "name": "cherry tomatoes(halves)",
+                "dosage": {
+                    "integer": 8,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": ""
+                }
+            },
+            {
+                "name": "salt"
+            },
+            {
+                "name": "pepper"
+            },
+            {
+                "name": "fresh parsley(option)"
+            }
+        ],
+        "steps": [
+            "Preheat oven 245ºF.Place 14’’ piece of foil shiny side up. Spoon 1/2 of hummus mixture on foil.",
+            "Top with salmon filet.Lightly sprinkle salmon filet with salt and pepper. Add remaining hummus mixture.Top with red pepper and cherry tomatoes. Fold each side of foil over fish pressing down lightly to seal.",
+            "Bake for 15 to 20 minutes or until fish is cooked through.",
+            "Let stand for 5 minutes and Carefully open pouch.",
+            "Place on serving dish."
+        ],
+        "nutrition": {
+            "calories": "275kcal",
+            "protein": "34.75g",
+            "fat": "12.5g",
+            "carbohydrates": "30g"
+        }
+    },
+    {
+        "name": "Big Abs Pasta",
+        "time": "25mins",
+        "weight": 42,
+        "classify": "High Protein",
+        "filters": "sugar-free,lunch,",
+        "keywords": "courgette,onion,cream,chicken,rotini,pasta",
+        "ingredients":[
+            {
+                "name": "courgette",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 3,
+                    "unit": ""
+                }
+            },
+            {
+                "name": "green onion",
+                "dosage": {
+                    "integer": 1,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": ""
+                }
+            },
+            {
+                "name": "fish cube",
+                "dosage": {
+                    "integer": 160,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "g"
+                }
+            },
+            {
+                "name": "rotini",
+                "dosage": {
+                    "integer": 160,
+                    "numerator": 1,
+                    "denominator": 2,
+                    "unit": "g"
+                }
+            },
+            {
+                "name": "fresh light cream",
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 3,
+                    "unit": "cup"
+                }
+            },
+            {
+                "name": "olive oil",
+                "dosage": {
+                    "integer": 2,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "tbsp"
+                }
+            },
+            {
+                "name": "chicken stock",
+                "dosage": {
+                    "integer": 2,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "cup"
+                }
+            },
+            {
+                "name": "salt"
+            }
+        ],
+        "steps": [
+            "In a large pot of boiling salted water, boil rotini according to package instructions; drain well.",
+            "Cut courgette, mixed fish in 1cm cube, cut green onion in slice.",
+            "Boil fish cubes with cold water, and drain well.",
+            "Stir fry the green onion and courgette with a little bit olive oil, add fish cubes.Mix chicken stock into the pan and boil with mild fire.Add cream, stir.",
+            "Place on serving dish."
+        ],
+        "nutrition": {
+            "calories": "549cal",
+            "protein": "24.8g",
+            "fat": "28g",
+            "carbohydrates": "50.8g"
+        }
+    }
+]
