@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -29,7 +29,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_searchheader_back" translatesAutoresizingMaskIntoConstraints="NO" id="2tx-Un-49e">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="277.5"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_searchheader_backmask" translatesAutoresizingMaskIntoConstraints="NO" id="Ub5-9c-tzF">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_searchheader_backmask" translatesAutoresizingMaskIntoConstraints="NO" id="Ub5-9c-tzF">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="282.5"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_search_logo" translatesAutoresizingMaskIntoConstraints="NO" id="9V1-2U-dcx">
@@ -123,6 +123,9 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="btnFavourite" destination="8Fz-M2-rIP" id="Kkk-sy-zgF"/>
+                                            <outlet property="imgvFood" destination="T5M-m4-0PR" id="vx4-r5-Zgh"/>
+                                            <outlet property="labTime" destination="itb-mO-fib" id="cJQ-0Q-mMg"/>
+                                            <outlet property="labTitle" destination="SgX-XE-6UK" id="ZAa-BD-CB5"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

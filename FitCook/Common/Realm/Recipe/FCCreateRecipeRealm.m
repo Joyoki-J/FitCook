@@ -17,12 +17,15 @@
 //    [self createRecipe];
     
     // 复制压缩realm
-        [self copyRealm];
+//        [self copyRealm];
+    
+//    [self moveRealm];
 }
 
 + (void)createRecipe {
     NSData *JSONData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"recipe" ofType:@"json"]];
     NSArray *dataArray = [NSJSONSerialization JSONObjectWithData:JSONData options:NSJSONReadingAllowFragments error:nil];
+    NSLog(@"");
     NSLog(@"=======================\n");
     RLMArray<FCRealmRecipe *> *recipes = [[RLMArray alloc] initWithObjectClassName:FCRealmRecipe.className];
     for (NSInteger i = 0; i < dataArray.count; i++) {
@@ -46,6 +49,22 @@
     NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
     NSURL *url = [NSURL URLWithString:[path stringByAppendingString:@"/recipe.realm"]];
     [realm writeCopyToURL:url encryptionKey:nil error:nil];
+}
+
++ (void)moveRealm {
+    NSString *path1 = [[NSBundle mainBundle] pathForResource:@"default" ofType:@"realm"];
+    NSString *path = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingString:@"/default.realm"];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
+        NSLog(@"没有,需要移动!");
+        NSError *error;
+        if ([[NSFileManager defaultManager] copyItemAtPath:path1 toPath:path error:&error]) {
+            NSLog(@"移动成功");
+        } else {
+            NSLog(@"移动失败%@",error);
+        }
+    } else {
+        NSLog(@"已经有了");
+    }
 }
 
 @end

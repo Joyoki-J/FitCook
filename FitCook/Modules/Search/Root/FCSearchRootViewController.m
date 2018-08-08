@@ -12,6 +12,7 @@
 #import "FCRecipesDetailViewController.h"
 #import "FCSearchRootListCell.h"
 #import "FCSearchHeaderView.h"
+#import "FCRealm.h"
 
 @interface FCSearchRootViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,FCSearchHeaderViewDelegate,FCSearchFilterViewControllerDelegate>
 
@@ -29,6 +30,8 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutLogoW;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutLogoH;
 
+@property (nonatomic, strong) NSMutableArray<NSDictionary *> *arrRecipe;
+
 @end
 
 @implementation FCSearchRootViewController
@@ -41,6 +44,20 @@
     [super viewDidLoad];
     
     [self createSubViews];
+    
+    _arrRecipe = [NSMutableArray array];
+    
+    dispatch_async(dispatch_queue_create("test", 0), ^{
+        RLMResults *results = [[FCRealmRecipe allObjects] sortedResultsUsingKeyPath:@"weight" ascending:YES];
+        for (NSInteger i = 0; i < results.count; i++) {
+            FCRealmRecipe *recipe = [results objectAtIndex:i];
+            [self.arrRecipe addObject:@{@"image": @(recipe.weight), @"title": recipe.name, @"time": recipe.time}];
+        }
+        NSLog(@"============\n%@",self.arrRecipe);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tvList reloadData];
+        });
+    });
 }
 
 - (void)createSubViews {
@@ -80,7 +97,7 @@
 
 #pragma mark - UITableViewDelegate,UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return _arrRecipe.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -97,6 +114,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FCSearchRootListCell *cell = [FCSearchRootListCell cellWithTableView:tableView andIndexPath:indexPath];
+    NSDictionary *dic = [_arrRecipe objectAtIndex:indexPath.row];
+    cell.imgvFood.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@_1",[dic[@"image"] stringValue]]];
+    cell.labTitle.text = dic[@"title"];
+    cell.labTime.text = dic[@"time"];
     return cell;
 }
 
@@ -150,6 +171,22 @@
     } else {
         return YES;
     }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    NSString *keyword = [textField.text lowercaseString];
+    
+    dispatch_async(dispatch_queue_create("test", 0), ^{
+        NSString *str = [NSString stringWithFormat:@"keywords LIKE '*%@*'",keyword];
+        RLMResults *result = [FCRealmRecipe objectsWhere:str];
+        for (NSInteger i = 0; i < result.count; i++) {
+            FCRealmRecipe *r = result[i];
+            NSLog(@"菜谱: %@",r.name);
+            NSLog(@"keyword: %@",r.keywords);
+            NSLog(@"=============================================");
+        }
+    });
+    return YES;
 }
 
 #pragma mark - FCSearchHeaderViewDelegate

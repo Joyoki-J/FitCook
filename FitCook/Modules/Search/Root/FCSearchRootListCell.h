@@ -10,6 +10,10 @@
 
 @interface FCSearchRootListCell : FCBaseTableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *imgvFood;
+@property (weak, nonatomic) IBOutlet UILabel *labTitle;
+@property (weak, nonatomic) IBOutlet UILabel *labTime;
+
 @property (nonatomic, assign) BOOL isFavourited;
 
 @end

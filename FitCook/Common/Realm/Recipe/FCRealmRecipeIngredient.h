@@ -12,6 +12,8 @@
 @interface FCRealmRecipeIngredient : RLMObject
 
 @property NSString *name;
+@property NSString *category;
+@property BOOL isNeedCalculate;
 @property FCRealmRecipeDosage *dosage;
 
 @end

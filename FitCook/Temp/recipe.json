@@ -5,10 +5,12 @@
         "weight": 1,
         "classify": "Today’s inspiration",
         "filters": "sugar-free,gluten-free,lunch,dinner,",
-        "keywords": "steak,asparagus,cherry,tomato",
+        "keywords": "steak,asparagus,cherry,tomato,tomatoes,olive oil",
         "ingredients":[
             {
                 "name": "asparagus",
+                "category": "asparagus",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 60,
                     "numerator": 0,
@@ -18,6 +20,8 @@
             },
             {
                 "name": "cherry tomatoes",
+                "category": "cherry tomatoes",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 4,
                     "numerator": 0,
@@ -26,7 +30,20 @@
                 }
             },
             {
+                "name": "flank steak",
+                "category": "flank steak",
+                "isNeedCalculate": true,
+                "dosage": {
+                    "integer": 150,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "g"
+                }
+            },
+            {
                 "name": "olive oil",
+                "category": "olive oil",
+                "isNeedCalculate": false,
                 "dosage": {
                     "integer": 2,
                     "numerator": 0,
@@ -36,6 +53,8 @@
             },
             {
                 "name": "salt",
+                "category": "salt",
+                "isNeedCalculate": false,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -45,20 +64,13 @@
             },
             {
                 "name": "freshly ground black pepper",
+                "category": "freshly ground black pepper",
+                "isNeedCalculate": false,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
                     "denominator": 4,
                     "unit": "tbsp"
-                }
-            },
-            {
-                "name": "flank steak",
-                "dosage": {
-                    "integer": 150,
-                    "numerator": 0,
-                    "denominator": 0,
-                    "unit": "g"
                 }
             }
         ],
@@ -81,10 +93,12 @@
         "weight": 2,
         "classify": "Today’s inspiration",
         "filters": "breakfast,gluten-free,",
-        "keywords": "greek,yogurt,yoghurt,berry,granola,cereal,honey",
+        "keywords": "greek,yogurt,yoghurt,berry,berries,granola,cereal,honey",
         "ingredients":[
             {
                 "name": "Greek yogurt",
+                "category": "Greek yogurt",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -94,6 +108,8 @@
             },
             {
                 "name": "berries",
+                "category": "berries",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -103,6 +119,8 @@
             },
             {
                 "name": "granola/other whole cereal",
+                "category": "granola / other whole cereal",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -112,6 +130,8 @@
             },
             {
                 "name": "honey",
+                "category": "honey",
+                "isNeedCalculate": false,
                 "dosage": {
                     "integer": 1,
                     "numerator": 0,
@@ -137,10 +157,12 @@
         "weight": 3,
         "classify": "Today’s inspiration",
         "filters": "dairy-free,sugar-free,lunch,",
-        "keywords": "quinoa,mushroom,garlic,parmesan",
+        "keywords": "quinoa,mushroom,garlic,parmesan,olive oil",
         "ingredients":[
             {
                 "name": "quinoa",
+                "category": "quinoa",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 40,
                     "numerator": 0,
@@ -150,6 +172,8 @@
             },
             {
                 "name": "sliced mushroom",
+                "category": "mushroom",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 160,
                     "numerator": 0,
@@ -158,7 +182,20 @@
                 }
             },
             {
+                "name": "grated Parmesan",
+                "category": "Parmesan",
+                "isNeedCalculate": true,
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 2,
+                    "unit": "tbsp"
+                }
+            },
+            {
                 "name": "minced garlic",
+                "category": "garlic",
+                "isNeedCalculate": false,
                 "dosage": {
                     "integer": 2,
                     "numerator": 0,
@@ -168,6 +205,8 @@
             },
             {
                 "name": "olive oil",
+                "category": "olive oil",
+                "isNeedCalculate": false,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -176,16 +215,14 @@
                 }
             },
             {
-                "name": "grated Parmesan",
-                "dosage": {
-                    "integer": 0,
-                    "numerator": 1,
-                    "denominator": 2,
-                    "unit": "tbsp"
-                }
+                "name": "salt to taste",
+                "category": "salt",
+                "isNeedCalculate": false,
             },
             {
-                "name": "salt and freshly black pepper to taste"
+                "name": "freshly black pepper to taste",
+                "category": "freshly black pepper",
+                "isNeedCalculate": false,
             }
         ],
         "steps": [
@@ -206,10 +243,12 @@
         "weight": 11,
         "classify": "Last Recipes",
         "filters": "dairy-free,lunch,dinner,",
-        "keywords": "tofu,onion,cucumber,peanut,salad",
+        "keywords": "tofu,onion,red onion,green onion,cucumber,peanuts,salad,garlic",
         "ingredients":[
             {
                 "name": "tofu",
+                "category": "tofu",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 160,
                     "numerator": 0,
@@ -218,43 +257,9 @@
                 }
             },
             {
-                "name": "soy sauce",
-                "dosage": {
-                    "integer": 2,
-                    "numerator": 0,
-                    "denominator": 0,
-                    "unit": "tbsp"
-                }
-            },
-            {
-                "name": "olive oil",
-                "dosage": {
-                    "integer": 1,
-                    "numerator": 0,
-                    "denominator": 0,
-                    "unit": "tbsp"
-                }
-            },
-            {
-                "name": "rice vinegar",
-                "dosage": {
-                    "integer": 2,
-                    "numerator": 0,
-                    "denominator": 0,
-                    "unit": "tbsp"
-                }
-            },
-            {
-                "name": "sesame oil",
-                "dosage": {
-                    "integer": 0,
-                    "numerator": 1,
-                    "denominator": 2,
-                    "unit": "tbsp"
-                }
-            },
-            {
-                "name": "green onion",
+                "name": "red onion",
+                "category": "red onion",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 1,
                     "numerator": 0,
@@ -263,16 +268,9 @@
                 }
             },
             {
-                "name": "minced garlic",
-                "dosage": {
-                    "integer": 2,
-                    "numerator": 0,
-                    "denominator": 0,
-                    "unit": "cloves"
-                }
-            },
-            {
-                "name": "red onion",
+                "name": "green onion",
+                "category": "green onion",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 1,
                     "numerator": 0,
@@ -282,6 +280,8 @@
             },
             {
                 "name": "small cucumber",
+                "category": "cucumber",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 1,
                     "numerator": 0,
@@ -291,10 +291,67 @@
             },
             {
                 "name": "crushed peanuts",
+                "category": "crushed peanuts",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 1,
                     "numerator": 0,
                     "denominator": 0,
+                    "unit": "tbsp"
+                }
+            },
+            {
+                "name": "minced garlic",
+                "category": "garlic",
+                "isNeedCalculate": false,
+                "dosage": {
+                    "integer": 2,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "cloves"
+                }
+            },
+            {
+                "name": "soy sauce",
+                "category": "soy sauce",
+                "isNeedCalculate": false,
+                "dosage": {
+                    "integer": 2,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "tbsp"
+                }
+            },
+            {
+                "name": "olive oil",
+                "category": "olive oil",
+                "isNeedCalculate": false,
+                "dosage": {
+                    "integer": 1,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "tbsp"
+                }
+            },
+            {
+                "name": "rice vinegar",
+                "category": "rice vinegar",
+                "isNeedCalculate": false,
+                "dosage": {
+                    "integer": 2,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "tbsp"
+                }
+            },
+            {
+                "name": "sesame oil",
+                "category": "sesame oil",
+                "isNeedCalculate": false,
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 2,
                     "unit": "tbsp"
                 }
             }
@@ -323,6 +380,8 @@
         "ingredients":[
             {
                 "name": "sweet corn",
+                "category": "sweet corn",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 100,
                     "numerator": 0,
@@ -332,6 +391,8 @@
             },
             {
                 "name": "cooked and peeled prawn",
+                "category": "cooked and peeled prawn",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 150,
                     "numerator": 0,
@@ -341,6 +402,8 @@
             },
             {
                 "name": "medium lemon",
+                "category": "lemon",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -350,6 +413,8 @@
             },
             {
                 "name": "small onion",
+                "category": "onion",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -358,7 +423,20 @@
                 }
             },
             {
+                "name": "fresh and chopped basil",
+                "category": "fresh basil",
+                "isNeedCalculate": false,
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 2,
+                    "unit": "cup"
+                }
+            },
+            {
                 "name": "salt",
+                "category": "salt",
+                "isNeedCalculate": false,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -368,6 +446,8 @@
             },
             {
                 "name": "olive oil",
+                "category": "olive oil",
+                "isNeedCalculate": false,
                 "dosage": {
                     "integer": 2,
                     "numerator": 0,
@@ -377,6 +457,8 @@
             },
             {
                 "name": "red wine vinegar",
+                "category": "red wine vinegar",
+                "isNeedCalculate": false,
                 "dosage": {
                     "integer": 2,
                     "numerator": 0,
@@ -386,20 +468,13 @@
             },
             {
                 "name": "mustard",
+                "category": "mustard",
+                "isNeedCalculate": false,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
                     "denominator": 2,
                     "unit": "tbsp"
-                }
-            },
-            {
-                "name": "fresh and chopped basil",
-                "dosage": {
-                    "integer": 0,
-                    "numerator": 1,
-                    "denominator": 2,
-                    "unit": "cup"
                 }
             }
         ],
@@ -424,10 +499,12 @@
         "weight": 13,
         "classify": "Last Recipes",
         "filters": "dinner,dairy-free,",
-        "keywords": "potato,broccoli,onion,chicken,breast,sprout",
+        "keywords": "potatos,broccoli,onion,chicken,breast,sprouts,mushroom",
         "ingredients":[
             {
                 "name": "potato",
+                "category": "potato",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 1,
                     "numerator": 0,
@@ -437,6 +514,8 @@
             },
             {
                 "name": "broccoli",
+                "category": "broccoli",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -446,6 +525,8 @@
             },
             {
                 "name": "medium onion",
+                "category": "onion",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 1,
                     "numerator": 0,
@@ -455,6 +536,8 @@
             },
             {
                 "name": "mushroom",
+                "category": "mushroom",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 100,
                     "numerator": 0,
@@ -464,6 +547,8 @@
             },
             {
                 "name": "chicken breast",
+                "category": "chicken breast",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 0,
                     "numerator": 2,
@@ -473,6 +558,8 @@
             },
             {
                 "name": "Brussel sprouts",
+                "category": "Brussel sprouts",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 150,
                     "numerator": 0,
@@ -482,6 +569,8 @@
             },
             {
                 "name": "olive oil",
+                "category": "olive oil",
+                "isNeedCalculate": false,
                 "dosage": {
                     "integer": 2,
                     "numerator": 0,
@@ -491,6 +580,8 @@
             },
             {
                 "name": "cayenne pepper",
+                "category": "cayenne pepper",
+                "isNeedCalculate": false,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -500,6 +591,8 @@
             },
             {
                 "name": "black pepper",
+                "category": "black pepper",
+                "isNeedCalculate": false,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -509,24 +602,14 @@
             },
             {
                 "name": "salt",
+                "category": "salt",
+                "isNeedCalculate": false,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
                     "denominator": 4,
                     "unit": "tbsp"
                 }
-            },
-            {
-                "name": "salt",
-                "dosage": {
-                    "integer": 0,
-                    "numerator": 1,
-                    "denominator": 4,
-                    "unit": "tbsp"
-                }
-            },
-            {
-                "name": "basil"
             }
         ],
         "steps": [
@@ -550,10 +633,12 @@
         "weight": 21,
         "classify": "Low Calories",
         "filters": "dairy-free,lunch,dinner,",
-        "keywords": "salmon,rice,chilli,broccoli",
+        "keywords": "salmon,rice,chilli,broccoli,onion",
         "ingredients":[
             {
                 "name": "sushi rice",
+                "category": "sushi rice",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 80,
                     "numerator": 0,
@@ -562,25 +647,9 @@
                 }
             },
             {
-                "name": "water",
-                "dosage": {
-                    "integer": 0,
-                    "numerator": 1,
-                    "denominator": 3,
-                    "unit": "cup"
-                }
-            },
-            {
-                "name": "salt",
-                "dosage": {
-                    "integer": 0,
-                    "numerator": 1,
-                    "denominator": 2,
-                    "unit": "tsp"
-                }
-            },
-            {
                 "name": "sashimi-grade salmon fillet",
+                "category": "sashimi-grade salmon fillet",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 160,
                     "numerator": 0,
@@ -589,25 +658,9 @@
                 }
             },
             {
-                "name": "soya sauce",
-                "dosage": {
-                    "integer": 2,
-                    "numerator": 0,
-                    "denominator": 0,
-                    "unit": "tbsp"
-                }
-            },
-            {
-                "name": "sesame oil",
-                "dosage": {
-                    "integer": 0,
-                    "numerator": 1,
-                    "denominator": 4,
-                    "unit": "tbsp"
-                }
-            },
-            {
                 "name": "finely chopped red chilli",
+                "category": "red chilli",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -617,6 +670,8 @@
             },
             {
                 "name": "finely chopped red or spring onion",
+                "category": "red onion",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -626,6 +681,8 @@
             },
             {
                 "name": "broccoli",
+                "category": "broccoli",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -634,7 +691,9 @@
                 }
             },
             {
-                "name": "sugar snaps",
+                "name": "sugar snap peas",
+                "category": "sugar snap peas",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 6,
                     "numerator": 0,
@@ -643,7 +702,20 @@
                 }
             },
             {
-                "name": "chilli mayonnaise(mayo with hot chilli sauce)",
+                "name": "lime",
+                "category": "lime",
+                "isNeedCalculate": true,
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 2,
+                    "unit": ""
+                }
+            },
+            {
+                "name": "mayonnaise with a little bit chilli sauce",
+                "category": "mayonnaise",
+                "isNeedCalculate": false,
                 "dosage": {
                     "integer": 2,
                     "numerator": 0,
@@ -652,12 +724,47 @@
                 }
             },
             {
-                "name": "lime",
+                "name": "water",
+                "category": "water",
+                "isNeedCalculate": false,
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 3,
+                    "unit": "cup"
+                }
+            },
+            {
+                "name": "salt",
+                "category": "salt",
+                "isNeedCalculate": false,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
                     "denominator": 2,
-                    "unit": ""
+                    "unit": "tsp"
+                }
+            },
+            {
+                "name": "soya sauce",
+                "category": "soya sauce",
+                "isNeedCalculate": false,
+                "dosage": {
+                    "integer": 2,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "tbsp"
+                }
+            },
+            {
+                "name": "sesame oil",
+                "category": "sesame oil",
+                "isNeedCalculate": false,
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 4,
+                    "unit": "tbsp"
                 }
             }
         ],
@@ -681,10 +788,12 @@
         "weight": 22,
         "classify": "Low Calories",
         "filters": "breakfast,lunch,",
-        "keywords": "egg,wrap,tuna,pickle,lettuce,hummus,pepper,tortilla",
+        "keywords": "egg,wrap,tuna,pickles,lettuce,hummus,pepper,tortilla",
         "ingredients":[
             {
                 "name": "medium egg",
+                "category": "egg",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 1,
                     "numerator": 0,
@@ -694,6 +803,8 @@
             },
             {
                 "name": "tortilla",
+                "category": "tortilla",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 1,
                     "numerator": 0,
@@ -702,16 +813,20 @@
                 }
             },
             {
-                "name": "hummus",
+                "name": "lettuce",
+                "category": "lettuce",
+                "isNeedCalculate": true,
                 "dosage": {
-                    "integer": 2,
+                    "integer": 1,
                     "numerator": 0,
                     "denominator": 0,
-                    "unit": "tsp"
+                    "unit": "leaf"
                 }
             },
             {
                 "name": "small red bell pepper",
+                "category": "red bell pepper",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -721,6 +836,8 @@
             },
             {
                 "name": "pickles",
+                "category": "pickles",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 10,
                     "numerator": 0,
@@ -729,7 +846,9 @@
                 }
             },
             {
-                "name": "canned tuna(solid/chunks)",
+                "name": "solid/chunks canned tuna",
+                "category": "canned tuna",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -738,12 +857,14 @@
                 }
             },
             {
-                "name": "lettuce",
+                "name": "hummus",
+                "category": "hummus",
+                "isNeedCalculate": false,
                 "dosage": {
-                    "integer": 1,
+                    "integer": 2,
                     "numerator": 0,
                     "denominator": 0,
-                    "unit": "leaf"
+                    "unit": "tsp"
                 }
             }
         ],
@@ -766,10 +887,12 @@
         "weight": 31,
         "classify": "Quick and easy",
         "filters": "lunch,vegetarian,gluten-free,dairy-free,",
-        "keywords": "avocado,pasta,spaghetti,basil,lemon,corn,cherry,tomato",
+        "keywords": "avocados,pasta,spaghetti,basil,lemon,corn,cherry,tomatoes",
         "ingredients":[
             {
                 "name": "spaghetti",
+                "category": "spaghetti",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 120,
                     "numerator": 0,
@@ -779,24 +902,19 @@
             },
             {
                 "name": "ripe avocados, halved, seeded and peeled",
+                "category": "ripe avocado",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
                     "denominator": 2,
                     "unit": ""
-                }
-            },
-            {
-                "name": "fresh basil leaves",
-                "dosage": {
-                    "integer": 0,
-                    "numerator": 1,
-                    "denominator": 8,
-                    "unit": "cup"
                 }
             },
             {
                 "name": "freshly squeezed lemon juice",
+                "category": "lemon",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -805,16 +923,9 @@
                 }
             },
             {
-                "name": "olive oil",
-                "dosage": {
-                    "integer": 0,
-                    "numerator": 1,
-                    "denominator": 12,
-                    "unit": "cup"
-                }
-            },
-            {
-                "name": "cherry tomatoes, halved",
+                "name": "halved cherry tomatoes",
+                "category": "cherry tomatoes",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 60,
                     "numerator": 0,
@@ -823,7 +934,9 @@
                 }
             },
             {
-                "name": "canned corn kernels, drained and rinsed",
+                "name": "drained and rinsed canned corn kernels",
+                "category": "canned corn kernels",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -832,7 +945,31 @@
                 }
             },
             {
+                "name": "fresh basil leaves",
+                "category": "basil leaves",
+                "isNeedCalculate": true,
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 8,
+                    "unit": "cup"
+                }
+            },
+            {
+                "name": "olive oil",
+                "category": "olive oil",
+                "isNeedCalculate": false,
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 12,
+                    "unit": "cup"
+                }
+            },
+            {
                 "name": "garlic",
+                "category": "garlic",
+                "isNeedCalculate": false,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -841,10 +978,14 @@
                 }
             },
             {
-                "name": "salt"
+                "name": "salt",
+                "category": "salt",
+                "isNeedCalculate": false,
             },
             {
-                "name": "freshly ground black pepper"
+                "name": "freshly ground black pepper",
+                "category": "freshly ground black pepper",
+                "isNeedCalculate": false,
             }
         ],
         "steps": [
@@ -870,6 +1011,8 @@
         "ingredients":[
             {
                 "name": "green beans",
+                "category": "green beans",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 60,
                     "numerator": 0,
@@ -879,6 +1022,8 @@
             },
             {
                 "name": "red potatoes",
+                "category": "red potatoes",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 60,
                     "numerator": 0,
@@ -887,16 +1032,9 @@
                 }
             },
             {
-                "name": "chopped fresh parsley",
-                "dosage": {
-                    "integer": 2,
-                    "numerator": 0,
-                    "denominator": 0,
-                    "unit": "tbsp"
-                }
-            },
-            {
                 "name": "light Margarine",
+                "category": "light Margarine",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 1,
                     "numerator": 0,
@@ -905,7 +1043,20 @@
                 }
             },
             {
+                "name": "chopped fresh parsley",
+                "category": "parsley",
+                "isNeedCalculate": true,
+                "dosage": {
+                    "integer": 2,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": "tbsp"
+                }
+            },
+            {
                 "name": "salt",
+                "category": "salt",
+                "isNeedCalculate": false,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -915,6 +1066,8 @@
             },
             {
                 "name": "pepper",
+                "category": "pepper",
+                "isNeedCalculate": false,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -924,6 +1077,8 @@
             },
             {
                 "name": "chilli powder",
+                "category": "chilli powder",
+                "isNeedCalculate": false,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -950,10 +1105,12 @@
         "weight": 41,
         "classify": "High Protein",
         "filters": "gluten-free,lunch,dinner,",
-        "keywords": "salmon,cherry,tomato,onion,pepper,chickpeas,hummus,parsley",
+        "keywords": "salmon,cherry,tomatoes,onion,pepper,chickpeas,hummus,parsley",
         "ingredients":[
             {
                 "name": "salmon fillet",
+                "category": "salmon fillet",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 1,
                     "numerator": 0,
@@ -963,6 +1120,8 @@
             },
             {
                 "name": "drained canned chickpeas",
+                "category": "canned chickpeas",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 2,
                     "numerator": 0,
@@ -972,6 +1131,8 @@
             },
             {
                 "name": "chopped red onion",
+                "category": "red onion",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 30,
                     "numerator": 0,
@@ -980,7 +1141,31 @@
                 }
             },
             {
+                "name": "cherry tomatoes",
+                "category": "halves",
+                "isNeedCalculate": true,
+                "dosage": {
+                    "integer": 8,
+                    "numerator": 0,
+                    "denominator": 0,
+                    "unit": ""
+                }
+            },
+            {
+                "name": "thinly sliced red pepper",
+                "category": "red pepper",
+                "isNeedCalculate": true,
+                "dosage": {
+                    "integer": 0,
+                    "numerator": 1,
+                    "denominator": 4,
+                    "unit": "cup"
+                }
+            },
+            {
                 "name": "water",
+                "category": "water",
+                "isNeedCalculate": false,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -990,6 +1175,8 @@
             },
             {
                 "name": "hummus",
+                "category": "hummus",
+                "isNeedCalculate": false,
                 "dosage": {
                     "integer": 2,
                     "numerator": 0,
@@ -998,31 +1185,14 @@
                 }
             },
             {
-                "name": "thinly sliced red pepper",
-                "dosage": {
-                    "integer": 0,
-                    "numerator": 1,
-                    "denominator": 4,
-                    "unit": "cup"
-                }
+                "name": "salt to taste",
+                "category": "salt",
+                "isNeedCalculate": false,
             },
             {
-                "name": "cherry tomatoes(halves)",
-                "dosage": {
-                    "integer": 8,
-                    "numerator": 0,
-                    "denominator": 0,
-                    "unit": ""
-                }
-            },
-            {
-                "name": "salt"
-            },
-            {
-                "name": "pepper"
-            },
-            {
-                "name": "fresh parsley(option)"
+                "name": "black pepper to taste",
+                "category": "black pepper",
+                "isNeedCalculate": false,
             }
         ],
         "steps": [
@@ -1049,6 +1219,8 @@
         "ingredients":[
             {
                 "name": "courgette",
+                "category": "courgette",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -1058,6 +1230,8 @@
             },
             {
                 "name": "green onion",
+                "category": "green onion",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 1,
                     "numerator": 0,
@@ -1067,6 +1241,8 @@
             },
             {
                 "name": "fish cube",
+                "category": "fish cube",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 160,
                     "numerator": 0,
@@ -1076,15 +1252,19 @@
             },
             {
                 "name": "rotini",
+                "category": "rotini",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 160,
-                    "numerator": 1,
-                    "denominator": 2,
+                    "numerator": 0,
+                    "denominator": 0,
                     "unit": "g"
                 }
             },
             {
                 "name": "fresh light cream",
+                "category": "fresh light cream",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -1094,6 +1274,8 @@
             },
             {
                 "name": "olive oil",
+                "category": "olive oil",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 2,
                     "numerator": 0,
@@ -1103,6 +1285,8 @@
             },
             {
                 "name": "chicken stock",
+                "category": "chicken stock",
+                "isNeedCalculate": true,
                 "dosage": {
                     "integer": 2,
                     "numerator": 0,
@@ -1111,7 +1295,9 @@
                 }
             },
             {
-                "name": "salt"
+                "name": "salt to taste",
+                "category": "salt",
+                "isNeedCalculate": true,
             }
         ],
         "steps": [
