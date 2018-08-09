@@ -13,7 +13,7 @@
 #import "FCSearchRootListCell.h"
 #import "FCSearchHeaderView.h"
 
-@interface FCSearchRootViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,FCSearchHeaderViewDelegate,FCSearchFilterViewControllerDelegate>
+@interface FCSearchRootViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,FCSearchHeaderViewDelegate,FCSearchFilterViewControllerDelegate,FCSearchRootListCellDelegate>
 
 @property (strong, nonatomic) IBOutlet UIView *vHeaderBack;
 @property (strong, nonatomic) IBOutlet FCSearchHeaderView *vHeader;
@@ -106,15 +106,26 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FCSearchRootListCell *cell = [FCSearchRootListCell cellWithTableView:tableView andIndexPath:indexPath];
     FCRecipe *mRecipe = [_arrRecipe objectAtIndex:indexPath.row];
+    cell.delegate = self;
+    cell.indexPath = indexPath;
     cell.imgvFood.image = [UIImage imageNamed:mRecipe.imageName_1];
     cell.labTitle.text = mRecipe.name;
     cell.labTime.text = mRecipe.time;
+    cell.isFavourited = [[FCUser currentUser] isFavouriteRecipe:mRecipe];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     FCRecipesDetailViewController *vcRecipesDetail = [FCRecipesDetailViewController viewControllerFromStoryboard];
     [self.navigationController pushViewController:vcRecipesDetail animated:YES];
+}
+
+#pragma mark - FCSearchRootListCellDelegate
+- (void)searchRootListCell:(FCSearchRootListCell *)cell didClickFavouriteActionWithIndexPath:(NSIndexPath *)indexPath {
+    FCRecipe *recipe = [_arrRecipe objectAtIndex:indexPath.row];
+    FCUser *user = [FCUser currentUser];
+    [user updateRecipe:recipe isFavourite:!cell.isFavourited];
+    cell.isFavourited = !cell.isFavourited;
 }
 
 - (void)reloadData {

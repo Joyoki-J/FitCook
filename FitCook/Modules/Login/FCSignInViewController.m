@@ -67,6 +67,7 @@
     
     [[NSNotificationCenter defaultCenter] postNotificationName:FCSignInNotificationKey object:nil];
     
+    [FCToast showText:@"You are logged in!"];
 }
 
 - (IBAction)onClickSignUpAction:(UIButton *)sender {

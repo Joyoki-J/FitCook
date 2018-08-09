@@ -83,6 +83,7 @@
     } else if (sender.tag == 103) {
         [FCUser logoutCurrentUser];
         [[NSNotificationCenter defaultCenter] postNotificationName:FCLogoutNotificationKey object:nil];
+        [FCToast showText:@"You have been logged out."];
     }
     
 }

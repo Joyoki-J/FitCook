@@ -9,7 +9,33 @@
 #import "FCUser.h"
 #import "FCApp.h"
 
+@implementation FCFavourite
+
++ (NSDictionary *)defaultPropertyValues {
+    return @{@"isFavourite":@NO};
+}
+
+@end
+
 @implementation FCUser
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _favourites = [[RLMArray<FCFavourite> alloc] initWithObjectClassName:[FCFavourite className]];
+        [_favourites addObjects:[self getDefaultFavourites]];
+    }
+    return self;
+}
+
+- (NSArray<FCFavourite *> *)getDefaultFavourites {
+    NSMutableArray *array = [NSMutableArray array];
+    for (NSInteger i = 0; i < 12; i++) {
+        [array addObject:[[FCFavourite alloc] init]];
+    }
+    return array;
+}
 
 + (NSString *)primaryKey {
     return @"email";
@@ -108,6 +134,18 @@
     RLMRealm *realm = [RLMRealm defaultRealm];
     [realm transactionWithBlock:^{
         user.image = image;
+    }];
+}
+
+- (BOOL)isFavouriteRecipe:(FCRecipe *)recipe {
+    return [[[[[self class] currentUser].favourites objectAtIndex:recipe.index] isFavourite] boolValue];
+}
+
+- (void)updateRecipe:(FCRecipe *)recipe isFavourite:(BOOL)isFavourite {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    FCUser *user = [[self class] currentUser];
+    [realm transactionWithBlock:^{
+        user.favourites[recipe.index].isFavourite = @(isFavourite);
     }];
 }
 

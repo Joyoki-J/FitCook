@@ -8,12 +8,23 @@
 
 #import <Realm/Realm.h>
 
+@class FCRecipe;
+
+@interface FCFavourite: RLMObject
+
+@property NSNumber<RLMBool> *isFavourite;
+
+@end
+
+RLM_ARRAY_TYPE(FCFavourite)
+
 @interface FCUser : RLMObject
 
 @property NSString *email;
 @property NSString *password;
 @property NSString *name;
 @property NSData *image;
+@property RLMArray<FCFavourite *><FCFavourite> *favourites;
 
 @property (readonly) RLMLinkingObjects *owners;
 
@@ -29,6 +40,10 @@
 + (void)logoutCurrentUser;
 
 - (void)updateUserImage:(NSData *)image;
+
+- (BOOL)isFavouriteRecipe:(FCRecipe *)recipe;
+
+- (void)updateRecipe:(FCRecipe *)recipe isFavourite:(BOOL)isFavourite;
 
 @end
 

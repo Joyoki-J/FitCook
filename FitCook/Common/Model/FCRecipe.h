@@ -25,7 +25,7 @@
 
 @interface FCRecipe : NSObject<FCRecipeProtocol>
 
-@property (nonatomic, assign) NSInteger recipeId;
+@property (nonatomic, assign) NSInteger index;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *time;
 @property (nonatomic, assign) NSInteger weight;

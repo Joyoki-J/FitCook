@@ -28,7 +28,9 @@
 }
 
 - (IBAction)onClickFavouriteAction:(UIButton *)sender {
-    self.isFavourited = !_isFavourited;
+    if ([_delegate respondsToSelector:@selector(searchRootListCell:didClickFavouriteActionWithIndexPath:)]) {
+        [_delegate searchRootListCell:self didClickFavouriteActionWithIndexPath:_indexPath];
+    }
 }
 
 - (void)setIsFavourited:(BOOL)isFavourited {
