@@ -23,9 +23,6 @@
 		1F4CFB84210A1F7A00CFC438 /* FCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CFB83210A1F7A00CFC438 /* FCNavigationController.m */; };
 		1F4CFB87210A205000CFC438 /* FCNavigationRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CFB86210A205000CFC438 /* FCNavigationRootViewController.m */; };
 		1F54C7A9210A1A35002BE1E5 /* UIImage+FC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F54C7A8210A1A35002BE1E5 /* UIImage+FC.m */; };
-		1F582BB6211B4ECD00448DC1 /* FCRecipesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F582BB5211B4ECD00448DC1 /* FCRecipesModel.m */; };
-		1F582BB8211B4F1B00448DC1 /* default.realm in Resources */ = {isa = PBXBuildFile; fileRef = 1F582BB7211B4F1B00448DC1 /* default.realm */; };
-		1F582BBB211B502800448DC1 /* FCRealm.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F582BBA211B502800448DC1 /* FCRealm.m */; };
 		1F5B719F210DCFA9001C4604 /* foot_photo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F5B719E210DCFA9001C4604 /* foot_photo2.png */; };
 		1F5B71A2210DD053001C4604 /* FCRecipesRootListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5B71A1210DD053001C4604 /* FCRecipesRootListCell.m */; };
 		1F5B71A5210DD09A001C4604 /* FCBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5B71A4210DD09A001C4604 /* FCBaseCollectionViewCell.m */; };
@@ -54,10 +51,6 @@
 		1FF233C220FE3CA0001DEB95 /* FCRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF233C120FE3CA0001DEB95 /* FCRootViewController.m */; };
 		1FF233E720FE3D93001DEB95 /* FCMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF233E620FE3D93001DEB95 /* FCMainViewController.m */; };
 		6916C0412119687900DE744E /* FCToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 6916C0402119687900DE744E /* FCToast.m */; };
-		6916C049211A8E4B00DE744E /* FCRealmRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 6916C048211A8E4B00DE744E /* FCRealmRecipe.m */; };
-		6916C04D211A961100DE744E /* FCRealmRecipeIngredient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6916C04C211A961100DE744E /* FCRealmRecipeIngredient.m */; };
-		6916C050211A963E00DE744E /* FCRealmRecipeDosage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6916C04F211A963E00DE744E /* FCRealmRecipeDosage.m */; };
-		6916C053211A967500DE744E /* FCRealmRecipeNutrition.m in Sources */ = {isa = PBXBuildFile; fileRef = 6916C052211A967500DE744E /* FCRealmRecipeNutrition.m */; };
 		6916C06F211AC50900DE744E /* 22_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6916C057211AC50500DE744E /* 22_3.png */; };
 		6916C070211AC50900DE744E /* 32_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6916C058211AC50500DE744E /* 32_3.png */; };
 		6916C071211AC50900DE744E /* 2_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6916C059211AC50500DE744E /* 2_1.png */; };
@@ -107,7 +100,10 @@
 		6916C0B5211AC51800DE744E /* 42_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 6916C09D211AC51700DE744E /* 42_4.png */; };
 		6916C0B6211AC51800DE744E /* 31_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6916C09E211AC51700DE744E /* 31_1.png */; };
 		6916C0B8211AF8DA00DE744E /* recipe.json in Resources */ = {isa = PBXBuildFile; fileRef = 6916C0B7211AF8DA00DE744E /* recipe.json */; };
-		6916C0BB211AF91100DE744E /* FCCreateRecipeRealm.m in Sources */ = {isa = PBXBuildFile; fileRef = 6916C0BA211AF91100DE744E /* FCCreateRecipeRealm.m */; };
+		6916C0C2211BEBFC00DE744E /* FCRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 6916C0C1211BEBFC00DE744E /* FCRecipe.m */; };
+		6916C0D5211C2D1B00DE744E /* FCApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 6916C0D4211C2D1B00DE744E /* FCApp.m */; };
+		6916C0D8211C2D2700DE744E /* FCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6916C0D7211C2D2700DE744E /* FCUser.m */; };
+		6916C0DB211C2EA400DE744E /* FCCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 6916C0DA211C2EA400DE744E /* FCCommon.m */; };
 		697E0FEF20FC486300777146 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 697E0FEE20FC486300777146 /* AppDelegate.m */; };
 		697E0FF520FC486300777146 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 697E0FF320FC486300777146 /* Main.storyboard */; };
 		697E0FFA20FC486600777146 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 697E0FF820FC486600777146 /* LaunchScreen.storyboard */; };
@@ -154,11 +150,6 @@
 		1F4CFB88210A2DDD00CFC438 /* FCCategoryHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCCategoryHeader.h; sourceTree = "<group>"; };
 		1F54C7A7210A1A35002BE1E5 /* UIImage+FC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+FC.h"; sourceTree = "<group>"; };
 		1F54C7A8210A1A35002BE1E5 /* UIImage+FC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FC.m"; sourceTree = "<group>"; };
-		1F582BB4211B4ECD00448DC1 /* FCRecipesModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCRecipesModel.h; sourceTree = "<group>"; };
-		1F582BB5211B4ECD00448DC1 /* FCRecipesModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCRecipesModel.m; sourceTree = "<group>"; };
-		1F582BB7211B4F1B00448DC1 /* default.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = default.realm; sourceTree = "<group>"; };
-		1F582BB9211B502800448DC1 /* FCRealm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCRealm.h; sourceTree = "<group>"; };
-		1F582BBA211B502800448DC1 /* FCRealm.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCRealm.m; sourceTree = "<group>"; };
 		1F5916BE21063AC200A62093 /* FitCook-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FitCook-Prefix.pch"; sourceTree = "<group>"; };
 		1F5B719E210DCFA9001C4604 /* foot_photo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foot_photo2.png; sourceTree = "<group>"; };
 		1F5B71A0210DD053001C4604 /* FCRecipesRootListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCRecipesRootListCell.h; sourceTree = "<group>"; };
@@ -211,14 +202,6 @@
 		56F320A08630F8D0C285BF96 /* libPods-FitCook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FitCook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6916C03F2119687900DE744E /* FCToast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCToast.h; sourceTree = "<group>"; };
 		6916C0402119687900DE744E /* FCToast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCToast.m; sourceTree = "<group>"; };
-		6916C047211A8E4B00DE744E /* FCRealmRecipe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCRealmRecipe.h; sourceTree = "<group>"; };
-		6916C048211A8E4B00DE744E /* FCRealmRecipe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCRealmRecipe.m; sourceTree = "<group>"; };
-		6916C04B211A961100DE744E /* FCRealmRecipeIngredient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCRealmRecipeIngredient.h; sourceTree = "<group>"; };
-		6916C04C211A961100DE744E /* FCRealmRecipeIngredient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCRealmRecipeIngredient.m; sourceTree = "<group>"; };
-		6916C04E211A963E00DE744E /* FCRealmRecipeDosage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCRealmRecipeDosage.h; sourceTree = "<group>"; };
-		6916C04F211A963E00DE744E /* FCRealmRecipeDosage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCRealmRecipeDosage.m; sourceTree = "<group>"; };
-		6916C051211A967500DE744E /* FCRealmRecipeNutrition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCRealmRecipeNutrition.h; sourceTree = "<group>"; };
-		6916C052211A967500DE744E /* FCRealmRecipeNutrition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCRealmRecipeNutrition.m; sourceTree = "<group>"; };
 		6916C057211AC50500DE744E /* 22_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 22_3.png; sourceTree = "<group>"; };
 		6916C058211AC50500DE744E /* 32_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 32_3.png; sourceTree = "<group>"; };
 		6916C059211AC50500DE744E /* 2_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2_1.png; sourceTree = "<group>"; };
@@ -268,8 +251,14 @@
 		6916C09D211AC51700DE744E /* 42_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 42_4.png; sourceTree = "<group>"; };
 		6916C09E211AC51700DE744E /* 31_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 31_1.png; sourceTree = "<group>"; };
 		6916C0B7211AF8DA00DE744E /* recipe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipe.json; sourceTree = "<group>"; };
-		6916C0B9211AF91100DE744E /* FCCreateRecipeRealm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCCreateRecipeRealm.h; sourceTree = "<group>"; };
-		6916C0BA211AF91100DE744E /* FCCreateRecipeRealm.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCCreateRecipeRealm.m; sourceTree = "<group>"; };
+		6916C0C0211BEBFC00DE744E /* FCRecipe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCRecipe.h; sourceTree = "<group>"; };
+		6916C0C1211BEBFC00DE744E /* FCRecipe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCRecipe.m; sourceTree = "<group>"; };
+		6916C0D3211C2D1B00DE744E /* FCApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCApp.h; sourceTree = "<group>"; };
+		6916C0D4211C2D1B00DE744E /* FCApp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCApp.m; sourceTree = "<group>"; };
+		6916C0D6211C2D2700DE744E /* FCUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCUser.h; sourceTree = "<group>"; };
+		6916C0D7211C2D2700DE744E /* FCUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCUser.m; sourceTree = "<group>"; };
+		6916C0D9211C2EA400DE744E /* FCCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCCommon.h; sourceTree = "<group>"; };
+		6916C0DA211C2EA400DE744E /* FCCommon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCCommon.m; sourceTree = "<group>"; };
 		697E0FEA20FC486300777146 /* FitCook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitCook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		697E0FED20FC486300777146 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		697E0FEE20FC486300777146 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -441,10 +430,12 @@
 		1F54C7AA210A1C20002BE1E5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				6916C0422119995E00DE744E /* Realm */,
+				6916C0BF211BEAD400DE744E /* Model */,
 				1F54C7B5210A1D2E002BE1E5 /* Manager */,
 				1F54C7B4210A1CE7002BE1E5 /* Base */,
 				1F54C7AB210A1C3D002BE1E5 /* Category */,
+				6916C0D9211C2EA400DE744E /* FCCommon.h */,
+				6916C0DA211C2EA400DE744E /* FCCommon.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -572,7 +563,6 @@
 		1F54C7B6210A1D71002BE1E5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1F582BB7211B4F1B00448DC1 /* default.realm */,
 				6987DEFE21144ECE00F9D303 /* Assets.xcassets */,
 				697E0FF320FC486300777146 /* Main.storyboard */,
 				697E0FF820FC486600777146 /* LaunchScreen.storyboard */,
@@ -622,8 +612,6 @@
 				1F5EBB6A210F71CA00ECE894 /* FCRecipesDetailViewController.m */,
 				1F92BF722110B70800CE4BBB /* FCRecipesSegmentedView.h */,
 				1F92BF732110B70800CE4BBB /* FCRecipesSegmentedView.m */,
-				1F582BB4211B4ECD00448DC1 /* FCRecipesModel.h */,
-				1F582BB5211B4ECD00448DC1 /* FCRecipesModel.m */,
 			);
 			path = RecipesDetail;
 			sourceTree = "<group>";
@@ -682,31 +670,17 @@
 			path = FCToast;
 			sourceTree = "<group>";
 		};
-		6916C0422119995E00DE744E /* Realm */ = {
+		6916C0BF211BEAD400DE744E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6916C04A211A8F4F00DE744E /* Recipe */,
+				6916C0C0211BEBFC00DE744E /* FCRecipe.h */,
+				6916C0C1211BEBFC00DE744E /* FCRecipe.m */,
+				6916C0D3211C2D1B00DE744E /* FCApp.h */,
+				6916C0D4211C2D1B00DE744E /* FCApp.m */,
+				6916C0D6211C2D2700DE744E /* FCUser.h */,
+				6916C0D7211C2D2700DE744E /* FCUser.m */,
 			);
-			path = Realm;
-			sourceTree = "<group>";
-		};
-		6916C04A211A8F4F00DE744E /* Recipe */ = {
-			isa = PBXGroup;
-			children = (
-				6916C047211A8E4B00DE744E /* FCRealmRecipe.h */,
-				6916C048211A8E4B00DE744E /* FCRealmRecipe.m */,
-				6916C04B211A961100DE744E /* FCRealmRecipeIngredient.h */,
-				6916C04C211A961100DE744E /* FCRealmRecipeIngredient.m */,
-				6916C04E211A963E00DE744E /* FCRealmRecipeDosage.h */,
-				6916C04F211A963E00DE744E /* FCRealmRecipeDosage.m */,
-				6916C051211A967500DE744E /* FCRealmRecipeNutrition.h */,
-				6916C052211A967500DE744E /* FCRealmRecipeNutrition.m */,
-				6916C0B9211AF91100DE744E /* FCCreateRecipeRealm.h */,
-				6916C0BA211AF91100DE744E /* FCCreateRecipeRealm.m */,
-				1F582BB9211B502800448DC1 /* FCRealm.h */,
-				1F582BBA211B502800448DC1 /* FCRealm.m */,
-			);
-			path = Recipe;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		697E0FE120FC486300777146 = {
@@ -826,7 +800,6 @@
 				6916C0B0211AC51800DE744E /* 31_2.png in Resources */,
 				6916C0AB211AC51800DE744E /* 13_2.png in Resources */,
 				6916C0A8211AC51800DE744E /* 21_3.png in Resources */,
-				1F582BB8211B4F1B00448DC1 /* default.realm in Resources */,
 				6916C07B211AC50900DE744E /* 12_2.png in Resources */,
 				6916C0B2211AC51800DE744E /* 41_3.png in Resources */,
 				6916C078211AC50900DE744E /* 32_1.png in Resources */,
@@ -922,23 +895,19 @@
 				1FA7FC06211209DC00EDB21F /* FCTermsConditionsViewController.m in Sources */,
 				1F4CFB7E210A1EA800CFC438 /* FCFavouritesRootViewController.m in Sources */,
 				1F5B71B0210DDFEE001C4604 /* FCFilterView.m in Sources */,
-				6916C04D211A961100DE744E /* FCRealmRecipeIngredient.m in Sources */,
 				6987DEEB2110564F00F9D303 /* NSString+FC.m in Sources */,
-				6916C0BB211AF91100DE744E /* FCCreateRecipeRealm.m in Sources */,
 				1F5EBB5D210F599C00ECE894 /* FCShoppingRootRecipesCell.m in Sources */,
 				1F54C7A9210A1A35002BE1E5 /* UIImage+FC.m in Sources */,
-				6916C049211A8E4B00DE744E /* FCRealmRecipe.m in Sources */,
 				1F5B71A5210DD09A001C4604 /* FCBaseCollectionViewCell.m in Sources */,
+				6916C0C2211BEBFC00DE744E /* FCRecipe.m in Sources */,
 				1F5B71AB210DDD75001C4604 /* FCRecipesRootItemLayout.m in Sources */,
 				1F5EBB67210F6E2600ECE894 /* FCShoppingListViewController.m in Sources */,
 				1F5B71A8210DD15A001C4604 /* FCRecipesRootItemCell.m in Sources */,
-				1F582BB6211B4ECD00448DC1 /* FCRecipesModel.m in Sources */,
 				1F5B71B6210DE98B001C4604 /* FCFilterCell.m in Sources */,
 				697E100520FC633600777146 /* FCBaseViewController.m in Sources */,
 				6916C0412119687900DE744E /* FCToast.m in Sources */,
 				1F4CFB81210A1EC400CFC438 /* FCProfileRootViewController.m in Sources */,
 				1FA211C5211889CC00476082 /* FCSignUpViewController.m in Sources */,
-				6916C050211A963E00DE744E /* FCRealmRecipeDosage.m in Sources */,
 				69893F9321181DFF008E9B5A /* FCSearchFilterView.m in Sources */,
 				1F4CFB78210A1E5600CFC438 /* FCShoppingRootViewController.m in Sources */,
 				1FA211C22118899000476082 /* FCSignInViewController.m in Sources */,
@@ -949,9 +918,9 @@
 				1F5EBB6B210F71CA00ECE894 /* FCRecipesDetailViewController.m in Sources */,
 				6987DEEE21114CD900F9D303 /* FCRecipesRootFilterCell.m in Sources */,
 				1FF233C220FE3CA0001DEB95 /* FCRootViewController.m in Sources */,
-				6916C053211A967500DE744E /* FCRealmRecipeNutrition.m in Sources */,
 				697E0FFD20FC486600777146 /* main.m in Sources */,
 				6987DEFA211427B600F9D303 /* FCSearchScanViewController.m in Sources */,
+				6916C0D5211C2D1B00DE744E /* FCApp.m in Sources */,
 				1F1D307A210CE3C800DC50DD /* FCBaseTableViewCell.m in Sources */,
 				1F5EBB60210F59AE00ECE894 /* FCShoppingRootFoodsCell.m in Sources */,
 				1F5B71A2210DD053001C4604 /* FCRecipesRootListCell.m in Sources */,
@@ -960,13 +929,14 @@
 				1F8B27CA21136A9F00CB2C74 /* FCModalTransition.m in Sources */,
 				1F4CFB75210A1E0A00CFC438 /* FCRecipesRootViewController.m in Sources */,
 				1F4CFB84210A1F7A00CFC438 /* FCNavigationController.m in Sources */,
+				6916C0DB211C2EA400DE744E /* FCCommon.m in Sources */,
 				1F1D3077210CE03500DC50DD /* FCFavouritesRootListCell.m in Sources */,
 				1F8B27C42113564F00CB2C74 /* FCSearchFilterViewController.m in Sources */,
 				1FF233E720FE3D93001DEB95 /* FCMainViewController.m in Sources */,
 				6987DEFD211434A200F9D303 /* FCSearchRootListCell.m in Sources */,
-				1F582BBB211B502800448DC1 /* FCRealm.m in Sources */,
 				1F92BF742110B70800CE4BBB /* FCRecipesSegmentedView.m in Sources */,
 				1F4CFB87210A205000CFC438 /* FCNavigationRootViewController.m in Sources */,
+				6916C0D8211C2D2700DE744E /* FCUser.m in Sources */,
 				697E0FEF20FC486300777146 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

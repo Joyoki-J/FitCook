@@ -15,6 +15,8 @@
 @interface FCProfileRootViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,MFMailComposeViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imgvPicture;
+@property (weak, nonatomic) IBOutlet UILabel *labName;
+@property (weak, nonatomic) IBOutlet UILabel *labEmail;
 
 
 // Constraints
@@ -38,6 +40,13 @@
     
     _imgvPicture.layer.cornerRadius = 4.f;
     _imgvPicture.clipsToBounds = YES;
+    
+    FCUser *user = [FCUser currentUser];
+    _labName.text = user.name;
+    _labEmail.text = user.email;
+    if (user.image) {
+        _imgvPicture.image = [UIImage imageWithData:user.image];
+    }
 }
 
 - (void)updateViewConstraints {
@@ -72,6 +81,7 @@
             //给出提示,设备未开启邮件服务
         }
     } else if (sender.tag == 103) {
+        [FCUser logoutCurrentUser];
         [[NSNotificationCenter defaultCenter] postNotificationName:FCLogoutNotificationKey object:nil];
     }
     
@@ -120,6 +130,7 @@
 
 - (void)uploadHeadImage:(UIImage *)image {
     _imgvPicture.image = image;
+    [[FCUser currentUser] updateUserImage:UIImagePNGRepresentation(image)];
 }
 
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo;

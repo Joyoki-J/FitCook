@@ -9,7 +9,7 @@
 #import "FCSignInViewController.h"
 #import "FCSignUpViewController.h"
 
-@interface FCSignInViewController ()<UITextFieldDelegate>
+@interface FCSignInViewController ()<UITextFieldDelegate,FCSignUpViewControllerDelegate>
 
 @property (nonatomic, strong) NSArray<UITextField *> *arrtf;
 
@@ -56,13 +56,29 @@
 
 - (IBAction)onClickSignInAction:(UIButton *)sender {
 
+    NSString *email = _tfEmail.text;
+    NSString *password = _tfPassword.text;
+    
+    NSString *msg = [FCUser loginUserWithEmail:email password:password];
+    
+    if (msg) {
+        return;
+    }
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:FCSignInNotificationKey object:nil];
     
 }
 
 - (IBAction)onClickSignUpAction:(UIButton *)sender {
     FCSignUpViewController *vcSignUp = [FCSignUpViewController viewControllerFromStoryboard];
+    vcSignUp.delegate = self;
     [self.navigationController pushViewController:vcSignUp animated:YES];
+}
+
+#pragma mark - FCSignUpViewControllerDelegate
+- (void)signUpViewController:(FCSignUpViewController *)vc signUpWithEmail:(NSString *)email password:(NSString *)password {
+    _tfEmail.text = email;
+    _tfPassword.text = password;
 }
 
 #pragma mark - UITextFieldDelegate

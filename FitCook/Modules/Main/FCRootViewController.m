@@ -21,11 +21,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(signInNotification:) name:FCSignInNotificationKey object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logoutNotification:) name:FCLogoutNotificationKey object:nil];
     
-    [self showLoginViewController:NO];
+    if (FCUser.currentUser) {
+        [self showMainViewController:NO];
+    } else {
+        [self showLoginViewController:NO];
+    }
 }
 
 - (void)showMainViewController:(BOOL)animated {

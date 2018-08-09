@@ -12,7 +12,6 @@
 #import "FCRecipesDetailViewController.h"
 #import "FCSearchRootListCell.h"
 #import "FCSearchHeaderView.h"
-#import "FCRealm.h"
 
 @interface FCSearchRootViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,FCSearchHeaderViewDelegate,FCSearchFilterViewControllerDelegate>
 
@@ -20,6 +19,8 @@
 @property (strong, nonatomic) IBOutlet FCSearchHeaderView *vHeader;
 @property (weak, nonatomic) IBOutlet UITableView *tvList;
 @property (weak, nonatomic) IBOutlet UIImageView *imgvLogo;
+
+@property (nonatomic, strong) UIView *vFooter;
 
 @property (nonatomic, assign) CGFloat headerHeight;
 
@@ -30,7 +31,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutLogoW;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutLogoH;
 
-@property (nonatomic, strong) NSMutableArray<NSDictionary *> *arrRecipe;
+@property (nonatomic, strong) NSMutableArray<FCRecipe *> *arrRecipe;
 
 @end
 
@@ -45,23 +46,13 @@
     
     [self createSubViews];
     
-    _arrRecipe = [NSMutableArray array];
-    
-    dispatch_async(dispatch_queue_create("test", 0), ^{
-        RLMResults *results = [[FCRealmRecipe allObjects] sortedResultsUsingKeyPath:@"weight" ascending:YES];
-        for (NSInteger i = 0; i < results.count; i++) {
-            FCRealmRecipe *recipe = [results objectAtIndex:i];
-            [self.arrRecipe addObject:@{@"image": @(recipe.weight), @"title": recipe.name, @"time": recipe.time}];
-        }
-        NSLog(@"============\n%@",self.arrRecipe);
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tvList reloadData];
-        });
-    });
+    _arrRecipe = [NSMutableArray arrayWithArray:[FCRecipe allRecipes]];
 }
 
 - (void)createSubViews {
-
+    _vFooter = [[UIView alloc] init];
+    _vFooter.backgroundColor = [UIColor whiteColor];
+    
     _headerHeight = kSCREEN_WIDTH * 0.75 + 109;
     
     _layoutLogoW.constant = kSCREEN_WIDTH * (203.0 / 375.0);
@@ -114,16 +105,33 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FCSearchRootListCell *cell = [FCSearchRootListCell cellWithTableView:tableView andIndexPath:indexPath];
-    NSDictionary *dic = [_arrRecipe objectAtIndex:indexPath.row];
-    cell.imgvFood.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@_1",[dic[@"image"] stringValue]]];
-    cell.labTitle.text = dic[@"title"];
-    cell.labTime.text = dic[@"time"];
+    FCRecipe *mRecipe = [_arrRecipe objectAtIndex:indexPath.row];
+    cell.imgvFood.image = [UIImage imageNamed:mRecipe.imageName_1];
+    cell.labTitle.text = mRecipe.name;
+    cell.labTime.text = mRecipe.time;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     FCRecipesDetailViewController *vcRecipesDetail = [FCRecipesDetailViewController viewControllerFromStoryboard];
     [self.navigationController pushViewController:vcRecipesDetail animated:YES];
+}
+
+- (void)reloadData {
+    CGPoint p = _tvList.contentOffset;
+    [_tvList reloadData];
+    if (_tvList.contentSize.height < (kSCREEN_HEIGHT - 175 - kTABBAR_HEIGHT)) {
+        _vFooter.frame = CGRectMake(0, 0, kSCREEN_WIDTH, kSCREEN_HEIGHT - 175 - kTABBAR_HEIGHT - _tvList.contentSize.height);
+        _tvList.tableFooterView = _vFooter;
+    } else {
+        _vFooter.frame = CGRectMake(0, 0, kSCREEN_WIDTH, 14);
+        _tvList.tableFooterView = _vFooter;
+    }
+    if (p.y > _tvList.contentSize.height - (kSCREEN_HEIGHT - 175 - kTABBAR_HEIGHT)) {
+        [_tvList setContentOffset:CGPointZero];
+    } else {
+        [_tvList setContentOffset:p];
+    }
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -174,18 +182,13 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    NSString *keyword = [textField.text lowercaseString];
-    
-    dispatch_async(dispatch_queue_create("test", 0), ^{
-        NSString *str = [NSString stringWithFormat:@"keywords LIKE '*%@*'",keyword];
-        RLMResults *result = [FCRealmRecipe objectsWhere:str];
-        for (NSInteger i = 0; i < result.count; i++) {
-            FCRealmRecipe *r = result[i];
-            NSLog(@"菜谱: %@",r.name);
-            NSLog(@"keyword: %@",r.keywords);
-            NSLog(@"=============================================");
-        }
-    });
+    NSString *keywords = [textField.text lowercaseString];
+    NSArray<FCRecipe *> *recipes = [FCRecipe recipesWithKeywords:[keywords componentsSeparatedByString:@" "]];
+    for (FCRecipe *r in recipes) {
+        NSLog(@"name = %@",r.name);
+        NSLog(@"keywords = %@",r.keywords);
+    }
+    NSLog(@"============================");
     return YES;
 }
 
@@ -203,12 +206,14 @@
 }
 
 - (void)searchHeaderDidSelectedFilter:(FCSearchHeaderView *)vHeader {
-    NSString *keyword = vHeader.tfSearch.text;
+    NSString *keyword = [vHeader.tfSearch.text lowercaseString];
+    [_arrRecipe removeAllObjects];
     if (keyword && keyword.length > 0) {
-        NSLog(@"选择了Filter = %@",keyword);
+        [_arrRecipe addObjectsFromArray:[FCRecipe predicateWithFilters:@[keyword]]];
     } else {
-        NSLog(@"清空了Filter");
+        [_arrRecipe addObjectsFromArray:[FCRecipe allRecipes]];
     }
+    [self reloadData];
 }
 
 #pragma mark - FCSearchFilterViewControllerDelegate

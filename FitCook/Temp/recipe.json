@@ -85,7 +85,11 @@
             "protein": "32.2g",
             "fat": "9g",
             "carbohydrates": "6.3g"
-        }
+        },
+        "imageName_1": "1_1",
+        "imageName_2": "1_2",
+        "imageName_3": "1_3",
+        "imageName_4": "1_4",
     },
     {
         "name": "Greek Yogurt Bowl",
@@ -149,7 +153,11 @@
             "protein": "12g",
             "fat": "0g",
             "carbohydrates": "5g"
-        }
+        },
+        "imageName_1": "2_1",
+        "imageName_2": "2_2",
+        "imageName_3": "2_3",
+        "imageName_4": "2_4",
     },
     {
         "name": "Mushroom Fried Quinoa",
@@ -235,7 +243,11 @@
             "protein": "5.95g",
             "fat": "18.65g",
             "carbohydrates": "12.9g"
-        }
+        },
+        "imageName_1": "3_1",
+        "imageName_2": "3_2",
+        "imageName_3": "3_3",
+        "imageName_4": "3_4",
     },
     {
         "name": "Easy Tofu Salad",
@@ -368,7 +380,11 @@
             "protein": "10g",
             "fat": "24g",
             "carbohydrates": "34g"
-        }
+        },
+        "imageName_1": "11_1",
+        "imageName_2": "11_2",
+        "imageName_3": "11_3",
+        "imageName_4": "11_4",
     },
     {
         "name": "Corn Shrimp Salad",
@@ -491,7 +507,11 @@
             "protein": "26g",
             "fat": "21.4g",
             "carbohydrates": "5.2g"
-        }
+        },
+        "imageName_1": "12_1",
+        "imageName_2": "12_2",
+        "imageName_3": "12_3",
+        "imageName_4": "12_4",
     },
     {
         "name": "Low-calories Roasted Dinner",
@@ -625,7 +645,11 @@
             "protein": "28.23g",
             "fat": "21.34g",
             "carbohydrates": "41.28g"
-        }
+        },
+        "imageName_1": "13_1",
+        "imageName_2": "13_2",
+        "imageName_3": "13_3",
+        "imageName_4": "13_4",
     },
     {
         "name": "Salmon Poke Bowl",
@@ -780,7 +804,11 @@
             "protein": "28g",
             "fat": "21g",
             "carbohydrates": "48g"
-        }
+        },
+        "imageName_1": "21_1",
+        "imageName_2": "21_2",
+        "imageName_3": "21_3",
+        "imageName_4": "21_4",
     },
     {
         "name": "Easy Tuna Wrap",
@@ -879,7 +907,11 @@
             "protein": "34.8g",
             "fat": "10.9g",
             "carbohydrates": "26.6g"
-        }
+        },
+        "imageName_1": "22_1",
+        "imageName_2": "22_2",
+        "imageName_3": "22_3",
+        "imageName_4": "22_4",
     },
     {
         "name": "Ketogenic Avocado Pasta",
@@ -999,7 +1031,11 @@
             "protein": "14.3g",
             "fat": "34.2g",
             "carbohydrates": "80.7g"
-        }
+        },
+        "imageName_1": "31_1",
+        "imageName_2": "31_2",
+        "imageName_3": "31_3",
+        "imageName_4": "31_4",
     },
     {
         "name": "Low-carb Salad",
@@ -1097,7 +1133,11 @@
             "protein": "9.33g",
             "fat": "13.96g",
             "carbohydrates": "12.9g"
-        }
+        },
+        "imageName_1": "32_1",
+        "imageName_2": "32_2",
+        "imageName_3": "32_3",
+        "imageName_4": "32_4",
     },
     {
         "name": "Protein Packed Salmon",
@@ -1207,7 +1247,11 @@
             "protein": "34.75g",
             "fat": "12.5g",
             "carbohydrates": "30g"
-        }
+        },
+        "imageName_1": "41_1",
+        "imageName_2": "41_2",
+        "imageName_3": "41_3",
+        "imageName_4": "41_4",
     },
     {
         "name": "Big Abs Pasta",
@@ -1312,6 +1356,10 @@
             "protein": "24.8g",
             "fat": "28g",
             "carbohydrates": "50.8g"
-        }
+        },
+        "imageName_1": "42_1",
+        "imageName_2": "42_2",
+        "imageName_3": "42_3",
+        "imageName_4": "42_4",
     }
 ]

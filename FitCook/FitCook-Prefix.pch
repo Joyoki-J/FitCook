@@ -12,6 +12,9 @@
 #import "FCUIManager.h"
 #import "FCCategoryHeader.h"
 #import "FCToast.h"
+#import "FCRecipe.h"
+#import "FCApp.h"
+#import "FCUser.h"
 
 #import <MJExtension/MJExtension.h>
 #import <Masonry.h>

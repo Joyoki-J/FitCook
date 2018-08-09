@@ -52,8 +52,22 @@
 }
 
 - (IBAction)onClickSignUpAction:(UIButton *)sender {
-    NSLog(@"点击 - SignUp");
     
+    NSString *email    = _tfEmail.text;
+    NSString *name     = _tfName.text;
+    NSString *password = _tfPassword.text;
+    
+    NSString *msg = [FCUser addUserWithEmail:email password:password name:name];
+    
+    if (msg) {
+        return;
+    }
+    
+    if ([_delegate respondsToSelector:@selector(signUpViewController:signUpWithEmail:password:)]) {
+        [_delegate signUpViewController:self signUpWithEmail:email password:password];
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

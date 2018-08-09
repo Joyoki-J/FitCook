@@ -8,8 +8,7 @@
 
 #import "AppDelegate.h"
 #import "FCRootViewController.h"
-
-#import "FCCreateRecipeRealm.h"
+#import "FCApp.h"
 
 @interface AppDelegate ()
 
@@ -19,7 +18,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [FCCreateRecipeRealm createRecipeRealm];
+    
+    [FCApp initialized];
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     FCRootViewController *vcRoot = [[FCRootViewController alloc] init];
     self.window.rootViewController = vcRoot;
