@@ -9,5 +9,6 @@
 #import "FCBaseTableViewCell.h"
 
 @interface FCFavouritesRootListCell : FCBaseTableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *imgvFood;
 
 @end

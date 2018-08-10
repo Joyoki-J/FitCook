@@ -8,6 +8,8 @@
 
 #import <Realm/Realm.h>
 
+#define kUserUpdateFavouriteNotificationKey @"kUserUpdateFavouriteNotificationKey"
+
 @class FCRecipe;
 
 @interface FCFavourite: RLMObject

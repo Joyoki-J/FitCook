@@ -66,7 +66,8 @@
 
 #pragma mark - UITableViewDataSource, UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return _isFoodsStyle ? _arrFoods.count : _arrRecipes.count;
+//    return _isFoodsStyle ? _arrFoods.count : _arrRecipes.count;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

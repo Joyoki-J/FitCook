@@ -12,6 +12,9 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
++ (instancetype)shareDelegate;
+
+@property (nonatomic, strong) NSDictionary<NSString *, UIImage *> *images;
 
 @end
 

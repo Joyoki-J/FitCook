@@ -10,4 +10,6 @@
 
 @interface FCRecipesDetailViewController : FCBaseViewController
 
++ (instancetype)viewControllerFromStoryboardWithRecipe:(FCRecipe *)recipe;
+
 @end

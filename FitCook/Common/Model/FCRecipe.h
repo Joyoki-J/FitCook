@@ -21,6 +21,10 @@
 
 + (NSArray<FCRecipe *> *)predicateWithFilters:(NSArray<NSString *> *)filters;
 
++ (FCRecipe *)recipeWithIndex:(NSInteger)index;
+
++ (NSArray<FCRecipe *> *)recipesWithIndexs:(NSIndexSet *)indexs;
+
 @end
 
 @interface FCRecipe : NSObject<FCRecipeProtocol>

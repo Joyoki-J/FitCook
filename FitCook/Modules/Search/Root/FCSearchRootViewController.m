@@ -33,6 +33,8 @@
 
 @property (nonatomic, strong) NSMutableArray<FCRecipe *> *arrRecipe;
 
+@property (nonatomic, assign) BOOL isNeedRefresh;
+
 @end
 
 @implementation FCSearchRootViewController
@@ -45,6 +47,8 @@
     [super viewDidLoad];
     
     [self createSubViews];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userUpdateFavouriteNotification:) name:kUserUpdateFavouriteNotificationKey object:nil];
     
     _arrRecipe = [NSMutableArray arrayWithArray:[FCRecipe allRecipes]];
 }
@@ -82,8 +86,23 @@
     [self.view endEditing:YES];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (_isNeedRefresh == YES) {
+        _isNeedRefresh = NO;
+        [_tvList reloadRowsAtIndexPaths:[_tvList indexPathsForVisibleRows] withRowAnimation:UITableViewRowAnimationNone];
+    }
+}
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];
+}
+
+- (void)userUpdateFavouriteNotification:(NSNotification *)notifi {
+    NSString *vcName = notifi.object;
+    if (vcName && ![vcName isEqualToString:NSStringFromClass([self class])]) {
+        _isNeedRefresh = YES;
+    }
 }
 
 #pragma mark - UITableViewDelegate,UITableViewDataSource
@@ -108,7 +127,7 @@
     FCRecipe *mRecipe = [_arrRecipe objectAtIndex:indexPath.row];
     cell.delegate = self;
     cell.indexPath = indexPath;
-    cell.imgvFood.image = [UIImage imageNamed:mRecipe.imageName_1];
+    cell.imgvFood.image = [AppDelegate shareDelegate].images[mRecipe.imageName_1];
     cell.labTitle.text = mRecipe.name;
     cell.labTime.text = mRecipe.time;
     cell.isFavourited = [[FCUser currentUser] isFavouriteRecipe:mRecipe];
@@ -116,7 +135,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    FCRecipesDetailViewController *vcRecipesDetail = [FCRecipesDetailViewController viewControllerFromStoryboard];
+    FCRecipesDetailViewController *vcRecipesDetail = [FCRecipesDetailViewController viewControllerFromStoryboardWithRecipe:_arrRecipe[indexPath.row]];
     [self.navigationController pushViewController:vcRecipesDetail animated:YES];
 }
 
@@ -126,6 +145,7 @@
     FCUser *user = [FCUser currentUser];
     [user updateRecipe:recipe isFavourite:!cell.isFavourited];
     cell.isFavourited = !cell.isFavourited;
+    [[NSNotificationCenter defaultCenter] postNotificationName:kUserUpdateFavouriteNotificationKey object:NSStringFromClass([self class])];
 }
 
 - (void)reloadData {

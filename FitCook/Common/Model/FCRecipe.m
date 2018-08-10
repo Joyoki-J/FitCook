@@ -61,6 +61,14 @@
     }
 }
 
++ (FCRecipe *)recipeWithIndex:(NSInteger)index {
+    return [[self allRecipes] objectAtIndex:index];
+}
+
++ (NSArray<FCRecipe *> *)recipesWithIndexs:(NSIndexSet *)indexs {
+    return [[self allRecipes] objectsAtIndexes:indexs];
+}
+
 @end
 
 @implementation FCRecipeIngredient

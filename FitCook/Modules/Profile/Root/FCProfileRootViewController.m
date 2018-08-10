@@ -148,7 +148,7 @@
 //    NSString *textToShare = @"FitCook";
 //    NSURL *urlToShare = [NSURL URLWithString:@"https://itunes.apple.com/us/app/fitcook/id1420594493"];
 //    NSArray *activityItems = @[textToShare,urlToShare];
-    UIImage *image = [UIImage imageNamed:@"foot_photo3"];
+    UIImage *image = [UIImage imageNamed:@"logo"];
     NSArray *activityItems = @[[self getJPEGImagerImg:image]];
     UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItems applicationActivities:nil];
     activityVC.excludedActivityTypes = @[UIActivityTypePrint,

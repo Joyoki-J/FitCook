@@ -11,6 +11,8 @@
 
 @interface FCRecipesDetailViewController ()<FCRecipesSegmentedViewDelegate>
 
+@property (nonatomic, strong) FCRecipe *recipe;
+
 @property (weak, nonatomic) IBOutlet FCRecipesSegmentedView *vSegment;
 @property (weak, nonatomic) IBOutlet UIView *vContent;
 @property (weak, nonatomic) IBOutlet UILabel *labTitle;
@@ -27,16 +29,38 @@
     return @"Recipes";
 }
 
++ (instancetype)viewControllerFromStoryboardWithRecipe:(FCRecipe *)recipe {
+    FCRecipesDetailViewController *vc = [FCRecipesDetailViewController viewControllerFromStoryboard];
+    vc.recipe = recipe;
+    return vc;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     _vSegment.delegate = self;
     
     [self createCustomBackItem];
+    [self createSubViews];
     
     [self test1];
     [self test2];
     [self test3];
+}
+
+- (void)createSubViews {
+    UIImage *image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:_recipe.imageName_4 ofType:@"png"]];
+    CGRect rect = CGRectMake(0, 0, kSCREEN_WIDTH, 263);
+    
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextFillRect(context, rect);
+    [image drawInRect:rect];
+    UIImage* im = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    _imgvFood.image = im;
+//    _imgvFood.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:_recipe.imageName_4 ofType:@"png"]];
+    _labTitle.text = _recipe.name;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,7 +85,25 @@
         make.left.mas_equalTo(9);
         make.top.mas_equalTo(kSTATBAR_HEIGHT + (44.0 - 25.0) / 2.0);
     }];
+    
+    UIButton *btnFavourite = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btnFavourite setImage:[UIImage imageNamed:@"icon_favourite_unlike"] forState:UIControlStateNormal];
+    [btnFavourite setImage:[UIImage imageNamed:@"icon_favourite_like"] forState:UIControlStateSelected];
+    [btnFavourite addTarget:self action:@selector(onClickFavouriteAction:) forControlEvents:UIControlEventTouchUpInside];
+    [btnFavourite setSelected:[[FCUser currentUser] isFavouriteRecipe:_recipe]];
+    [self.view addSubview:btnFavourite];
+    [btnFavourite mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.height.mas_equalTo(20);
+        make.trailing.mas_equalTo(-20);
+        make.centerY.equalTo(btnBack.mas_centerY);
+    }];
 };
+
+- (void)onClickFavouriteAction:(UIButton *)sender {
+    [[FCUser currentUser] updateRecipe:_recipe isFavourite:!sender.isSelected];
+    [sender setSelected:!sender.isSelected];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kUserUpdateFavouriteNotificationKey object:NSStringFromClass([self class])];
+}
 
 - (void)test1 {
     NSArray<NSDictionary<NSString *, NSString *> *> *array = @[@{@"title": @"3 ounces", @"value": @"spaghetti"},
