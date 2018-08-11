@@ -17,6 +17,8 @@
 		1F1D307E210CE87100DC50DD /* foot_photo1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F1D307D210CE87100DC50DD /* foot_photo1.png */; };
 		1F2ED04B211E93D400FB4B81 /* FCImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2ED04A211E93D400FB4B81 /* FCImageManager.m */; };
 		1F2ED04E211E944300FB4B81 /* UIImageView+FC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2ED04D211E944300FB4B81 /* UIImageView+FC.m */; };
+		1F2ED052211F56CD00FB4B81 /* FCParticleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2ED051211F56CD00FB4B81 /* FCParticleButton.m */; };
+		1F2ED055211F56EE00FB4B81 /* FCParticleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2ED054211F56EE00FB4B81 /* FCParticleView.m */; };
 		1F4CFB75210A1E0A00CFC438 /* FCRecipesRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CFB74210A1E0A00CFC438 /* FCRecipesRootViewController.m */; };
 		1F4CFB78210A1E5600CFC438 /* FCShoppingRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CFB77210A1E5600CFC438 /* FCShoppingRootViewController.m */; };
 		1F4CFB7B210A1E8C00CFC438 /* FCSearchRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CFB7A210A1E8C00CFC438 /* FCSearchRootViewController.m */; };
@@ -140,6 +142,10 @@
 		1F2ED04A211E93D400FB4B81 /* FCImageManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCImageManager.m; sourceTree = "<group>"; };
 		1F2ED04C211E944300FB4B81 /* UIImageView+FC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+FC.h"; sourceTree = "<group>"; };
 		1F2ED04D211E944300FB4B81 /* UIImageView+FC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+FC.m"; sourceTree = "<group>"; };
+		1F2ED050211F56CD00FB4B81 /* FCParticleButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCParticleButton.h; sourceTree = "<group>"; };
+		1F2ED051211F56CD00FB4B81 /* FCParticleButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCParticleButton.m; sourceTree = "<group>"; };
+		1F2ED053211F56EE00FB4B81 /* FCParticleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCParticleView.h; sourceTree = "<group>"; };
+		1F2ED054211F56EE00FB4B81 /* FCParticleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCParticleView.m; sourceTree = "<group>"; };
 		1F4CFB73210A1E0A00CFC438 /* FCRecipesRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCRecipesRootViewController.h; sourceTree = "<group>"; };
 		1F4CFB74210A1E0A00CFC438 /* FCRecipesRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCRecipesRootViewController.m; sourceTree = "<group>"; };
 		1F4CFB76210A1E5600CFC438 /* FCShoppingRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCShoppingRootViewController.h; sourceTree = "<group>"; };
@@ -436,6 +442,17 @@
 			path = Root;
 			sourceTree = "<group>";
 		};
+		1F2ED04F211F56AC00FB4B81 /* FCParticleButton */ = {
+			isa = PBXGroup;
+			children = (
+				1F2ED050211F56CD00FB4B81 /* FCParticleButton.h */,
+				1F2ED051211F56CD00FB4B81 /* FCParticleButton.m */,
+				1F2ED053211F56EE00FB4B81 /* FCParticleView.h */,
+				1F2ED054211F56EE00FB4B81 /* FCParticleView.m */,
+			);
+			path = FCParticleButton;
+			sourceTree = "<group>";
+		};
 		1F54C7AA210A1C20002BE1E5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -589,6 +606,7 @@
 		1F5B71AC210DDF56001C4604 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				1F2ED04F211F56AC00FB4B81 /* FCParticleButton */,
 				6916C03E2119685600DE744E /* FCToast */,
 				6987DEEF21119FA300F9D303 /* FCOnePixelLine */,
 				1F5B71AD210DDFCC001C4604 /* FCFilterView */,
@@ -931,10 +949,12 @@
 				1FE31D3C2116395C007CD792 /* FCFilterStyle.m in Sources */,
 				697E100820FC649300777146 /* UIBarButtonItem+FC.m in Sources */,
 				1F5EBB6B210F71CA00ECE894 /* FCRecipesDetailViewController.m in Sources */,
+				1F2ED052211F56CD00FB4B81 /* FCParticleButton.m in Sources */,
 				6987DEEE21114CD900F9D303 /* FCRecipesRootFilterCell.m in Sources */,
 				1FF233C220FE3CA0001DEB95 /* FCRootViewController.m in Sources */,
 				697E0FFD20FC486600777146 /* main.m in Sources */,
 				6987DEFA211427B600F9D303 /* FCSearchScanViewController.m in Sources */,
+				1F2ED055211F56EE00FB4B81 /* FCParticleView.m in Sources */,
 				6916C0D5211C2D1B00DE744E /* FCApp.m in Sources */,
 				1F1D307A210CE3C800DC50DD /* FCBaseTableViewCell.m in Sources */,
 				1F5EBB60210F59AE00ECE894 /* FCShoppingRootFoodsCell.m in Sources */,

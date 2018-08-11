@@ -8,6 +8,7 @@
 
 #import "FCRecipesDetailViewController.h"
 #import "FCRecipesSegmentedView.h"
+#import "FCParticleButton.h"
 
 @interface FCRecipesDetailViewController ()<FCRecipesSegmentedViewDelegate>
 
@@ -20,6 +21,8 @@
 
 // Constraints
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutAddButtom;
+
+@property (nonatomic, assign) BOOL isStartAnimate;
 
 @end
 
@@ -46,6 +49,28 @@
     [self test1];
     [self test2];
     [self test3];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    if (!_isStartAnimate) {
+        _isStartAnimate = YES;
+        [self startAnimate];
+    }
+}
+
+- (void)startAnimate {
+    __weak typeof(self) weakSelf = self;
+    [UIView animateWithDuration:10 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.imgvFood.transform = CGAffineTransformTranslate(CGAffineTransformMakeScale(1.15, 1.15), -10, 10);
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:10 delay:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            self.imgvFood.transform = CGAffineTransformIdentity;
+        } completion:^(BOOL finished) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [weakSelf startAnimate];
+            });
+        }];
+    }];
 }
 
 - (void)createSubViews {
@@ -76,7 +101,7 @@
         make.top.mas_equalTo(kSTATBAR_HEIGHT + (44.0 - 25.0) / 2.0);
     }];
     
-    UIButton *btnFavourite = [UIButton buttonWithType:UIButtonTypeCustom];
+    FCParticleButton *btnFavourite = [[FCParticleButton alloc] init];
     [btnFavourite setImage:[UIImage imageNamed:@"icon_favourite_unlike"] forState:UIControlStateNormal];
     [btnFavourite setImage:[UIImage imageNamed:@"icon_favourite_like"] forState:UIControlStateSelected];
     [btnFavourite addTarget:self action:@selector(onClickFavouriteAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -89,8 +114,14 @@
     }];
 };
 
-- (void)onClickFavouriteAction:(UIButton *)sender {
+- (void)onClickFavouriteAction:(FCParticleButton *)sender {
     [[FCUser currentUser] updateRecipe:_recipe isFavourite:!sender.isSelected];
+    if (sender.selected) {
+        [sender popInsideWithDuration:0.4f];
+    } else {
+        [sender popOutsideWithDuration:0.5f];
+        [sender animate];
+    }
     [sender setSelected:!sender.isSelected];
     [[NSNotificationCenter defaultCenter] postNotificationName:kUserUpdateFavouriteNotificationKey object:NSStringFromClass([self class])];
 }

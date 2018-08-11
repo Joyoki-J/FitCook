@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -85,13 +85,14 @@
                                                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Fz-M2-rIP">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Fz-M2-rIP" customClass="FCParticleButton">
                                                             <rect key="frame" x="307" y="100" width="20" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="kTi-us-p20"/>
                                                                 <constraint firstAttribute="width" constant="20" id="v80-rx-xh6"/>
                                                             </constraints>
                                                             <state key="normal" image="icon_favourite_unlike"/>
+                                                            <state key="selected" image="icon_favourite_like"/>
                                                             <connections>
                                                                 <action selector="onClickFavouriteAction:" destination="Olr-sj-qyH" eventType="touchUpInside" id="Xhk-yU-ENx"/>
                                                             </connections>
@@ -762,6 +763,7 @@
     </scenes>
     <resources>
         <image name="foot_photo1.png" width="1154" height="443"/>
+        <image name="icon_favourite_like" width="20" height="18"/>
         <image name="icon_favourite_unlike" width="20" height="19"/>
         <image name="icon_search_applyfilter" width="240" height="42"/>
         <image name="icon_search_barback" width="78" height="39"/>
