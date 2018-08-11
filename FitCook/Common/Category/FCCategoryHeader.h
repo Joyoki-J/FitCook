@@ -13,5 +13,6 @@
 #import "UIImage+FC.h"
 #import "UIView+FC.h"
 #import "NSString+FC.h"
+#import "UIImageView+FC.h"
 
 #endif /* FCCategoryHeader_h */

@@ -127,7 +127,7 @@
     FCRecipe *mRecipe = [_arrRecipe objectAtIndex:indexPath.row];
     cell.delegate = self;
     cell.indexPath = indexPath;
-    cell.imgvFood.image = [AppDelegate shareDelegate].images[mRecipe.imageName_1];
+    [cell.imgvFood fc_setImageWithName:mRecipe.imageName_1];
     cell.labTitle.text = mRecipe.name;
     cell.labTime.text = mRecipe.time;
     cell.isFavourited = [[FCUser currentUser] isFavouriteRecipe:mRecipe];

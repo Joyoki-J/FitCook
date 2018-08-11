@@ -15,6 +15,8 @@
 		1F1D3077210CE03500DC50DD /* FCFavouritesRootListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D3076210CE03500DC50DD /* FCFavouritesRootListCell.m */; };
 		1F1D307A210CE3C800DC50DD /* FCBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D3079210CE3C800DC50DD /* FCBaseTableViewCell.m */; };
 		1F1D307E210CE87100DC50DD /* foot_photo1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F1D307D210CE87100DC50DD /* foot_photo1.png */; };
+		1F2ED04B211E93D400FB4B81 /* FCImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2ED04A211E93D400FB4B81 /* FCImageManager.m */; };
+		1F2ED04E211E944300FB4B81 /* UIImageView+FC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2ED04D211E944300FB4B81 /* UIImageView+FC.m */; };
 		1F4CFB75210A1E0A00CFC438 /* FCRecipesRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CFB74210A1E0A00CFC438 /* FCRecipesRootViewController.m */; };
 		1F4CFB78210A1E5600CFC438 /* FCShoppingRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CFB77210A1E5600CFC438 /* FCShoppingRootViewController.m */; };
 		1F4CFB7B210A1E8C00CFC438 /* FCSearchRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CFB7A210A1E8C00CFC438 /* FCSearchRootViewController.m */; };
@@ -134,6 +136,10 @@
 		1F1D3078210CE3C800DC50DD /* FCBaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCBaseTableViewCell.h; sourceTree = "<group>"; };
 		1F1D3079210CE3C800DC50DD /* FCBaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCBaseTableViewCell.m; sourceTree = "<group>"; };
 		1F1D307D210CE87100DC50DD /* foot_photo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foot_photo1.png; sourceTree = "<group>"; };
+		1F2ED049211E93D400FB4B81 /* FCImageManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCImageManager.h; sourceTree = "<group>"; };
+		1F2ED04A211E93D400FB4B81 /* FCImageManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCImageManager.m; sourceTree = "<group>"; };
+		1F2ED04C211E944300FB4B81 /* UIImageView+FC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+FC.h"; sourceTree = "<group>"; };
+		1F2ED04D211E944300FB4B81 /* UIImageView+FC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+FC.m"; sourceTree = "<group>"; };
 		1F4CFB73210A1E0A00CFC438 /* FCRecipesRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCRecipesRootViewController.h; sourceTree = "<group>"; };
 		1F4CFB74210A1E0A00CFC438 /* FCRecipesRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCRecipesRootViewController.m; sourceTree = "<group>"; };
 		1F4CFB76210A1E5600CFC438 /* FCShoppingRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCShoppingRootViewController.h; sourceTree = "<group>"; };
@@ -454,6 +460,8 @@
 				6987DEE72110532500F9D303 /* UIView+FC.m */,
 				6987DEE92110564F00F9D303 /* NSString+FC.h */,
 				6987DEEA2110564F00F9D303 /* NSString+FC.m */,
+				1F2ED04C211E944300FB4B81 /* UIImageView+FC.h */,
+				1F2ED04D211E944300FB4B81 /* UIImageView+FC.m */,
 				1F4CFB88210A2DDD00CFC438 /* FCCategoryHeader.h */,
 			);
 			path = Category;
@@ -559,6 +567,8 @@
 			children = (
 				697E100920FC650400777146 /* FCUIManager.h */,
 				697E100A20FC650400777146 /* FCUIManager.m */,
+				1F2ED049211E93D400FB4B81 /* FCImageManager.h */,
+				1F2ED04A211E93D400FB4B81 /* FCImageManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -897,6 +907,7 @@
 			files = (
 				697E100B20FC650400777146 /* FCUIManager.m in Sources */,
 				1FA7FC06211209DC00EDB21F /* FCTermsConditionsViewController.m in Sources */,
+				1F2ED04B211E93D400FB4B81 /* FCImageManager.m in Sources */,
 				1F4CFB7E210A1EA800CFC438 /* FCFavouritesRootViewController.m in Sources */,
 				1F5B71B0210DDFEE001C4604 /* FCFilterView.m in Sources */,
 				6987DEEB2110564F00F9D303 /* NSString+FC.m in Sources */,
@@ -933,6 +944,7 @@
 				1F8B27CA21136A9F00CB2C74 /* FCModalTransition.m in Sources */,
 				1F4CFB75210A1E0A00CFC438 /* FCRecipesRootViewController.m in Sources */,
 				1F4CFB84210A1F7A00CFC438 /* FCNavigationController.m in Sources */,
+				1F2ED04E211E944300FB4B81 /* UIImageView+FC.m in Sources */,
 				6916C0DB211C2EA400DE744E /* FCCommon.m in Sources */,
 				1F1D3077210CE03500DC50DD /* FCFavouritesRootListCell.m in Sources */,
 				1F8B27C42113564F00CB2C74 /* FCSearchFilterViewController.m in Sources */,
@@ -1083,7 +1095,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2AG95DX2G9;
+				DEVELOPMENT_TEAM = 27CV7895W3;
 				GCC_PREFIX_HEADER = "FitCook/FitCook-Prefix.pch";
 				INFOPLIST_FILE = FitCook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1114,7 +1126,7 @@
 					"\"SystemConfiguration\"",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.joyoki1.fitcook;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shanshan.fitcook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1126,7 +1138,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2AG95DX2G9;
+				DEVELOPMENT_TEAM = 27CV7895W3;
 				GCC_PREFIX_HEADER = "FitCook/FitCook-Prefix.pch";
 				INFOPLIST_FILE = FitCook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1157,7 +1169,7 @@
 					"\"SystemConfiguration\"",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.joyoki1.fitcook;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shanshan.fitcook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

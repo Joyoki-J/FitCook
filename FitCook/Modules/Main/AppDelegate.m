@@ -16,45 +16,9 @@
 
 @implementation AppDelegate
 
-+ (instancetype)shareDelegate {
-    return (AppDelegate *)[UIApplication sharedApplication].delegate;
-}
-
-- (void)setImageWithW:(NSString *)w dic:(NSMutableDictionary *)dic {
-    NSString *key1 = [NSString stringWithFormat:@"%@_1",w];
-    NSString *key2 = [NSString stringWithFormat:@"%@_2",w];
-    NSString *key3 = [NSString stringWithFormat:@"%@_3",w];
-    NSString *key4 = [NSString stringWithFormat:@"%@_4",w];
-    [dic setObject:[self imageWithName:key1] forKey:key1];
-    [dic setObject:[self imageWithName:key2] forKey:key2];
-    [dic setObject:[self imageWithName:key3] forKey:key3];
-    [dic setObject:[self imageWithName:key4] forKey:key4];
-}
-
-- (UIImage *)imageWithName:(NSString *)name {
-    UIImage *image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:name ofType:@"png"]];
-    CGRect rect = CGRectMake(0, 0, kSCREEN_WIDTH - 28, 134);
-    
-    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextFillRect(context, rect);
-    [image drawInRect:rect];
-    UIImage* im = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
- 
-    return im;
-}
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [FCApp initialized];
-    
-    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    NSArray<NSString *> *arrW = @[@"1",@"2",@"3",@"11",@"12",@"13",@"21",@"22",@"31",@"32",@"41",@"42"];
-    [arrW enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [self setImageWithW:obj dic:dic];
-    }];
-    _images = dic;
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     FCRootViewController *vcRoot = [[FCRootViewController alloc] init];

@@ -49,17 +49,7 @@
 }
 
 - (void)createSubViews {
-    UIImage *image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:_recipe.imageName_4 ofType:@"png"]];
-    CGRect rect = CGRectMake(0, 0, kSCREEN_WIDTH, 263);
-    
-    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextFillRect(context, rect);
-    [image drawInRect:rect];
-    UIImage* im = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    _imgvFood.image = im;
-//    _imgvFood.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:_recipe.imageName_4 ofType:@"png"]];
+    [_imgvFood fc_setImageWithName:_recipe.imageName_4];
     _labTitle.text = _recipe.name;
 }
 

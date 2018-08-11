@@ -137,7 +137,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FCFavouritesRootListCell *cell = [FCFavouritesRootListCell cellWithTableView:tableView andIndexPath:indexPath];
     FCRecipe *recipe = _arrData[indexPath.section];
-    cell.imgvFood.image = [AppDelegate shareDelegate].images[recipe.imageName_1];
+    [cell.imgvFood fc_setImageWithName:recipe.imageName_1];
     return cell;
 }
 
