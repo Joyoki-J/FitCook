@@ -14,6 +14,7 @@
 
 @property (nonatomic, weak) id <FCRecipesRootListCellDelegate> delegate;
 @property (nonatomic, assign) NSInteger section;
+- (void)makeCellWithData:(NSMutableArray<FCRecipe *> *)data;
 
 @end
 

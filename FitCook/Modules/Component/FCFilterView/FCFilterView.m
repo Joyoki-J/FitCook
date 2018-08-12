@@ -14,11 +14,11 @@
 
 @interface FCFilterView()<UICollectionViewDelegate, UICollectionViewDataSource>
 
-@property (nonatomic, strong) NSMutableArray<NSString *> *arrData;
+@property (nonatomic, strong) NSArray<NSString *> *arrData;
 
 @property (nonatomic, strong) UICollectionView *cvList;
 
-@property (nonatomic, strong) NSIndexPath *selectIndexPath;
+@property (nonatomic, strong) NSMutableArray<NSNumber *> *selectedIndexs;
 
 @end
 
@@ -37,14 +37,14 @@
 - (void)setupDefaultData {
     _style = [[FCFilterStyle alloc] init];
     
-    _arrData = [NSMutableArray array];
-    [_arrData addObjectsFromArray:@[@"Sugar-free",
-                                    @"Vegetarian",
-                                    @"Dairy-free",
-                                    @"Gluten-free",
-                                    @"Breakfast",
-                                    @"Lunch",
-                                    @"Dinner"]];
+    _arrData = @[@"Sugar-free",
+                 @"Vegetarian",
+                 @"Dairy-free",
+                 @"Gluten-free",
+                 @"Breakfast",
+                 @"Lunch",
+                 @"Dinner"];
+    _selectedIndexs = [NSMutableArray arrayWithArray:@[@(NO),@(NO),@(NO),@(NO),@(NO),@(NO),@(NO)]];
 }
 
 - (void)createSubViews {
@@ -85,24 +85,35 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     FCFilterCell *cell = [FCFilterCell cellWithCollectionView:collectionView andIndexPath:indexPath];
     cell.labTitle.text = _arrData[indexPath.row];
-    cell.isSelected = _selectIndexPath == indexPath;
+    cell.isSelected = [[_selectedIndexs objectAtIndex:indexPath.row] boolValue];
     [cell setupWithStyle:_style];
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *selectedTitle = nil;
-    if (_selectIndexPath == indexPath) {
-        _selectIndexPath = nil;
+    if ([[_selectedIndexs objectAtIndex:indexPath.row] boolValue]) {
+        _selectedIndexs[indexPath.row] = @(NO);
         [collectionView reloadData];
     } else {
-        _selectIndexPath = indexPath;
-        selectedTitle = _arrData[indexPath.row];
+        if (indexPath.row >= 4) {
+            _selectedIndexs[4] = @(NO);
+            _selectedIndexs[5] = @(NO);
+            _selectedIndexs[6] = @(NO);
+        }
+        _selectedIndexs[indexPath.row] = @(YES);
         [collectionView reloadData];
         [self scrollCollectionViewIfNeed:collectionView withIndexPath:indexPath];
     }
-    if ([_delegate respondsToSelector:@selector(filterView:didSelectedIndex:withTitle:)]) {
-        [_delegate filterView:self didSelectedIndex:indexPath.row withTitle:selectedTitle];
+    NSMutableArray<NSNumber *> *indexs = [NSMutableArray array];
+    NSMutableArray<NSString *> *titles = [NSMutableArray array];
+    for (NSInteger i = 0; i < _selectedIndexs.count; i++) {
+        if ([_selectedIndexs[i] boolValue]) {
+            [indexs addObject:@(i)];
+            [titles addObject:[_arrData[i] lowercaseString]];
+        }
+    }
+    if ([_delegate respondsToSelector:@selector(filterView:didSelectedIndexs:withTitles:)]) {
+        [_delegate filterView:self didSelectedIndexs:indexs withTitles:titles];
     }
 }
 

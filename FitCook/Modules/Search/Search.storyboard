@@ -129,6 +129,29 @@
                                             <outlet property="labTitle" destination="SgX-XE-6UK" id="ZAa-BD-CB5"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FCSearchRootListNoDataCell" rowHeight="180" id="9TZ-X6-iJ0" customClass="FCSearchRootListNoDataCell">
+                                        <rect key="frame" x="0.0" y="203.5" width="375" height="180"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9TZ-X6-iJ0" id="1I8-8e-SYF">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Ops!Try other keywords!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ZL-BS-xap">
+                                                    <rect key="frame" x="64" y="148" width="247" height="28"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                    <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3ZL-BS-xap" firstAttribute="top" secondItem="1I8-8e-SYF" secondAttribute="top" constant="148" id="waF-IP-5EF"/>
+                                                <constraint firstItem="3ZL-BS-xap" firstAttribute="centerX" secondItem="1I8-8e-SYF" secondAttribute="centerX" id="xf0-cv-M49"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="layoutTop" destination="waF-IP-5EF" id="eUN-0o-mAS"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="acz-Rf-W6i" id="ET0-02-oKl"/>

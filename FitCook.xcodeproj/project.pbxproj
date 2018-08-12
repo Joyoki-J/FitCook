@@ -19,6 +19,7 @@
 		1F2ED04E211E944300FB4B81 /* UIImageView+FC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2ED04D211E944300FB4B81 /* UIImageView+FC.m */; };
 		1F2ED052211F56CD00FB4B81 /* FCParticleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2ED051211F56CD00FB4B81 /* FCParticleButton.m */; };
 		1F2ED055211F56EE00FB4B81 /* FCParticleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2ED054211F56EE00FB4B81 /* FCParticleView.m */; };
+		1F2ED05B21208C9E00FB4B81 /* FCSearchRootListNoDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2ED05A21208C9E00FB4B81 /* FCSearchRootListNoDataCell.m */; };
 		1F4CFB75210A1E0A00CFC438 /* FCRecipesRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CFB74210A1E0A00CFC438 /* FCRecipesRootViewController.m */; };
 		1F4CFB78210A1E5600CFC438 /* FCShoppingRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CFB77210A1E5600CFC438 /* FCShoppingRootViewController.m */; };
 		1F4CFB7B210A1E8C00CFC438 /* FCSearchRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CFB7A210A1E8C00CFC438 /* FCSearchRootViewController.m */; };
@@ -146,6 +147,8 @@
 		1F2ED051211F56CD00FB4B81 /* FCParticleButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCParticleButton.m; sourceTree = "<group>"; };
 		1F2ED053211F56EE00FB4B81 /* FCParticleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCParticleView.h; sourceTree = "<group>"; };
 		1F2ED054211F56EE00FB4B81 /* FCParticleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCParticleView.m; sourceTree = "<group>"; };
+		1F2ED05921208C9E00FB4B81 /* FCSearchRootListNoDataCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCSearchRootListNoDataCell.h; sourceTree = "<group>"; };
+		1F2ED05A21208C9E00FB4B81 /* FCSearchRootListNoDataCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCSearchRootListNoDataCell.m; sourceTree = "<group>"; };
 		1F4CFB73210A1E0A00CFC438 /* FCRecipesRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCRecipesRootViewController.h; sourceTree = "<group>"; };
 		1F4CFB74210A1E0A00CFC438 /* FCRecipesRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCRecipesRootViewController.m; sourceTree = "<group>"; };
 		1F4CFB76210A1E5600CFC438 /* FCShoppingRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCShoppingRootViewController.h; sourceTree = "<group>"; };
@@ -399,6 +402,8 @@
 				1FE31D3821163210007CD792 /* FCSearchHeaderView.m */,
 				6987DEFB211434A200F9D303 /* FCSearchRootListCell.h */,
 				6987DEFC211434A200F9D303 /* FCSearchRootListCell.m */,
+				1F2ED05921208C9E00FB4B81 /* FCSearchRootListNoDataCell.h */,
+				1F2ED05A21208C9E00FB4B81 /* FCSearchRootListNoDataCell.m */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -936,6 +941,7 @@
 				1F5B71AB210DDD75001C4604 /* FCRecipesRootItemLayout.m in Sources */,
 				1F5EBB67210F6E2600ECE894 /* FCShoppingListViewController.m in Sources */,
 				1F5B71A8210DD15A001C4604 /* FCRecipesRootItemCell.m in Sources */,
+				1F2ED05B21208C9E00FB4B81 /* FCSearchRootListNoDataCell.m in Sources */,
 				1F5B71B6210DE98B001C4604 /* FCFilterCell.m in Sources */,
 				697E100520FC633600777146 /* FCBaseViewController.m in Sources */,
 				6916C0412119687900DE744E /* FCToast.m in Sources */,

@@ -27,6 +27,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
+    _keywords = [NSMutableArray array];
+    
     _vFilter.delegate = self;
     
     _style1 = [[FCFilterStyle alloc] init];
@@ -78,13 +80,28 @@
     }
 }
 
-- (void)filterView:(FCFilterView *)view didSelectedIndex:(NSInteger)index withTitle:(NSString *)title {
-    
-    _tfSearch.text = title;
+- (void)filterView:(FCFilterView *)view didSelectedIndexs:(NSArray<NSNumber *> *)indexs withTitles:(NSArray<NSString *> *)titles {
+    [_keywords removeAllObjects];
+    if (_tfSearch.text && _tfSearch.text.length > 0) {
+        NSArray<NSString *> *searchWords = [_tfSearch.text componentsSeparatedByString:@" "];
+        [searchWords enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [self.keywords addObject:[obj lowercaseString]];
+        }];
+    }
+    [_keywords addObjectsFromArray:titles];
     
     if ([_delegate respondsToSelector:@selector(searchHeaderDidSelectedFilter:)]) {
         [_delegate searchHeaderDidSelectedFilter:self];
     }
+}
+
+- (void)filterView:(FCFilterView *)view didSelectedIndex:(NSInteger)index withTitle:(NSString *)title {
+    
+    
+    
+    
+    
+   
 }
 
 @end

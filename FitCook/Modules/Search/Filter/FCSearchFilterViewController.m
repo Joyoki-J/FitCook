@@ -10,8 +10,7 @@
 #import "FCModalTransition.h"
 #import "FCSearchFilterView.h"
 
-#define userid 100000
-#define kSearchFilterTasteKey [NSString stringWithFormat:@"%ld_FilterTaste",(long)userid]
+#define kSearchFilterTasteKey [NSString stringWithFormat:@"%@_FilterTaste",[FCUser currentUser].email]
 
 #define kSugarfree  @"0"
 #define kDairyfree  @"1"

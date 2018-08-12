@@ -11,6 +11,7 @@
 #import "FCSearchScanViewController.h"
 #import "FCRecipesDetailViewController.h"
 #import "FCSearchRootListCell.h"
+#import "FCSearchRootListNoDataCell.h"
 #import "FCSearchHeaderView.h"
 
 @interface FCSearchRootViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,FCSearchHeaderViewDelegate,FCSearchFilterViewControllerDelegate,FCSearchRootListCellDelegate>
@@ -107,11 +108,11 @@
 
 #pragma mark - UITableViewDelegate,UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _arrRecipe.count;
+    return _arrRecipe.count > 0 ? _arrRecipe.count : 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 148;
+    return _arrRecipe.count > 0 ? 148 : kSCREEN_HEIGHT - 175 - kTABBAR_HEIGHT;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -123,20 +124,27 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    FCSearchRootListCell *cell = [FCSearchRootListCell cellWithTableView:tableView andIndexPath:indexPath];
-    FCRecipe *mRecipe = [_arrRecipe objectAtIndex:indexPath.row];
-    cell.delegate = self;
-    cell.indexPath = indexPath;
-    [cell.imgvFood fc_setImageWithName:mRecipe.imageName_1];
-    cell.labTitle.text = mRecipe.name;
-    cell.labTime.text = mRecipe.time;
-    cell.isFavourited = [[FCUser currentUser] isFavouriteRecipe:mRecipe];
-    return cell;
+    if (_arrRecipe.count > 0) {
+        FCSearchRootListCell *cell = [FCSearchRootListCell cellWithTableView:tableView andIndexPath:indexPath];
+        FCRecipe *mRecipe = [_arrRecipe objectAtIndex:indexPath.row];
+        cell.delegate = self;
+        cell.indexPath = indexPath;
+        [cell.imgvFood fc_setImageWithName:mRecipe.imageName_1];
+        cell.labTitle.text = mRecipe.name;
+        cell.labTime.text = mRecipe.time;
+        cell.isFavourited = [[FCUser currentUser] isFavouriteRecipe:mRecipe];
+        return cell;
+    } else {
+        FCSearchRootListNoDataCell *cell = [FCSearchRootListNoDataCell cellWithTableView:tableView andIndexPath:indexPath];
+        return cell;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    FCRecipesDetailViewController *vcRecipesDetail = [FCRecipesDetailViewController viewControllerFromStoryboardWithRecipe:_arrRecipe[indexPath.row]];
-    [self.navigationController pushViewController:vcRecipesDetail animated:YES];
+    if (_arrRecipe.count > 0) {
+        FCRecipesDetailViewController *vcRecipesDetail = [FCRecipesDetailViewController viewControllerFromStoryboardWithRecipe:_arrRecipe[indexPath.row]];
+        [self.navigationController pushViewController:vcRecipesDetail animated:YES];
+    }
 }
 
 #pragma mark - FCSearchRootListCellDelegate
@@ -237,10 +245,9 @@
 }
 
 - (void)searchHeaderDidSelectedFilter:(FCSearchHeaderView *)vHeader {
-    NSString *keyword = [vHeader.tfSearch.text lowercaseString];
     [_arrRecipe removeAllObjects];
-    if (keyword && keyword.length > 0) {
-        [_arrRecipe addObjectsFromArray:[FCRecipe predicateWithFilters:@[keyword]]];
+    if (vHeader.keywords.count > 0) {
+        [_arrRecipe addObjectsFromArray:[FCRecipe predicateWithFilters:vHeader.keywords]];
     } else {
         [_arrRecipe addObjectsFromArray:[FCRecipe allRecipes]];
     }

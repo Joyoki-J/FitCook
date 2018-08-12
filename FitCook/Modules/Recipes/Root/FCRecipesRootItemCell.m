@@ -7,24 +7,32 @@
 //
 
 #import "FCRecipesRootItemCell.h"
+#import "FCParticleButton.h"
 
 @interface FCRecipesRootItemCell()
 
-@property (weak, nonatomic) IBOutlet UIButton *btnFavourite;
+@property (weak, nonatomic) IBOutlet FCParticleButton *btnFavourite;
 
 @end
 
 @implementation FCRecipesRootItemCell
 
 
-- (IBAction)onClickFavouriteAction:(UIButton *)sender {
-    self.isFavourited = !_isFavourited;
+- (IBAction)onClickFavouriteAction:(FCParticleButton *)sender {
+    if (sender.selected) {
+        [sender popInsideWithDuration:0.4f];
+    } else {
+        [sender popOutsideWithDuration:0.5f];
+        [sender animate];
+    }
+    if ([_delegate respondsToSelector:@selector(recipesRootItemCell:didClickFavouriteActionWithIndexPath:)]) {
+        [_delegate recipesRootItemCell:self didClickFavouriteActionWithIndexPath:_indexPath];
+    }
 }
 
 - (void)setIsFavourited:(BOOL)isFavourited {
     _isFavourited = isFavourited;
-    UIImage *image = isFavourited ? [UIImage imageNamed:@"icon_favourite_like"] : [UIImage imageNamed:@"icon_favourite_unlike"];
-    [_btnFavourite setImage:image forState:UIControlStateNormal];
+    [_btnFavourite setSelected:isFavourited];
 }
 
 @end

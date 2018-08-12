@@ -23,7 +23,7 @@
 
 @protocol FCFilterViewDelegate <NSObject>
 
-- (void)filterView:(FCFilterView *)view didSelectedIndex:(NSInteger)index withTitle:(NSString *)title;
+- (void)filterView:(FCFilterView *)view didSelectedIndexs:(NSArray<NSNumber *> *)indexs withTitles:(NSArray<NSString *> *)titles;
 
 @end
 

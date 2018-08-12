@@ -16,6 +16,7 @@
 
 @property(nonatomic, assign) CGFloat progress;
 @property (weak, nonatomic) IBOutlet UITextField *tfSearch;
+@property (nonatomic, strong) NSMutableArray<NSString *> *keywords;
 
 @end
 
