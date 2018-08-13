@@ -137,10 +137,10 @@
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo;
 {
     if (!error){
-        NSLog(@"save image success");
+        [FCToast showText:@"Saving profile photo succeed."];
     }
     else{
-        NSLog(@"save image fail");
+        [FCToast showText:@"Saving profile photo failed."];
     }
 }
 
@@ -162,9 +162,9 @@
     [self presentViewController:activityVC animated:YES completion:nil];
     activityVC.completionWithItemsHandler = ^(UIActivityType  _Nullable activityType, BOOL completed, NSArray * _Nullable returnedItems, NSError * _Nullable activityError) {
         if (completed) {
-            NSLog(@"completed");
+            [FCToast showText:@"Shared!"];
         } else  {
-            NSLog(@"cancled");
+            [FCToast showText:@"Failed."];
         }
     };
 }
@@ -211,16 +211,16 @@
 -(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
     switch (result) {
         case MFMailComposeResultCancelled:
-            NSLog(@"Mail send canceled: 用户取消编辑");
+            [FCToast showText:@"Cannot send emial."];
             break;
         case MFMailComposeResultSaved:
-            NSLog(@"Mail saved: 用户保存邮件");
+            [FCToast showText:@"Your email has been saved."];
             break;
         case MFMailComposeResultSent:
-            NSLog(@"Mail sent: 用户点击发送");
+            [FCToast showText:@"Your email has been sent."];
             break;
         case MFMailComposeResultFailed:
-            NSLog(@"Mail send errored: %@ : 用户尝试保存或发送邮件失败", [error localizedDescription]);
+            [FCToast showText:@"Failed."];
             break;
     }
     [self dismissViewControllerAnimated:YES completion:nil];

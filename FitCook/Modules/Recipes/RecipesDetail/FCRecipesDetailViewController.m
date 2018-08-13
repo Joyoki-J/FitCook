@@ -215,9 +215,9 @@
     
     UIScrollView *sv = [_vContent viewWithTag:10];
     [_recipe.ingredients enumerateObjectsUsingBlock:^(FCRecipeIngredient * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSString *title = [NSString stringWithFormat:@"%ld %@",obj.dosage.integer * stepValue, obj.dosage.unit];
-        UILabel *labTitle = [sv viewWithTag:100 + idx];
-        labTitle.text = title;
+        FCDosageView *labTitle = [sv viewWithTag:100 + idx];
+        FCRecipeDosage *dosage = [obj.dosage mulNumber:stepValue];
+        [labTitle setTextWithDosage:(id)(dosage ? dosage : [NSNull null])];
     }];
 }
 
@@ -306,6 +306,16 @@
 
 - (IBAction)onClickAddShoppingListAction:(UIButton *)sender {
     NSLog(@"点击 - Add");
+    static NSInteger test = 0;
+    if (test % 2 == 0) {
+        
+        [FCToast showText:@"The ingredients have been added to your shopping list."];
+    } else {
+        UIAlertController *vcAlert = [UIAlertController alertControllerWithTitle:@"Oops!" message:@"This recipe has already been added to your shopping list." preferredStyle:UIAlertControllerStyleAlert];
+        [vcAlert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:vcAlert animated:YES completion:nil];
+    }
+    test++;
 }
 
 

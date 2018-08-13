@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EE1-3k-CDS">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,9 +16,22 @@
             <objects>
                 <viewController id="EE1-3k-CDS" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XAa-iG-29o">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_launch_logo" translatesAutoresizingMaskIntoConstraints="NO" id="AE4-MZ-erB">
+                                <rect key="frame" x="35" y="40" width="250" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="m2c-VC-ufL"/>
+                                    <constraint firstAttribute="height" constant="220" id="nc5-9c-mwD"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AE4-MZ-erB" firstAttribute="centerX" secondItem="XAa-iG-29o" secondAttribute="centerX" id="6LW-oI-vJ8"/>
+                            <constraint firstItem="AE4-MZ-erB" firstAttribute="centerY" secondItem="XAa-iG-29o" secondAttribute="centerY" multiplier="5:8" id="ALk-kq-Li5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="95w-mS-2Bj"/>
                     </view>
                 </viewController>
@@ -26,4 +40,7 @@
             <point key="canvasLocation" x="577" y="496"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_launch_logo" width="250" height="220"/>
+    </resources>
 </document>

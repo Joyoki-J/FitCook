@@ -63,6 +63,19 @@
 @property (nonatomic, assign) NSInteger denominator;
 @property (nonatomic, copy) NSString *unit;
 
+// +
+- (FCRecipeDosage *)addDosage:(FCRecipeDosage *)aDosage;
+- (FCRecipeDosage *)addNumber:(NSInteger)aNumber;
+// -
+- (FCRecipeDosage *)subDosage:(FCRecipeDosage *)aDosage;
+- (FCRecipeDosage *)subNumber:(NSInteger)aNumber;
+// *
+- (FCRecipeDosage *)mulDosage:(FCRecipeDosage *)aDosage;
+- (FCRecipeDosage *)mulNumber:(NSInteger)aNumber;
+// /
+- (FCRecipeDosage *)divDosage:(FCRecipeDosage *)aDosage;
+- (FCRecipeDosage *)divNumber:(NSInteger)aNumber;
+
 @end
 
 @interface FCRecipeNutrition : NSObject
