@@ -9,6 +9,7 @@
 #import "FCRecipesDetailViewController.h"
 #import "FCRecipesSegmentedView.h"
 #import "FCParticleButton.h"
+#import "FCDosageView.h"
 
 @interface FCRecipesDetailViewController ()<FCRecipesSegmentedViewDelegate>
 
@@ -18,6 +19,9 @@
 @property (weak, nonatomic) IBOutlet UIView *vContent;
 @property (weak, nonatomic) IBOutlet UILabel *labTitle;
 @property (weak, nonatomic) IBOutlet UIImageView *imgvFood;
+
+@property (nonatomic, strong) UIStepper *stepper;
+@property (nonatomic, strong) UILabel *labServings;
 
 // Constraints
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutAddButtom;
@@ -46,9 +50,9 @@
     [self createCustomBackItem];
     [self createSubViews];
     
-    [self test1];
-    [self test2];
-    [self test3];
+    [self setIngredients];
+    [self setSteps];
+    [self setNutritions];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -126,32 +130,39 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:kUserUpdateFavouriteNotificationKey object:NSStringFromClass([self class])];
 }
 
-- (void)test1 {
-    NSArray<NSDictionary<NSString *, NSString *> *> *array = @[@{@"title": @"3 ounces", @"value": @"spaghetti"},
-                                                             @{@"title": @"1/2", @"value": @"ripe avocados"},
-                                                             @{@"title": @"1/8 cup", @"value": @"basil leaves"},
-                                                             @{@"title": @"1/2", @"value": @"freshly squeezed lemon juice"},
-                                                             @{@"title": @"1/12 cup", @"value": @"olive oil"},
-                                                             @{@"title": @"1/4 cup", @"value": @"cherry tomatoes, halved"},
-                                                             @{@"title": @"1/8 cup", @"value": @"canned corn kernels"}];
+- (void)setIngredients {
+    NSMutableArray<NSDictionary *> *array = [NSMutableArray array];
+    [_recipe.ingredients enumerateObjectsUsingBlock:^(FCRecipeIngredient * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [array addObject:@{@"title": obj.dosage ? obj.dosage : [NSNull null], @"value": obj.name}];
+    }];
     UIScrollView *sv = [_vContent viewWithTag:10];
-    __block UILabel *labLast;
+    
+    UIView *vStep = [self createStep];
+    [sv addSubview:vStep];
+    [vStep mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(14);
+        make.top.mas_equalTo(0);
+        make.height.mas_equalTo(30);
+        make.width.mas_equalTo(kSCREEN_WIDTH - 28);
+    }];
+    
+    __block UIView *labLast = vStep;
+    
     [array enumerateObjectsUsingBlock:^(NSDictionary<NSString *,NSString *> * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        UILabel *labTitle = [self getContentLabel];
+        FCDosageView *labTitle = [[FCDosageView alloc] init];
         UILabel *labContent = [self getContentLabel];
-        labTitle.text = obj[@"title"];
+        labTitle.tag = 100 + idx;
+        [labTitle setTextWithDosage:(FCRecipeDosage *)obj[@"title"]];
         labContent.text = obj[@"value"];
         [sv addSubview:labTitle];
         [sv addSubview:labContent];
         [labContent mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(127);
-            make.width.mas_equalTo(kSCREEN_WIDTH - 141);
+            make.left.mas_equalTo(135);
+            make.width.mas_equalTo(kSCREEN_WIDTH - 149);
             if (labLast) {
                 make.top.equalTo(labLast.mas_bottom).offset(5);
-            } else {
-                make.top.mas_equalTo(0);
             }
-            if (idx == 6) {
+            if (idx == array.count - 1) {
                 make.bottom.mas_equalTo(0);
             }
         }];
@@ -164,37 +175,69 @@
     }];
 }
 
-- (void)test2 {
+- (UIView *)createStep {
+    UIView *vStep = [[UIView alloc] init];
+    vStep.backgroundColor = [UIColor whiteColor];
+    
+    UILabel *labServings = [[UILabel alloc] init];
+    labServings.text = @"1 Servings";
+    labServings.textAlignment = NSTextAlignmentLeft;
+    labServings.textColor = RGB(99, 99, 102);
+    labServings.font = kBoldFont(18);
+    _labServings = labServings;
+    [vStep addSubview:labServings];
+    
+    UIStepper *stepper = [[UIStepper alloc] init];
+    stepper.minimumValue = 1;
+    stepper.maximumValue = 100;
+    stepper.value = 1;
+    stepper.stepValue = 1;
+    [stepper addTarget:self action:@selector(stepperChangedValue:) forControlEvents:UIControlEventValueChanged];
+    _stepper = stepper;
+    [vStep addSubview:stepper];
+    
+    [stepper mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.right.mas_equalTo(0);
+        make.width.mas_equalTo(100);
+    }];
+    
+    [labServings mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.bottom.mas_equalTo(0);
+        make.trailing.equalTo(stepper.mas_leading).offset(-15);
+    }];
+    
+    return vStep;
+}
+
+- (void)stepperChangedValue:(UIStepper *)stepper {
+    NSInteger stepValue = (NSInteger)stepper.value;
+    _labServings.text = [NSString stringWithFormat:@"%ld Servings",stepValue];
+    
+    UIScrollView *sv = [_vContent viewWithTag:10];
+    [_recipe.ingredients enumerateObjectsUsingBlock:^(FCRecipeIngredient * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSString *title = [NSString stringWithFormat:@"%ld %@",obj.dosage.integer * stepValue, obj.dosage.unit];
+        UILabel *labTitle = [sv viewWithTag:100 + idx];
+        labTitle.text = title;
+    }];
+}
+
+- (void)setSteps {
+    NSMutableArray<NSAttributedString *> *array = [NSMutableArray array];
     NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
     style.lineSpacing = 6;
     style.lineBreakMode = NSLineBreakByWordWrapping;
-    NSMutableAttributedString *attributedString1 = [[NSMutableAttributedString alloc] initWithString:@"1. In a large pot of boiling salted water, cook pasta according to package instructions; drain well." attributes:@{
-                                                                                                                                                                                                                           NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size: 14.0f],
-                                                                                                                                                                                                                           NSForegroundColorAttributeName: [UIColor colorWithRed:99.0f / 255.0f green:99.0f / 255.0f blue:102.0f / 255.0f alpha:1.0f],
-                                                                                                                                                                                                                           NSParagraphStyleAttributeName:style
-                                                                                                                                                                                                                           }];
-    [attributedString1 addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica-Bold" size: 18.0f] range:NSMakeRange(0, 2)];
-    NSMutableAttributedString *attributedString2 = [[NSMutableAttributedString alloc] initWithString:@"2. To make the avocado sauce, combine avocados, basil, garlic and lemon juice in the bowl of a food processor; season with salt and pepper, to taste. With the motor running, add olive oil in a slow stream until emulsified; set aside." attributes:@{
-                                                                                                                                                                                                                                                                                                                                                                   NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size: 14.0f],
-                                                                                                                                                                                                                                                                                                                                                                   NSForegroundColorAttributeName: [UIColor colorWithRed:99.0f / 255.0f green:99.0f / 255.0f blue:102.0f / 255.0f alpha:1.0f],
-                                                                                                                                                                                                                                                                                                                                                                   NSParagraphStyleAttributeName:style
-                                                                                                                                                                                                                                                                                                                                                                   }];
-    [attributedString2 addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica-Bold" size: 18.0f] range:NSMakeRange(0, 2)];
-    NSMutableAttributedString *attributedString3 = [[NSMutableAttributedString alloc] initWithString:@"3. In a large bowl, combine pasta, avocado sauce, cherry tomatoes and corn." attributes:@{
-                                                                                                                                                                                                 NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size: 14.0f],
-                                                                                                                                                                                                 NSForegroundColorAttributeName: [UIColor colorWithRed:99.0f / 255.0f green:99.0f / 255.0f blue:102.0f / 255.0f alpha:1.0f],
-                                                                                                                                                                                                 NSParagraphStyleAttributeName:style
-                                                                                                                                                                                                 }];
-    [attributedString3 addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica-Bold" size: 18.0f] range:NSMakeRange(0, 2)];
-    NSMutableAttributedString *attributedString4 = [[NSMutableAttributedString alloc] initWithString:@"4. Serve immediately" attributes:@{
-                                                                                                                                         NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size: 14.0f],
-                                                                                                                                         NSForegroundColorAttributeName: [UIColor colorWithRed:99.0f / 255.0f green:99.0f / 255.0f blue:102.0f / 255.0f alpha:1.0f],
-                                                                                                                                         NSParagraphStyleAttributeName:style
-                                                                                                                                         }];
-    [attributedString4 addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica-Bold" size: 18.5f] range:NSMakeRange(0, 2)];
-    
+    [_recipe.steps enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSString *string = [NSString stringWithFormat:@"%ld. %@",idx + 1, obj];
+        NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:string attributes:@{
+                                                                                                                                                                                                                              NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size: 14.0f],
+                                                                                                                                                                                                                              NSForegroundColorAttributeName: [UIColor colorWithRed:99.0f / 255.0f green:99.0f / 255.0f blue:102.0f / 255.0f alpha:1.0f],
+                                                                                                                                                                                                                              NSParagraphStyleAttributeName:style
+                                                                                                                                                                                                                              }];
+        [attributedString addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica-Bold" size: 18.0f] range:NSMakeRange(0, 2)];
+        [array addObject:attributedString];
+    }];
     UIScrollView *sv = [_vContent viewWithTag:11];
-    NSArray<NSAttributedString *> *array = @[attributedString1,attributedString2,attributedString3,attributedString4];
+    
     __block UILabel *labLast;
     [array enumerateObjectsUsingBlock:^(NSAttributedString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         UILabel *labTitle = [self getContentLabel];
@@ -208,7 +251,7 @@
             } else {
                 make.top.mas_equalTo(0);
             }
-            if (idx == 3) {
+            if (idx == array.count - 1) {
                 make.bottom.mas_equalTo(0);
             }
         }];
@@ -216,35 +259,11 @@
     }];
 }
 
-- (void)test3 {
-    NSArray<NSDictionary<NSString *, NSString *> *> *array = @[@{@"title": @"Calories:", @"value": @"670.7kcal"},
-                                                               @{@"title": @"Fat:", @"value": @"34.2g"},
-                                                               @{@"title": @"Carbohydrat:", @"value": @"80.7g"},
-                                                               @{@"title": @"Protein:", @"value": @"14.3g"},
-                                                               @{@"title": @"Calories:", @"value": @"670.7kcal"},
-                                                               @{@"title": @"Fat:", @"value": @"34.2g"},
-                                                               @{@"title": @"Carbohydrat:", @"value": @"80.7g"},
-                                                               @{@"title": @"Protein:", @"value": @"14.3g"},
-                                                               @{@"title": @"Calories:", @"value": @"670.7kcal"},
-                                                               @{@"title": @"Fat:", @"value": @"34.2g"},
-                                                               @{@"title": @"Carbohydrat:", @"value": @"80.7g"},
-                                                               @{@"title": @"Protein:", @"value": @"14.3g"},
-                                                               @{@"title": @"Calories:", @"value": @"670.7kcal"},
-                                                               @{@"title": @"Fat:", @"value": @"34.2g"},
-                                                               @{@"title": @"Carbohydrat:", @"value": @"80.7g"},
-                                                               @{@"title": @"Protein:", @"value": @"14.3g"},
-                                                               @{@"title": @"Calories:", @"value": @"670.7kcal"},
-                                                               @{@"title": @"Fat:", @"value": @"34.2g"},
-                                                               @{@"title": @"Carbohydrat:", @"value": @"80.7g"},
-                                                               @{@"title": @"Protein:", @"value": @"14.3g"},
-                                                               @{@"title": @"Calories:", @"value": @"670.7kcal"},
-                                                               @{@"title": @"Fat:", @"value": @"34.2g"},
-                                                               @{@"title": @"Carbohydrat:", @"value": @"80.7g"},
-                                                               @{@"title": @"Protein:", @"value": @"14.3g"},
-                                                               @{@"title": @"Calories:", @"value": @"670.7kcal"},
-                                                               @{@"title": @"Fat:", @"value": @"34.2g"},
-                                                               @{@"title": @"Carbohydrat:", @"value": @"80.7g"},
-                                                               @{@"title": @"Protein:", @"value": @"14.3g"}];
+- (void)setNutritions {
+    NSArray<NSDictionary<NSString *, NSString *> *> *array = @[@{@"title": @"Calories:",@"value": _recipe.nutrition.calories},
+                                                               @{@"title": @"Fat:",@"value": _recipe.nutrition.fat},
+                                                               @{@"title": @"Carbohydrat:",@"value": _recipe.nutrition.carbohydrates},
+                                                               @{@"title": @"Protein:",@"value": _recipe.nutrition.protein},];
     UIScrollView *sv = [_vContent viewWithTag:12];
     __block UILabel *labLast;
     [array enumerateObjectsUsingBlock:^(NSDictionary<NSString *,NSString *> * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {

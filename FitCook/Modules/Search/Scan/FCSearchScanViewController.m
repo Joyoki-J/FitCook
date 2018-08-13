@@ -157,23 +157,8 @@
     });
 }
 
-- (void)getFoodId:(NSString *)foodId {
-    
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Scan" message:foodId preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//        self.isSuccess = NO;
-        if ([self.deleagte respondsToSelector:@selector(searchScanViewController:didSearchFoodWithName:)]) {
-            [self.deleagte searchScanViewController:self didSearchFoodWithName:@"tomato"];
-        }
-        [self.navigationController popViewControllerAnimated:YES];
-    }]];
-    [self presentViewController:alert animated:YES completion:nil];
-}
-
 - (void)requestFoodInfoWithFoodId:(NSString *)foodId {
-    NSLog(@"foodId = %@",foodId);
     NSString *url = [NSString stringWithFormat:@"https://dev.tescolabs.com/product/?gtin=%@",foodId];
-    NSLog(@"url = %@",url);
     AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
     session.requestSerializer = [AFJSONRequestSerializer serializer];
     [session.requestSerializer setValue:@"f832dfc040c048628480d64f9179681a" forHTTPHeaderField:@"Ocp-Apim-Subscription-Key"];

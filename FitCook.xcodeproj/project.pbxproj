@@ -110,6 +110,8 @@
 		6916C0D8211C2D2700DE744E /* FCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6916C0D7211C2D2700DE744E /* FCUser.m */; };
 		6916C0DB211C2EA400DE744E /* FCCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 6916C0DA211C2EA400DE744E /* FCCommon.m */; };
 		6916C138211D5BC000DE744E /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6916C137211D5BC000DE744E /* logo.png */; };
+		697B32CC21218C3F00038C6A /* FCFractionalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 697B32CB21218C3F00038C6A /* FCFractionalView.m */; };
+		697B32CF2121946300038C6A /* FCDosageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 697B32CE2121946300038C6A /* FCDosageView.m */; };
 		697E0FEF20FC486300777146 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 697E0FEE20FC486300777146 /* AppDelegate.m */; };
 		697E0FF520FC486300777146 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 697E0FF320FC486300777146 /* Main.storyboard */; };
 		697E0FFA20FC486600777146 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 697E0FF820FC486600777146 /* LaunchScreen.storyboard */; };
@@ -276,6 +278,10 @@
 		6916C0D9211C2EA400DE744E /* FCCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCCommon.h; sourceTree = "<group>"; };
 		6916C0DA211C2EA400DE744E /* FCCommon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCCommon.m; sourceTree = "<group>"; };
 		6916C137211D5BC000DE744E /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		697B32CA21218C3F00038C6A /* FCFractionalView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCFractionalView.h; sourceTree = "<group>"; };
+		697B32CB21218C3F00038C6A /* FCFractionalView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCFractionalView.m; sourceTree = "<group>"; };
+		697B32CD2121946300038C6A /* FCDosageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCDosageView.h; sourceTree = "<group>"; };
+		697B32CE2121946300038C6A /* FCDosageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCDosageView.m; sourceTree = "<group>"; };
 		697E0FEA20FC486300777146 /* FitCook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitCook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		697E0FED20FC486300777146 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		697E0FEE20FC486300777146 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -611,6 +617,7 @@
 		1F5B71AC210DDF56001C4604 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				697B32C921218C3300038C6A /* FCDosageView */,
 				1F2ED04F211F56AC00FB4B81 /* FCParticleButton */,
 				6916C03E2119685600DE744E /* FCToast */,
 				6987DEEF21119FA300F9D303 /* FCOnePixelLine */,
@@ -717,6 +724,17 @@
 				6916C0D7211C2D2700DE744E /* FCUser.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		697B32C921218C3300038C6A /* FCDosageView */ = {
+			isa = PBXGroup;
+			children = (
+				697B32CD2121946300038C6A /* FCDosageView.h */,
+				697B32CE2121946300038C6A /* FCDosageView.m */,
+				697B32CA21218C3F00038C6A /* FCFractionalView.h */,
+				697B32CB21218C3F00038C6A /* FCFractionalView.m */,
+			);
+			path = FCDosageView;
 			sourceTree = "<group>";
 		};
 		697E0FE120FC486300777146 = {
@@ -952,8 +970,10 @@
 				1FA211C22118899000476082 /* FCSignInViewController.m in Sources */,
 				1F4CFB7B210A1E8C00CFC438 /* FCSearchRootViewController.m in Sources */,
 				6987DEF221119FCF00F9D303 /* FCOnePixelLine.m in Sources */,
+				697B32CF2121946300038C6A /* FCDosageView.m in Sources */,
 				1FE31D3C2116395C007CD792 /* FCFilterStyle.m in Sources */,
 				697E100820FC649300777146 /* UIBarButtonItem+FC.m in Sources */,
+				697B32CC21218C3F00038C6A /* FCFractionalView.m in Sources */,
 				1F5EBB6B210F71CA00ECE894 /* FCRecipesDetailViewController.m in Sources */,
 				1F2ED052211F56CD00FB4B81 /* FCParticleButton.m in Sources */,
 				6987DEEE21114CD900F9D303 /* FCRecipesRootFilterCell.m in Sources */,
