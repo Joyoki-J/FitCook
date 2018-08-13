@@ -66,15 +66,9 @@
 // +
 - (FCRecipeDosage *)addDosage:(FCRecipeDosage *)aDosage;
 - (FCRecipeDosage *)addNumber:(NSInteger)aNumber;
-// -
-- (FCRecipeDosage *)subDosage:(FCRecipeDosage *)aDosage;
-- (FCRecipeDosage *)subNumber:(NSInteger)aNumber;
 // *
 - (FCRecipeDosage *)mulDosage:(FCRecipeDosage *)aDosage;
 - (FCRecipeDosage *)mulNumber:(NSInteger)aNumber;
-// /
-- (FCRecipeDosage *)divDosage:(FCRecipeDosage *)aDosage;
-- (FCRecipeDosage *)divNumber:(NSInteger)aNumber;
 
 @end
 

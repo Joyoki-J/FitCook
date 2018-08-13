@@ -179,15 +179,6 @@
     return [self addDosage:aDosage];
 }
 
-// -
-- (FCRecipeDosage *)subDosage:(FCRecipeDosage *)aDosage {
-    return nil;
-}
-
-- (FCRecipeDosage *)subNumber:(NSInteger)aNumber {
-    return nil;
-}
-
 // *
 - (FCRecipeDosage *)mulDosage:(FCRecipeDosage *)aDosage {
     if (![self check:aDosage] || [self isZero] || [aDosage isZero]) {
@@ -235,14 +226,6 @@
                                                           denominator:1
                                                                  unit:self.unit];
     return [self mulDosage:aDosage];
-}
-// /
-- (FCRecipeDosage *)divDosage:(FCRecipeDosage *)aDosage {
-    return nil;
-}
-
-- (FCRecipeDosage *)divNumber:(NSInteger)aNumber {
-    return nil;
 }
 
 - (void)reduce {
