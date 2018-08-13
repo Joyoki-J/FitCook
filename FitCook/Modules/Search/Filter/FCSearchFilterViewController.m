@@ -25,6 +25,10 @@
 @property (weak, nonatomic) IBOutlet FCSearchFilterView *vFilterDiet;
 @property (weak, nonatomic) IBOutlet FCSearchFilterView *vFilterTaste;
 
+@property (nonatomic, strong) NSMutableDictionary<NSString *,NSNumber *> *dicTaste;
+
+@property (nonatomic, strong) NSMutableSet<NSNumber *> *dSetCategory;
+@property (nonatomic, strong) NSMutableSet<NSNumber *> *dSetDiet;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutTop;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutBottom;
@@ -88,6 +92,7 @@
             [setIndexDiet removeAllObjects];
             [setIndexDiet addObject:@0];
         }
+        _dicTaste = [dicTaste mutableCopy];
     } else {
         dicTaste = @{kSugarfree : @(NO),
                      kDairyfree : @(NO),
@@ -95,9 +100,39 @@
                      kGlutenfree: @(NO)};
         [[NSUserDefaults standardUserDefaults] setObject:dicTaste forKey:kSearchFilterTasteKey];
         [[NSUserDefaults standardUserDefaults] synchronize];
+        _dicTaste = [dicTaste mutableCopy];
     }
-    _vFilterDiet.selectedIndexs = setIndexDiet;
+    _vFilterCategory.selectedIndexs = _dSetCategory;
+    _vFilterDiet.selectedIndexs = _dSetDiet.count > 0 ? _dSetDiet : setIndexDiet;
     _vFilterTaste.selectedIndexs = setIndexTaste;
+}
+
+- (void)setSelectedFilters:(NSArray<NSString *> *)filters {
+    NSMutableSet<NSNumber *> *setCategory = [NSMutableSet set];
+    NSMutableSet<NSNumber *> *setDiet = [NSMutableSet set];
+    [filters enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([[obj lowercaseString] isEqualToString:@"breakfast"]) {
+            [setCategory addObject:@0];
+        } else if ([[obj lowercaseString] isEqualToString:@"lunch"]) {
+            [setCategory addObject:@1];
+        } else if ([[obj lowercaseString] isEqualToString:@"dinner"]) {
+            [setCategory addObject:@2];
+        } else if ([[obj lowercaseString] isEqualToString:@"sugar-free"]) {
+            [setDiet addObject:@1];
+        } else if ([[obj lowercaseString] isEqualToString:@"dairy-free"]) {
+            [setDiet addObject:@2];
+        } else if ([[obj lowercaseString] isEqualToString:@"vegetarian"]) {
+            [setDiet addObject:@3];
+        } else if ([[obj lowercaseString] isEqualToString:@"gluten-free"]) {
+            [setDiet addObject:@4];
+        }
+    }];
+    if (setDiet.count >= 4) {
+        [setDiet removeAllObjects];
+        [setDiet addObject:@0];
+    }
+    _dSetCategory = setCategory;
+    _dSetDiet = setDiet;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -109,10 +144,6 @@
     
     __block NSMutableArray *arrTitles = [NSMutableArray array];
     
-    NSArray<UIButton *> *arrFilterCategory = _vFilterCategory.arrFilter;
-    [_vFilterCategory.selectedIndexs enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, BOOL * _Nonnull stop) {
-        [arrTitles addObject:[[arrFilterCategory objectAtIndex:obj.integerValue] currentTitle]];
-    }];
     if ([_vFilterDiet.selectedIndexs containsObject:@0]) {
         [_vFilterDiet.arrFilter enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             if (idx != 0) {
@@ -126,21 +157,29 @@
         }];
     }
     
-    NSLog(@"选择了 = %@",arrTitles);
+    NSArray<UIButton *> *arrFilterCategory = _vFilterCategory.arrFilter;
+    [_vFilterCategory.selectedIndexs enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, BOOL * _Nonnull stop) {
+        [arrTitles addObject:[[arrFilterCategory objectAtIndex:obj.integerValue] currentTitle]];
+    }];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:_dicTaste forKey:kSearchFilterTasteKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    if ([_delegate respondsToSelector:@selector(searchFilterViewController:didSelectedFilters:)]) {
+        [_delegate searchFilterViewController:self didSelectedFilters:arrTitles];
+    }
     
     [self close];
 }
 
 - (IBAction)onClickClearFilterAction:(UIButton *)sender {
-    NSDictionary *dicTaste = @{kSugarfree : @(NO),
-                               kDairyfree : @(NO),
-                               kVegetarian: @(NO),
-                               kGlutenfree: @(NO)};
-    [[NSUserDefaults standardUserDefaults] setObject:dicTaste forKey:kSearchFilterTasteKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    _vFilterCategory.selectedIndexs = nil;
-    _vFilterDiet.selectedIndexs     = nil;
-    _vFilterTaste.selectedIndexs    = nil;
+    _dicTaste = [@{kSugarfree : @(NO),
+                   kDairyfree : @(NO),
+                   kVegetarian: @(NO),
+                   kGlutenfree: @(NO)} mutableCopy];
+    _vFilterCategory.selectedIndexs = [NSSet set];
+    _vFilterDiet.selectedIndexs     = [NSSet set];
+    _vFilterTaste.selectedIndexs    = [NSSet set];
 }
 
 - (void)close {
@@ -160,9 +199,8 @@
             view.selectedIndexs = [NSSet setWithObject:indexNum];
         }
     } else if ([view.title isEqualToString:@"Diet"]) { //Diet
-        NSMutableDictionary *dicTaste = [[[NSUserDefaults standardUserDefaults] dictionaryForKey:kSearchFilterTasteKey] mutableCopy];
         __block BOOL isSelectedAll = YES;
-        [dicTaste.allValues enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [_dicTaste.allValues enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             if (![obj boolValue]) {
                 isSelectedAll = NO;
                 *stop = YES;
@@ -173,7 +211,7 @@
         if (index == 0) {
             if ([view.selectedIndexs containsObject:indexNum]) {
                 NSMutableSet *set = [NSMutableSet set];
-                [dicTaste enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, NSNumber * _Nonnull obj, BOOL * _Nonnull stop) {
+                [_dicTaste enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, NSNumber * _Nonnull obj, BOOL * _Nonnull stop) {
                     if ([obj boolValue]) {
                         [set addObject:@([key integerValue] + 1)];
                     }
@@ -185,9 +223,8 @@
         } else {
             NSMutableSet<NSNumber *> *selectedIndexs = [view.selectedIndexs mutableCopy];
             if ([selectedIndexs containsObject:@0]) {
-                [dicTaste setObject:@(YES) forKey:[NSString stringWithFormat:@"%ld",(long)(index - 1)]];
                 __block BOOL isSelectedAll = YES;
-                [dicTaste.allValues enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                [_dicTaste.allValues enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                     if (![obj boolValue]) {
                         isSelectedAll = NO;
                         *stop = YES;
@@ -197,7 +234,7 @@
                 [selectedIndexs removeObject:@0];
             }
             if ([selectedIndexs containsObject:indexNum]) {
-                if ([[dicTaste objectForKey:[NSString stringWithFormat:@"%ld",(long)(index - 1)]] boolValue]) {
+                if ([[_dicTaste objectForKey:[NSString stringWithFormat:@"%ld",(long)(index - 1)]] boolValue]) {
                     return;
                 }
                 [selectedIndexs removeObject:indexNum];
@@ -206,7 +243,7 @@
                     [selectedIndexs removeAllObjects];
                     [selectedIndexs addObject:@0];
                 } else {
-                    [dicTaste enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, NSNumber * _Nonnull obj, BOOL * _Nonnull stop) {
+                    [_dicTaste enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, NSNumber * _Nonnull obj, BOOL * _Nonnull stop) {
                         if ([obj boolValue]) {
                             [selectedIndexs addObject:@([key integerValue] + 1)];
                         }
@@ -218,10 +255,9 @@
         }
     } else { //Taste
         NSMutableSet<NSNumber *> *selectedIndexs = [view.selectedIndexs mutableCopy];
-        NSMutableDictionary *dicTaste = [[[NSUserDefaults standardUserDefaults] dictionaryForKey:kSearchFilterTasteKey] mutableCopy];
         if ([selectedIndexs containsObject:indexNum]) {
             [selectedIndexs removeObject:indexNum];
-            [dicTaste setObject:@(NO) forKey:[indexNum stringValue]];
+            [_dicTaste setObject:@(NO) forKey:[indexNum stringValue]];
             if (![_vFilterDiet.selectedIndexs containsObject:@0]) {
                 NSMutableSet *set = [_vFilterDiet.selectedIndexs mutableCopy];
                 [set removeObject:@(index + 1)];
@@ -229,10 +265,10 @@
             }
         } else {
             [selectedIndexs addObject:indexNum];
-            [dicTaste setObject:@(YES) forKey:[indexNum stringValue]];
+            [_dicTaste setObject:@(YES) forKey:[indexNum stringValue]];
             if (![_vFilterDiet.selectedIndexs containsObject:@0]) {
                 __block BOOL isSelectedAll = YES;
-                [dicTaste.allValues enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                [_dicTaste.allValues enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                     if (![obj boolValue]) {
                         isSelectedAll = NO;
                         *stop = YES;
@@ -247,8 +283,6 @@
                 }
             }
         }
-        [[NSUserDefaults standardUserDefaults] setObject:dicTaste forKey:kSearchFilterTasteKey];
-        [[NSUserDefaults standardUserDefaults] synchronize];
         view.selectedIndexs = selectedIndexs;
     }
 }

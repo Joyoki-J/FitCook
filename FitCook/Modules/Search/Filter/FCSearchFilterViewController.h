@@ -15,6 +15,7 @@
 @property (nonatomic, weak) id <FCSearchFilterViewControllerDelegate> delegate;
 
 + (instancetype)viewControllerWithCustomTransition;
+- (void)setSelectedFilters:(NSArray<NSString *> *)filters;
 - (void)close;
 
 @end
@@ -23,5 +24,6 @@
 @protocol FCSearchFilterViewControllerDelegate <NSObject>
 
 - (void)searchFilterViewControllerWillClose:(FCSearchFilterViewController *)vc;
+- (void)searchFilterViewController:(FCSearchFilterViewController *)vc didSelectedFilters:(NSArray<NSString *> *)filters;
 
 @end

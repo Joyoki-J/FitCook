@@ -14,7 +14,7 @@
 #import "FCSearchRootListNoDataCell.h"
 #import "FCSearchHeaderView.h"
 
-@interface FCSearchRootViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,FCSearchHeaderViewDelegate,FCSearchFilterViewControllerDelegate,FCSearchRootListCellDelegate>
+@interface FCSearchRootViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,FCSearchHeaderViewDelegate,FCSearchFilterViewControllerDelegate,FCSearchRootListCellDelegate,FCSearchScanViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIView *vHeaderBack;
 @property (strong, nonatomic) IBOutlet FCSearchHeaderView *vHeader;
@@ -47,11 +47,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _arrRecipe = [NSMutableArray array];
+    
     [self createSubViews];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userUpdateFavouriteNotification:) name:kUserUpdateFavouriteNotificationKey object:nil];
     
-    _arrRecipe = [NSMutableArray arrayWithArray:[FCRecipe allRecipes]];
+    [_vHeader loadFilters];
 }
 
 - (void)createSubViews {
@@ -159,14 +161,15 @@
 - (void)reloadData {
     CGPoint p = _tvList.contentOffset;
     [_tvList reloadData];
-    if (_tvList.contentSize.height < (kSCREEN_HEIGHT - 175 - kTABBAR_HEIGHT)) {
-        _vFooter.frame = CGRectMake(0, 0, kSCREEN_WIDTH, kSCREEN_HEIGHT - 175 - kTABBAR_HEIGHT - _tvList.contentSize.height);
+    if (_tvList.contentSize.height <= (kSCREEN_HEIGHT - 175 - kTABBAR_HEIGHT)) {
+        _vFooter.frame = CGRectMake(0, 0, kSCREEN_WIDTH, kSCREEN_HEIGHT - 175 - kTABBAR_HEIGHT - 148 * _arrRecipe.count);
+        
         _tvList.tableFooterView = _vFooter;
     } else {
         _vFooter.frame = CGRectMake(0, 0, kSCREEN_WIDTH, 14);
         _tvList.tableFooterView = _vFooter;
     }
-    if (p.y > _tvList.contentSize.height - (kSCREEN_HEIGHT - 175 - kTABBAR_HEIGHT)) {
+    if (p.y > 0) {
         [_tvList setContentOffset:CGPointZero];
     } else {
         [_tvList setContentOffset:p];
@@ -221,42 +224,81 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    NSString *keywords = [textField.text lowercaseString];
-    NSArray<FCRecipe *> *recipes = [FCRecipe recipesWithKeywords:[keywords componentsSeparatedByString:@" "]];
-    for (FCRecipe *r in recipes) {
-        NSLog(@"name = %@",r.name);
-        NSLog(@"keywords = %@",r.keywords);
-    }
-    NSLog(@"============================");
+    [self.view endEditing:YES];
+    [self searchRecipes:_vHeader];
     return YES;
 }
 
 #pragma mark - FCSearchHeaderViewDelegate
 - (void)searchHeaderDidClickScanAction:(FCSearchHeaderView *)vHeader {
     FCSearchScanViewController *vcSearchScan = [FCSearchScanViewController viewControllerFromStoryboard];
+    vcSearchScan.deleagte = self;
     [self.navigationController pushViewController:vcSearchScan animated:YES];
 }
 
 - (void)searchHeaderDidClickSeeAllFilterAction:(FCSearchHeaderView *)vHeader {
     _isNeedDefaultStatusBar = YES;
     FCSearchFilterViewController *vcSearchFilter = [FCSearchFilterViewController viewControllerWithCustomTransition];
+    [vcSearchFilter setSelectedFilters:[_vHeader getFilters]];
     vcSearchFilter.delegate = self;
     [self.tabBarController presentViewController:vcSearchFilter animated:YES completion:nil];
 }
 
 - (void)searchHeaderDidSelectedFilter:(FCSearchHeaderView *)vHeader {
+    [self searchRecipes:vHeader];
+}
+
+- (void)searchRecipes:(FCSearchHeaderView *)vHeader {
     [_arrRecipe removeAllObjects];
-    if (vHeader.keywords.count > 0) {
-        [_arrRecipe addObjectsFromArray:[FCRecipe predicateWithFilters:vHeader.keywords]];
-    } else {
-        [_arrRecipe addObjectsFromArray:[FCRecipe allRecipes]];
+    
+    NSMutableArray<NSString *> *filterWords = vHeader.keywords;
+    NSMutableArray<NSString *> *searchWords = [NSMutableArray array];
+    if (vHeader.tfSearch.text && vHeader.tfSearch.text.length > 0) {
+        NSArray<NSString *> *words = [vHeader.tfSearch.text componentsSeparatedByString:@" "];
+        [words enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [searchWords addObject:[obj lowercaseString]];
+        }];
     }
+    
+    if (filterWords.count < 1 && searchWords.count < 1) {
+        [_arrRecipe addObjectsFromArray:[FCRecipe allRecipes]];
+    } else if (filterWords.count > 0 && searchWords.count > 0) {
+        NSMutableSet *set1 = [NSMutableSet setWithArray:[FCRecipe predicateWithFilters:filterWords]];
+        NSMutableSet *set2 = [NSMutableSet setWithArray:[FCRecipe recipesWithKeywords:searchWords]];
+        [set1 intersectSet:set2];
+        NSMutableArray<FCRecipe *> *recipes = [NSMutableArray array];
+        [set1 enumerateObjectsUsingBlock:^(id  _Nonnull obj, BOOL * _Nonnull stop) {
+            [recipes addObject:obj];
+        }];
+        [_arrRecipe addObjectsFromArray:[recipes sortedArrayUsingComparator:^NSComparisonResult(FCRecipe * _Nonnull obj1, FCRecipe *  _Nonnull obj2) {
+            return obj1.weight > obj2.weight;
+        }]];
+    } else if (filterWords.count > 0 && searchWords.count < 1) {
+        [_arrRecipe addObjectsFromArray:[[FCRecipe predicateWithFilters:filterWords] sortedArrayUsingComparator:^NSComparisonResult(FCRecipe * _Nonnull obj1, FCRecipe *  _Nonnull obj2) {
+            return obj1.weight > obj2.weight;
+        }]];
+    } else if (filterWords.count < 1 && searchWords.count > 0) {
+        [_arrRecipe addObjectsFromArray:[[FCRecipe recipesWithKeywords:searchWords] sortedArrayUsingComparator:^NSComparisonResult(FCRecipe * _Nonnull obj1, FCRecipe *  _Nonnull obj2) {
+            return obj1.weight > obj2.weight;
+        }]];
+    }
+    
     [self reloadData];
+}
+
+#pragma mark - FCSearchScanViewControllerDelegate
+- (void)searchScanViewController:(FCSearchScanViewController *)vc didSearchFoodWithName:(NSString *)foodName {
+    _vHeader.tfSearch.text = foodName;
+    [self searchRecipes:_vHeader];
 }
 
 #pragma mark - FCSearchFilterViewControllerDelegate
 - (void)searchFilterViewControllerWillClose:(FCSearchFilterViewController *)vc {
     _isNeedDefaultStatusBar = NO;
+}
+
+- (void)searchFilterViewController:(FCSearchFilterViewController *)vc didSelectedFilters:(NSArray<NSString *> *)filters {
+    [_vHeader setRecipeFilters:filters];
 }
 
 #pragma mark - Override

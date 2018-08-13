@@ -9,6 +9,12 @@
 #import "FCSearchHeaderView.h"
 #import "FCFilterView.h"
 
+#define kSearchFilterTasteKey [NSString stringWithFormat:@"%@_FilterTaste",[FCUser currentUser].email]
+#define kSugarfree  @"0"
+#define kDairyfree  @"1"
+#define kVegetarian @"2"
+#define kGlutenfree @"3"
+
 @interface FCSearchHeaderView()<FCFilterViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *vFilterBack;
@@ -82,12 +88,7 @@
 
 - (void)filterView:(FCFilterView *)view didSelectedIndexs:(NSArray<NSNumber *> *)indexs withTitles:(NSArray<NSString *> *)titles {
     [_keywords removeAllObjects];
-    if (_tfSearch.text && _tfSearch.text.length > 0) {
-        NSArray<NSString *> *searchWords = [_tfSearch.text componentsSeparatedByString:@" "];
-        [searchWords enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            [self.keywords addObject:[obj lowercaseString]];
-        }];
-    }
+    
     [_keywords addObjectsFromArray:titles];
     
     if ([_delegate respondsToSelector:@selector(searchHeaderDidSelectedFilter:)]) {
@@ -95,13 +96,67 @@
     }
 }
 
-- (void)filterView:(FCFilterView *)view didSelectedIndex:(NSInteger)index withTitle:(NSString *)title {
+- (BOOL)filterView:(FCFilterView *)view willSelectedIndex:(NSInteger)index withTitle:(NSString *)title {
+    NSDictionary *dicTaste = [[NSUserDefaults standardUserDefaults] dictionaryForKey:kSearchFilterTasteKey];
+    if (dicTaste) {
+        if ([title isEqualToString:@"Sugar-free"]) {
+            return ![[dicTaste objectForKey:kSugarfree] boolValue];
+        } else if ([title isEqualToString:@"Dairy-free"]) {
+            return ![[dicTaste objectForKey:kDairyfree] boolValue];
+        } else if ([title isEqualToString:@"Vegetarian"]) {
+            return ![[dicTaste objectForKey:kVegetarian] boolValue];
+        } else if ([title isEqualToString:@"Gluten-free"]) {
+            return ![[dicTaste objectForKey:kGlutenfree] boolValue];
+        }
+    }
+    return YES;
+}
+
+- (void)setRecipeFilters:(NSArray<NSString *> *)filters {
+    [_vFilter updateFilters:filters];
+    [_keywords removeAllObjects];
     
+    NSMutableArray *titles = [NSMutableArray array];
+    [filters enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [titles addObject:[obj lowercaseString]];
+    }];
+    [_keywords addObjectsFromArray:titles];
     
-    
-    
-    
-   
+    if ([_delegate respondsToSelector:@selector(searchHeaderDidSelectedFilter:)]) {
+        [_delegate searchHeaderDidSelectedFilter:self];
+    }
+}
+
+- (void)loadFilters {
+    NSDictionary *dicTaste = [[NSUserDefaults standardUserDefaults] dictionaryForKey:kSearchFilterTasteKey];
+    [_keywords removeAllObjects];
+    NSMutableArray<NSString *> *filters = [NSMutableArray array];
+    if (dicTaste) {
+        if ([[dicTaste objectForKey:kSugarfree] boolValue]) {
+            [_keywords addObject:@"sugar-free"];
+            [filters addObject:@"Sugar-free"];
+        }
+        if ([[dicTaste objectForKey:kDairyfree] boolValue]) {
+            [_keywords addObject:@"dairy-free"];
+            [filters addObject:@"Dairy-free"];
+        }
+        if ([[dicTaste objectForKey:kVegetarian] boolValue]) {
+            [_keywords addObject:@"vegetarian"];
+            [filters addObject:@"Vegetarian"];
+        }
+        if ([[dicTaste objectForKey:kGlutenfree] boolValue]) {
+            [_keywords addObject:@"gluten-free"];
+            [filters addObject:@"Gluten-free"];
+        }
+    }
+    [_vFilter updateFilters:filters];
+    if ([_delegate respondsToSelector:@selector(searchHeaderDidSelectedFilter:)]) {
+        [_delegate searchHeaderDidSelectedFilter:self];
+    }
+}
+
+- (NSArray<NSString *> *)getFilters {
+    return _vFilter.titles;
 }
 
 @end

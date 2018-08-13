@@ -18,6 +18,12 @@
 @property (weak, nonatomic) IBOutlet UITextField *tfSearch;
 @property (nonatomic, strong) NSMutableArray<NSString *> *keywords;
 
+- (void)setRecipeFilters:(NSArray<NSString *> *)filters;
+
+- (void)loadFilters;
+
+- (NSArray<NSString *> *)getFilters;
+
 @end
 
 @protocol FCSearchHeaderViewDelegate <NSObject>

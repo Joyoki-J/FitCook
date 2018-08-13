@@ -19,11 +19,18 @@
 
 - (void)updateStyle:(FCFilterStyle *)style;
 
+- (void)updateFilters:(NSArray<NSString *> *)filters;
+
+@property (nonatomic, strong) NSArray<NSString *> *titles;
+
 @end
 
 @protocol FCFilterViewDelegate <NSObject>
 
 - (void)filterView:(FCFilterView *)view didSelectedIndexs:(NSArray<NSNumber *> *)indexs withTitles:(NSArray<NSString *> *)titles;
+
+@optional
+- (BOOL)filterView:(FCFilterView *)view willSelectedIndex:(NSInteger)index withTitle:(NSString *)title;
 
 @end
 

@@ -38,13 +38,26 @@
     _style = [[FCFilterStyle alloc] init];
     
     _arrData = @[@"Sugar-free",
-                 @"Vegetarian",
                  @"Dairy-free",
+                 @"Vegetarian",
                  @"Gluten-free",
                  @"Breakfast",
                  @"Lunch",
                  @"Dinner"];
     _selectedIndexs = [NSMutableArray arrayWithArray:@[@(NO),@(NO),@(NO),@(NO),@(NO),@(NO),@(NO)]];
+}
+
+- (void)updateFilters:(NSArray<NSString *> *)filters {
+    _selectedIndexs = [NSMutableArray arrayWithArray:@[@(NO),@(NO),@(NO),@(NO),@(NO),@(NO),@(NO)]];
+    NSMutableArray<NSString *> *titles = [NSMutableArray array];
+    [_arrData enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([filters containsObject:obj]) {
+            self.selectedIndexs[idx] = @(YES);
+            [titles addObject:[obj lowercaseString]];
+        }
+    }];
+    _titles = titles;
+    [_cvList reloadData];
 }
 
 - (void)createSubViews {
@@ -91,6 +104,13 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if ([_delegate respondsToSelector:@selector(filterView:willSelectedIndex:withTitle:)]) {
+        if (![_delegate filterView:self willSelectedIndex:indexPath.row withTitle:_arrData[indexPath.row]]) {
+            return;
+        }
+    }
+    
     if ([[_selectedIndexs objectAtIndex:indexPath.row] boolValue]) {
         _selectedIndexs[indexPath.row] = @(NO);
         [collectionView reloadData];
@@ -112,6 +132,7 @@
             [titles addObject:[_arrData[i] lowercaseString]];
         }
     }
+    _titles = titles;
     if ([_delegate respondsToSelector:@selector(filterView:didSelectedIndexs:withTitles:)]) {
         [_delegate filterView:self didSelectedIndexs:indexs withTitles:titles];
     }

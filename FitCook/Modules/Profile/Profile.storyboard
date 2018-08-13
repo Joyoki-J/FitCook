@@ -46,13 +46,13 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wen Shanshan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAa-jQ-a7m">
-                                                        <rect key="frame" x="98" y="15" width="263" height="20"/>
+                                                        <rect key="frame" x="98" y="17" width="263" height="20"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <color key="textColor" red="0.38823529411764707" green="0.38823529411764707" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sswenj33@gmail.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxg-G1-pos">
-                                                        <rect key="frame" x="98" y="65" width="263" height="20"/>
+                                                        <rect key="frame" x="98" y="62" width="263" height="20"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <color key="textColor" red="0.38823529411764707" green="0.38823529411764707" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -67,16 +67,16 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="UXg-5u-6wl" firstAttribute="centerY" secondItem="0zP-YD-e8J" secondAttribute="centerY" id="6xz-t6-vY3"/>
-                                                    <constraint firstItem="CAa-jQ-a7m" firstAttribute="centerY" secondItem="0zP-YD-e8J" secondAttribute="centerY" multiplier="1:2" id="FoS-Aj-jRR"/>
                                                     <constraint firstItem="lxg-G1-pos" firstAttribute="leading" secondItem="aGC-RN-RFQ" secondAttribute="trailing" constant="14" id="IJe-bT-Phj"/>
                                                     <constraint firstItem="aGC-RN-RFQ" firstAttribute="leading" secondItem="0zP-YD-e8J" secondAttribute="leading" constant="14" id="IoS-Fv-cCS"/>
                                                     <constraint firstItem="UXg-5u-6wl" firstAttribute="leading" secondItem="aGC-RN-RFQ" secondAttribute="trailing" constant="14" id="NgR-kK-LJb"/>
                                                     <constraint firstItem="8KJ-2e-w6t" firstAttribute="bottom" secondItem="aGC-RN-RFQ" secondAttribute="bottom" id="Oy4-9J-HOn"/>
                                                     <constraint firstItem="CAa-jQ-a7m" firstAttribute="leading" secondItem="aGC-RN-RFQ" secondAttribute="trailing" constant="14" id="Wmz-76-1ok"/>
+                                                    <constraint firstItem="CAa-jQ-a7m" firstAttribute="top" secondItem="8KJ-2e-w6t" secondAttribute="top" constant="2" id="Wu7-i2-wVt"/>
                                                     <constraint firstItem="8KJ-2e-w6t" firstAttribute="trailing" secondItem="aGC-RN-RFQ" secondAttribute="trailing" id="X6K-mB-Jez"/>
                                                     <constraint firstItem="aGC-RN-RFQ" firstAttribute="centerY" secondItem="0zP-YD-e8J" secondAttribute="centerY" id="XUi-XZ-4Z8"/>
                                                     <constraint firstAttribute="trailing" secondItem="UXg-5u-6wl" secondAttribute="trailing" constant="14" id="Zdc-wG-tho"/>
-                                                    <constraint firstItem="lxg-G1-pos" firstAttribute="centerY" secondItem="0zP-YD-e8J" secondAttribute="centerY" multiplier="3:2" id="bio-01-GS7"/>
+                                                    <constraint firstItem="lxg-G1-pos" firstAttribute="bottom" secondItem="8KJ-2e-w6t" secondAttribute="bottom" constant="-3" id="cSe-gu-Ggt"/>
                                                     <constraint firstAttribute="height" constant="100" id="eEh-0Z-hdq"/>
                                                     <constraint firstAttribute="trailing" secondItem="lxg-G1-pos" secondAttribute="trailing" constant="14" id="kwG-0t-kAj"/>
                                                     <constraint firstAttribute="trailing" secondItem="CAa-jQ-a7m" secondAttribute="trailing" constant="14" id="x8Q-yL-3eJ"/>

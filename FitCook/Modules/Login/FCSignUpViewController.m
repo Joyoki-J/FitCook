@@ -60,6 +60,7 @@
     NSString *msg = [FCUser addUserWithEmail:email password:password name:name];
     
     if (msg) {
+        [FCToast showErrorText:msg];
         return;
     }
     

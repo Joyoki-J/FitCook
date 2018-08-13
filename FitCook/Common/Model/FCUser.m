@@ -64,6 +64,10 @@
         return @"The email is invalid.";
     }
     
+    if (![self isValidateEmail:email]) {
+        return @"The email is invalid.";
+    }
+    
     if (!(name && name.length > 0)) {
         return @"Knock,Knock!Who is there?";
     }
@@ -147,6 +151,12 @@
     [realm transactionWithBlock:^{
         user.favourites[recipe.index].isFavourite = @(isFavourite);
     }];
+}
+
++ (BOOL)isValidateEmail:(NSString *)email {
+    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    return [emailTest evaluateWithObject:email];
 }
 
 @end

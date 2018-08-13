@@ -8,6 +8,7 @@
 
 #import "FCSearchScanViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import <AFNetworking.h>
 
 @interface FCSearchScanViewController ()<AVCaptureMetadataOutputObjectsDelegate>
 
@@ -151,13 +152,73 @@
         if (metadataObjects != nil && metadataObjects.count > 0 && !self.isSuccess) {
             self.isSuccess = YES;
             AVMetadataMachineReadableCodeObject * metadataObject = [metadataObjects firstObject ];
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Scan" message:metadataObject.stringValue preferredStyle:UIAlertControllerStyleAlert];
-            [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                self.isSuccess = NO;
-            }]];
-            [self presentViewController:alert animated:YES completion:nil];
+            [self requestFoodInfoWithFoodId:metadataObject.stringValue];
         }
     });
+}
+
+- (void)getFoodId:(NSString *)foodId {
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Scan" message:foodId preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//        self.isSuccess = NO;
+        if ([self.deleagte respondsToSelector:@selector(searchScanViewController:didSearchFoodWithName:)]) {
+            [self.deleagte searchScanViewController:self didSearchFoodWithName:@"tomato"];
+        }
+        [self.navigationController popViewControllerAnimated:YES];
+    }]];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)requestFoodInfoWithFoodId:(NSString *)foodId {
+    NSLog(@"foodId = %@",foodId);
+    NSString *url = [NSString stringWithFormat:@"https://dev.tescolabs.com/product/?gtin=%@",foodId];
+    NSLog(@"url = %@",url);
+    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+    session.requestSerializer = [AFJSONRequestSerializer serializer];
+    [session.requestSerializer setValue:@"f832dfc040c048628480d64f9179681a" forHTTPHeaderField:@"Ocp-Apim-Subscription-Key"];
+    
+    [session GET:url parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [self handleFoodInfoWithData:responseObject];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [self showErrorAlert];
+    }];
+}
+
+- (void)handleFoodInfoWithData:(id)responseObject {
+    if (responseObject && [responseObject isKindOfClass:[NSDictionary class]]) {
+        NSDictionary *dicData = (NSDictionary *)responseObject;
+        NSArray *products = dicData[@"products"];
+        if (products.count < 1) {
+            [self showErrorAlert];
+            return;
+        }
+        NSDictionary *data = [products firstObject];
+        NSString *description = data[@"description"];
+        if (!(description && description.length > 0)) {
+            [self showErrorAlert];
+            return;
+        }
+        if ([_deleagte respondsToSelector:@selector(searchScanViewController:didSearchFoodWithName:)]) {
+            [_deleagte searchScanViewController:self didSearchFoodWithName:description];
+        }
+        [self.navigationController popViewControllerAnimated:YES];
+    } else {
+        [self showErrorAlert];
+    }
+}
+
+- (void)showErrorAlert {
+    UIAlertController *vcAlert = [UIAlertController alertControllerWithTitle:nil message:@"Network error, please try again!" preferredStyle:UIAlertControllerStyleAlert];
+    [vcAlert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }]];
+    [vcAlert addAction:[UIAlertAction actionWithTitle:@"Sure" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        self.isSuccess = NO;
+    }]];
+    [self presentViewController:vcAlert animated:YES completion:nil];
 }
 
 #pragma mark - Override
