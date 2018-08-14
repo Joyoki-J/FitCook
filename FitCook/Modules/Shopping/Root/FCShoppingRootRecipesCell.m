@@ -22,7 +22,7 @@
     _imgvFood.layer.cornerRadius = 4.f;
     _imgvFood.clipsToBounds = YES;
     
-    _vContent.layer.borderColor = [kCOLOR_TAB_BAR_ITEM_TITLE CGColor];
+    _vContent.layer.borderColor = [RGB(217, 218, 218) CGColor];
     _vContent.layer.borderWidth = 1.f;
     _vContent.layer.cornerRadius = 4.f;
     _vContent.clipsToBounds = YES;

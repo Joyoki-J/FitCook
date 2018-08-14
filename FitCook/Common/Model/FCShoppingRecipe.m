@@ -22,6 +22,15 @@
     return self;
 }
 
+- (FCRecipeDosage *)getDosage {
+    FCRecipeDosage *d = [[FCRecipeDosage alloc] init];
+    d.integer = self.integer;
+    d.numerator = self.numerator;
+    d.denominator = self.denominator;
+    d.unit = self.unit;
+    return d;
+}
+
 @end
 
 @implementation FCShoppingIngredient
@@ -33,6 +42,7 @@
         _name = ingredient.name;
         _category = ingredient.category;
         _isNeedCalculate = ingredient.isNeedCalculate;
+        _weight = ingredient.weight;
         _dosage = [[FCShoppingDosage alloc] initWithRecipeDosage:ingredient.dosage];
     }
     return self;
@@ -63,6 +73,17 @@
         [array addObject:[[FCShoppingIngredient alloc] initWithRecipeIngredient:obj]];
     }];
     return array;
+}
+
+- (NSInteger)HowManyIngredentsMissing {
+    __block NSInteger count = 0;
+    
+    for (NSInteger i = 0; i < self.ingredients.count; i++) {
+        if (![self.ingredients objectAtIndex:i].isBuy) {
+            count++;
+        }
+    }
+    return count;
 }
 
 @end

@@ -160,6 +160,44 @@
     return [emailTest evaluateWithObject:email];
 }
 
+- (BOOL)isAddedShoppingRecipe:(FCRecipe *)recipe {
+    FCUser *user = [[self class] currentUser];
+    RLMResults *result = [user.shoppingList objectsWhere:@"index = %ld", recipe.index];
+    return result.count > 0;
+}
 
+- (void)addRecipeToShoppingList:(FCRecipe *)recipe withCount:(NSInteger)count {
+    FCShoppingRecipe *shoppingRecipe = [[FCShoppingRecipe alloc] initWithRecipe:recipe count:count];
+    RLMArray<FCShoppingRecipe *> *shoppingList = [[self class] currentUser].shoppingList;
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm transactionWithBlock:^{
+        [shoppingList addObject:shoppingRecipe];
+    }];
+}
+
+- (void)deleteRecipeFromShoppingList:(FCShoppingRecipe *)recipe {
+    RLMArray<FCShoppingRecipe *> *shoppingList = [[self class] currentUser].shoppingList;
+    FCShoppingRecipe *shoppingRecipe = [shoppingList objectsWhere:@"index = %ld", recipe.index][0];
+    NSUInteger index = [shoppingList indexOfObject:shoppingRecipe];
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm transactionWithBlock:^{
+        [shoppingList removeObjectAtIndex:index];
+        [realm deleteObject:shoppingRecipe];
+    }];
+}
+
+- (NSArray<FCShoppingRecipe *> *)getShoppingList {
+    NSMutableArray<FCShoppingRecipe *> *arr = [NSMutableArray array];
+    RLMArray<FCShoppingRecipe *> *shoppingList = [[self class] currentUser].shoppingList;
+    for (NSInteger i = 0; i < shoppingList.count; i++) {
+        [arr addObject:shoppingList[i]];
+    }
+    
+    [arr sortUsingComparator:^NSComparisonResult(FCShoppingRecipe * _Nonnull obj1, FCShoppingRecipe *  _Nonnull obj2) {
+        return obj1.weight > obj2.weight;
+    }];
+    
+    return arr;
+}
 
 @end

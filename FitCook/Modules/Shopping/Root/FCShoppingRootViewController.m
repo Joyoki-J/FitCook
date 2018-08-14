@@ -10,6 +10,7 @@
 #import "FCShoppingRootRecipesCell.h"
 #import "FCShoppingRootFoodsCell.h"
 #import "FCShoppingListViewController.h"
+#import "FCShoppingRecipe.h"
 
 @interface FCShoppingRootViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -19,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tvList;
 @property (weak, nonatomic) IBOutlet UIView *vNoData;
 
-@property (nonatomic, strong) NSMutableArray *arrRecipes;
+@property (nonatomic, strong) NSMutableArray<FCShoppingRecipe *> *arrRecipes;
 @property (nonatomic, strong) NSMutableArray *arrFoods;
 
 @property (nonatomic, assign) BOOL isNeedRefresh;
@@ -35,18 +36,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _isNeedRefresh = YES;
+    
     _arrRecipes = [NSMutableArray array];
     _arrFoods   = [NSMutableArray array];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userUpdateShoppingNotification:) name:kUserUpdateShoppingNotificationKey object:nil];
     
-    [_arrRecipes addObjectsFromArray:@[@"",@"",@"",@"",@"",@"",@"",@"",@"",@""]];
-    [_arrFoods addObjectsFromArray:@[@"Avocado",@"Spaghetti",@"Olive Oil",@"Salt",@"Milk"]];
-    
     _tvList.estimatedSectionFooterHeight = 0;
     _tvList.estimatedSectionFooterHeight = 0;
     
-    [self addRightBarButtonItem];
+//    [self addRightBarButtonItem];
 }
 
 - (void)userUpdateShoppingNotification:(NSNotification *)notifi {
@@ -68,7 +68,7 @@
 - (void)onClickRightAction:(UIButton *)sender {
     _isFoodsStyle = !_isFoodsStyle;
     [_btnRightItem setImage:_isFoodsStyle ? [UIImage imageNamed:@"navbarItem_liststyle_foods"] : [UIImage imageNamed:@"navbarItem_liststyle_recipes"] forState:UIControlStateNormal];
-    [_tvList reloadData];
+    [self reloadData:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -86,12 +86,7 @@
 
 - (void)refreshData {
     [self.arrRecipes removeAllObjects];
-    FCUser *user = [FCUser currentUser];
-    [[FCRecipe allRecipes] enumerateObjectsUsingBlock:^(FCRecipe * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if ([user isFavouriteRecipe:obj]) {
-            [self.arrRecipes addObject:obj];
-        }
-    }];
+    [_arrRecipes addObjectsFromArray:[[FCUser currentUser] getShoppingList]];
     [self reloadData:NO];
 }
 
@@ -143,7 +138,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return _isFoodsStyle ? 42.0 : 116.0;
+    return _isFoodsStyle ? 50.0: 116.0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -161,6 +156,10 @@
         return cell;
     } else {
         FCShoppingRootRecipesCell *cell = [FCShoppingRootRecipesCell cellWithTableView:tableView andIndexPath:indexPath];
+        FCShoppingRecipe *shoppingRecipe = [_arrRecipes objectAtIndex:indexPath.section];
+        [cell.imgvFood fc_setImageWithName:shoppingRecipe.imageName_3];
+        cell.labTitle.text = shoppingRecipe.name;
+        cell.labDetails.text = [NSString stringWithFormat:@"%ld ingredents missing",[shoppingRecipe HowManyIngredentsMissing]];
         return cell;
     }
 }
@@ -171,6 +170,7 @@
         cell.isSelected = !cell.isSelected;
     } else {
         FCShoppingListViewController *vcShoppingList = [FCShoppingListViewController viewControllerFromStoryboard];
+        vcShoppingList.shoppingRecipe = [_arrRecipes objectAtIndex:indexPath.section];
         [self.navigationController pushViewController:vcShoppingList animated:YES];
     }
 }
@@ -183,6 +183,8 @@
     if (!_isFoodsStyle && editingStyle == UITableViewCellEditingStyleDelete) {
         [tableView endEditing:NO];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            FCShoppingRecipe *recipe = [self.arrRecipes objectAtIndex:indexPath.section];
+            [[FCUser currentUser] deleteRecipeFromShoppingList:recipe];
             [self.arrRecipes removeObjectAtIndex:indexPath.section];
             [self reloadData:YES];
         });

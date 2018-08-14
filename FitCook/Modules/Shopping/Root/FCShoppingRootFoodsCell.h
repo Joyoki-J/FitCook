@@ -7,11 +7,13 @@
 //
 
 #import "FCBaseTableViewCell.h"
+#import "FCDosageView.h"
 
 @interface FCShoppingRootFoodsCell : FCBaseTableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *labCount;
 @property (weak, nonatomic) IBOutlet UILabel *labFoodName;
+@property (nonatomic, strong) FCDosageView *vCount;
+
 @property (nonatomic, assign) BOOL isSelected;
 
 @end

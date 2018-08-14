@@ -14,8 +14,9 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tvList;
 
-@property (nonatomic, strong) NSMutableArray *arrShopingFoods;
 @property (nonatomic, strong) UIImageView *imgvHeader;
+
+@property (nonatomic, strong) RLMResults<FCShoppingIngredient *> *arrIngredients;
 
 @end
 
@@ -29,15 +30,14 @@
     [super viewDidLoad];
     self.title = @"Shopping List";
     
-    _arrShopingFoods = [NSMutableArray array];
-    [_arrShopingFoods addObjectsFromArray:@[@"Avocado",@"Spaghetti",@"Olive Oil",@"Salt",@"Milk"]];
-    
     _tvList.tableHeaderView = [self createHeaderView];
-    _imgvHeader.image = [UIImage imageNamed:@"foot_photo1"];
+    [_imgvHeader fc_setImageWithName:_shoppingRecipe.imageName_1];
+    
+    [self reloadData];
 }
 
 - (UIView *)createHeaderView {
-    UIView *vHeader = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, 21.0 / 50.0 * (kSCREEN_WIDTH - 30.0))];
+    UIView *vHeader = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, 21.0 / 50.0 * (kSCREEN_WIDTH - 30.0) + 35)];
     vHeader.backgroundColor = [UIColor whiteColor];
     
     _imgvHeader = [[UIImageView alloc] init];
@@ -47,48 +47,40 @@
     vMask.backgroundColor = RGBA(0, 0, 0, 12);
     [vHeader addSubview:vMask];
     
-    UIImageView *imgvArrow = [[UIImageView alloc] init];
-    imgvArrow.image = [UIImage imageNamed:@"icon_shopping_arrow_white"];
-    [vMask addSubview:imgvArrow];
-    
-    UILabel *labToRecipes = [[UILabel alloc] init];
-    labToRecipes.text = @"back to recipe";
-    labToRecipes.textColor = [UIColor whiteColor];
-    labToRecipes.textAlignment = NSTextAlignmentRight;
-    labToRecipes.font = kFont_14;
-    [vMask addSubview:labToRecipes];
-    
     [_imgvHeader mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.bottom.mas_equalTo(0);
+        make.top.mas_equalTo(0);
+        make.bottom.mas_equalTo(-35);
         make.leading.mas_equalTo(15);
         make.trailing.mas_equalTo(-15);
     }];
     
     [vMask mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.bottom.mas_equalTo(0);
+        make.top.mas_equalTo(0);
+        make.bottom.mas_equalTo(-35);
         make.leading.mas_equalTo(15);
         make.trailing.mas_equalTo(-15);
     }];
     
-    [imgvArrow mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.height.mas_equalTo(13);
-        make.trailing.mas_equalTo(-10);
-        make.bottom.mas_equalTo(-11);
-    }];
+    UILabel *labServings = [[UILabel alloc] init];
+    labServings.text = [NSString stringWithFormat:@"%ld Servings",_shoppingRecipe.count];
+    labServings.textAlignment = NSTextAlignmentLeft;
+    labServings.textColor = RGB(99, 99, 102);
+    labServings.font = kBoldFont(18);
+    [vHeader addSubview:labServings];
     
-    [labToRecipes mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.trailing.equalTo(imgvArrow.mas_leading).offset(-4);
-        make.centerY.equalTo(imgvArrow.mas_centerY);
+    [labServings mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(15);
+        make.right.mas_equalTo(-15);
+        make.height.mas_equalTo(20);
+        make.bottom.mas_equalTo(0);
     }];
-    
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onClickHeaderAction:)];
-    [vMask addGestureRecognizer:tap];
     
     return vHeader;
 }
 
-- (void)onClickHeaderAction:(UITapGestureRecognizer *)tap {
-    FCRecipesDetailViewController *vcRecipesDetail = [FCRecipesDetailViewController viewControllerFromStoryboard];
+- (IBAction)onClickHeaderAction:(UIButton *)sender {
+    FCRecipe *recipe = [FCRecipe recipeWithIndex:_shoppingRecipe.index];
+    FCRecipesDetailViewController *vcRecipesDetail = [FCRecipesDetailViewController viewControllerFromStoryboardWithRecipe:recipe];
     [self.navigationController pushViewController:vcRecipesDetail animated:YES];
 }
 
@@ -99,11 +91,11 @@
 
 #pragma mark - UITableViewDataSource, UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _arrShopingFoods.count;
+    return _arrIngredients.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 42.0;
+    return 42;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -116,13 +108,33 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FCShoppingRootFoodsCell *cell = [FCShoppingRootFoodsCell cellWithTableView:tableView andIndexPath:indexPath];
-    cell.labFoodName.text = _arrShopingFoods[indexPath.row];
+    FCShoppingIngredient *ingredient = _arrIngredients[indexPath.row];
+    cell.labFoodName.text = ingredient.name;
+    [cell.vCount setTextWithDosage:[[ingredient.dosage getDosage] mulNumber:_shoppingRecipe.count]];
+    cell.isSelected = ingredient.isBuy;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    FCShoppingRootFoodsCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.isSelected = !cell.isSelected;
+    FCShoppingIngredient *ingredient = _arrIngredients[indexPath.row];
+    if (ingredient.isBuy) {
+        [[RLMRealm defaultRealm] transactionWithBlock:^{
+            ingredient.isBuy = NO;
+            ingredient.weight = ingredient.weight - 200;
+        }];
+    } else {
+        [[RLMRealm defaultRealm] transactionWithBlock:^{
+            ingredient.isBuy = YES;
+            ingredient.weight = ingredient.weight + 200;
+        }];
+    }
+    [self reloadData];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kUserUpdateShoppingNotificationKey object:NSStringFromClass([self class])];
+}
+
+- (void)reloadData {
+    _arrIngredients = [_shoppingRecipe.ingredients sortedResultsUsingKeyPath:@"weight" ascending:YES];
+    [_tvList reloadData];
 }
 
 @end

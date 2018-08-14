@@ -12,6 +12,7 @@
                 "name": "asparagus",
                 "category": "asparagus",
                 "isNeedCalculate": true,
+                "weight": 2,
                 "dosage": {
                     "integer": 60,
                     "numerator": 0,
@@ -23,6 +24,7 @@
                 "name": "cherry tomatoes",
                 "category": "cherry tomatoes",
                 "isNeedCalculate": true,
+                "weight": 3,
                 "dosage": {
                     "integer": 4,
                     "numerator": 0,
@@ -34,6 +36,8 @@
                 "name": "flank steak",
                 "category": "flank steak",
                 "isNeedCalculate": true,
+                "weight": 18,
+                "weight": 1,
                 "dosage": {
                     "integer": 150,
                     "numerator": 0,
@@ -45,6 +49,7 @@
                 "name": "olive oil",
                 "category": "olive oil",
                 "isNeedCalculate": false,
+                "weight": 51,
                 "dosage": {
                     "integer": 2,
                     "numerator": 0,
@@ -56,6 +61,7 @@
                 "name": "salt",
                 "category": "salt",
                 "isNeedCalculate": false,
+                "weight": 58,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -67,6 +73,7 @@
                 "name": "freshly ground black pepper",
                 "category": "freshly ground black pepper",
                 "isNeedCalculate": false,
+                "weight": 63,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -105,6 +112,7 @@
                 "name": "Greek yogurt",
                 "category": "Greek yogurt",
                 "isNeedCalculate": true,
+                "weight": 19,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -116,6 +124,7 @@
                 "name": "berries",
                 "category": "berries",
                 "isNeedCalculate": true,
+                "weight": 20,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -127,6 +136,7 @@
                 "name": "granola/other whole cereal",
                 "category": "granola / other whole cereal",
                 "isNeedCalculate": true,
+                "weight": 28,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -138,6 +148,7 @@
                 "name": "honey",
                 "category": "honey",
                 "isNeedCalculate": false,
+                "weight": 47,
                 "dosage": {
                     "integer": 1,
                     "numerator": 0,
@@ -174,6 +185,7 @@
                 "name": "quinoa",
                 "category": "quinoa",
                 "isNeedCalculate": true,
+                "weight": 29,
                 "dosage": {
                     "integer": 40,
                     "numerator": 0,
@@ -185,6 +197,7 @@
                 "name": "sliced mushroom",
                 "category": "mushroom",
                 "isNeedCalculate": true,
+                "weight": 23,
                 "dosage": {
                     "integer": 160,
                     "numerator": 0,
@@ -196,6 +209,7 @@
                 "name": "grated Parmesan",
                 "category": "Parmesan",
                 "isNeedCalculate": true,
+                "weight": 27,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -207,6 +221,7 @@
                 "name": "minced garlic",
                 "category": "garlic",
                 "isNeedCalculate": false,
+                "weight": 50,
                 "dosage": {
                     "integer": 2,
                     "numerator": 0,
@@ -218,6 +233,7 @@
                 "name": "olive oil",
                 "category": "olive oil",
                 "isNeedCalculate": false,
+                "weight": 51,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -229,11 +245,13 @@
                 "name": "salt to taste",
                 "category": "salt",
                 "isNeedCalculate": false,
+                "weight": 58
             },
             {
                 "name": "freshly black pepper to taste",
-                "category": "freshly black pepper",
+                "category": "freshly ground black pepper",
                 "isNeedCalculate": false,
+                "weight": 63,
             }
         ],
         "steps": [
@@ -265,6 +283,7 @@
                 "name": "tofu",
                 "category": "tofu",
                 "isNeedCalculate": true,
+                "weight": 7,
                 "dosage": {
                     "integer": 160,
                     "numerator": 0,
@@ -276,6 +295,7 @@
                 "name": "red onion",
                 "category": "red onion",
                 "isNeedCalculate": true,
+                "weight": 9,
                 "dosage": {
                     "integer": 1,
                     "numerator": 0,
@@ -287,6 +307,7 @@
                 "name": "green onion",
                 "category": "green onion",
                 "isNeedCalculate": true,
+                "weight": 10,
                 "dosage": {
                     "integer": 1,
                     "numerator": 0,
@@ -298,6 +319,7 @@
                 "name": "small cucumber",
                 "category": "cucumber",
                 "isNeedCalculate": true,
+                "weight": 16,
                 "dosage": {
                     "integer": 1,
                     "numerator": 0,
@@ -309,6 +331,7 @@
                 "name": "crushed peanuts",
                 "category": "crushed peanuts",
                 "isNeedCalculate": true,
+                "weight": 30,
                 "dosage": {
                     "integer": 1,
                     "numerator": 0,
@@ -320,6 +343,7 @@
                 "name": "minced garlic",
                 "category": "garlic",
                 "isNeedCalculate": false,
+                "weight": 50,
                 "dosage": {
                     "integer": 2,
                     "numerator": 0,
@@ -331,6 +355,7 @@
                 "name": "soy sauce",
                 "category": "soy sauce",
                 "isNeedCalculate": false,
+                "weight": 65,
                 "dosage": {
                     "integer": 2,
                     "numerator": 0,
@@ -342,6 +367,7 @@
                 "name": "olive oil",
                 "category": "olive oil",
                 "isNeedCalculate": false,
+                "weight": 51,
                 "dosage": {
                     "integer": 1,
                     "numerator": 0,
@@ -353,6 +379,7 @@
                 "name": "rice vinegar",
                 "category": "rice vinegar",
                 "isNeedCalculate": false,
+                "weight": 54,
                 "dosage": {
                     "integer": 2,
                     "numerator": 0,
@@ -364,6 +391,7 @@
                 "name": "sesame oil",
                 "category": "sesame oil",
                 "isNeedCalculate": false,
+                "weight": 52,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -403,6 +431,7 @@
                 "name": "sweet corn",
                 "category": "sweet corn",
                 "isNeedCalculate": true,
+                "weight": 6,
                 "dosage": {
                     "integer": 100,
                     "numerator": 0,
@@ -414,6 +443,7 @@
                 "name": "cooked and peeled prawn",
                 "category": "cooked and peeled prawn",
                 "isNeedCalculate": true,
+                "weight": 17,
                 "dosage": {
                     "integer": 150,
                     "numerator": 0,
@@ -425,6 +455,7 @@
                 "name": "medium lemon",
                 "category": "lemon",
                 "isNeedCalculate": true,
+                "weight": 14,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -436,6 +467,7 @@
                 "name": "small onion",
                 "category": "onion",
                 "isNeedCalculate": true,
+                "weight": 12,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -447,6 +479,7 @@
                 "name": "fresh and chopped basil",
                 "category": "fresh basil",
                 "isNeedCalculate": false,
+                "weight": 59,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -458,6 +491,7 @@
                 "name": "salt",
                 "category": "salt",
                 "isNeedCalculate": false,
+                "weight": 58,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -469,6 +503,7 @@
                 "name": "olive oil",
                 "category": "olive oil",
                 "isNeedCalculate": false,
+                "weight": 51,
                 "dosage": {
                     "integer": 2,
                     "numerator": 0,
@@ -480,6 +515,7 @@
                 "name": "red wine vinegar",
                 "category": "red wine vinegar",
                 "isNeedCalculate": false,
+                "weight": 55,
                 "dosage": {
                     "integer": 2,
                     "numerator": 0,
@@ -491,6 +527,7 @@
                 "name": "mustard",
                 "category": "mustard",
                 "isNeedCalculate": false,
+                "weight": 57,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -531,6 +568,7 @@
                 "name": "potato",
                 "category": "potato",
                 "isNeedCalculate": true,
+                "weight": 4,
                 "dosage": {
                     "integer": 1,
                     "numerator": 0,
@@ -542,6 +580,7 @@
                 "name": "broccoli",
                 "category": "broccoli",
                 "isNeedCalculate": true,
+                "weight": 8,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -553,6 +592,7 @@
                 "name": "medium onion",
                 "category": "onion",
                 "isNeedCalculate": true,
+                "weight": 12,
                 "dosage": {
                     "integer": 1,
                     "numerator": 0,
@@ -564,6 +604,7 @@
                 "name": "mushroom",
                 "category": "mushroom",
                 "isNeedCalculate": true,
+                "weight": 23,
                 "dosage": {
                     "integer": 100,
                     "numerator": 0,
@@ -575,6 +616,7 @@
                 "name": "chicken breast",
                 "category": "chicken breast",
                 "isNeedCalculate": true,
+                "weight": 21,
                 "dosage": {
                     "integer": 0,
                     "numerator": 2,
@@ -586,6 +628,7 @@
                 "name": "Brussel sprouts",
                 "category": "Brussel sprouts",
                 "isNeedCalculate": true,
+                "weight": 26,
                 "dosage": {
                     "integer": 150,
                     "numerator": 0,
@@ -597,6 +640,7 @@
                 "name": "olive oil",
                 "category": "olive oil",
                 "isNeedCalculate": false,
+                "weight": 51,
                 "dosage": {
                     "integer": 2,
                     "numerator": 0,
@@ -608,6 +652,7 @@
                 "name": "cayenne pepper",
                 "category": "cayenne pepper",
                 "isNeedCalculate": false,
+                "weight": 56,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -619,6 +664,7 @@
                 "name": "black pepper",
                 "category": "black pepper",
                 "isNeedCalculate": false,
+                "weight": 62,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -630,6 +676,7 @@
                 "name": "salt",
                 "category": "salt",
                 "isNeedCalculate": false,
+                "weight": 58,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -670,6 +717,7 @@
                 "name": "sushi rice",
                 "category": "sushi rice",
                 "isNeedCalculate": true,
+                "weight": 31,
                 "dosage": {
                     "integer": 80,
                     "numerator": 0,
@@ -681,6 +729,7 @@
                 "name": "sashimi-grade salmon fillet",
                 "category": "sashimi-grade salmon fillet",
                 "isNeedCalculate": true,
+                "weight": 32,
                 "dosage": {
                     "integer": 160,
                     "numerator": 0,
@@ -692,6 +741,7 @@
                 "name": "finely chopped red chilli",
                 "category": "red chilli",
                 "isNeedCalculate": true,
+                "weight": 33,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -703,6 +753,7 @@
                 "name": "finely chopped red or spring onion",
                 "category": "red onion",
                 "isNeedCalculate": true,
+                "weight": 9,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -714,6 +765,7 @@
                 "name": "broccoli",
                 "category": "broccoli",
                 "isNeedCalculate": true,
+                "weight": 8,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -725,6 +777,7 @@
                 "name": "sugar snap peas",
                 "category": "sugar snap peas",
                 "isNeedCalculate": true,
+                "weight": 13,
                 "dosage": {
                     "integer": 6,
                     "numerator": 0,
@@ -736,6 +789,7 @@
                 "name": "lime",
                 "category": "lime",
                 "isNeedCalculate": true,
+                "weight": 35,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -747,6 +801,7 @@
                 "name": "mayonnaise with a little bit chilli sauce",
                 "category": "mayonnaise",
                 "isNeedCalculate": false,
+                "weight": 48,
                 "dosage": {
                     "integer": 2,
                     "numerator": 0,
@@ -758,6 +813,7 @@
                 "name": "water",
                 "category": "water",
                 "isNeedCalculate": false,
+                "weight": 66,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -769,6 +825,7 @@
                 "name": "salt",
                 "category": "salt",
                 "isNeedCalculate": false,
+                "weight": 58,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -780,6 +837,7 @@
                 "name": "soya sauce",
                 "category": "soya sauce",
                 "isNeedCalculate": false,
+                "weight": 53,
                 "dosage": {
                     "integer": 2,
                     "numerator": 0,
@@ -791,6 +849,7 @@
                 "name": "sesame oil",
                 "category": "sesame oil",
                 "isNeedCalculate": false,
+                "weight": 52,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -830,6 +889,7 @@
                 "name": "medium egg",
                 "category": "egg",
                 "isNeedCalculate": true,
+                "weight": 1,
                 "dosage": {
                     "integer": 1,
                     "numerator": 0,
@@ -841,6 +901,7 @@
                 "name": "tortilla",
                 "category": "tortilla",
                 "isNeedCalculate": true,
+                "weight": 24,
                 "dosage": {
                     "integer": 1,
                     "numerator": 0,
@@ -852,6 +913,7 @@
                 "name": "lettuce",
                 "category": "lettuce",
                 "isNeedCalculate": true,
+                "weight": 25,
                 "dosage": {
                     "integer": 1,
                     "numerator": 0,
@@ -863,6 +925,7 @@
                 "name": "small red bell pepper",
                 "category": "red bell pepper",
                 "isNeedCalculate": true,
+                "weight": 34,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -874,6 +937,7 @@
                 "name": "pickles",
                 "category": "pickles",
                 "isNeedCalculate": true,
+                "weight": 36,
                 "dosage": {
                     "integer": 10,
                     "numerator": 0,
@@ -885,6 +949,7 @@
                 "name": "solid/chunks canned tuna",
                 "category": "canned tuna",
                 "isNeedCalculate": true,
+                "weight": 37,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -896,6 +961,7 @@
                 "name": "hummus",
                 "category": "hummus",
                 "isNeedCalculate": false,
+                "weight": 48,
                 "dosage": {
                     "integer": 2,
                     "numerator": 0,
@@ -934,6 +1000,7 @@
                 "name": "spaghetti",
                 "category": "spaghetti",
                 "isNeedCalculate": true,
+                "weight": 38,
                 "dosage": {
                     "integer": 120,
                     "numerator": 0,
@@ -945,6 +1012,7 @@
                 "name": "ripe avocados, halved, seeded and peeled",
                 "category": "ripe avocado",
                 "isNeedCalculate": true,
+                "weight": 39,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -956,6 +1024,7 @@
                 "name": "freshly squeezed lemon juice",
                 "category": "lemon",
                 "isNeedCalculate": true,
+                "weight": 14,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -967,6 +1036,7 @@
                 "name": "halved cherry tomatoes",
                 "category": "cherry tomatoes",
                 "isNeedCalculate": true,
+                "weight": 3,
                 "dosage": {
                     "integer": 60,
                     "numerator": 0,
@@ -978,6 +1048,7 @@
                 "name": "drained and rinsed canned corn kernels",
                 "category": "canned corn kernels",
                 "isNeedCalculate": true,
+                "weight": 40,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -989,6 +1060,7 @@
                 "name": "fresh basil leaves",
                 "category": "basil leaves",
                 "isNeedCalculate": true,
+                "weight": 41,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -1000,6 +1072,7 @@
                 "name": "olive oil",
                 "category": "olive oil",
                 "isNeedCalculate": false,
+                "weight": 51,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -1011,6 +1084,7 @@
                 "name": "garlic",
                 "category": "garlic",
                 "isNeedCalculate": false,
+
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -1022,11 +1096,13 @@
                 "name": "salt",
                 "category": "salt",
                 "isNeedCalculate": false,
+                "weight": 58
             },
             {
                 "name": "freshly ground black pepper",
                 "category": "freshly ground black pepper",
                 "isNeedCalculate": false,
+                "weight": 63
             }
         ],
         "steps": [
@@ -1059,6 +1135,7 @@
                 "name": "green beans",
                 "category": "green beans",
                 "isNeedCalculate": true,
+                "weight": 11,
                 "dosage": {
                     "integer": 60,
                     "numerator": 0,
@@ -1070,6 +1147,7 @@
                 "name": "red potatoes",
                 "category": "red potatoes",
                 "isNeedCalculate": true,
+                "weight": 5,
                 "dosage": {
                     "integer": 60,
                     "numerator": 0,
@@ -1081,6 +1159,7 @@
                 "name": "light Margarine",
                 "category": "light Margarine",
                 "isNeedCalculate": true,
+                "weight": 42,
                 "dosage": {
                     "integer": 1,
                     "numerator": 0,
@@ -1092,6 +1171,7 @@
                 "name": "chopped fresh parsley",
                 "category": "parsley",
                 "isNeedCalculate": true,
+                "weight": 43,
                 "dosage": {
                     "integer": 2,
                     "numerator": 0,
@@ -1103,6 +1183,7 @@
                 "name": "salt",
                 "category": "salt",
                 "isNeedCalculate": false,
+                "weight": 58,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -1114,6 +1195,7 @@
                 "name": "pepper",
                 "category": "pepper",
                 "isNeedCalculate": false,
+                "weight": 60,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -1125,6 +1207,7 @@
                 "name": "chilli powder",
                 "category": "chilli powder",
                 "isNeedCalculate": false,
+                "weight": 64,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -1173,6 +1256,7 @@
                 "name": "drained canned chickpeas",
                 "category": "canned chickpeas",
                 "isNeedCalculate": true,
+                "weight": 45,
                 "dosage": {
                     "integer": 2,
                     "numerator": 0,
@@ -1184,6 +1268,7 @@
                 "name": "chopped red onion",
                 "category": "red onion",
                 "isNeedCalculate": true,
+                "weight": 9,
                 "dosage": {
                     "integer": 30,
                     "numerator": 0,
@@ -1193,8 +1278,9 @@
             },
             {
                 "name": "cherry tomatoes",
-                "category": "halves",
+                "category": "cherry tomatoes",
                 "isNeedCalculate": true,
+                "weight": 3,
                 "dosage": {
                     "integer": 8,
                     "numerator": 0,
@@ -1206,6 +1292,7 @@
                 "name": "thinly sliced red pepper",
                 "category": "red pepper",
                 "isNeedCalculate": true,
+                "weight": 61,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -1217,6 +1304,7 @@
                 "name": "water",
                 "category": "water",
                 "isNeedCalculate": false,
+                "weight": 66,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -1228,6 +1316,7 @@
                 "name": "hummus",
                 "category": "hummus",
                 "isNeedCalculate": false,
+                "weight": 48,
                 "dosage": {
                     "integer": 2,
                     "numerator": 0,
@@ -1239,11 +1328,13 @@
                 "name": "salt to taste",
                 "category": "salt",
                 "isNeedCalculate": false,
+                "weight": 58
             },
             {
                 "name": "black pepper to taste",
                 "category": "black pepper",
                 "isNeedCalculate": false,
+                "weight": 62
             }
         ],
         "steps": [
@@ -1277,6 +1368,7 @@
                 "name": "courgette",
                 "category": "courgette",
                 "isNeedCalculate": true,
+                "weight": 15,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -1288,6 +1380,7 @@
                 "name": "green onion",
                 "category": "green onion",
                 "isNeedCalculate": true,
+                "weight": 10,
                 "dosage": {
                     "integer": 1,
                     "numerator": 0,
@@ -1299,6 +1392,7 @@
                 "name": "fish cube",
                 "category": "fish cube",
                 "isNeedCalculate": true,
+                "weight": 44,
                 "dosage": {
                     "integer": 160,
                     "numerator": 0,
@@ -1310,6 +1404,7 @@
                 "name": "rotini",
                 "category": "rotini",
                 "isNeedCalculate": true,
+                "weight": 46,
                 "dosage": {
                     "integer": 160,
                     "numerator": 0,
@@ -1321,6 +1416,7 @@
                 "name": "fresh light cream",
                 "category": "fresh light cream",
                 "isNeedCalculate": true,
+                "weight": 47,
                 "dosage": {
                     "integer": 0,
                     "numerator": 1,
@@ -1332,6 +1428,7 @@
                 "name": "olive oil",
                 "category": "olive oil",
                 "isNeedCalculate": true,
+                "weight": 51,
                 "dosage": {
                     "integer": 2,
                     "numerator": 0,
@@ -1343,6 +1440,7 @@
                 "name": "chicken stock",
                 "category": "chicken stock",
                 "isNeedCalculate": true,
+                "weight": 22,
                 "dosage": {
                     "integer": 2,
                     "numerator": 0,
@@ -1354,6 +1452,7 @@
                 "name": "salt to taste",
                 "category": "salt",
                 "isNeedCalculate": true,
+                "weight": 58
             }
         ],
         "steps": [

@@ -7,7 +7,10 @@
 //
 
 #import "FCBaseViewController.h"
+#import "FCShoppingRecipe.h"
 
 @interface FCShoppingListViewController : FCBaseViewController
+
+@property (nonatomic, strong) FCShoppingRecipe *shoppingRecipe;
 
 @end

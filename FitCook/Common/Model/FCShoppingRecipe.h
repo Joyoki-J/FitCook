@@ -9,6 +9,7 @@
 #import "RLMObject.h"
 
 @class FCRecipe;
+@class FCRecipeDosage;
 
 @interface FCShoppingDosage: RLMObject
 
@@ -17,6 +18,8 @@
 @property NSInteger denominator;
 @property NSString *unit;
 
+- (FCRecipeDosage *)getDosage;
+
 @end
 
 @interface FCShoppingIngredient: RLMObject
@@ -24,6 +27,7 @@
 @property BOOL isBuy;
 @property NSString *name;
 @property NSString *category;
+@property NSInteger weight;
 @property BOOL isNeedCalculate;
 @property FCShoppingDosage *dosage;
 
@@ -43,6 +47,8 @@ RLM_ARRAY_TYPE(FCShoppingIngredient)
 
 @property NSString *imageName_1; //1154 x 443
 @property NSString *imageName_3; //339 x 339
+
+- (NSInteger)HowManyIngredentsMissing;
 
 @end
 

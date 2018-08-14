@@ -20,37 +20,49 @@
 
 @implementation FCDosageView
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self setup];
+    }
+    return self;
+}
+
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        _labInteger = [self createLabel];
-        [self addSubview:_labInteger];
-        
-        _labFractional = [[FCFractionalView alloc] init];
-        [self addSubview:_labFractional];
-        
-        _labUnit = [self createLabel];
-        [self addSubview:_labUnit];
-        
-        [_labInteger mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.left.bottom.mas_equalTo(0);
-        }];
-        
-        [_labFractional mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.labInteger.mas_right);
-            make.centerY.equalTo(self.labInteger.mas_centerY);
-            make.height.equalTo(self.labInteger.mas_height);
-        }];
-        
-        [_labUnit mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.labFractional.mas_right);
-            make.right.mas_equalTo(0);
-            make.centerY.equalTo(self.labInteger.mas_centerY);
-            make.height.equalTo(self.labInteger.mas_height);
-        }];
+        [self setup];
     }
     return self;
+}
+
+- (void)setup {
+    _labInteger = [self createLabel];
+    [self addSubview:_labInteger];
+    
+    _labFractional = [[FCFractionalView alloc] init];
+    [self addSubview:_labFractional];
+    
+    _labUnit = [self createLabel];
+    [self addSubview:_labUnit];
+    
+    [_labInteger mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.bottom.mas_equalTo(0);
+    }];
+    
+    [_labFractional mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.labInteger.mas_right);
+        make.centerY.equalTo(self.labInteger.mas_centerY);
+        make.height.equalTo(self.labInteger.mas_height);
+    }];
+    
+    [_labUnit mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.labFractional.mas_right);
+        make.right.mas_equalTo(0);
+        make.centerY.equalTo(self.labInteger.mas_centerY);
+        make.height.equalTo(self.labInteger.mas_height);
+    }];
 }
 
 - (void)setTextWithDosage:(FCRecipeDosage *)dosage {

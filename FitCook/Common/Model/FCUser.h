@@ -50,11 +50,13 @@ RLM_ARRAY_TYPE(FCFavourite)
 
 - (void)updateRecipe:(FCRecipe *)recipe isFavourite:(BOOL)isFavourite;
 
-- (BOOL)isShoppingRecipe:(FCRecipe *)recipe;
+- (BOOL)isAddedShoppingRecipe:(FCRecipe *)recipe;
 
 - (void)addRecipeToShoppingList:(FCRecipe *)recipe withCount:(NSInteger)count;
 
-- (void)deleteRecipeFromShoppingList:(FCRecipe *)recipe;
+- (void)deleteRecipeFromShoppingList:(FCShoppingRecipe *)recipe;
+
+- (NSArray<FCShoppingRecipe *> *)getShoppingList;
 
 @end
 

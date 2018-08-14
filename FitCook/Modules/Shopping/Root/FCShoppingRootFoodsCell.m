@@ -19,13 +19,18 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    
+    _vCount = [[FCDosageView alloc] init];
+    [self.contentView addSubview:_vCount];
+    [_vCount mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.imgvSeleced.mas_right).offset(10);
+        make.height.mas_equalTo(20);
+        make.centerY.equalTo(self.imgvSeleced.mas_centerY);
+    }];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 - (void)setIsSelected:(BOOL)isSelected {

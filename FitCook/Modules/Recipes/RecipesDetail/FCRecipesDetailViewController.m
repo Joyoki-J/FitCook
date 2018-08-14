@@ -305,17 +305,16 @@
 }
 
 - (IBAction)onClickAddShoppingListAction:(UIButton *)sender {
-    NSLog(@"点击 - Add");
-    static NSInteger test = 0;
-    if (test % 2 == 0) {
-        
-        [FCToast showText:@"The ingredients have been added to your shopping list."];
-    } else {
+    if ([[FCUser currentUser] isAddedShoppingRecipe:_recipe]) {
         UIAlertController *vcAlert = [UIAlertController alertControllerWithTitle:@"Oops!" message:@"This recipe has already been added to your shopping list." preferredStyle:UIAlertControllerStyleAlert];
         [vcAlert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
         [self presentViewController:vcAlert animated:YES completion:nil];
+        
+    } else {
+        [[FCUser currentUser] addRecipeToShoppingList:_recipe withCount:(NSInteger)_stepper.value];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kUserUpdateShoppingNotificationKey object:NSStringFromClass([self class])];
+        [FCToast showText:@"The ingredients have been added to your shopping list."];
     }
-    test++;
 }
 
 
