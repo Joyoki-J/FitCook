@@ -2,8 +2,8 @@
 //  FCShoppingRootViewController.m
 //  FitCook
 //
-//  Created by Joyoki on 2018/7/26.
-//  Copyright © 2018年 Joyoki. All rights reserved.
+//  Created by shanshan on 2018/7/26.
+//  Copyright © 2018年 shanshan. All rights reserved.
 //
 
 #import "FCShoppingRootViewController.h"
@@ -17,9 +17,12 @@
 @property (nonatomic, strong) UIButton *btnRightItem;
 
 @property (weak, nonatomic) IBOutlet UITableView *tvList;
+@property (weak, nonatomic) IBOutlet UIView *vNoData;
 
 @property (nonatomic, strong) NSMutableArray *arrRecipes;
 @property (nonatomic, strong) NSMutableArray *arrFoods;
+
+@property (nonatomic, assign) BOOL isNeedRefresh;
 
 @end
 
@@ -35,6 +38,8 @@
     _arrRecipes = [NSMutableArray array];
     _arrFoods   = [NSMutableArray array];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userUpdateShoppingNotification:) name:kUserUpdateShoppingNotificationKey object:nil];
+    
     [_arrRecipes addObjectsFromArray:@[@"",@"",@"",@"",@"",@"",@"",@"",@"",@""]];
     [_arrFoods addObjectsFromArray:@[@"Avocado",@"Spaghetti",@"Olive Oil",@"Salt",@"Milk"]];
     
@@ -42,6 +47,13 @@
     _tvList.estimatedSectionFooterHeight = 0;
     
     [self addRightBarButtonItem];
+}
+
+- (void)userUpdateShoppingNotification:(NSNotification *)notifi {
+    NSString *vcName = notifi.object;
+    if (vcName && ![vcName isEqualToString:NSStringFromClass([self class])]) {
+        _isNeedRefresh = YES;
+    }
 }
 
 - (void)addRightBarButtonItem {
@@ -62,6 +74,63 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (_isNeedRefresh) {
+        _isNeedRefresh = NO;
+        [self refreshData];
+    }
+}
+
+- (void)refreshData {
+    [self.arrRecipes removeAllObjects];
+    FCUser *user = [FCUser currentUser];
+    [[FCRecipe allRecipes] enumerateObjectsUsingBlock:^(FCRecipe * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([user isFavouriteRecipe:obj]) {
+            [self.arrRecipes addObject:obj];
+        }
+    }];
+    [self reloadData:NO];
+}
+
+- (void)reloadData:(BOOL)animated {
+    [_tvList reloadData];
+    if (self.arrRecipes.count > 0) {
+        [self hideNoDataView:animated];
+    } else {
+        [self showNoDataView:animated];
+    }
+}
+
+- (void)showNoDataView:(BOOL)animated {
+    if (_vNoData.alpha != 1) {
+        if (animated) {
+            [self.view bringSubviewToFront:_vNoData];
+            [UIView animateWithDuration:0.3 animations:^{
+                self.vNoData.alpha = 1;
+            }];
+        } else {
+            [self.view bringSubviewToFront:_vNoData];
+            self.vNoData.alpha = 1;
+        }
+    }
+}
+
+- (void)hideNoDataView:(BOOL)animated {
+    if (_vNoData.alpha != 0) {
+        if (animated) {
+            [UIView animateWithDuration:0.3 animations:^{
+                self.vNoData.alpha = 0;
+            } completion:^(BOOL finished) {
+                [self.view sendSubviewToBack:self.vNoData];
+            }];
+        } else {
+            self.vNoData.alpha = 0;
+            [self.view sendSubviewToBack:self.vNoData];
+        }
+    }
 }
 
 #pragma mark - UITableViewDataSource, UITableViewDelegate
@@ -115,9 +184,14 @@
         [tableView endEditing:NO];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self.arrRecipes removeObjectAtIndex:indexPath.section];
-            [tableView reloadData];
+            [self reloadData:YES];
         });
     }
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

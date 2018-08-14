@@ -2,8 +2,8 @@
 //  FCSignInViewController.m
 //  FitCook
 //
-//  Created by Joyoki on 2018/8/6.
-//  Copyright © 2018年 Joyoki. All rights reserved.
+//  Created by shanshan on 2018/8/6.
+//  Copyright © 2018年 shanshan. All rights reserved.
 //
 
 #import "FCSignInViewController.h"
@@ -38,6 +38,11 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillChangeFrameNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
+    NSString *lastEmail = [FCApp app].lastUserName;
+    if (lastEmail && lastEmail.length > 0) {
+        _tfEmail.text = lastEmail;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

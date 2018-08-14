@@ -2,8 +2,8 @@
 //  FCUIManager.m
 //  FitCook
 //
-//  Created by Jay on 2018/7/16.
-//  Copyright © 2018年 Joyoki. All rights reserved.
+//  Created by shanshan on 2018/7/16.
+//  Copyright © 2018年 shanshan. All rights reserved.
 //
 
 #import "FCUIManager.h"

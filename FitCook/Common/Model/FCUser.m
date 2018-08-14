@@ -2,12 +2,26 @@
 //  FCUser.m
 //  FitCook
 //
-//  Created by Jay on 2018/8/9.
-//  Copyright © 2018年 Joyoki. All rights reserved.
+//  Created by shanshan on 2018/8/9.
+//  Copyright © 2018年 shanshan. All rights reserved.
 //
 
 #import "FCUser.h"
 #import "FCApp.h"
+
+@implementation FCShoppingRecipe
+
+- (instancetype)initWithRecipeWeight:(NSInteger)weight recipeCount:(NSInteger)count
+{
+    self = [super init];
+    if (self) {
+        _recipeWeight = weight;
+        _recipeCount = count;
+    }
+    return self;
+}
+
+@end
 
 @implementation FCFavourite
 
@@ -158,5 +172,7 @@
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
     return [emailTest evaluateWithObject:email];
 }
+
+
 
 @end

@@ -2,8 +2,8 @@
 //  FCShoppingRootRecipesCell.m
 //  FitCook
 //
-//  Created by Joyoki on 2018/7/30.
-//  Copyright © 2018年 Joyoki. All rights reserved.
+//  Created by shanshan on 2018/7/30.
+//  Copyright © 2018年 shanshan. All rights reserved.
 //
 
 #import "FCShoppingRootRecipesCell.h"

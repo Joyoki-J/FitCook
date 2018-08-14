@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,6 +20,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oUy-Dc-QQR">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kui-g3-36x">
+                                        <rect key="frame" x="0.0" y="159" width="375" height="257.5"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_shopping_nodata" translatesAutoresizingMaskIntoConstraints="NO" id="WHG-Qa-j3g">
+                                                <rect key="frame" x="102" y="0.0" width="170" height="170"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="170" id="6Lk-17-fdH"/>
+                                                    <constraint firstAttribute="height" constant="170" id="oVw-oC-Wp1"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZc-LI-VLz">
+                                                <rect key="frame" x="63.5" y="224" width="248.5" height="33.5"/>
+                                                <string key="text">Add ingredients when viewing a recipe
+by tap the button down to the page</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.38823529410000002" green="0.38823529410000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Shopping" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTL-UM-ftW">
+                                                <rect key="frame" x="14" y="190" width="347" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <color key="textColor" red="0.38823529410000002" green="0.38823529410000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="sZc-LI-VLz" firstAttribute="top" secondItem="oTL-UM-ftW" secondAttribute="bottom" constant="5" id="0Rc-0d-Y1X"/>
+                                            <constraint firstItem="WHG-Qa-j3g" firstAttribute="centerX" secondItem="Kui-g3-36x" secondAttribute="centerX" id="6io-0t-0Ad"/>
+                                            <constraint firstItem="oTL-UM-ftW" firstAttribute="leading" secondItem="Kui-g3-36x" secondAttribute="leading" constant="14" id="8xe-Tx-PsQ"/>
+                                            <constraint firstAttribute="bottom" secondItem="sZc-LI-VLz" secondAttribute="bottom" id="9HF-Ga-Bv5"/>
+                                            <constraint firstItem="oTL-UM-ftW" firstAttribute="top" secondItem="WHG-Qa-j3g" secondAttribute="bottom" constant="20" id="mRO-xy-FHV"/>
+                                            <constraint firstItem="WHG-Qa-j3g" firstAttribute="top" secondItem="Kui-g3-36x" secondAttribute="top" id="oWX-ff-T4z"/>
+                                            <constraint firstAttribute="trailing" secondItem="oTL-UM-ftW" secondAttribute="trailing" constant="14" id="xji-Kx-NwW"/>
+                                            <constraint firstItem="sZc-LI-VLz" firstAttribute="centerX" secondItem="Kui-g3-36x" secondAttribute="centerX" id="z1w-tr-U8x"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Kui-g3-36x" firstAttribute="centerY" secondItem="oUy-Dc-QQR" secondAttribute="centerY" multiplier="8:9" id="IXa-Z0-gEC"/>
+                                    <constraint firstAttribute="trailing" secondItem="Kui-g3-36x" secondAttribute="trailing" id="WLd-Z0-qxJ"/>
+                                    <constraint firstItem="Kui-g3-36x" firstAttribute="leading" secondItem="oUy-Dc-QQR" secondAttribute="leading" id="kgo-It-3qg"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Z4M-AM-Bdb">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -142,15 +191,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="oUy-Dc-QQR" firstAttribute="top" secondItem="C7S-SH-GbG" secondAttribute="top" id="7Jb-LK-7IQ"/>
+                            <constraint firstItem="oUy-Dc-QQR" firstAttribute="trailing" secondItem="C7S-SH-GbG" secondAttribute="trailing" id="7jH-ng-mcC"/>
+                            <constraint firstItem="oUy-Dc-QQR" firstAttribute="leading" secondItem="C7S-SH-GbG" secondAttribute="leading" id="HZr-ct-UWv"/>
                             <constraint firstItem="Z4M-AM-Bdb" firstAttribute="leading" secondItem="C7S-SH-GbG" secondAttribute="leading" id="Imn-mH-zrm"/>
                             <constraint firstItem="C7S-SH-GbG" firstAttribute="bottom" secondItem="Z4M-AM-Bdb" secondAttribute="bottom" id="U7U-2H-376"/>
                             <constraint firstItem="Z4M-AM-Bdb" firstAttribute="top" secondItem="C7S-SH-GbG" secondAttribute="top" id="coI-Ls-Zkg"/>
+                            <constraint firstItem="oUy-Dc-QQR" firstAttribute="bottom" secondItem="C7S-SH-GbG" secondAttribute="bottom" id="tOg-pP-vyw"/>
                             <constraint firstItem="C7S-SH-GbG" firstAttribute="trailing" secondItem="Z4M-AM-Bdb" secondAttribute="trailing" id="xEr-so-o34"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="C7S-SH-GbG"/>
                     </view>
                     <connections>
                         <outlet property="tvList" destination="Z4M-AM-Bdb" id="ScC-oD-ptC"/>
+                        <outlet property="vNoData" destination="oUy-Dc-QQR" id="Rpo-eS-deK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NzO-Rs-DND" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -241,6 +295,7 @@
     <resources>
         <image name="foot_photo3.png" width="339" height="339"/>
         <image name="icon_shopping_arrow" width="16" height="16"/>
+        <image name="icon_shopping_nodata" width="170" height="156"/>
         <image name="icon_shopping_unselected" width="22" height="22"/>
     </resources>
 </document>

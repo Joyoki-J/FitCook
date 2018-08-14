@@ -2,15 +2,27 @@
 //  FCUser.h
 //  FitCook
 //
-//  Created by Jay on 2018/8/9.
-//  Copyright © 2018年 Joyoki. All rights reserved.
+//  Created by shanshan on 2018/8/9.
+//  Copyright © 2018年 shanshan. All rights reserved.
 //
 
 #import <Realm/Realm.h>
 
 #define kUserUpdateFavouriteNotificationKey @"kUserUpdateFavouriteNotificationKey"
+#define kUserUpdateShoppingNotificationKey @"kUserUpdateShoppingNotificationKey"
 
 @class FCRecipe;
+
+@interface FCShoppingRecipe: RLMObject
+
+- (instancetype)initWithRecipeWeight:(NSInteger)weight recipeCount:(NSInteger)count;
+
+@property NSInteger recipeWeight;
+@property NSInteger recipeCount;
+
+@end
+
+RLM_ARRAY_TYPE(FCShoppingRecipe)
 
 @interface FCFavourite: RLMObject
 
@@ -27,6 +39,7 @@ RLM_ARRAY_TYPE(FCFavourite)
 @property NSString *name;
 @property NSData *image;
 @property RLMArray<FCFavourite *><FCFavourite> *favourites;
+@property RLMArray<FCShoppingRecipe *><FCShoppingRecipe> *shoppingList;
 
 @property (readonly) RLMLinkingObjects *owners;
 
@@ -46,6 +59,12 @@ RLM_ARRAY_TYPE(FCFavourite)
 - (BOOL)isFavouriteRecipe:(FCRecipe *)recipe;
 
 - (void)updateRecipe:(FCRecipe *)recipe isFavourite:(BOOL)isFavourite;
+
+- (BOOL)isShoppingRecipe:(FCRecipe *)recipe;
+
+- (void)addRecipeToShoppingList:(FCRecipe *)recipe withCount:(NSInteger)count;
+
+- (void)deleteRecipeFromShoppingList:(FCRecipe *)recipe;
 
 @end
 
