@@ -7,22 +7,12 @@
 //
 
 #import <Realm/Realm.h>
+#import "FCShoppingRecipe.h"
 
 #define kUserUpdateFavouriteNotificationKey @"kUserUpdateFavouriteNotificationKey"
 #define kUserUpdateShoppingNotificationKey @"kUserUpdateShoppingNotificationKey"
 
 @class FCRecipe;
-
-@interface FCShoppingRecipe: RLMObject
-
-- (instancetype)initWithRecipeWeight:(NSInteger)weight recipeCount:(NSInteger)count;
-
-@property NSInteger recipeWeight;
-@property NSInteger recipeCount;
-
-@end
-
-RLM_ARRAY_TYPE(FCShoppingRecipe)
 
 @interface FCFavourite: RLMObject
 

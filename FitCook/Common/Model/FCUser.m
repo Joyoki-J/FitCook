@@ -9,20 +9,6 @@
 #import "FCUser.h"
 #import "FCApp.h"
 
-@implementation FCShoppingRecipe
-
-- (instancetype)initWithRecipeWeight:(NSInteger)weight recipeCount:(NSInteger)count
-{
-    self = [super init];
-    if (self) {
-        _recipeWeight = weight;
-        _recipeCount = count;
-    }
-    return self;
-}
-
-@end
-
 @implementation FCFavourite
 
 + (NSDictionary *)defaultPropertyValues {
@@ -39,6 +25,7 @@
     if (self) {
         _favourites = [[RLMArray<FCFavourite> alloc] initWithObjectClassName:[FCFavourite className]];
         [_favourites addObjects:[self getDefaultFavourites]];
+        _shoppingList = [[RLMArray<FCShoppingRecipe> alloc] initWithObjectClassName:[FCShoppingRecipe className]];
     }
     return self;
 }

@@ -112,6 +112,7 @@
 		6916C138211D5BC000DE744E /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6916C137211D5BC000DE744E /* logo.png */; };
 		697B32CC21218C3F00038C6A /* FCFractionalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 697B32CB21218C3F00038C6A /* FCFractionalView.m */; };
 		697B32CF2121946300038C6A /* FCDosageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 697B32CE2121946300038C6A /* FCDosageView.m */; };
+		697B32D32122787800038C6A /* FCShoppingRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 697B32D22122787800038C6A /* FCShoppingRecipe.m */; };
 		697E0FEF20FC486300777146 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 697E0FEE20FC486300777146 /* AppDelegate.m */; };
 		697E0FF520FC486300777146 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 697E0FF320FC486300777146 /* Main.storyboard */; };
 		697E0FFA20FC486600777146 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 697E0FF820FC486600777146 /* LaunchScreen.storyboard */; };
@@ -282,6 +283,8 @@
 		697B32CB21218C3F00038C6A /* FCFractionalView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCFractionalView.m; sourceTree = "<group>"; };
 		697B32CD2121946300038C6A /* FCDosageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCDosageView.h; sourceTree = "<group>"; };
 		697B32CE2121946300038C6A /* FCDosageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCDosageView.m; sourceTree = "<group>"; };
+		697B32D12122787800038C6A /* FCShoppingRecipe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCShoppingRecipe.h; sourceTree = "<group>"; };
+		697B32D22122787800038C6A /* FCShoppingRecipe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCShoppingRecipe.m; sourceTree = "<group>"; };
 		697E0FEA20FC486300777146 /* FitCook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitCook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		697E0FED20FC486300777146 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		697E0FEE20FC486300777146 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -722,6 +725,8 @@
 				6916C0D4211C2D1B00DE744E /* FCApp.m */,
 				6916C0D6211C2D2700DE744E /* FCUser.h */,
 				6916C0D7211C2D2700DE744E /* FCUser.m */,
+				697B32D12122787800038C6A /* FCShoppingRecipe.h */,
+				697B32D22122787800038C6A /* FCShoppingRecipe.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -998,6 +1003,7 @@
 				6987DEFD211434A200F9D303 /* FCSearchRootListCell.m in Sources */,
 				1F92BF742110B70800CE4BBB /* FCRecipesSegmentedView.m in Sources */,
 				1F4CFB87210A205000CFC438 /* FCNavigationRootViewController.m in Sources */,
+				697B32D32122787800038C6A /* FCShoppingRecipe.m in Sources */,
 				6916C0D8211C2D2700DE744E /* FCUser.m in Sources */,
 				697E0FEF20FC486300777146 /* AppDelegate.m in Sources */,
 			);

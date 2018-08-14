@@ -52,6 +52,7 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *category;
 @property (nonatomic, assign) BOOL isNeedCalculate;
+@property (nonatomic, assign) BOOL isBuy;
 @property (nonatomic, strong) FCRecipeDosage *dosage;
 
 @end
