@@ -160,10 +160,4 @@
     return YES;
 }
 
-- (void)dealloc
-{
-    NSLog(@"Login");
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
 @end

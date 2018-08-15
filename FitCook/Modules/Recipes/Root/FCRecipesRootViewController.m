@@ -11,6 +11,7 @@
 #import "FCRecipesRootFilterCell.h"
 #import "FCFilterView.h"
 #import "FCRecipesDetailViewController.h"
+#import "FCGuideViewController.h"
 
 @interface FCRecipesRootViewController()<UITableViewDataSource, UITableViewDelegate, FCFilterViewDelegate, FCRecipesRootListCellDelegate,FCRecipesRootFilterCellDelegate>
 
@@ -70,6 +71,25 @@
     if (_isNeedRefresh == YES) {
         _isNeedRefresh = NO;
         [_tvList reloadRowsAtIndexPaths:[_tvList indexPathsForVisibleRows] withRowAnimation:UITableViewRowAnimationNone];
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    if (IS_SS_IPHONE_X && ![FCApp app].hasShowGuideRecipe) {
+        UIImage *image = [UIImage imageNamed:@"icon_guide_recipe"];
+        FCGuide *guide = [[FCGuide alloc] init];
+        guide.index = 0;
+        guide.imageView = [[UIImageView alloc] initWithImage:image];
+        guide.imageView.frame = CGRectMake((kSCREEN_WIDTH - image.size.width) / 2.0, (kSCREEN_HEIGHT - image.size.height) / 2.0, image.size.width, image.size.height);
+        FCGuideViewController *vc = [[FCGuideViewController alloc] init];
+        vc.guides = @[guide];
+        [self.tabBarController presentViewController:vc animated:YES completion:^{
+            [[RLMRealm defaultRealm] transactionWithBlock:^{
+                [FCApp app].hasShowGuideRecipe = YES;
+            }];
+        }];
     }
 }
 

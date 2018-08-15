@@ -155,9 +155,4 @@
     return NO;
 }
 
-- (void)dealloc
-{
-    NSLog(@"SignUp");
-}
-
 @end

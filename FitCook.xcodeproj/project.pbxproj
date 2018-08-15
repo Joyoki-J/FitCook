@@ -113,6 +113,9 @@
 		697B32CC21218C3F00038C6A /* FCFractionalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 697B32CB21218C3F00038C6A /* FCFractionalView.m */; };
 		697B32CF2121946300038C6A /* FCDosageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 697B32CE2121946300038C6A /* FCDosageView.m */; };
 		697B32D32122787800038C6A /* FCShoppingRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 697B32D22122787800038C6A /* FCShoppingRecipe.m */; };
+		697B32F32123CC3D00038C6A /* FCGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 697B32F22123CC3D00038C6A /* FCGuideViewController.m */; };
+		697B32F92123D25B00038C6A /* FCGuideTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 697B32F82123D25B00038C6A /* FCGuideTransition.m */; };
+		697B32FC2123F3D900038C6A /* FCGuide.m in Sources */ = {isa = PBXBuildFile; fileRef = 697B32FB2123F3D900038C6A /* FCGuide.m */; };
 		697E0FEF20FC486300777146 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 697E0FEE20FC486300777146 /* AppDelegate.m */; };
 		697E0FF520FC486300777146 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 697E0FF320FC486300777146 /* Main.storyboard */; };
 		697E0FFA20FC486600777146 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 697E0FF820FC486600777146 /* LaunchScreen.storyboard */; };
@@ -285,6 +288,12 @@
 		697B32CE2121946300038C6A /* FCDosageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCDosageView.m; sourceTree = "<group>"; };
 		697B32D12122787800038C6A /* FCShoppingRecipe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCShoppingRecipe.h; sourceTree = "<group>"; };
 		697B32D22122787800038C6A /* FCShoppingRecipe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCShoppingRecipe.m; sourceTree = "<group>"; };
+		697B32F12123CC3D00038C6A /* FCGuideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCGuideViewController.h; sourceTree = "<group>"; };
+		697B32F22123CC3D00038C6A /* FCGuideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCGuideViewController.m; sourceTree = "<group>"; };
+		697B32F72123D25B00038C6A /* FCGuideTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCGuideTransition.h; sourceTree = "<group>"; };
+		697B32F82123D25B00038C6A /* FCGuideTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCGuideTransition.m; sourceTree = "<group>"; };
+		697B32FA2123F3D900038C6A /* FCGuide.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCGuide.h; sourceTree = "<group>"; };
+		697B32FB2123F3D900038C6A /* FCGuide.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCGuide.m; sourceTree = "<group>"; };
 		697E0FEA20FC486300777146 /* FitCook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitCook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		697E0FED20FC486300777146 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		697E0FEE20FC486300777146 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -620,6 +629,7 @@
 		1F5B71AC210DDF56001C4604 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				697B32F02123CC1800038C6A /* FCGuide */,
 				697B32C921218C3300038C6A /* FCDosageView */,
 				1F2ED04F211F56AC00FB4B81 /* FCParticleButton */,
 				6916C03E2119685600DE744E /* FCToast */,
@@ -740,6 +750,19 @@
 				697B32CB21218C3F00038C6A /* FCFractionalView.m */,
 			);
 			path = FCDosageView;
+			sourceTree = "<group>";
+		};
+		697B32F02123CC1800038C6A /* FCGuide */ = {
+			isa = PBXGroup;
+			children = (
+				697B32F12123CC3D00038C6A /* FCGuideViewController.h */,
+				697B32F22123CC3D00038C6A /* FCGuideViewController.m */,
+				697B32F72123D25B00038C6A /* FCGuideTransition.h */,
+				697B32F82123D25B00038C6A /* FCGuideTransition.m */,
+				697B32FA2123F3D900038C6A /* FCGuide.h */,
+				697B32FB2123F3D900038C6A /* FCGuide.m */,
+			);
+			path = FCGuide;
 			sourceTree = "<group>";
 		};
 		697E0FE120FC486300777146 = {
@@ -963,6 +986,7 @@
 				6916C0C2211BEBFC00DE744E /* FCRecipe.m in Sources */,
 				1F5B71AB210DDD75001C4604 /* FCRecipesRootItemLayout.m in Sources */,
 				1F5EBB67210F6E2600ECE894 /* FCShoppingListViewController.m in Sources */,
+				697B32F92123D25B00038C6A /* FCGuideTransition.m in Sources */,
 				1F5B71A8210DD15A001C4604 /* FCRecipesRootItemCell.m in Sources */,
 				1F2ED05B21208C9E00FB4B81 /* FCSearchRootListNoDataCell.m in Sources */,
 				1F5B71B6210DE98B001C4604 /* FCFilterCell.m in Sources */,
@@ -975,6 +999,7 @@
 				1FA211C22118899000476082 /* FCSignInViewController.m in Sources */,
 				1F4CFB7B210A1E8C00CFC438 /* FCSearchRootViewController.m in Sources */,
 				6987DEF221119FCF00F9D303 /* FCOnePixelLine.m in Sources */,
+				697B32F32123CC3D00038C6A /* FCGuideViewController.m in Sources */,
 				697B32CF2121946300038C6A /* FCDosageView.m in Sources */,
 				1FE31D3C2116395C007CD792 /* FCFilterStyle.m in Sources */,
 				697E100820FC649300777146 /* UIBarButtonItem+FC.m in Sources */,
@@ -982,6 +1007,7 @@
 				1F5EBB6B210F71CA00ECE894 /* FCRecipesDetailViewController.m in Sources */,
 				1F2ED052211F56CD00FB4B81 /* FCParticleButton.m in Sources */,
 				6987DEEE21114CD900F9D303 /* FCRecipesRootFilterCell.m in Sources */,
+				697B32FC2123F3D900038C6A /* FCGuide.m in Sources */,
 				1FF233C220FE3CA0001DEB95 /* FCRootViewController.m in Sources */,
 				697E0FFD20FC486600777146 /* main.m in Sources */,
 				6987DEFA211427B600F9D303 /* FCSearchScanViewController.m in Sources */,
@@ -1147,7 +1173,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 27CV7895W3;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "FitCook/FitCook-Prefix.pch";
 				INFOPLIST_FILE = FitCook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1190,7 +1216,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 27CV7895W3;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "FitCook/FitCook-Prefix.pch";
 				INFOPLIST_FILE = FitCook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

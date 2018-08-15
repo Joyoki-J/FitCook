@@ -17,6 +17,10 @@
 @property FCUser *currentUser;
 @property RLMArray<FCUser *><FCUser> *users;
 
+@property BOOL hasShowGuideRecipe;
+@property BOOL hasShowGuideSearch;
+@property BOOL hasShowGuideFavourites;
+
 + (void)initialized;
 
 + (BOOL)isFirstLaunch;

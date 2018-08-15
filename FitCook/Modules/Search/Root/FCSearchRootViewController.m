@@ -13,6 +13,7 @@
 #import "FCSearchRootListCell.h"
 #import "FCSearchRootListNoDataCell.h"
 #import "FCSearchHeaderView.h"
+#import "FCGuideViewController.h"
 
 @interface FCSearchRootViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,FCSearchHeaderViewDelegate,FCSearchFilterViewControllerDelegate,FCSearchRootListCellDelegate,FCSearchScanViewControllerDelegate>
 
@@ -94,6 +95,40 @@
     if (_isNeedRefresh == YES) {
         _isNeedRefresh = NO;
         [_tvList reloadRowsAtIndexPaths:[_tvList indexPathsForVisibleRows] withRowAnimation:UITableViewRowAnimationNone];
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    if (IS_SS_IPHONE_X && ![FCApp app].hasShowGuideSearch) {
+        UIImage *image1 = [UIImage imageNamed:@"icon_guide_search1"];
+        FCGuide *guide1 = [[FCGuide alloc] init];
+        guide1.index = 0;
+        guide1.imageView = [[UIImageView alloc] initWithImage:image1];
+        guide1.imageView.frame = CGRectMake((kSCREEN_WIDTH - image1.size.width) / 2.0, (kSCREEN_HEIGHT - image1.size.height) / 2.0, image1.size.width, image1.size.height);
+        guide1.imageView.minY = guide1.imageView.minY + 76;
+        UIImage *image2 = [UIImage imageNamed:@"icon_guide_search2"];
+        FCGuide *guide2 = [[FCGuide alloc] init];
+        guide2.index = 1;
+        guide2.imageView = [[UIImageView alloc] initWithImage:image2];
+        guide2.imageView.frame = CGRectMake((kSCREEN_WIDTH - image2.size.width) / 2.0, (kSCREEN_HEIGHT - image2.size.height) / 2.0, image2.size.width, image2.size.height);
+        guide2.imageView.minX = guide2.imageView.minX - 20;
+        guide2.imageView.minY = guide2.imageView.minY + 30;
+        UIImage *image3 = [UIImage imageNamed:@"icon_guide_search3"];
+        FCGuide *guide3 = [[FCGuide alloc] init];
+        guide3.index = 2;
+        guide3.imageView = [[UIImageView alloc] initWithImage:image3];
+        guide3.imageView.frame = CGRectMake((kSCREEN_WIDTH - image3.size.width) / 2.0, (kSCREEN_HEIGHT - image3.size.height) / 2.0, image3.size.width, image3.size.height);
+        guide3.imageView.minX = guide3.imageView.minX - 30;
+        guide3.imageView.minY = guide3.imageView.minY + 165;
+        FCGuideViewController *vc = [[FCGuideViewController alloc] init];
+        vc.guides = @[guide1, guide2, guide3];
+        [self.tabBarController presentViewController:vc animated:YES completion:^{
+            [[RLMRealm defaultRealm] transactionWithBlock:^{
+                [FCApp app].hasShowGuideSearch = YES;
+            }];
+        }];
     }
 }
 
