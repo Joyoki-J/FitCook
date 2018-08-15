@@ -25,9 +25,26 @@
     self.window.rootViewController = vcRoot;
     [self.window makeKeyAndVisible];
     
+    [self setupDefaultUserIfNeed];
+    
     return YES;
 }
 
+- (void)setupDefaultUserIfNeed {
+    FCApp *app = [FCApp app];
+    RLMResults<FCUser *> *users = [app.users objectsWhere:@"email = 'sswenj33@gmail.com'"];
+    if (users.count > 0) {
+        return;
+    }
+    FCUser *user = [[FCUser alloc] init];
+    user.email = @"sswenj33@gmail.com";
+    user.password = @"12345678";
+    user.name = @"ShanshanWen";
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm transactionWithBlock:^{
+        [app.users addObject:user];
+    }];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

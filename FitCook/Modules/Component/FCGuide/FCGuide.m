@@ -18,7 +18,7 @@
     self.imageView.transform = CGAffineTransformMakeScale(0.01, 0.01);
     self.imageView.alpha = 0;
     [target addSubview:self.imageView];
-    [UIView animateWithDuration:0.3 delay:0 usingSpringWithDamping:0.6 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+    [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:0.6 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         self.imageView.transform = CGAffineTransformIdentity;
         self.imageView.alpha = 1;
     } completion:^(BOOL finished) {
@@ -27,7 +27,7 @@
 }
 
 - (void)hide:(void (^)(void))completion {
-    [UIView animateWithDuration:0.2 animations:^{
+    [UIView animateWithDuration:0.25 animations:^{
         self.imageView.transform = CGAffineTransformMakeScale(0.01, 0.01);
         self.imageView.alpha = 0;
     } completion:^(BOOL finished) {
