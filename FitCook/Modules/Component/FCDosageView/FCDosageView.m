@@ -67,7 +67,7 @@
 
 - (void)setTextWithDosage:(FCRecipeDosage *)dosage {
     if ([dosage isKindOfClass:[FCRecipeDosage class]]) {
-        _labInteger.text = dosage.integer > 0 ? [NSString stringWithFormat:@"%ld",dosage.integer] : nil;
+        _labInteger.text = dosage.integer > 0 ? [NSString stringWithFormat:@"%ld",(long)dosage.integer] : nil;
         [_labFractional setValueWithNumerator:dosage.numerator andDenominator:dosage.denominator];
         _labUnit.text = dosage.unit && dosage.unit.length > 0 ? [NSString stringWithFormat:@" %@",dosage.unit] : nil;
     } else {

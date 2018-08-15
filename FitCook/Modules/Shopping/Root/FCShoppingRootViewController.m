@@ -159,7 +159,7 @@
         FCShoppingRecipe *shoppingRecipe = [_arrRecipes objectAtIndex:indexPath.section];
         [cell.imgvFood fc_setImageWithName:shoppingRecipe.imageName_3];
         cell.labTitle.text = shoppingRecipe.name;
-        cell.labDetails.text = [NSString stringWithFormat:@"%ld ingredents missing",[shoppingRecipe HowManyIngredentsMissing]];
+        cell.labDetails.text = [NSString stringWithFormat:@"%ld ingredents missing",(long)[shoppingRecipe HowManyIngredentsMissing]];
         return cell;
     }
 }

@@ -211,7 +211,7 @@
 
 - (void)stepperChangedValue:(UIStepper *)stepper {
     NSInteger stepValue = (NSInteger)stepper.value;
-    _labServings.text = [NSString stringWithFormat:@"%ld Servings",stepValue];
+    _labServings.text = [NSString stringWithFormat:@"%ld Servings",(long)stepValue];
     
     UIScrollView *sv = [_vContent viewWithTag:10];
     [_recipe.ingredients enumerateObjectsUsingBlock:^(FCRecipeIngredient * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -227,7 +227,7 @@
     style.lineSpacing = 6;
     style.lineBreakMode = NSLineBreakByWordWrapping;
     [_recipe.steps enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSString *string = [NSString stringWithFormat:@"%ld. %@",idx + 1, obj];
+        NSString *string = [NSString stringWithFormat:@"%ld. %@",(long)(idx + 1), obj];
         NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:string attributes:@{
                                                                                                                                                                                                                               NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size: 14.0f],
                                                                                                                                                                                                                               NSForegroundColorAttributeName: [UIColor colorWithRed:99.0f / 255.0f green:99.0f / 255.0f blue:102.0f / 255.0f alpha:1.0f],

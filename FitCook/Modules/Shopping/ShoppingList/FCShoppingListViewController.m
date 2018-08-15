@@ -62,7 +62,7 @@
     }];
     
     UILabel *labServings = [[UILabel alloc] init];
-    labServings.text = [NSString stringWithFormat:@"%ld Servings",_shoppingRecipe.count];
+    labServings.text = [NSString stringWithFormat:@"%ld Servings",(long)_shoppingRecipe.count];
     labServings.textAlignment = NSTextAlignmentLeft;
     labServings.textColor = RGB(99, 99, 102);
     labServings.font = kBoldFont(18);
