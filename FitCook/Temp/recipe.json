@@ -6,7 +6,7 @@
         "weight": 1,
         "classify": "Today’s inspiration",
         "filters": "sugar-free,gluten-free,lunch,dinner,",
-        "keywords": "steak,asparagus,cherry,tomato,tomatoes,olive oil",
+        "keywords": "beef,steak,asparagus,cherry,tomato,tomatoes,olive oil,olive,",
         "ingredients":[
             {
                 "name": "asparagus",
@@ -106,7 +106,7 @@
         "weight": 2,
         "classify": "Today’s inspiration",
         "filters": "breakfast,gluten-free,",
-        "keywords": "greek,yogurt,yoghurt,berry,berries,granola,cereal,honey",
+        "keywords": "greek,yogurt,yoghurt,berry,berries,granola,cereal,honey,blueberries,strawberries,rasphberries,",
         "ingredients":[
             {
                 "name": "Greek yogurt",
@@ -179,7 +179,7 @@
         "weight": 3,
         "classify": "Today’s inspiration",
         "filters": "dairy-free,sugar-free,lunch,",
-        "keywords": "quinoa,mushroom,mushrooms,garlic,parmesan,olive oil",
+        "keywords": "quinoa,mushroom,mushrooms,garlic,parmesan,olive oil,olive",
         "ingredients":[
             {
                 "name": "quinoa",
@@ -277,7 +277,7 @@
         "weight": 11,
         "classify": "Last Recipes",
         "filters": "dairy-free,lunch,dinner,",
-        "keywords": "tofu,onion,red onion,green onion,cucumber,peanuts,salad,garlic",
+        "keywords": "tofu,onions,red onion,green onion,cucumber,cucumbers,peanuts,salad,garlic,",
         "ingredients":[
             {
                 "name": "tofu",
@@ -425,7 +425,7 @@
         "weight": 12,
         "classify": "Last Recipes",
         "filters": "gluten-free, dairy-free,",
-        "keywords": "corn,prawn,lemon,onion,mustard,basil",
+        "keywords": "corn,sweetcorn,prawn,prawns,lemon,lemons,onions,onion,mustard,basil,",
         "ingredients":[
             {
                 "name": "sweet corn",
@@ -562,7 +562,7 @@
         "weight": 13,
         "classify": "Last Recipes",
         "filters": "dinner,dairy-free,",
-        "keywords": "potatos,broccoli,onion,chicken,breast,sprouts,mushroom",
+        "keywords": "potatos,broccoli,broccolis,onions,onion,chicken,breast,sprouts,mushrooms,mushroom,",
         "ingredients":[
             {
                 "name": "potato",
@@ -711,7 +711,7 @@
         "weight": 21,
         "classify": "Low Calories",
         "filters": "dairy-free,lunch,dinner,",
-        "keywords": "salmon,rice,chilli,broccoli,onion",
+        "keywords": "salmon,rice,chillies,chilli,broccoli,broccolis,onions,onion,",
         "ingredients":[
             {
                 "name": "sushi rice",
@@ -883,7 +883,7 @@
         "weight": 22,
         "classify": "Low Calories",
         "filters": "breakfast,lunch,",
-        "keywords": "egg,wrap,tuna,pickles,lettuce,hummus,pepper,tortilla",
+        "keywords": "egg,eggs,wrap,wraps,tuna,pickles,pickled,gherkins,lettuce,hummus,houmous,pepper,peppers,tortilla,",
         "ingredients":[
             {
                 "name": "medium egg",
@@ -994,7 +994,7 @@
         "weight": 31,
         "classify": "Quick and easy",
         "filters": "lunch,vegetarian,gluten-free,dairy-free,",
-        "keywords": "avocados,pasta,spaghetti,basil,lemon,corn,cherry,tomatoes",
+        "keywords": "avocados,pasta,spaghetti,basil,lemon,corn,corns,cherry,tomatoes,",
         "ingredients":[
             {
                 "name": "spaghetti",
@@ -1129,7 +1129,7 @@
         "weight": 32,
         "classify": "Quick and easy",
         "filters": "low-calories,quick&easy,dairy-free,dinner,",
-        "keywords": "green beans,red potatoes,butter,chilli,salad",
+        "keywords": "green beans,beans,red potatoes,red potato,red,butter,chilli,chillis,salad,",
         "ingredients":[
             {
                 "name": "green beans",
@@ -1239,7 +1239,7 @@
         "weight": 41,
         "classify": "High Protein",
         "filters": "gluten-free,lunch,dinner,",
-        "keywords": "salmon,cherry,tomatoes,onion,pepper,chickpeas,hummus,parsley",
+        "keywords": "salmon,cherry,tomatoes,onion,onions,pepper,chickpeas,hummus,humous,chick,peas,parsley,",
         "ingredients":[
             {
                 "name": "salmon fillet",
@@ -1362,7 +1362,7 @@
         "weight": 42,
         "classify": "High Protein",
         "filters": "sugar-free,lunch,",
-        "keywords": "courgette,onion,cream,chicken,rotini,pasta",
+        "keywords": "courgette,courgettes,onion,onions,fesh,cream,chicken stock,rotini,pasta,chicken,",
         "ingredients":[
             {
                 "name": "courgette",

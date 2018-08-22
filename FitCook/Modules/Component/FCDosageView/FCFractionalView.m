@@ -62,7 +62,7 @@
         _labDenominator.text = nil;
         _labSeparator.text = nil;
     } else {
-        _labNumerator.text = [NSString stringWithFormat:@"%ld",numerator];
+        _labNumerator.text = [NSString stringWithFormat:@"%ld",(long)numerator];
         _labDenominator.text = [NSString stringWithFormat:@"%ld",(long)denominator];
         _labSeparator.text = @"/";
     }

@@ -27,7 +27,7 @@
 }
 
 + (NSArray<FCRecipe *> *)recipesWithKeywords:(NSArray<NSString *> *)keywords {
-    NSPredicate *predicate = [self predicateWithKeys:keywords format:@"keywords LIKE '*%@*'" isAnd:NO];
+    NSPredicate *predicate = [self predicateWithKeys:keywords format:@"keywords LIKE '*%@,*'" isAnd:NO];
     if (predicate) {
         return [[self allRecipes] filteredArrayUsingPredicate:predicate];
     } else {
