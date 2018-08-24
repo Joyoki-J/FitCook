@@ -36,6 +36,8 @@
     
     _arrData = [NSMutableArray array];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(signInNotification:) name:FCSignInNotificationKey object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logoutNotification:) name:FCLogoutNotificationKey object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userUpdateFavouriteNotification:) name:kUserUpdateFavouriteNotificationKey object:nil];
     
     _tvList.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, CGFLOAT_MIN)];
@@ -177,6 +179,14 @@
             [[NSNotificationCenter defaultCenter] postNotificationName:kUserUpdateFavouriteNotificationKey object:NSStringFromClass([self class])];
         });
     }
+}
+
+- (void)signInNotification:(NSNotification *)noti {
+    [self refreshData];
+}
+
+- (void)logoutNotification:(NSNotification *)noti {
+    [self refreshData];
 }
 
 - (void)dealloc

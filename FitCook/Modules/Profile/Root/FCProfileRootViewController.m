@@ -26,7 +26,6 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutSpace3;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutSpace4;
 
-
 @end
 
 @implementation FCProfileRootViewController
@@ -37,6 +36,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(signInNotification:) name:FCSignInNotificationKey object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logoutNotification:) name:FCLogoutNotificationKey object:nil];
     
     _imgvPicture.layer.cornerRadius = 4.f;
     _imgvPicture.clipsToBounds = YES;
@@ -224,6 +226,20 @@
             break;
     }
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)signInNotification:(NSNotification *)noti {
+    FCUser *user = [FCUser currentUser];
+    _labName.text = user.name;
+    _labEmail.text = user.email;
+    _imgvPicture.image = user.image ? [UIImage imageWithData:user.image] : nil;
+}
+
+- (void)logoutNotification:(NSNotification *)noti {
+    FCUser *user = [FCUser currentUser];
+    _labName.text = user.name;
+    _labEmail.text = user.email;
+    _imgvPicture.image = user.image ? [UIImage imageWithData:user.image] : nil;
 }
 
 @end

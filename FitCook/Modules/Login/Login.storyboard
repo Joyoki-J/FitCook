@@ -221,6 +221,18 @@ a </string>
                                     <constraint firstAttribute="trailing" secondItem="Ck8-jX-AGJ" secondAttribute="trailing" constant="30" id="gXN-ur-be1"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KmB-He-obw">
+                                <rect key="frame" x="369" y="20" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="X11-Q6-4Cd"/>
+                                    <constraint firstAttribute="height" constant="30" id="lMX-Om-DAH"/>
+                                </constraints>
+                                <state key="normal" image="icon_navbar_close"/>
+                                <state key="highlighted" image="icon_navbar_close"/>
+                                <connections>
+                                    <action selector="onClickCloseAction:" destination="h2w-Ou-uqZ" eventType="touchUpInside" id="gwT-En-giq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -233,6 +245,8 @@ a </string>
                             <constraint firstItem="hZg-jl-IOj" firstAttribute="centerY" secondItem="ctl-WU-YUn" secondAttribute="centerY" constant="-30" id="mch-rh-LHo"/>
                             <constraint firstItem="p6Z-rg-lUW" firstAttribute="trailing" secondItem="mPk-x4-vxt" secondAttribute="trailing" id="rG8-hL-G9e"/>
                             <constraint firstItem="p6Z-rg-lUW" firstAttribute="trailing" secondItem="vYa-ZM-4QR" secondAttribute="trailing" id="tuy-qY-GNy"/>
+                            <constraint firstItem="KmB-He-obw" firstAttribute="top" secondItem="p6Z-rg-lUW" secondAttribute="top" id="urw-dq-GtX"/>
+                            <constraint firstItem="p6Z-rg-lUW" firstAttribute="trailing" secondItem="KmB-He-obw" secondAttribute="trailing" constant="15" id="xvN-YL-UxT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="p6Z-rg-lUW"/>
                     </view>
@@ -493,15 +507,29 @@ and a </string>
                                     <constraint firstAttribute="trailing" secondItem="BtL-Y3-Z0y" secondAttribute="trailing" id="zsi-kE-A08"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Beg-RV-14i">
+                                <rect key="frame" x="369" y="20" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="Bb2-eW-d4o"/>
+                                    <constraint firstAttribute="height" constant="30" id="tJo-z1-0W4"/>
+                                </constraints>
+                                <state key="normal" image="icon_navbar_close"/>
+                                <state key="highlighted" image="icon_navbar_close"/>
+                                <connections>
+                                    <action selector="onClickCloseAction:" destination="APb-js-xRg" eventType="touchUpInside" id="9IZ-Wn-qRm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="I7k-ht-96O" firstAttribute="trailing" secondItem="Beg-RV-14i" secondAttribute="trailing" constant="15" id="7Fd-4q-Nvw"/>
                             <constraint firstItem="nKn-kq-gcA" firstAttribute="trailing" secondItem="I7k-ht-96O" secondAttribute="trailing" id="Ap7-yM-0sY"/>
                             <constraint firstItem="7nh-lE-BQP" firstAttribute="trailing" secondItem="I7k-ht-96O" secondAttribute="trailing" id="TYu-Jr-UbW"/>
                             <constraint firstItem="J6T-Rd-Ptx" firstAttribute="leading" secondItem="I7k-ht-96O" secondAttribute="leading" id="U4q-NK-90i"/>
                             <constraint firstItem="J6T-Rd-Ptx" firstAttribute="trailing" secondItem="I7k-ht-96O" secondAttribute="trailing" id="XEH-c9-uhC"/>
                             <constraint firstItem="7nh-lE-BQP" firstAttribute="leading" secondItem="I7k-ht-96O" secondAttribute="leading" id="Z31-6F-sTO"/>
                             <constraint firstItem="I7k-ht-96O" firstAttribute="bottom" secondItem="7nh-lE-BQP" secondAttribute="bottom" constant="30" id="ZP9-zN-98K"/>
+                            <constraint firstItem="Beg-RV-14i" firstAttribute="top" secondItem="I7k-ht-96O" secondAttribute="top" id="f1N-SO-mJr"/>
                             <constraint firstItem="nKn-kq-gcA" firstAttribute="centerY" secondItem="xKY-Es-U2T" secondAttribute="centerY" id="mTb-hj-KHL"/>
                             <constraint firstItem="J6T-Rd-Ptx" firstAttribute="centerY" secondItem="xKY-Es-U2T" secondAttribute="centerY" multiplier="5:12" id="oQe-2e-cJL"/>
                             <constraint firstItem="nKn-kq-gcA" firstAttribute="leading" secondItem="I7k-ht-96O" secondAttribute="leading" id="xNN-gI-xhd"/>
@@ -531,8 +559,8 @@ and a </string>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="icon_toast_error" translatesAutoresizingMaskIntoConstraints="NO" id="3Lk-UO-q4h">
-                            <rect key="frame" x="27" y="29" width="17" height="17"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="icon_toast_error" translatesAutoresizingMaskIntoConstraints="NO" id="3Lk-UO-q4h">
+                            <rect key="frame" x="30" y="29" width="17" height="17"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="17" id="KS4-FB-16l"/>
                                 <constraint firstAttribute="height" constant="17" id="w64-U2-hKf"/>
@@ -558,6 +586,7 @@ and a </string>
         </scene>
     </scenes>
     <resources>
+        <image name="icon_navbar_close" width="40" height="40"/>
         <image name="icon_sign_back" width="308" height="57"/>
         <image name="icon_toast_back" width="224" height="64"/>
         <image name="icon_toast_error" width="17" height="17"/>

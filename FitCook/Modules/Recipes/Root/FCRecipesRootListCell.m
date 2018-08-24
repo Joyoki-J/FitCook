@@ -75,6 +75,10 @@
 
 #pragma mark - FCRecipesRootItemCellDelegate
 - (void)recipesRootItemCell:(FCRecipesRootItemCell *)cell didClickFavouriteActionWithIndexPath:(NSIndexPath *)indexPath {
+    if (![FCApp app].currentUser) {
+        [[FCRootViewController shareViewController] showLoginViewController];
+        return;
+    }
     FCRecipe *recipe = [_arrRecipes objectAtIndex:indexPath.row];
     FCUser *user = [FCUser currentUser];
     [user updateRecipe:recipe isFavourite:!cell.isFavourited];

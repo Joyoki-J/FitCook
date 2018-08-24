@@ -145,6 +145,11 @@
     _keyboardRect = CGRectZero;
 }
 
+- (IBAction)onClickCloseAction:(UIButton *)sender {
+    [[FCRootViewController shareViewController] hideLoginViewController];
+}
+
+
 #pragma mark - Override
 
 - (BOOL)needsHiddenNavigationBar {

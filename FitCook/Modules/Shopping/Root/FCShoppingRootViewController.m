@@ -41,6 +41,8 @@
     _arrRecipes = [NSMutableArray array];
     _arrFoods   = [NSMutableArray array];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(signInNotification:) name:FCSignInNotificationKey object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logoutNotification:) name:FCLogoutNotificationKey object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userUpdateShoppingNotification:) name:kUserUpdateShoppingNotificationKey object:nil];
     
     _tvList.estimatedSectionFooterHeight = 0;
@@ -189,6 +191,18 @@
             [self reloadData:YES];
         });
     }
+}
+
+- (void)signInNotification:(NSNotification *)noti {
+    [self.arrRecipes removeAllObjects];
+    [_arrRecipes addObjectsFromArray:[[FCUser currentUser] getShoppingList]];
+    [self reloadData:NO];
+}
+
+- (void)logoutNotification:(NSNotification *)noti {
+    [self.arrRecipes removeAllObjects];
+    [_arrRecipes addObjectsFromArray:[[FCUser currentUser] getShoppingList]];
+    [self reloadData:NO];
 }
 
 - (void)dealloc

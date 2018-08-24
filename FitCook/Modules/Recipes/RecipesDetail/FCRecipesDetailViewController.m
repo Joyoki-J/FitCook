@@ -26,6 +26,8 @@
 // Constraints
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutAddButtom;
 
+@property (nonatomic, strong) FCParticleButton *btnFavourite;
+
 @property (nonatomic, assign) BOOL isStartAnimate;
 
 @end
@@ -44,6 +46,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(signInNotification:) name:FCSignInNotificationKey object:nil];
     
     _vSegment.delegate = self;
     
@@ -116,9 +120,18 @@
         make.trailing.mas_equalTo(-20);
         make.centerY.equalTo(btnBack.mas_centerY);
     }];
+    _btnFavourite = btnFavourite;
 };
 
+- (void)signInNotification:(NSNotification *)noti {
+    [_btnFavourite setSelected:[[FCUser currentUser] isFavouriteRecipe:_recipe]];
+}
+
 - (void)onClickFavouriteAction:(FCParticleButton *)sender {
+    if (![FCApp app].currentUser) {
+        [[FCRootViewController shareViewController] showLoginViewController];
+        return;
+    }
     [[FCUser currentUser] updateRecipe:_recipe isFavourite:!sender.isSelected];
     if (sender.selected) {
         [sender popInsideWithDuration:0.4f];
@@ -305,6 +318,11 @@
 }
 
 - (IBAction)onClickAddShoppingListAction:(UIButton *)sender {
+    if (![FCApp app].currentUser) {
+        [[FCRootViewController shareViewController] showLoginViewController];
+        return;
+    }
+    
     if ([[FCUser currentUser] isAddedShoppingRecipe:_recipe]) {
         UIAlertController *vcAlert = [UIAlertController alertControllerWithTitle:@"Oops!" message:@"This recipe has already been added to your shopping list." preferredStyle:UIAlertControllerStyleAlert];
         [vcAlert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];

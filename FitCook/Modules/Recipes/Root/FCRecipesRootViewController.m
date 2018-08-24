@@ -38,6 +38,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(signInNotification:) name:FCSignInNotificationKey object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logoutNotification:) name:FCLogoutNotificationKey object:nil];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userUpdateFavouriteNotification:) name:kUserUpdateFavouriteNotificationKey object:nil];
     
     _arrSeletecdFilters = [NSMutableArray array];
@@ -156,6 +159,10 @@
 
 #pragma mark - FCRecipesRootFilterCellDelegate
 - (void)recipesRootFilterCell:(FCRecipesRootFilterCell *)cell didClickFavouriteActionWithIndexPath:(NSIndexPath *)indexPath {
+    if (![FCApp app].currentUser) {
+        [[FCRootViewController shareViewController] showLoginViewController];
+        return;
+    }
     FCRecipe *recipe = [_arrFilterRecipes objectAtIndex:indexPath.row];
     FCUser *user = [FCUser currentUser];
     [user updateRecipe:recipe isFavourite:!cell.isFavourited];
@@ -185,6 +192,14 @@
         _vNoData.hidden = YES;
         [self.view sendSubviewToBack:_vNoData];
     }
+}
+
+- (void)signInNotification:(NSNotification *)noti {
+    [_tvList reloadRowsAtIndexPaths:[_tvList indexPathsForVisibleRows] withRowAnimation:UITableViewRowAnimationNone];
+}
+
+- (void)logoutNotification:(NSNotification *)noti {
+    [_tvList reloadRowsAtIndexPaths:[_tvList indexPathsForVisibleRows] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 @end

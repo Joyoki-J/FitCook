@@ -13,8 +13,9 @@
 #import "FCSearchRootViewController.h"
 #import "FCFavouritesRootViewController.h"
 #import "FCProfileRootViewController.h"
+#import "FCRootViewController.h"
 
-@interface FCMainViewController ()
+@interface FCMainViewController ()<UITabBarControllerDelegate>
 
 @end
 
@@ -22,6 +23,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.delegate = self;
     
     [[UITabBar appearance] setBackgroundImage:[UIImage fc_imageWithColor:[UIColor whiteColor]]];
     
@@ -71,6 +74,17 @@
     [item setSelectedImage:selectedImage];
     item.titlePositionAdjustment = UIOffsetMake(0, -3);
     return item;
+}
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    
+    if ([[(UINavigationController *)viewController viewControllers].firstObject isKindOfClass:[FCProfileRootViewController class]]) {
+        if (![FCApp app].currentUser) {
+            [[FCRootViewController shareViewController] showLoginViewController];
+            return NO;
+        }
+    }
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning {

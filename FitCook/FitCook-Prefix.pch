@@ -15,6 +15,8 @@
 #import "FCRecipe.h"
 #import "FCApp.h"
 #import "FCUser.h"
+#import "FCRootViewController.h"
+#import "FCSignInViewController.h"
 
 #import <MJExtension/MJExtension.h>
 #import <Masonry.h>

@@ -10,4 +10,11 @@
 
 @interface FCRootViewController : FCBaseViewController
 
++ (instancetype)shareViewController;
+
+- (void)showLoginViewController;
+- (void)hideLoginViewController;
+
+@property (nonatomic, readonly) BOOL isShowSign;
+
 @end
