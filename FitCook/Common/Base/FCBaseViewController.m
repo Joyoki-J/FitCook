@@ -36,6 +36,7 @@
     self = [super initWithCoder:coder];
     if (self) {
         self.hidesBottomBarWhenPushed = YES;
+        self.extendedLayoutIncludesOpaqueBars = YES;
     }
     return self;
 }
@@ -45,6 +46,7 @@
     self = [super init];
     if (self) {
         self.hidesBottomBarWhenPushed = YES;
+        self.extendedLayoutIncludesOpaqueBars = YES;
     }
     return self;
 }
@@ -61,8 +63,6 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
-    
     [self.navigationController.navigationBar setBackgroundImage:[self navigationBarBackgroundImage] forBarMetrics:UIBarMetricsDefault];
     
     NSMutableDictionary *titleAttributes = [NSMutableDictionary dictionary];
@@ -86,16 +86,22 @@
         }
     }
     
-    if (self.isViewWillAppearBecauseOfPop) {
-        [self.navigationController setNavigationBarHidden:[self needsHiddenNavigationBar] animated:YES];
+    if ([self needsHiddenNavigationBar]) {
+        if (!self.navigationController.isNavigationBarHidden) {
+            [self.navigationController setNavigationBarHidden:YES animated:animated];
+        }
     } else {
-        //from tab bar
-        [self.navigationController setNavigationBarHidden:[self needsHiddenNavigationBar] animated:NO];
+        if (self.navigationController.isNavigationBarHidden) {
+            [self.navigationController setNavigationBarHidden:NO animated:animated];
+        }
     }
+    
     
     if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
         self.navigationController.interactivePopGestureRecognizer.delegate = nil;
-    } 
+    }
+    
+    [super viewWillAppear:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated
